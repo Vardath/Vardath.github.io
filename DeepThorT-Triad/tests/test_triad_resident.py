@@ -51,7 +51,7 @@ class TriadTests(unittest.TestCase):
     def test_current_manifest(self):
         from deepthort_local.latest_acceptance import load_test
         m=load_test(Path(__file__).resolve().parents[1]/'LATEST_TEST.json')
-        self.assertEqual(m['checks'],["shared_cap","triad_residency","workflow_doctrine","delegation","team_delegation","project_assignment","janus_core","task_memory","memory_governance","portable_skills","portable_procedures","local_mcp","mcp_calls","task_mcp","mcp_stdio","live_memory","memory_core","memory_observer","application_workflow","speech_backend","visual_backend","video_render","multimedia_core"])
+        self.assertEqual(m['checks'],["shared_cap","triad_residency","workflow_doctrine","delegation","team_delegation","project_assignment","janus_core","task_memory","memory_governance","portable_skills","portable_procedures","local_mcp","mcp_calls","task_mcp","mcp_stdio","live_memory","memory_core","memory_observer","application_workflow","speech_backend","visual_backend","video_render","multimedia_core","five_model_acceptance"])
 
     def test_disconnected_loopback_reply_does_not_raise_or_retry(self):
         from triad_server import handler

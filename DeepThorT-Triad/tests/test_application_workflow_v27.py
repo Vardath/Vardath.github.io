@@ -358,3 +358,52 @@ class ApplicationWorkflowTests(unittest.TestCase):
             self.assertEqual(r['status'],'stopped_container_removed')
             self.assertEqual(calls[1][-3:],['container','rm',ident])
             with self.assertRaises(ValueError):perform(root,dict(s,container_id='short'),'docker.exe',run)
+
+
+    def test_integrated_five_model_fixture(self):
+        import tempfile,json,hashlib
+        from pathlib import Path
+        from deepthort_local.five_model_acceptance import exercise,EXPECTED,PLAN,RECALL
+        from deepthort_local.triad_profiles import PROFILES,MEMORY_PROFILE
+        from deepthort_local.creative_profile import MODEL_NAME,REVISION
+        from deepthort_local.creative_core import midi
+        health={'pid':10,'ready':True,'offline':True,'backend':'native-openvino-ir-cpu',
+                'models':{role:{'name':p[0],'resident':True,'pid':i+11} for i,(role,p) in enumerate(PROFILES.items())},
+                'memory_model':{'name':MEMORY_PROFILE[0],'revision':MEMORY_PROFILE[2],'resident':True,'pid':20},
+                'serial_memory_mode':True,'memory_retries':0}
+        answers=[('memory',RECALL),('janus',PLAN),('implementation',EXPECTED),
+                 ('sentinel',{'verdict':'reject','fields':['bpm']}),('sentinel',{'verdict':'accept','fields':[]})]
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);calls=[]
+            def ask(role,prompt,tokens):
+                expected_role,obj=answers[len(calls)];calls.append(role)
+                self.assertEqual(role,expected_role);return json.dumps(obj)
+            def creative(**kw):
+                self.assertTrue(kw['accept'](EXPECTED));raw=midi(EXPECTED)
+                (root/'score.mid').write_bytes(raw)
+                return root,{'native_inference_verified':True,'assigned_role':'multimedia','model':MODEL_NAME,'revision':REVISION,
+                    'pid':30,'sha256':hashlib.sha256(raw).hexdigest(),'scope':'five-model-native',
+                    'brief_sha256':hashlib.sha256(kw['brief'].encode()).hexdigest(),'project_publication_authorized':False}
+            r=exercise(lambda:health,10,ask,root,creative=creative)
+            self.assertEqual(r['status'],'passed',r)
+            self.assertEqual(len(r['evidence']['collaboration_stages']),6)
+            self.assertEqual(len(calls),5)
+            failed=exercise(lambda:health,10,lambda *a:json.dumps({'keep':['N2']}),root,creative=lambda **kw:self.fail('wrong recall must not generate'))
+            self.assertEqual(failed['status'],'failed')
+            stopped=exercise(lambda:health,10,ask,root,cancelled=lambda:True,creative=creative)
+            self.assertEqual(stopped['status'],'cancelled')
+            # Scripted receipt tests the host oracle only, not real inference.
+            calls.clear()
+            def unverified(**kw):
+                p,receipt=creative(**kw);receipt['native_inference_verified']=False
+                return p,receipt
+            r=exercise(lambda:health,10,ask,root,creative=unverified)
+            self.assertEqual(r['status'],'failed')
+            self.assertEqual(len(calls),4)
+
+    def test_five_model_manifest_registration(self):
+        from pathlib import Path
+        from deepthort_local.latest_acceptance import load_test
+        manifest=load_test(Path(__file__).resolve().parents[1]/'LATEST_TEST.json')
+        self.assertEqual(len(manifest['checks']),24)
+        self.assertEqual(manifest['checks'][-1],'five_model_acceptance')

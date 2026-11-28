@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v72-evidence-self-development",
-  "title": "DeepThorT V72: evidence-driven self-development investigations",
+  "id": "janus-pass189-five-model-acceptance",
+  "title": "JANUS integrated five-model acceptance",
   "checks": [
     "shared_cap",
     "triad_residency",
@@ -25,6 +25,7 @@
     "speech_backend",
     "visual_backend",
     "video_render",
-    "multimedia_core"
+    "multimedia_core",
+    "five_model_acceptance"
   ]
 }
