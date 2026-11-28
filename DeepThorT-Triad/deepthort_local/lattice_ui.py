@@ -530,3 +530,67 @@ class CommandCentre(ttk.Frame):
     def live(self,status,workers,samples):
         self.live_status.set(status+f' · {samples} measured PID samples')
         sync_table(self.workers,workers)
+
+
+def approval_job_rows(jobs):
+    states={'waiting_approval','waiting_verification','waiting_repair','needs_input'}
+    return [(str(job['id']),(str(job['id']),job['state'],str(job.get('target') or ''),
+            str(job.get('detail') or ''))) for job in jobs if job['state'] in states]
+
+
+def pc_action_rows(actions):
+    return [(str(action['id']),(str(action['id']),str(action.get('status','')),
+            str(action.get('label','')),str(action.get('approval_source','')),
+            str(action.get('approved_at','')))) for action in actions]
+
+
+class ApprovalCentre(ttk.Frame):
+    """Read-only record inspection. Never grant, launch, cancel or replay here."""
+    def __init__(self,parent,refresh,inspect_job,inspect_action,links):
+        super().__init__(parent)
+        self.notice=tk.StringVar(self,value='Refresh to inspect saved records.')
+        header=ttk.Frame(self);header.pack(fill='x',pady=5)
+        ttk.Label(header,text='APPROVALS & PC ACTIVITY',style='Muted.TLabel').pack(side='left')
+        ttk.Button(header,text='Refresh approvals',command=refresh).pack(side='right')
+        ttk.Label(self,textvariable=self.notice,wraplength=620).pack(anchor='w',pady=4)
+        bar=ttk.Frame(self);bar.pack(fill='x',pady=3)
+        action_menu(bar,'Existing permission controls',links).pack(side='left')
+        tabs=ttk.Notebook(self);tabs.pack(fill='both',expand=True)
+        jobs=ttk.Frame(tabs);actions=ttk.Frame(tabs)
+        tabs.add(jobs,text='Workspace review & blockers')
+        tabs.add(actions,text='Recorded PC actions')
+        self.job_table,self.job_detail=self._pane(jobs,
+            'Pending review and blocked job records. Review is not approval.',
+            [('id','Job',50),('state','State',135),('target','Target',160),('detail','Evidence',230)],inspect_job)
+        self.action_table,self.action_detail=self._pane(actions,
+            'Recent JANUS action ledger, across workspaces. Not a complete operating-system audit.',
+            [('id','Action',55),('state','State',95),('label','Action label',210),
+             ('source','Approval source',125),('stamp','Approved at',150)],inspect_action)
+
+    def _pane(self,parent,caption,columns,inspect):
+        ttk.Label(parent,text=caption,wraplength=620).pack(anchor='w',pady=4)
+        frame=ttk.Frame(parent);frame.pack(fill='both',expand=True)
+        tree=ttk.Treeview(frame,columns=[c[0] for c in columns],show='headings',selectmode='browse',height=7)
+        for key,label,width in columns:
+            tree.heading(key,text=label);tree.column(key,width=width,stretch=key in ('detail','label'))
+        source_scrollbars(frame,tree)
+        detail_frame=ttk.Frame(parent);detail_frame.pack(fill='x',pady=4)
+        detail=tk.Text(detail_frame,height=9,state='disabled',wrap='word',
+                       bg=PALETTE['input'],fg=PALETTE['text'])
+        scroll_text(detail_frame,detail)
+        def show():
+            selected=tree.selection()
+            if selected:replace_readonly(detail,inspect(selected[0]))
+        ttk.Button(parent,text='Inspect selected record',command=show).pack(anchor='w')
+        return tree,detail
+
+    def render(self,project,jobs,actions):
+        if getattr(self,'project',None)!=project:
+            selected=self.job_table.selection()
+            if selected:self.job_table.selection_remove(*selected)
+        self.project=project
+        sync_table(self.job_table,jobs)
+        sync_table(self.action_table,actions)
+        replace_readonly(self.job_detail,'Select a workspace record for historical evidence.')
+        replace_readonly(self.action_detail,'Select a PC action to inspect its recorded approval and result.')
+        self.notice.set(f'{project} · {len(jobs)} review/blocker rows · {len(actions)} recent PC action records')

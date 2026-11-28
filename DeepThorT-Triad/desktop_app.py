@@ -103,7 +103,7 @@ ROOT = Path(__file__).resolve().parent
 STATE = ROOT / 'state'
 from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
-from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_project_rows, command_job_rows
+from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_project_rows, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = (PALETTE[k] for k in ('base','panel','input','text','muted','accent'))
 GREEN, YELLOW = PALETTE['success'], PALETTE['warning']
 MAX_INFERENCE_PROMPT = 7500  # current OpenVINO IR endpoint requires <=8000 / message
@@ -490,6 +490,7 @@ class DeepThorTDesktop(tk.Tk):
                 (tasks_tab,'Tasks'),(process_tab,'Processes'),(janus_tab,'JANUS & Sentinel'),(hardware_tab,'Computer & Tools'),(media_tab,'Files & Images')):
             self.tabs.add(frame,text=title)
         command_tab=ttk.Frame(self.tabs);self.tabs.add(command_tab,text='Command Centre')
+        approval_tab=ttk.Frame(self.tabs);self.tabs.add(approval_tab,text='Approvals & PC Activity')
         # CHAT: separate persisted sessions and a tall, scrollable prompt editor.
         chatbar=ttk.Frame(chat);chatbar.pack(fill='x',pady=(4,3))
         ttk.Button(chatbar,text='+ New chat',command=self._new_chat).pack(side='left')
@@ -558,6 +559,9 @@ class DeepThorTDesktop(tk.Tk):
         self.command_centre=CommandCentre(command_tab,self._refresh_command_centre,self._open_command_job,
             [(label,lambda index=index:self.tabs.select(index)) for label,index in (('Chats',0),('Work queue',1),('File review',2),('Processes',4),('Operatives',5),('Tools',6))],self._show_queued_prompts)
         self.command_centre.pack(fill='both',expand=True)
+        self.approval_centre=ApprovalCentre(approval_tab,self._refresh_approval_centre,self._inspect_approval_job,self._inspect_pc_action,
+            [('Network permissions…',self._network_permissions_dialog),('Computer & Tools',lambda:self.tabs.select(6)),('Processes',lambda:self.tabs.select(4)),('Approved process controls',lambda:self.tabs.select(5))])
+        self.approval_centre.pack(fill='both',expand=True)
         self.tabs.bind('<<NotebookTabChanged>>',self._command_tab_changed,add='+')
 
         # REAL PERSISTENT WORK QUEUE
@@ -3044,7 +3048,37 @@ class DeepThorTDesktop(tk.Tk):
         if not self.node_ready and not self.node_loading and not self.installing:self._auto_start_if_installed()
 
     def _command_tab_changed(self,event=None):
-        if self.tabs.index('current')==8:self._refresh_command_centre()
+        index=self.tabs.index('current')
+        if index==8:self._refresh_command_centre()
+        elif index==9:self._refresh_approval_centre()
+
+    def _refresh_approval_centre(self):
+        import sqlite3
+        try:
+            project=self._project_key()
+            self.approval_centre.render(project,approval_job_rows(self.jobs.items(project)),
+                                       pc_action_rows(self.janus.actions(limit=100)))
+        except (OSError,ValueError,sqlite3.Error) as exc:
+            self.approval_centre.notice.set('Snapshot unavailable: '+str(exc)[:200])
+
+    def _inspect_approval_job(self,ident):
+        job=self.jobs.get(int(ident))
+        if not job or job['project']!=self._project_key():
+            return 'Job no longer belongs to the selected workspace. Refresh.'
+        lines=[f"Job #{job['id']} | {job['state']} | {job['mode']}",
+               str(job.get('target') or ''),str(job.get('detail') or ''),
+               'Historical observations only; no new grant or write.']
+        for label,store in (('Tool receipts',self.agent_tool_receipts),('Execution requests (not grants)',self.execution_intents)):
+            try:lines.extend(['',label,store.describe(job['id'],job['project']) or 'None recorded'])
+            except (OSError,ValueError,KeyError,TypeError) as exc:lines.append(label+' unavailable: '+str(exc)[:180])
+        return '\n'.join(lines)
+
+    def _inspect_pc_action(self,ident):
+        action=self.janus.action(int(ident))
+        if not action:return 'Action no longer recorded. Refresh.'
+        keys=('id','label','kind','status','approval_source','approved_at','cwd','argv_json',
+              'pid','started_at','finished_at','returncode','cancel_requested','detail','output_file')
+        return '\n'.join(f'{key}: {action.get(key)}' for key in keys if action.get(key) is not None)
 
     def _refresh_command_centre(self):
         import sqlite3
