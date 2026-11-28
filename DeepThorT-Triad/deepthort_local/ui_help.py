@@ -120,6 +120,7 @@ TOOLTIPS = {
     'Add task': 'Create a durable manual task for the selected project.',
     'Complete / reopen': 'Mark a selected task done or open; only verified work should be marked complete.',
     'Send to prompt': 'Place the selected task in the prompt editor without starting execution.',
+    'Linked job': 'Associate a manual task with an existing exact workspace job; inspect stored graph evidence or open the job without executing it.',
     'Cancel running job': 'Request cancellation of the active build or inference job.',
     'Stop tool / install process': 'Request termination of a running supervised local tool or installer.',
     'Refresh status': 'Read the actual persisted JANUS, Sentinel and process states.',

@@ -221,3 +221,41 @@ class IntegratedInterfaceTests(unittest.TestCase):
             app.approval_centre.render('new',[],[])
             self.assertFalse(app.approval_centre.grant_table.get_children())
             self.assertFalse(app.approval_centre.grant_table.selection())
+
+    def test_task_job_links_are_persistent_scoped_and_do_not_complete_tasks(self):
+        from deepthort_local.tasks import TaskBoard
+        with tempfile.TemporaryDirectory() as tmp:
+            db=Path(tmp)/'tasks.db'
+            board=TaskBoard(db)
+            ident=board.add('one','Build fixture')
+            board.link('one',ident,42)
+            self.assertEqual(TaskBoard(db).links('one'),{ident:42})
+            self.assertEqual(board.items('one'),[(ident,'Build fixture',0)])
+            self.assertFalse(board.links('two'))
+            with self.assertRaises(ValueError):
+                board.link('two',ident,42)
+            board.mark('one',ident,True)
+            self.assertEqual(board.links('one'),{ident:42})
+            board.link('one',ident,None)
+            self.assertFalse(board.links('one'))
+            self.assertEqual(board.items('one'),[(ident,'Build fixture',1)])
+
+    def test_task_board_displays_exact_link_and_recorded_graph(self):
+        app=self.app
+        with tempfile.TemporaryDirectory() as tmp:
+            project=Path(tmp).resolve()
+            app.project=project
+            ident=app.tasks.add(str(project),'Fixture')
+            app.tasks.link(str(project),ident,42)
+            job={'id':42,'project':str(project),'mode':'build','state':'waiting_verification','detail':'Test still required'}
+            with patch.object(app.jobs,'items',return_value=[job]),patch.object(app.jobs,'get',return_value=job), \
+                 patch.object(app.graphs,'status',return_value={'state':'active','nodes':[{'kind':'verification','title':'Fixed test','state':'pending'}],'edges':[]}):
+                app._refresh_tasks()
+                self.assertEqual(app.task_tree.item(str(ident),'values'),('Planned','Fixture','#42 · waiting_verification'))
+                app.task_tree.selection_set(str(ident))
+                app._inspect_task_job()
+                self.assertIn('verification · Fixed test · pending',app.task_evidence.get('1.0','end'))
+                self.assertEqual(app.tasks.items(str(project))[0][2],0)
+            app.project=None
+            app._refresh_tasks()
+            self.assertFalse(app.task_tree.get_children())
