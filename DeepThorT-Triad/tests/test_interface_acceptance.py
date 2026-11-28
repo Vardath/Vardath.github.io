@@ -339,3 +339,39 @@ class IntegratedInterfaceTests(unittest.TestCase):
             app._refresh_studio()
             self.assertFalse(app.studio_centre.table.exists('large.mp4'))
             app.project=None
+
+
+    def test_knowledge_enrollment_snapshot_does_not_read_source(self):
+        from deepthort_local.document_knowledge import DocumentKnowledge
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();one=root/'one';two=root/'two';one.mkdir();two.mkdir()
+            index=DocumentKnowledge(root/'index.sqlite3')
+            (one/'manual.txt').write_text('Exact useful manual reference for project testing.',encoding='utf-8')
+            index.index(one,'manual.txt')
+            (one/'manual.txt').unlink()
+            with patch('deepthort_local.document_knowledge._read',side_effect=AssertionError('Source read prohibited')):
+                rows=index.inspection_records(one)
+                self.assertEqual([r['path'] for r in rows],['manual.txt'])
+                self.assertNotIn('current',rows[0])
+                self.assertFalse(index.inspection_records(two))
+                self.assertFalse(index.inspection_records(one,exclude=['manual.txt']))
+
+    def test_knowledge_overview_exact_document_navigation(self):
+        app=self.app
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();app.project=root
+            sample={'path':'manual.txt','sha256':'a'*64,'origin':'explicit','fragments':3,'locator':'line'}
+            with patch.object(app.capabilities.knowledge,'inspection_records',return_value=[sample]), \
+                 patch.object(app,'_open_project_knowledge') as open_library:
+                app._refresh_knowledge_centre()
+                self.assertTrue(app.knowledge_centre.library_table.exists('manual.txt'))
+                app.knowledge_centre.library_table.selection_set('manual.txt')
+                app.knowledge_centre.inspect_library()
+                self.assertIn('source not revalidated',app.knowledge_centre.library_detail.get('1.0','end'))
+                app._open_indexed_document('manual.txt')
+                open_library.assert_called_once_with(selected_path='manual.txt')
+                app._open_indexed_document('other.txt')
+                open_library.assert_called_once()
+            app.project=None
+            app._refresh_knowledge_centre()
+            self.assertFalse(app.knowledge_centre.library_table.get_children())

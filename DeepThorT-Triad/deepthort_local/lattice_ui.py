@@ -620,7 +620,7 @@ class ApprovalCentre(ttk.Frame):
 
 class KnowledgeMemoryCentre(ttk.Frame):
     """Workspace-scoped historical recall inspection, not a new retrieval path."""
-    def __init__(self,parent,refresh,open_library):
+    def __init__(self,parent,refresh,open_library,open_document=None):
         super().__init__(parent)
         self.notice=tk.StringVar(self,value='Open or refresh to inspect saved records.')
         self.worker=tk.StringVar(self,value='No observer sample yet')
@@ -630,22 +630,68 @@ class KnowledgeMemoryCentre(ttk.Frame):
         ttk.Label(self,textvariable=self.notice,wraplength=620).pack(anchor='w',pady=5)
         ttk.Label(self,textvariable=self.worker,style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=4)
         ttk.Label(self,text='Independent recall remains required. Historical findings are advisory, not current proof or execution authority. JANUS and Sentinel receive eligible reports through existing review paths.',wraplength=620).pack(anchor='w',pady=4)
-        filterbar=ttk.Frame(self);filterbar.pack(fill='x',pady=3)
+        tabs=ttk.Notebook(self);tabs.pack(fill='both',expand=True)
+        receipts=ttk.Frame(tabs);library=ttk.Frame(tabs)
+        tabs.add(receipts,text='Recall receipts');tabs.add(library,text='Indexed references')
+        filterbar=ttk.Frame(receipts);filterbar.pack(fill='x',pady=3)
         self.query=tk.StringVar(self)
         ttk.Entry(filterbar,textvariable=self.query).pack(side='left',fill='x',expand=True)
         ttk.Button(filterbar,text='Filter memory receipts',command=self.filter).pack(side='left',padx=4)
-        frame=ttk.Frame(self);frame.pack(fill='both',expand=True)
+        frame=ttk.Frame(receipts);frame.pack(fill='both',expand=True)
         columns=[('job','Job',55),('request','Request',65),('outcome','Outcome',145),
                  ('focus','Focus',240),('count','Findings',65)]
         self.table=ttk.Treeview(frame,columns=[c[0] for c in columns],show='headings',selectmode='browse',height=7)
         for key,label,width in columns:
             self.table.heading(key,text=label);self.table.column(key,width=width,stretch=key=='focus')
         source_scrollbars(frame,self.table)
-        ttk.Button(self,text='Inspect memory receipt',command=self.inspect).pack(anchor='w',pady=4)
-        details=ttk.Frame(self);details.pack(fill='both',expand=True)
+        ttk.Button(receipts,text='Inspect memory receipt',command=self.inspect).pack(anchor='w',pady=4,before=frame)
+        details=ttk.Frame(receipts);details.pack(fill='both',expand=True)
         self.detail=tk.Text(details,height=9,state='disabled',wrap='word',bg=PALETTE['input'],fg=PALETTE['text'])
         scroll_text(details,self.detail)
         self.records={}
+        self.library_notice=tk.StringVar(self,value='Refresh to inspect stored enrollment records.')
+        ttk.Label(library,textvariable=self.library_notice,wraplength=620).pack(anchor='w',pady=4)
+        self.library_query=tk.StringVar(self)
+        controls=ttk.Frame(library);controls.pack(fill='x',pady=4)
+        ttk.Entry(controls,textvariable=self.library_query).pack(side='left',fill='x',expand=True)
+        ttk.Button(controls,text='Filter references',command=self.filter_library).pack(side='left',padx=4)
+        links=ttk.Frame(library);links.pack(fill='x',pady=4)
+        ttk.Button(links,text='Inspect enrollment',command=self.inspect_library).pack(side='left')
+        def navigate():
+            selected=self.library_table.selection()
+            if selected and open_document:open_document(selected[0])
+        if open_document:ttk.Button(links,text='Open in project library',command=navigate).pack(side='left',padx=4)
+        library_frame=ttk.Frame(library);library_frame.pack(fill='both',expand=True)
+        self.library_table=ttk.Treeview(library_frame,columns=('path','origin','fragments','locator'),show='headings',selectmode='browse')
+        for key,label,width in (('path','Document path',280),('origin','Origin',80),('fragments','Fragments',75),('locator','Locator',100)):
+            self.library_table.heading(key,text=label);self.library_table.column(key,width=width,stretch=key=='path')
+        source_scrollbars(library_frame,self.library_table)
+        detail_frame=ttk.Frame(library);detail_frame.pack(fill='both',expand=True)
+        self.library_detail=tk.Text(detail_frame,height=6,state='disabled',wrap='word',bg=PALETTE['input'],fg=PALETTE['text'])
+        scroll_text(detail_frame,self.library_detail)
+        self.library_records={}
+
+    def render_library(self,project,records):
+        if getattr(self,'library_project',None)!=project:
+            selected=self.library_table.selection()
+            if selected:self.library_table.selection_remove(*selected)
+            self.library_query.set('')
+        self.library_project=project
+        self.library_records={r['path']:r for r in records}
+        self.library_notice.set(f'{project} · {len(records)} stored enrollments; current fingerprints not checked here')
+        self.filter_library()
+        replace_readonly(self.library_detail,'Open the existing project library to check source freshness, search exact excerpts or manage enrollment.')
+
+    def filter_library(self):
+        rows=[(path,(path,r['origin'],str(r['fragments']),r['locator'])) for path,r in self.library_records.items()]
+        sync_table(self.library_table,[r for r in rows if matches_query(' '.join(r[1]),self.library_query.get())])
+
+    def inspect_library(self):
+        selection=self.library_table.selection()
+        if not selection:return
+        record=self.library_records.get(selection[0])
+        if record:
+            replace_readonly(self.library_detail,'Stored enrollment · source not revalidated\n'+'\n'.join(f'{k}: {v}' for k,v in record.items()))
 
     def render(self,project,records,worker):
         if getattr(self,'project',None)!=project:
