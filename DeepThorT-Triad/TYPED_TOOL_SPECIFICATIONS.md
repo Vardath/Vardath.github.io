@@ -781,3 +781,7 @@ Optionally supply top-level `transitions`, one entry for each pair of adjacent c
 ## Reviewed video motion tracking (Pass 174)
 
 Files & Images → Track video patch. JSON: `{"video":"clip.mp4","start_frame":0,"end_frame":30,"box":[20,20,12,12],"radius":5,"max_error":12}`. Select a nonuniform 4–32 pixel patch, 2–60 source frames, radius 1–12 and mean absolute RGB error limit 0–50. Search is bounded; stop rather than guess at a tied or excessive-error match. JSON contains frame indices, timestamps, bounding boxes and matching error. Translation only, no identity, scale/rotation or occlusion recovery.
+
+## Reviewed video frame interpolation (Pass 175)
+
+The existing editor accepts optional top-level `"interpolation":"blend2x"` (default `none`). Produces 48/50/60 fps from 24/25/30 fps by inserting a 50% RGB midpoint inside each clip and duplicating its last frame to preserve duration. No midpoint crosses a hard cut; explicit crossfade overlaps double in output frames. Maximum 60 selected source frames and 120 generated frames. This classical method can ghost during motion; no optical flow or neural interpolation claim.
