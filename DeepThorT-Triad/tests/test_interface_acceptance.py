@@ -399,3 +399,43 @@ class IntegratedInterfaceTests(unittest.TestCase):
                 start.assert_not_called();run.assert_not_called()
             self.assertEqual(len(app.settings_centre.model_table.get_children()),7)
             self.assertTrue(app.settings_centre.integration_table.exists('github'))
+
+
+    def test_failed_task_job_studio_and_readiness_snapshots_clear_rows(self):
+        import sqlite3
+        app=self.app
+        app.job_tree.insert('','end',iid='oldjob',values=('queued','build','old','old'))
+        app.task_tree.insert('','end',iid='oldtask',values=('Planned','old','old'))
+        app.studio_centre.render('old',[('old.txt',('Document','old.txt','.txt'))])
+        app.settings_centre.render_readiness([('old',('old','old','old','old'))],[])
+        with tempfile.TemporaryDirectory() as tmp:
+            app.project=Path(tmp).resolve()
+            with patch.object(app.jobs,'items',side_effect=sqlite3.OperationalError('locked')), \
+                 patch.object(app.tasks,'links',side_effect=sqlite3.OperationalError('locked')), \
+                 patch.object(app.inspection_exclusions,'filter',side_effect=ValueError('invalid exclusion')), \
+                 patch('deepthort_local.readiness_inspection.model_records',side_effect=OSError('unavailable')):
+                app._refresh_jobs();app._refresh_tasks();app._refresh_studio();app._refresh_settings_centre()
+            self.assertFalse(app.job_tree.get_children())
+            self.assertFalse(app.task_tree.get_children())
+            self.assertFalse(app.studio_centre.table.get_children())
+            self.assertFalse(app.settings_centre.model_table.get_children())
+            self.assertIn('unavailable',app.queue_summary.get().lower())
+            self.assertIn('unavailable',app.task_notice.get().lower())
+            self.assertIn('unavailable',app.studio_centre.notice.get().lower())
+            self.assertIn('unavailable',app.settings_centre.notice.get().lower())
+            app.project=None
+
+    def test_inventory_error_from_other_workspace_is_ignored(self):
+        app=self.app
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();app.project=root
+            app.inventory={'tools':[]}
+            app.inventory_notice.set('Current snapshot')
+            app.events.put(('inventory_error','old failure',root/'old'))
+            app._handle_events()
+            self.assertEqual(app.inventory_notice.get(),'Current snapshot')
+            app.events.put(('inventory_error','current failure',root))
+            app._handle_events()
+            self.assertIsNone(app.inventory)
+            self.assertIn('Scan failed',app.inventory_notice.get())
+            app.project=None

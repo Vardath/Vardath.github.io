@@ -2638,6 +2638,18 @@ class DeepThorTDesktop(tk.Tk):
         self.x4_report = None
         self._file_rows.clear()
         self._visible_project_paths = []
+        # Clear workspace-bound displays before any asynchronous refresh returns.
+        project=self._project_key()
+        self.command_centre.render(project,[],[],{})
+        self.command_centre.notice.set('Workspace changed — refresh Command Centre.')
+        self.approval_centre.render(project,[],[])
+        self.approval_centre.notice.set('Workspace changed — refresh approvals.')
+        self.knowledge_centre.render(project,[],self.memory_observer.inspection_snapshot())
+        self.knowledge_centre.render_library(project,[])
+        self.studio_centre.render(project,[])
+        self.settings_centre.render_readiness([],[])
+        self.settings_centre.notice.set('Workspace changed — refresh readiness.')
+        self.inventory=None;sync_table(self.inventory_table,[])
         self._refresh_files();self._refresh_tasks();self._refresh_chats();self._refresh_jobs();self._refresh_inventory()
         if 'x4' in self.project.name.casefold() and not self.disk_gate.gaming():
             self._inspect_x4_sources()  # Read-only, bounded automatic installation/reference lookup.
@@ -2834,7 +2846,7 @@ class DeepThorTDesktop(tk.Tk):
                     return
                 paths=self.inspection_exclusions.filter(target,list_project_files(target))
                 self.events.put(('files',target,paths))
-            except Exception as e:self.events.put(('log','Project scan failed: '+str(e)))
+            except Exception as e:self.events.put(('files_error',target,str(e)))
         threading.Thread(target=worker,daemon=True).start()
     def _current_project_file_scope(self):
         """Files an existing plan/job actually named, not a guess at an X4 asset."""
@@ -2873,10 +2885,16 @@ class DeepThorTDesktop(tk.Tk):
         for row in self.files.get_children():
             self.files.delete(row)
         self._file_rows.clear()
-        visible=self.inspection_exclusions.filter(self.project,self._visible_project_paths)
-        if not self.show_all_project_files.get():
-            active=self._current_project_file_scope()
-            visible=[path for path in visible if path.casefold() in active]
+        import sqlite3
+        try:
+            visible=self.inspection_exclusions.filter(self.project,self._visible_project_paths)
+            if not self.show_all_project_files.get():
+                active=self._current_project_file_scope()
+                visible=[path for path in visible if path.casefold() in active]
+        except (OSError,ValueError,sqlite3.Error) as exc:
+            self.file_filter_status.set('File snapshot unavailable — check inspection exclusions and refresh.')
+            self._log('File snapshot unavailable: '+type(exc).__name__)
+            return
         query=self.file_query.get() if hasattr(self,'file_query') else ''
         total=len(visible)
         visible=[path for path in visible if matches_query(path,query)]
@@ -3167,7 +3185,8 @@ class DeepThorTDesktop(tk.Tk):
 
     def _command_tab_changed(self,event=None):
         index=self.tabs.index('current')
-        if index==3:self._refresh_tasks()
+        if index==1:self._refresh_jobs()
+        elif index==3:self._refresh_tasks()
         elif index==8:self._refresh_command_centre()
         elif index==9:self._refresh_approval_centre()
         elif index==10:self._refresh_knowledge_centre()
@@ -3187,10 +3206,15 @@ class DeepThorTDesktop(tk.Tk):
                                    self.model_status.get(),self._project_key())
         from deepthort_local.readiness_inspection import model_records,integration_records
         pid=self.node.pid if self.node and self.node.poll() is None else None
-        self.settings_centre.render_readiness(
-            model_records(ROOT,self.last_server_health,pid,bool(self._creative_lane_thread and self._creative_lane_thread.is_alive())),
-            integration_records(self._project_key(),STATE/'janus.sqlite3',
-                                getattr(self,'_github_oauth_session',None),getattr(self,'_web_research_active',False)))
+        import sqlite3
+        try:
+            self.settings_centre.render_readiness(
+                model_records(ROOT,self.last_server_health,pid,bool(self._creative_lane_thread and self._creative_lane_thread.is_alive())),
+                integration_records(self._project_key(),STATE/'janus.sqlite3',
+                                    getattr(self,'_github_oauth_session',None),getattr(self,'_web_research_active',False)))
+        except (OSError,ValueError,sqlite3.Error) as exc:
+            self.settings_centre.render_readiness([],[])
+            self.settings_centre.notice.set('Readiness snapshot unavailable — refresh or use Self-diagnose: '+str(exc)[:160])
 
     def _studio_tool_category(self,category):
         self.media_shelf.category.set(category)
@@ -3198,6 +3222,13 @@ class DeepThorTDesktop(tk.Tk):
         self.tabs.select(7)
 
     def _refresh_studio(self):
+        import sqlite3
+        try:self._read_studio_overview()
+        except (OSError,ValueError,sqlite3.Error) as exc:
+            self.studio_centre.render(self._project_key(),[])
+            self.studio_centre.notice.set('Artifact snapshot unavailable — refresh after checking workspace and exclusions: '+str(exc)[:160])
+
+    def _read_studio_overview(self):
         project=self._project_key()
         paths=[]
         if self.project:
@@ -4985,7 +5016,17 @@ class DeepThorTDesktop(tk.Tk):
         if req and req['chat_id']==self.current_chat:self._reload_chat()
 
     def _refresh_jobs(self):
+        import sqlite3
         if not hasattr(self,'job_tree'):return
+        try:self._read_job_overview()
+        except (OSError,ValueError,sqlite3.Error) as exc:
+            sync_table(self.job_tree,[])
+            self.job_filter_count.set('Unavailable')
+            self.queue_summary.set('Job snapshot unavailable — refresh Work queue; see Processes for diagnostics.')
+            self._show(self.job_details,'Job snapshot unavailable: '+str(exc)[:180]+'\nNo job state was changed.')
+            self._log('Work queue snapshot unavailable: '+type(exc).__name__)
+
+    def _read_job_overview(self):
         project=self._project_key()
         displayed=[]
         rows=[j for j in self.jobs.items(project) if j['mode'] not in ('chat','plan','edit')]
@@ -7663,7 +7704,16 @@ class DeepThorTDesktop(tk.Tk):
         title=simpledialog.askstring('New project task','Describe the work step:',parent=self)
         if title:self.tasks.add(str(self.project),title);self._refresh_tasks()
     def _refresh_tasks(self):
+        import sqlite3
         if not hasattr(self,'task_tree'):return
+        try:self._read_task_overview()
+        except (OSError,ValueError,sqlite3.Error) as exc:
+            sync_table(self.task_tree,[])
+            self.task_count.set('Unavailable')
+            self.task_notice.set('Task snapshot unavailable — reopen Tasks to retry. No task state was changed.')
+            self._show(self.task_evidence,'Stored task evidence unavailable: '+str(exc)[:180])
+
+    def _read_task_overview(self):
         rows=[]
         if self.project:
             project=self._project_key()
@@ -7774,8 +7824,8 @@ class DeepThorTDesktop(tk.Tk):
             try:
                 inventory=scan_computer(ROOT,path,include_gpu=not self.disk_gate.gaming(),
                     x4_game_dir=game_dir,x4_reference_dir=reference_dir)
-                self.events.put(('inventory',inventory))
-            except Exception as exc:self.events.put(('inventory_error',str(exc)))
+                self.events.put(('inventory',inventory,path))
+            except Exception as exc:self.events.put(('inventory_error',str(exc),path))
         threading.Thread(target=worker,daemon=True).start()
     def _save_x4_paths(self):
         self.x4_settings_file.write_text(json.dumps({
@@ -10522,6 +10572,7 @@ class DeepThorTDesktop(tk.Tk):
                 if self.instruction_inbox.fail(event[1],event[2]):
                     self._log(f'JANUS instruction #{event[1]} needs review; council inference failed: {event[2]}')
             elif kind=='inventory':
+                if len(event)!=3 or event[2]!=self.project:continue
                 self.inventory=event[1]
                 try:
                     enrolled=self.tool_learning.discover(self.inventory.get('tools',[]))
@@ -10561,8 +10612,10 @@ class DeepThorTDesktop(tk.Tk):
                 self._tool_probe_active=None
                 self._log('Post-install version verification error for '+event[1]+': '+event[2])
             elif kind=='inventory_error':
+                if len(event)!=3 or event[2]!=self.project:continue
+                self.inventory=None;sync_table(self.inventory_table,[])
                 self._log('Computer scan problem: '+event[1]);self._show(self.machine_text,'Discovery error: '+event[1])
-                self.inventory_notice.set('Scan failed; displayed results may be from the previous scan')
+                self.inventory_notice.set('Scan failed — use Scan this computer to retry. No current inventory displayed.')
             elif kind=='x4_auto_report':
                 self.x4_report=event[1]
                 self._x4_report_project=str(self.project)
@@ -10629,9 +10682,15 @@ class DeepThorTDesktop(tk.Tk):
                 if event[1]==self.project:
                     self._visible_project_paths = event[2]
                     self._render_project_files()
-                    visible=self.inspection_exclusions.filter(self.project,event[2])
-                    self._log(f'Project file inventory refreshed: {len(visible)} visible files; '
-                              f'{len(self.inspection_exclusions.paths(self.project))} excluded from inspection.')
+            elif kind=='files_error':
+                if event[1]==self.project:
+                    self._visible_project_paths=[]
+                    self._file_rows.clear()
+                    for row in self.files.get_children():self.files.delete(row)
+                    self.file_filter_status.set('File scan failed — refresh files after checking workspace access.')
+                    self.studio_centre.render(self._project_key(),[])
+                    self.studio_centre.notice.set('File scan unavailable; refresh workspace files.')
+                    self._log('Project scan failed: '+event[2][:180])
             elif kind=='conversation_stage':self._set_reply_stage(event[1],event[2])
             elif kind=='project_midi_report':
                 if self._project_midi_pending and self._project_midi_pending[0]==event[1]:
