@@ -857,3 +857,7 @@ Test native grid game button accepts the same JSON as Generate grid game. Choose
 ## Native model benchmarking (Pass 193)
 
 Run latest test includes 24 fixed text requests (four resident models × three identical JSON oracles × two isolated sessions). Records configured model revision, PID, each pass/failure/blocked result and request elapsed time; median only over verified successes. Aborts on cancellation or changed worker/memory policy; defers active work and gaming. No raw responses, model replacement, new weights or remote inference. Native local run required. Not Gemma benchmarking, general coding acceptance, token throughput or peak memory measurement.
+
+## Reviewed SQLite backup and restoration (Pass 194)
+
+Backup SQLite: JSON `{"database":"project.db"}` produces a new ZIP containing exact standalone non-WAL SQLite bytes and a manifest with size, SHA-256, user version and page count. Restore SQLite copy: `{"archive":"backup.zip"}` produces a new `.db` after verifying manifest, checksum and SQLite quick-check. Both operations use exact source approval and refuse overwrite or sidecars; no live state replacement. Archives contain private data in unencrypted form; no scheduled full-state backup or externally authenticated signature. Existing source-checkpoint recovery unchanged.

@@ -547,6 +547,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(workbar,text='Revoke selected job automation',
                    command=self._revoke_selected_project_work).pack(side='left',padx=8)
         restorebar=ttk.Frame(queue_tab);restorebar.pack(fill='x',pady=(0,3))
+        ttk.Button(restorebar,text='Backup SQLite…',command=lambda:self._review_typed_tool('database_backup','.zip','Database: reviewed backup')).pack(side='left',padx=3)
+        ttk.Button(restorebar,text='Restore SQLite copy…',command=lambda:self._review_typed_tool('database_restore','.db','Database: reviewed restore')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Restore source checkpoint…',
                    command=self._restore_source_checkpoint).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Quiet Godot scene test',
@@ -1865,6 +1867,8 @@ class DeepThorTDesktop(tk.Tk):
                  'api_testing':('.json','Development: reviewed API tests'),
                  'application_monitoring':('.json','Development: reviewed health samples'),
                  'database_migration':('.db','Database: reviewed migration'),
+                 'database_backup':('.zip','Database: reviewed backup'),
+                 'database_restore':('.db','Database: reviewed restore'),
                  'language_server':('.json','Development: reviewed language server'),
                  'interface_learning':('.json','Development: reviewed interface evidence'),
                  'code_refactoring':('.py','Development: reviewed local refactor'),
