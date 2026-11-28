@@ -211,7 +211,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 199 | 34 | Browser-based file uploads | Partial: explicitly reviewed single public HTTPS multipart POST with exact project file hash, disclosed name/field, bounded response receipt and no automatic retry. Pass 200 CI pending. Live browser file input, authentication and remote storage/native acceptance outstanding. |
 | 200 | 33 | Automated online form completion | Partial: exact historical static form and literal text-like field mapping, required-field gaps and encoded preview, no network or submission. Pass 201 CI pending. Live browser fill, complex controls, validation and authenticated forms outstanding. |
 | 201 | 37 | Browser developer tools integration | Partial: reviewed installed Chrome/Edge disposable headless profile, ephemeral loopback DevTools endpoint, fixed Browser.getVersion and Target.getTargets, capped cleanup and blank-page verification. Pass 202 CI pending. Native browser and websocket-client acceptance, broader CDP inspection outstanding. |
-| 202 | 38 | General browser automation | Not started in this programme |
+| 202 | 38 | General browser automation | Partial: actual CDP local inert form replay with attached disposable page, DOM focus, native text insertion and independent readback oracle. Pass 203 CI pending. Live sites, arbitrary navigation, complex controls and native browser acceptance outstanding. |
 | 203 | 36 | Operation of authenticated browser sessions | Not started in this programme |
 | 204 | 26 | Research using authenticated websites | Not started in this programme |
 | 205 | 333 | Prompt injection resistance | Existing partial; completion not started in this programme |
@@ -1042,3 +1042,9 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 202 — 27 November 2026
 - Add reviewed installed Chrome/Edge DevTools connection using fresh headless profile under inherited Windows cap and nested cleanup. Exact profile endpoint, loopback HTTP identity and direct websocket, fixed read-only CDP version/target commands and blank-page assertion. Optional separately installed websocket-client, no automatic installation, personal profile, arbitrary commands or public navigation. Two mocked protocol fixtures, native browser acceptance outstanding. Next rank 202 / ID 38 general browser automation. No installer.
+
+## Pass 203 — 27 November 2026
+- Extend isolated native DevTools path with reviewed inert form replay from exact prior static preparation receipt. Use fixed target attachment, frame document, generated no-network markup, DOM focus, Input.insertText and fixed DOM value readback; no raw website HTML, scripts, live navigation or submission. Reuse runtime/receipt guards and cleanup. Move new browser tool buttons into a separate row. Two protocol fixture regressions, actual native browser execution still unverified. Next rank 203 / ID 36 operation of authenticated browser sessions. No installer.
+
+### Pass 203 documentation follow-up
+- Document exact JSON specifications, approval scope, output formats, optional browser dependency and native acceptance limitations for Passes 199–203 in TYPED_TOOL_SPECIFICATIONS.md. No runtime change or installer.

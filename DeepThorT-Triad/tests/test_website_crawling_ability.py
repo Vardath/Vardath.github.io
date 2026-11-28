@@ -197,3 +197,46 @@ class DevToolsTests(unittest.TestCase):
                 result={'protocolVersion':'1.3','product':'Chrome/140','revision':'abc','jsVersion':'1'} if x['id']==1 else {'targetInfos':[{'type':'page','url':'https://example.org'}]}
                 return json.dumps({'id':x['id'],'result':result})
         with self.assertRaises(ValueError):inspect(WS())
+
+class BrowserAutomationTests(unittest.TestCase):
+    def test_native_protocol_replay_and_value_oracle(self):
+        from deepthort_local.browser_automation import replay,VERIFY
+        class WS:
+            def __init__(self):self.sent=[];self.values=[]
+            def send(self,raw):
+                q=json.loads(raw);self.sent.append(q)
+                if q['method']=='Input.insertText':self.values.append(q['params']['text'])
+            def recv(self):
+                q=self.sent[-1];m=q['method'];result={}
+                if m=='Browser.getVersion':result={'protocolVersion':'1.3','product':'Chrome/140','revision':'abc','jsVersion':'1'}
+                elif m=='Target.getTargets':result={'targetInfos':[{'type':'page','url':'about:blank','targetId':'TARGET'}]}
+                elif m=='Target.attachToTarget':result={'sessionId':'SESSION'}
+                elif m=='Page.getFrameTree':result={'frameTree':{'frame':{'url':'about:blank','id':'FRAME'}}}
+                elif m=='DOM.getDocument':result={'root':{'nodeId':1}}
+                elif m=='DOM.querySelector':result={'nodeId':2}
+                elif m=='Runtime.evaluate':result={'result':{'value':self.values.copy()}}
+                reply={'id':q['id'],'result':result}
+                if 'sessionId' in q:reply['sessionId']=q['sessionId']
+                return json.dumps(reply)
+        ws=WS();r=replay(ws,[{'name':'title','value':'A & B'},{'name':'description','value':'<literal>'}])
+        self.assertTrue(r['dom_values_verified']);self.assertFalse(r['submitted'])
+        self.assertEqual(ws.values,['A & B','<literal>'])
+        doc=next(x['params']['html'] for x in ws.sent if x['method']=='Page.setDocumentContent')
+        self.assertNotIn('<literal>',doc);self.assertIn("form-action 'none'",doc)
+        self.assertEqual(ws.sent[-1]['params']['expression'],VERIFY)
+        class Wrong(WS):
+            def recv(self):
+                raw=super().recv()
+                if self.sent[-1]['method']=='Runtime.evaluate':
+                    return json.dumps({'id':self.sent[-1]['id'],'sessionId':'SESSION','result':{'result':{'value':['wrong']}}})
+                return raw
+        with self.assertRaises(ValueError):replay(Wrong(),[{'name':'title','value':'expected'}])
+    def test_replay_restricts_fields_and_escapes_labels(self):
+        from deepthort_local.browser_automation import fields,document
+        from deepthort_local.website_form_completion import SCHEMA
+        f={'locator':'/form[1]/input[1]','name':'title','value':'literal','type':'text'}
+        r={'schema':SCHEMA,'submitted':False,'browser_used':False,'form_filled_in_browser':False,'fields':[f]}
+        self.assertEqual(fields(r),[{'name':'title','value':'literal'}])
+        for bad in (dict(r,submitted=True),dict(r,fields=[dict(f,type='password')]),dict(r,fields=[f,f])):
+            with self.assertRaises(ValueError):fields(bad)
+        self.assertIn('&lt;tag&gt;',document([{'name':'<tag>','value':'unembedded'}]))
