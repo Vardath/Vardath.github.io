@@ -44,7 +44,7 @@ def native_route_available(run,task,mixed_roadmaps,workflows):
                             for w in workflows.roadmap_members(run['request_id'])))
 
 
-def ready_independent(runs,conversations,hierarchies,index,jobs,mixed_roadmaps,workflows,creative,*,exclude_project):
+def ready_independent(runs,conversations,hierarchies,index,jobs,mixed_roadmaps,workflows,creative,*,exclude_project,priority=None):
     """Find a ready existing native artifact boundary in a separate workspace.
 
     The ordinary roadmap reconciliation, predecessor verification, mixed
@@ -56,13 +56,16 @@ def ready_independent(runs,conversations,hierarchies,index,jobs,mixed_roadmaps,w
     from .roadmap_runs import eligible_successor
     from .roadmap_tool_bridge import gate
     from .mixed_roadmap import pending_task
-    for run in runs.active():
+    candidates=runs.active()
+    if priority is not None:candidates=sorted((r for r in candidates if priority.allowed(r)),key=priority.key)
+    for run in candidates:
         if (not run.get('mixed_sha') or run.get('creative_midi')!=1
                 or not independent_workspaces(run['project'],exclude_project)):
             continue
         ident=run['request_id']
         try:
             req=conversations.get(ident)
+            if not req or (priority is not None and not priority.allowed(req)):continue
             result=eligible_successor(run,req,conversations,hierarchies,index,jobs)
             if not result:continue
             before=(hierarchies.status(index,ident,req['prompt'])['milestones_total']+1

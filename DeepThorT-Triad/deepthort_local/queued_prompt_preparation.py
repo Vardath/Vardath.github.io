@@ -42,7 +42,8 @@ def rows(path,project=None,limit=100):
 def current(db,ident):
     r=db.execute('SELECT c.* FROM independent_prompt_queue q JOIN conversation_requests c ON c.id=q.request_id WHERE c.id=?',(ident,)).fetchone()
     return dict(r) if r else None
-def candidate(path,roles,exclude=(),priority=None):
+def candidate(path,roles,exclude=(),priority=None,independent_of=()):
+    from .task_graph import independent_workspaces
     allowed=[r for r in ROLES if r in roles]
     if not allowed:return None
     with closing(connect(path)) as db:
@@ -51,6 +52,7 @@ def candidate(path,roles,exclude=(),priority=None):
         for raw in pending:
             row=dict(raw)
             if row['id'] in exclude or len(row['prompt'])>MAX_PROMPT or json.loads(row['attachments']):continue
+            if any(not independent_workspaces(row['project'],p) for p in independent_of):continue
             # Each scope is considered once by each role; expired advice is not retried indefinitely.
             done={x[0] for x in db.execute('SELECT role FROM queued_prompt_attempts WHERE request_id=? AND identity=? UNION SELECT role FROM queued_prompt_advice WHERE request_id=? AND identity=?',(row['id'],identity(row),row['id'],identity(row)))}
             for role in allowed:
@@ -84,9 +86,12 @@ def specialist_for(path,row,host):
         return config if config['profile']['host']==host else None
     except (OSError,ValueError,TypeError,KeyError,sqlite3.Error):return None
 
-def run_once(path,client,roles,stopped,*,exclude=(),priority=None):
+def run_once(path,client,roles,stopped,*,exclude=(),priority=None,exact=None):
     if stopped():return None
-    item=candidate(path,roles,exclude,priority)
+    item=exact if exact is not None else candidate(path,roles,exclude,priority)
+    if exact is not None:
+        row,role=exact
+        if role not in roles or row['id'] in exclude or len(row['prompt'])>MAX_PROMPT or json.loads(row['attachments']) or (priority is not None and not priority.allowed(row)):return None
     if not item:return None
     row,role=item;key=identity(row)
     focus={'janus':'Identify useful dependencies, decomposition or planning questions.',
