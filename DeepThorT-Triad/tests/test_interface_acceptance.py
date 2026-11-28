@@ -259,3 +259,19 @@ class IntegratedInterfaceTests(unittest.TestCase):
             app.project=None
             app._refresh_tasks()
             self.assertFalse(app.task_tree.get_children())
+
+    def test_archived_picker_rechecks_workspace_and_exact_identity(self):
+        app=self.app
+        project=app._project_key()
+        with patch.object(app.chats,'closed',return_value=[('first','Same title'),('second','Same title')]), \
+             patch('desktop_app.SearchPicker') as picker,patch.object(app,'_reopen_chat') as reopen:
+            app._open_archived_chat_menu()
+            self.assertEqual(picker.call_args.args[2],[('first','Same title'),('second','Same title')])
+            callback=picker.call_args.args[3]
+            callback('missing')
+            reopen.assert_not_called()
+            callback('second')
+            reopen.assert_called_once_with('second')
+            with patch.object(app,'_project_key',return_value=project+'-different'):
+                callback('first')
+            reopen.assert_called_once_with('second')

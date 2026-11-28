@@ -2683,9 +2683,7 @@ class DeepThorTDesktop(tk.Tk):
         archived=self.chats.closed(self._project_key())
         if archived:
             menu.add_separator()
-            for ident,title in archived[-15:]:
-                menu.add_command(label='Reopen: '+title[:48],
-                                 command=lambda ident=ident:self._reopen_chat(ident))
+            menu.add_command(label='Find archived conversation…',command=self._open_archived_chat_menu)
         try:menu.tk_popup(event.x_root,event.y_root)
         finally:menu.grab_release()
 
@@ -2694,11 +2692,12 @@ class DeepThorTDesktop(tk.Tk):
         if not archived:
             messagebox.showinfo('Archived conversations','No archived chats in this project.',parent=self)
             return
-        menu=tk.Menu(self,tearoff=False)
-        for ident,title in archived:
-            menu.add_command(label=title[:80],command=lambda ident=ident:self._reopen_chat(ident))
-        try:menu.tk_popup(self.winfo_pointerx(),self.winfo_pointery())
-        finally:menu.grab_release()
+        project=self._project_key()
+        def reopen(ident):
+            if self._project_key()!=project:return
+            if ident not in {key for key,_ in self.chats.closed(project)}:return
+            self._reopen_chat(ident)
+        SearchPicker(self,'Find archived conversation',[(ident,title) for ident,title in archived],reopen)
 
     def _reopen_chat(self, ident):
         if self.chats.reopen(ident,self._project_key()):
@@ -3571,10 +3570,7 @@ class DeepThorTDesktop(tk.Tk):
             return
         window=tk.Toplevel(self)
         window.title('JANUS instruction inbox — advisory, not executed')
-        window.resizable(True,True)
-        width=max(500,min(1000,window.winfo_screenwidth()-80))
-        height=max(330,min(690,window.winfo_screenheight()-100))
-        window.geometry(f'{width}x{height}')
+        width,height=fit_dialog(window,1000,690)
         description=('No instructions matched the selected project; showing other project instructions. '
                      'Switch to the original workspace to use the main-tab retry control.'
                      if showing_other_projects else
@@ -3843,14 +3839,17 @@ class DeepThorTDesktop(tk.Tk):
             return
         dialog=tk.Toplevel(self);dialog.title('Approve complete ordered roadmap')
         dialog.transient(self);fit_dialog(dialog,850,620)
-        ttk.Label(dialog,text='One consent for every exact listed milestone. Successors require current predecessor '
+        warning_label=ttk.Label(dialog,text='One consent for every exact listed milestone. Successors require current predecessor '
                   'verification. Writes retain backups; fixed tests execute project code with your Windows permissions. '
                   'Amendments invalidate this consent. Tool installation follows its own policy. '
                   'For listed short MIDI artifacts, this approval also allows Gemma to create privately, '
                   'Sentinel to review the score, and the host to publish only a new exact output file. '
                   'An explicitly listed early preparation may run privately alongside its preceding milestone; '
                   'publication still requires the original verified boundary.',
-                  wraplength=790).pack(fill='x',padx=12,pady=12)
+                  wraplength=790)
+        warning_label.pack(fill='x',padx=12,pady=12)
+        warning_label.bind('<Configure>',lambda event:warning_label.configure(wraplength=max(100,event.width-12)),add='+')
+        dialog.bind('<Escape>',lambda event:dialog.destroy())
         body=ttk.Frame(dialog);body.pack(fill='both',expand=True,padx=12)
         view=tk.Text(body,wrap='word');scroll=ttk.Scrollbar(body,command=view.yview)
         view.configure(yscrollcommand=scroll.set);scroll.pack(side='right',fill='y');view.pack(fill='both',expand=True)
@@ -3873,7 +3872,7 @@ class DeepThorTDesktop(tk.Tk):
         view.configure(state='disabled')
         accepted=[False]
         def consent():accepted[0]=True;dialog.destroy()
-        buttons=ttk.Frame(dialog);buttons.pack(fill='x',padx=12,pady=12)
+        buttons=ttk.Frame(dialog);buttons.pack(fill='x',padx=12,pady=12,before=body)
         ttk.Button(buttons,text='Cancel',command=dialog.destroy).pack(side='right')
         ttk.Button(buttons,text='Approve entire exact roadmap',command=consent).pack(side='right',padx=8)
         dialog.grab_set();self.wait_window(dialog)
@@ -8281,9 +8280,8 @@ class DeepThorTDesktop(tk.Tk):
         dialog=tk.Toplevel(self)
         dialog.title('Review UNTRUSTED generated automation script — write only')
         dialog.transient(self)
-        w=max(490,min(1020,self.winfo_screenwidth()-100))
-        h=max(380,min(720,self.winfo_screenheight()-120))
-        dialog.geometry(f'{w}x{h}')
+        w,h=fit_dialog(dialog,1020,720)
+        dialog.bind('<Escape>',lambda event:dialog.destroy())
         dialog.protocol('WM_DELETE_WINDOW',dialog.destroy)
         ttk.Label(dialog,text=f'PROJECT FILE: {review["path"]} — NOT YET APPROVED OR RUN',
                   wraplength=w-60).pack(anchor='w',padx=12,pady=(12,4))
@@ -8306,7 +8304,7 @@ class DeepThorTDesktop(tk.Tk):
                     '\n\nFILE CHANGE / BACKUP PREVIEW\n'+review['diff'])
         text.configure(state='disabled')
         approved=[False]
-        buttons=ttk.Frame(dialog);buttons.pack(fill='x',padx=12,pady=12)
+        buttons=ttk.Frame(dialog);buttons.pack(fill='x',padx=12,pady=12,before=body)
         def consent():
             approved[0]=True;dialog.destroy()
         ttk.Button(buttons,text='Cancel',command=dialog.destroy).pack(side='right')
