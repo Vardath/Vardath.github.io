@@ -9,6 +9,7 @@ import time
 from contextlib import closing
 from .agent_contract import canonical_sha
 from .structured_source import strict_json
+from . import specialist_agents as specialist
 
 ROLES=('janus','sentinel','implementation')
 MAX_PROMPT=2400
@@ -16,14 +17,17 @@ TTL=1800
 def identity(row):
     return canonical_sha({'id':row['id'],'project':row['project'],'chat_id':row['chat_id'],
                           'mode':row['mode'],'prompt':row['prompt'],'attachments':row['attachments']})
-def checked(body):
-    if not isinstance(body,dict) or set(body)!={'kind','finding','guidance'} or body['kind'] not in ('advice','none'):
+def checked(body,role=None):
+    if not isinstance(body,dict) or set(body) not in ({'kind','finding','guidance'},{'kind','finding','guidance','specialist'}) or body['kind'] not in ('advice','none'):
         raise ValueError('Invalid advisory schema')
     for name,n in (('finding',220),('guidance',320)):
         val=body[name]
         if not isinstance(val,str) or len(val)>n or any(ord(c)<32 for c in val):raise ValueError('Invalid advisory text')
         if body['kind']=='advice' and not val.strip():raise ValueError('Empty finding')
         if body['kind']=='none' and val:raise ValueError('Unexpected finding')
+    if 'specialist' in body:
+        if role!='janus' or body['kind']!='advice':raise ValueError('Only JANUS may propose an advisory specialist')
+        specialist.checked(body['specialist'])
     return body
 def connect(path):
     db=sqlite3.connect(path,timeout=.05);db.row_factory=sqlite3.Row;return db
@@ -63,6 +67,23 @@ def available_roles(health,pid):
     if sum(w['generating'] for w in workers)>=slots:return ()
     return tuple(role for role in ROLES if isinstance(models.get(role),dict) and models[role].get('resident') is True
                  and models[role].get('busy') is False and models[role].get('generating') is False)
+def specialist_for(path,row,host):
+    # Advisory only; exact pending task, receipt integrity, age and permanent role binding.
+    if host not in specialist.HOSTS:return None
+    try:
+        with closing(connect(path)) as db:
+            fresh=current(db,row['id'])
+            if not fresh or fresh['state']!='pending' or identity(fresh)!=identity(row):return None
+            record=db.execute("SELECT * FROM queued_prompt_advice WHERE request_id=? AND role='janus' AND identity=?",(row['id'],identity(row))).fetchone()
+        if not record or not 0<=time.time()-record['stamp']<=TTL:return None
+        receipt=json.loads(record['body'])
+        if canonical_sha(receipt)!=record['receipt_sha'] or receipt['role']!='janus' or receipt['identity']!=identity(row) or receipt['authority'] is not False or receipt['verified'] is not False:return None
+        body=checked(receipt['body'],'janus')
+        config=receipt.get('specialist_config')
+        if 'specialist' not in body or config!=specialist.configure(body['specialist'],identity(row)):return None
+        return config if config['profile']['host']==host else None
+    except (OSError,ValueError,TypeError,KeyError,sqlite3.Error):return None
+
 def run_once(path,client,roles,stopped,*,exclude=(),priority=None):
     if stopped():return None
     item=candidate(path,roles,exclude,priority)
@@ -75,6 +96,11 @@ def run_once(path,client,roles,stopped,*,exclude=(),priority=None):
             ' No tools, execution, file changes, approvals, or claims of verification. Do not invent evidence. '
             'Keep the original request authoritative. Return ONLY JSON {"kind":"advice","finding":"max 220 chars","guidance":"max 320 chars"} '
             'or {"kind":"none","finding":"","guidance":""}. Exact queued user prompt:\n'+row['prompt'])
+    if role=='janus':
+        prompt+='\nOptional: include a specialist object with host (implementation or sentinel), name (40 chars), focus (180 chars), deliverable (120 chars). Configure a task-specific advisory lens on existing roles only; no new models, authority or tools.'
+    else:
+        config=specialist_for(path,row,role)
+        if config:prompt+=specialist.guidance(config,key,role)
     if stopped():return None
     # Reserve one exact advisory attempt atomically. A malformed reply or interrupted
     # inference cannot monopolize the queue through automatic infinite retries.
@@ -84,9 +110,10 @@ def run_once(path,client,roles,stopped,*,exclude=(),priority=None):
         if not fresh or fresh['state']!='pending' or identity(fresh)!=key:return None
         if not db.execute('INSERT OR IGNORE INTO queued_prompt_attempts VALUES(?,?,?)',(row['id'],role,key)).rowcount:return None
     if stopped():return None
-    body=checked(strict_json(client.chat_as(role,'queued-prep-'+key[:24]+'-'+role,prompt,max_tokens=256)))
+    body=checked(strict_json(client.chat_as(role,'queued-prep-'+key[:24]+'-'+role,prompt,max_tokens=384 if role=='janus' else 256)),role)
     if stopped():return None
     receipt={'role':role,'identity':key,'body':body,'authority':False,'verified':False}
+    if 'specialist' in body:receipt['specialist_config']=specialist.configure(body['specialist'],key)
     with closing(connect(path)) as db,db:
         db.execute('BEGIN IMMEDIATE')
         fresh=current(db,row['id'])
@@ -106,9 +133,13 @@ def advice(path,request,budget=600):
             if r['role'] not in ROLES or r['identity']!=identity(request) or not 0<=time.time()-r['stamp']<=TTL:continue
             receipt=json.loads(r['body'])
             if canonical_sha(receipt)!=r['receipt_sha'] or receipt['identity']!=r['identity'] or receipt['role']!=r['role'] or receipt['authority'] is not False or receipt['verified'] is not False:continue
-            body=checked(receipt['body'])
+            body=checked(receipt['body'],r['role'])
             if body['kind']!='advice':continue
             line='\nQueued '+r['role']+' preparation (unverified advisory only): '+body['finding']+'; '+body['guidance']
+            if 'specialist' in body:
+                config=specialist.configure(body['specialist'],identity(request))
+                if receipt.get('specialist_config')!=config:continue
+                line+='; proposed advisory specialist: '+config['profile']['name']+' ('+config['profile']['host']+'): '+config['profile']['focus']
             if len(result)+len(line)<=budget:result+=line
         return result
     except (OSError,ValueError,TypeError,KeyError,sqlite3.Error):return ''
