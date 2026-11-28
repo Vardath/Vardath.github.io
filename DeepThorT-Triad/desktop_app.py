@@ -935,6 +935,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(mesh_review_actions,text='Unwrap UV atlas…',command=lambda:self._review_typed_tool('uv_unwrapping','.obj','Mesh: reviewed UV atlas')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Simplify mesh…',command=lambda:self._review_typed_tool('mesh_simplification','.obj','Mesh: reviewed simplification')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Improve topology…',command=lambda:self._review_typed_tool('mesh_retopology','.obj','Mesh: reviewed planar retopology')).pack(side='left',padx=3)
+        ttk.Button(mesh_review_actions,text='Generate 3D from text…',command=lambda:self._review_typed_tool('neural_text_mesh','.obj','Mesh: reviewed neural text generation')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Reconstruct stereo points…',command=lambda:self._review_typed_tool('photogrammetry','.json','Mesh: reviewed stereo reconstruction')).pack(side='left',padx=3)
         blender_review_actions=ttk.Frame(media_tab);blender_review_actions.pack(fill='x',pady=2)
         ttk.Button(blender_review_actions,text='Create editable Blender mesh…',command=self._show_blender_mesh_workflow).pack(side='left',padx=3)
@@ -1954,6 +1955,7 @@ class DeepThorTDesktop(tk.Tk):
                  'image_colourisation':('.png','Image: reviewed regional colourisation'),
                  'image_style_transfer':('.png','Image: reviewed reference palette transfer'),
                  'mesh_conversion':('.glb','Mesh: reviewed conversion'),
+                 'neural_text_mesh':('.obj','Mesh: reviewed neural text generation'),
                  'image_composition':('.png','Image: reviewed composition'),
                  'layered_image':('.ora','Image: reviewed editable layers'),
                  'editable_graphic':('.svg','Image: reviewed editable graphic'),
