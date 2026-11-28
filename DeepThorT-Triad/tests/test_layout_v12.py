@@ -87,3 +87,16 @@ class OriginalWindowLayoutTests(unittest.TestCase):
         self.assertEqual([button.cget('text') for button in buttons if button.winfo_manager()=='pack'],labels)
         self.assertTrue(shelf.canvas.winfo_ismapped())
         self.assertTrue(self.app.image_info.winfo_ismapped())
+
+
+    def test_workspace_selector_reaches_last_page_at_remote_resolution(self):
+        self.app.geometry('1138x765')
+        self.app.update_idletasks()
+        nav=self.app.workspace_navigator
+        self.assertTrue(nav.choice.winfo_ismapped())
+        nav.current.set('Settings & Integrations')
+        nav.select()
+        self.assertEqual(self.app.tabs.index('current'),12)
+        self.app.tabs.select(0)
+        nav.sync()
+        self.assertEqual(nav.current.get(),'Chats')

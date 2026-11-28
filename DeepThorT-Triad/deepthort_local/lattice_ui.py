@@ -156,8 +156,7 @@ class SearchPicker(tk.Toplevel):
         self.title(title)
         self.transient(parent)
         self.configure(bg=PALETTE['base'])
-        self.geometry('560x390')
-        self.minsize(300, 220)
+        fit_dialog(self,560,390)
         self.rows = tuple(rows)
         self.visible = []
         self.callback = callback
@@ -773,3 +772,45 @@ class SettingsCentre(ttk.Frame):
     def render(self,rows,model_status,project):
         self.notice.set(model_status+' · '+project+' · policy snapshot, not runtime verification')
         sync_table(self.table,rows)
+
+
+def dialog_dimensions(width,height,screen_width,screen_height):
+    """Reserve room for native window chrome; never require a larger display."""
+    return (max(1,min(int(width),max(1,int(screen_width)-72))),
+            max(1,min(int(height),max(1,int(screen_height)-110))))
+
+
+def fit_dialog(window,width,height):
+    w,h=dialog_dimensions(width,height,window.winfo_screenwidth(),window.winfo_screenheight())
+    window.configure(bg=PALETTE['base'])
+    window.geometry(f'{w}x{h}')
+    window.resizable(True,True)
+    return w,h
+
+
+class WorkspaceNavigator(ttk.Frame):
+    """Every primary page stays reachable even if native tabs overflow."""
+    def __init__(self,parent,notebook):
+        super().__init__(parent)
+        self.notebook=notebook
+        self.names=tuple(notebook.tab(tab,'text') for tab in notebook.tabs())
+        self.current=tk.StringVar(self,value=self.names[0])
+        ttk.Label(self,text='Workspace').pack(side='left',padx=(0,4))
+        self.choice=ttk.Combobox(self,textvariable=self.current,state='readonly',
+                                values=self.names,width=25,takefocus=True)
+        self.choice.pack(side='left',fill='x',expand=True)
+        self.choice.bind('<<ComboboxSelected>>',lambda event:self.select())
+        self.choice.bind('<Return>',lambda event:(self.select(),'break')[1])
+        action_menu(self,'Quick navigation',[(name,lambda i=i:notebook.select(i))
+                    for i,name in enumerate(self.names)]).pack(side='right',padx=(4,0))
+        notebook.bind('<<NotebookTabChanged>>',self.sync,add='+')
+        self.sync()
+
+    def select(self):
+        if self.current.get() in self.names:self.notebook.select(self.names.index(self.current.get()))
+
+    def sync(self,event=None):
+        self.current.set(self.notebook.tab(self.notebook.select(),'text'))
+
+    def focus_choice(self):
+        self.choice.focus_set()
