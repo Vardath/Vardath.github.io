@@ -541,3 +541,38 @@ class IntegratedInterfaceTests(unittest.TestCase):
             app._open_selected_job_artifact()
             self.assertEqual(app.tabs.index('current'),11)
             self.assertEqual(app.studio_centre.table.selection(),('folder/clip.mp4',))
+
+
+    def test_operation_stop_routes_are_identity_bound_and_not_global(self):
+        from types import SimpleNamespace
+        app=self.app
+        thread=SimpleNamespace(is_alive=lambda:True)
+        app._latest_test_thread=thread
+        app._render_operations({'queued':3,'waiting_approval':2})
+        self.assertIn('waiting_approval: 2',app.operation_notice.get())
+        app.operation_table.selection_set('latest')
+        with patch.object(app,'_stop_latest_test') as stop,patch.object(app,'_stop_ai') as global_stop, \
+             patch.object(app,'_cancel_tool') as broad,patch('desktop_app.messagebox.askyesno',return_value=True):
+            app._latest_test_thread=SimpleNamespace(is_alive=lambda:True)
+            app._stop_selected_operation()
+            stop.assert_not_called()
+            app._render_operations({})
+            app.operation_table.selection_set('latest')
+            app._stop_selected_operation()
+            stop.assert_called_once()
+            broad.assert_not_called();global_stop.assert_not_called()
+        app._latest_test_thread=None
+        app._render_operations({})
+        self.assertFalse(app.operation_table.exists('latest'))
+
+    def test_operation_shared_process_is_not_individually_cancelled(self):
+        from types import SimpleNamespace
+        app=self.app
+        app.tool_process=SimpleNamespace(pid=123,poll=lambda:None)
+        app._render_operations({})
+        app.operation_table.selection_set('tool')
+        with patch.object(app,'_cancel_tool') as broad,patch.object(app,'_stop_ai') as global_stop:
+            app._stop_selected_operation()
+            broad.assert_not_called();global_stop.assert_not_called()
+        self.assertIn('No independent stop',app.operation_notice.get())
+        app.tool_process=None
