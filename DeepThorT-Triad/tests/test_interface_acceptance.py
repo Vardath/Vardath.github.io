@@ -494,3 +494,50 @@ class IntegratedInterfaceTests(unittest.TestCase):
         app.tabs.select(7)
         app.update_idletasks()
         self.assertEqual(app.tabs.index('current'),7)
+
+
+    def test_recorded_chat_navigation_protects_unsent_material(self):
+        app=self.app
+        project=app._project_key()
+        other=app.chats.create(project,'Same project navigation fixture')
+        app._refresh_chats()
+        original=app.current_chat
+        app.input.insert('1.0','Unsent draft')
+        self.assertFalse(app._navigate_recorded_chat(other,app.queue_summary))
+        self.assertEqual(app.current_chat,original)
+        self.assertEqual(app.input.get('1.0','end-1c'),'Unsent draft')
+        app.input.delete('1.0','end')
+        self.assertTrue(app._navigate_recorded_chat(other,app.queue_summary))
+        self.assertEqual(app.current_chat,other)
+        self.assertFalse(app._navigate_recorded_chat('absent',app.queue_summary))
+
+    def test_memory_record_navigation_requires_unchanged_receipt(self):
+        app=self.app
+        centre=app.knowledge_centre
+        record={'work_id':'exact','receipt_sha':'fixture','job_id':7,'request_id':9}
+        centre.project=app._project_key()
+        centre.records={'exact':record}
+        with patch('deepthort_local.memory_duty.inspection_records',return_value=[dict(record,receipt_sha='changed')]), \
+             patch.object(app.jobs,'get') as get:
+            app._open_receipt_job('exact')
+            get.assert_not_called()
+        self.assertIn('changed',centre.notice.get())
+        with patch('deepthort_local.memory_duty.inspection_records',return_value=[record]), \
+             patch.object(app.conversations,'get',return_value={'project':'another-workspace','chat_id':'other'}) as get:
+            app._open_receipt_conversation('exact')
+            get.assert_called_once_with(9)
+        self.assertIn('unavailable',centre.notice.get())
+
+    def test_job_target_navigation_requires_exact_studio_path(self):
+        app=self.app
+        job={'id':8,'project':app._project_key(),'target':'folder/clip.mp4'}
+        with patch.object(app,'_selected_job',return_value=job), \
+             patch.object(app,'_refresh_studio'):
+            app.studio_centre.render(app._project_key(),[('clip.mp4',('Video','clip.mp4','.mp4'))])
+            app.tabs.select(1)
+            app._open_selected_job_artifact()
+            self.assertEqual(app.tabs.index('current'),1)
+            app.studio_centre.render(app._project_key(),[('folder/clip.mp4',('Video','folder/clip.mp4','.mp4'))])
+            app._open_selected_job_artifact()
+            self.assertEqual(app.tabs.index('current'),11)
+            self.assertEqual(app.studio_centre.table.selection(),('folder/clip.mp4',))

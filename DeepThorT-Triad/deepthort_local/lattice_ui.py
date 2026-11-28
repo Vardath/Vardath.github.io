@@ -564,6 +564,7 @@ class ApprovalCentre(ttk.Frame):
         bar=ttk.Frame(self);bar.pack(fill='x',pady=3)
         action_menu(bar,'Existing permission controls',links).pack(side='left')
         tabs=ttk.Notebook(self);tabs.pack(fill='both',expand=True)
+        self.panels=tabs
         jobs=ttk.Frame(tabs);actions=ttk.Frame(tabs)
         tabs.add(jobs,text='Workspace review & blockers')
         tabs.add(actions,text='Recorded PC actions')
@@ -620,7 +621,7 @@ class ApprovalCentre(ttk.Frame):
 
 class KnowledgeMemoryCentre(ttk.Frame):
     """Workspace-scoped historical recall inspection, not a new retrieval path."""
-    def __init__(self,parent,refresh,open_library,open_document=None):
+    def __init__(self,parent,refresh,open_library,open_document=None,open_job=None,open_chat=None):
         super().__init__(parent)
         self.notice=tk.StringVar(self,value='Open or refresh to inspect saved records.')
         self.worker=tk.StringVar(self,value='No observer sample yet')
@@ -644,7 +645,15 @@ class KnowledgeMemoryCentre(ttk.Frame):
         for key,label,width in columns:
             self.table.heading(key,text=label);self.table.column(key,width=width,stretch=key=='focus')
         source_scrollbars(frame,self.table)
-        ttk.Button(receipts,text='Inspect memory receipt',command=self.inspect).pack(anchor='w',pady=4,before=frame)
+        receipt_links=ttk.Frame(receipts);receipt_links.pack(fill='x',pady=4,before=frame)
+        ttk.Button(receipt_links,text='Inspect memory receipt',command=self.inspect).pack(side='left')
+        def navigate_receipt(callback):
+            selected=self.table.selection()
+            if selected and callback:callback(selected[0])
+        actions=[]
+        if open_job:actions.append(('Open recorded job',lambda:navigate_receipt(open_job)))
+        if open_chat:actions.append(('Open recorded conversation',lambda:navigate_receipt(open_chat)))
+        if actions:action_menu(receipt_links,'Related records',actions).pack(side='left',padx=4)
         details=ttk.Frame(receipts);details.pack(fill='both',expand=True)
         self.detail=tk.Text(details,height=9,state='disabled',wrap='word',bg=PALETTE['input'],fg=PALETTE['text'])
         scroll_text(details,self.detail)

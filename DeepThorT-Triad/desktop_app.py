@@ -574,7 +574,7 @@ class DeepThorTDesktop(tk.Tk):
         self.approval_centre=ApprovalCentre(approval_tab,self._refresh_approval_centre,self._inspect_approval_job,self._inspect_pc_action,
             [('Network permissions…',self._network_permissions_dialog),('Computer & Tools',lambda:self.tabs.select(6)),('Processes',lambda:self.tabs.select(4)),('Approved process controls',lambda:self.tabs.select(5))],self._open_approval_job,self._inspect_approval_grant)
         self.approval_centre.pack(fill='both',expand=True)
-        self.knowledge_centre=KnowledgeMemoryCentre(memory_tab,self._refresh_knowledge_centre,self._open_project_knowledge,self._open_indexed_document)
+        self.knowledge_centre=KnowledgeMemoryCentre(memory_tab,self._refresh_knowledge_centre,self._open_project_knowledge,self._open_indexed_document,self._open_receipt_job,self._open_receipt_conversation)
         self.knowledge_centre.pack(fill='both',expand=True)
         self.studio_centre=StudioCentre(studio_tab,self._refresh_studio,self._studio_tool_category,self._inspect_studio_artifact,self._browse_studio_media,self._preview_studio_media)
         self.studio_centre.pack(fill='both',expand=True)
@@ -630,7 +630,10 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(qt,text='Cancel selected',command=self._cancel_job).pack(side='left',padx=3)
         ttk.Button(qt,text='Resume selected',command=self._resume_job).pack(side='left',padx=3)
         ttk.Button(qt,text='Verify build',command=self._verify_build).pack(side='left',padx=3)
-        action_menu(qt,'Selected job actions',[('Review legacy plan',self._approve_build_plan),('Load prompt into editor',self._load_job_prompt)]).pack(side='left',padx=3)
+        action_menu(qt,'Selected job actions',[('Review legacy plan',self._approve_build_plan),('Load prompt into editor',self._load_job_prompt),
+            ('Open recorded conversation',self._open_selected_job_conversation),
+            ('Open recorded approval evidence',self._open_selected_job_approval),
+            ('Open recorded target in Studio',self._open_selected_job_artifact)]).pack(side='left',padx=3)
         workbar=ttk.Frame(queue_tab);workbar.pack(fill='x',pady=(0,5))
         self.project_work_enabled=tk.BooleanVar(value=self._project_policy['enabled'])
         ttk.Checkbutton(workbar,text='Continue approved file steps and fixed tests without repeated prompts',
@@ -3504,8 +3507,7 @@ class DeepThorTDesktop(tk.Tk):
             if job['chat_id'] not in self.chat_ids:
                 self.command_centre.notice.set('Recorded conversation is not open. Use the existing archived conversation controls to reopen it, if available.')
                 return
-            self.chat_tabs.select(self.chat_ids.index(job['chat_id']))
-            self.tabs.select(0)
+            self._navigate_recorded_chat(job['chat_id'],self.command_centre.notice)
             return
         self.job_filter.set('All states');self.job_query.set('')
         self._refresh_jobs()
@@ -3514,6 +3516,94 @@ class DeepThorTDesktop(tk.Tk):
             self.job_tree.see(str(ident))
             self.tabs.select(1)
         else:self.command_centre.notice.set('Job is outside the current bounded queue view.')
+
+    def _navigate_recorded_chat(self,chat,notice):
+        """Navigate only to an existing exact chat; do not transfer a draft."""
+        import sqlite3
+        try:
+            if chat not in self.chat_ids or chat not in {ident for ident,_ in self.chats.list(self._project_key())}:
+                notice.set('Recorded conversation is not open in this workspace; use archived conversation controls.')
+                return False
+            if chat!=self.current_chat and (self.input.get('1.0','end-1c').strip() or self.attachments or self.imported_spec_source):
+                notice.set('Send or clear the unsent draft and attachments before navigating to another conversation.')
+                return False
+            self.chat_tabs.select(self.chat_ids.index(chat))
+            self.current_chat=chat
+            self._reload_chat()
+            self.tabs.select(0)
+            return True
+        except (OSError,ValueError,sqlite3.Error) as exc:
+            notice.set('Conversation navigation unavailable: '+str(exc)[:160])
+            return False
+
+    def _open_selected_job_conversation(self):
+        job=self._selected_job()
+        if job:self._navigate_recorded_chat(job['chat_id'],self.queue_summary)
+
+    def _open_selected_job_approval(self):
+        job=self._selected_job()
+        if not job:return
+        ident=str(job['id'])
+        self._refresh_approval_centre()
+        centre=self.approval_centre
+        for page,table in ((0,centre.job_table),(2,centre.grant_table)):
+            if table.exists(ident):
+                centre.panels.select(page)
+                table.selection_set(ident);table.see(ident)
+                self.tabs.select(9)
+                return
+        self.queue_summary.set('No matching review or grant in the bounded approval snapshot.')
+
+    def _open_selected_job_artifact(self):
+        job=self._selected_job()
+        if not job:return
+        relative=job.get('target')
+        if not relative:
+            self.queue_summary.set('No exact recorded file target for this job.');return
+        self._refresh_studio()
+        centre=self.studio_centre
+        if not any(key==relative for key,_ in centre.rows):
+            self.queue_summary.set('Recorded target is not in the current scoped Studio file snapshot.');return
+        centre.category.set('All states');centre.query.set('');centre.filter()
+        centre.table.selection_set(relative);centre.table.see(relative)
+        self.tabs.select(11)
+
+    def _current_receipt(self,work_id):
+        import sqlite3
+        centre=self.knowledge_centre
+        try:
+            if centre.project!=self._project_key() or work_id not in centre.records:return None
+            from deepthort_local.memory_duty import inspection_records
+            return next((r for r in inspection_records(self.memory_duty.path,self._project_key())
+                         if r['work_id']==work_id and r['receipt_sha']==centre.records[work_id]['receipt_sha']),None)
+        except (OSError,ValueError,sqlite3.Error,AttributeError,KeyError):return None
+
+    def _open_receipt_job(self,work_id):
+        receipt=self._current_receipt(work_id)
+        notice=self.knowledge_centre.notice
+        if not receipt:
+            notice.set('Receipt unavailable or changed; refresh memory overview.');return
+        job=self.jobs.get(receipt['job_id'])
+        if not job or job['project']!=self._project_key() or job['mode'] in ('chat','plan','edit'):
+            notice.set('Recorded job unavailable in this workspace.');return
+        if self.proposed is not None and self.proposal_job!=job['id']:
+            notice.set('Resolve the current source proposal before opening another job.');return
+        self.job_filter.set('All states');self.job_query.set('')
+        self._refresh_jobs()
+        ident=str(job['id'])
+        if not self.job_tree.exists(ident):
+            notice.set('Recorded job outside the bounded Work queue snapshot.');return
+        self.job_tree.selection_set(ident);self.job_tree.see(ident);self.tabs.select(1)
+
+    def _open_receipt_conversation(self,work_id):
+        receipt=self._current_receipt(work_id)
+        notice=self.knowledge_centre.notice
+        if not receipt:
+            notice.set('Receipt unavailable or changed; refresh memory overview.');return
+        request=self.conversations.get(receipt['request_id'])
+        if not request or request['project']!=self._project_key():
+            notice.set('Recorded conversation request unavailable in this workspace.');return
+        self._navigate_recorded_chat(request['chat_id'],notice)
 
     def _project_queue_rows(self):
         from deepthort_local.project_queue import inventory
