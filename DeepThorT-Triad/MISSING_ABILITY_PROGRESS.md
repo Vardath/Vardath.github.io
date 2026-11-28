@@ -190,7 +190,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 178 | 62 | Android emulator operation | Partial: reviewed existing dedicated AVD/SDK identity, headless read-only/no-snapshot Windows startup smoke under existing shared root and nested cleanup job, resource/log stop and JSON receipt. Pass 179 CI pending. Native boot, ADB/APK execution and gameplay acceptance outstanding. |
 | 179 | 253 | Game project generation | Partial: reviewed editable Godot 4 grid-game source ZIP with configurable grid, obstacles, collectibles, win/reset rules, keyboard/tap controls and reachability validation. Pass 180 CI pending. Native scene execution, generalized game generation, Android export and gameplay acceptance outstanding. |
 | 180 | 255 | X4 asset and XML processing | Partial: reviewed exact extracted macro/component XML numeric attribute diff generation, unique literal selectors, expected-value guards and independent local replay. Pass 181 CI pending. Combined DLC/mod schema, arbitrary diff operations and native game acceptance outstanding. |
-| 181 | 257 | Game asset generation | Existing partial; completion not started in this programme |
+| 181 | 257 | Game asset generation | Partial: reviewed explicit pixel-art sprite/tileset generation with transparent RGBA atlas, named frame rectangles, pivots, animation sequences and editable source archive. Pass 182 CI pending. Semantic/neural asset generation and native engine import outstanding. |
 | 182 | 258 | Level generation | Existing partial; completion not started in this programme |
 | 183 | 259 | Procedural world generation | Existing partial; completion not started in this programme |
 | 184 | 260 | NPC behaviour generation | Existing partial; completion not started in this programme |
@@ -979,3 +979,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 181 — 27 November 2026
 - Implement source-bound X4 macro/component numeric attribute diff generation alongside existing geometry/catalog/reference audits. Resolve unique literal paths and expected original values, emit X4 replace selectors, independently replay and compare resulting XML. Preserve source and refuse stale input/overwrite/DTD/ambiguous target. Fixture tests cover generation, replay and source changes. No combined-game schema or gameplay claim. Next rank 181 / ID 257 game asset generation. No installer.
+
+## Pass 182 — 27 November 2026
+- Implement concrete game sprite/tileset asset production: explicit palette/pixel rows, transparent atlas, named rectangles/pivots and animation metadata; verify decoded pixels and archive contents. Reuse installed Pillow and reviewed typed outputs. Tests cover animation references, pixels, determinism and stale/no-overwrite behavior. No neural art or engine import claim. Next rank 182 / ID 258 level generation. No installer.

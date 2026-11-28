@@ -809,3 +809,7 @@ Generate grid game button. JSON: `{"title":"Crystal Maze","width":6,"height":5,"
 ## Reviewed X4 numeric XML diffs (Pass 181)
 
 Generate X4 XML diff button. JSON: `{"asset":"assets/test.xml","kind":"macro","name":"ship_test_macro","edits":[{"path":[{"tag":"properties"},{"tag":"hull"}],"attribute":"max","expected":"100","value":"1000"}]}`. Use project-local extracted asset XML, exact macro/component name, 1–8 direct child steps with optional `key` and `value` literal identity predicate (name/ref/id/class/type), 1–32 exact numeric attribute replacements. Source must be unchanged and each target unique. Produces a new XML diff, not an installed extension. Independent replay checks selected attribute changes; does not prove game schema or gameplay. Place output at the corresponding extension-relative asset path after separate review; preserve the extracted source.
+
+## Reviewed game sprite atlas (Pass 182)
+
+Generate sprite atlas button. JSON keys `size` (8/16/24/32), `palette` (1–16 alphanumeric symbols to RGBA arrays, dot is transparent), `sprites` (1–32 objects with lowercase `name`, exact `rows` of pixel symbols, and `pivot` [x,y]), `animations` (up to 16 objects with `name`, named `frames`, integer `fps` 1–30 and boolean `loop`). Produces a ZIP with `atlas.png`, `atlas.json` (frame rectangles, pivots and animation metadata), and `source.json` for editing. PNG pixels and archive roundtrip verified; import/render and visual quality separately tested.

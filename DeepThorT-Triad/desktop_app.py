@@ -552,6 +552,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(restorebar,text='Quiet Godot scene test',
                    command=self._run_quiet_scene).pack(side='left',padx=7)
         ttk.Button(restorebar,text='Generate X4 XML diff…',command=lambda:self._review_typed_tool('x4_xml_processing','.xml','Development: reviewed X4 XML diff')).pack(side='left',padx=3)
+        ttk.Button(restorebar,text='Generate sprite atlas…',command=lambda:self._review_typed_tool('game_asset_generation','.zip','Development: reviewed sprite atlas')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Generate grid game…',command=lambda:self._review_typed_tool('game_project_generation','.zip','Development: reviewed game project')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Android emulator smoke…',command=lambda:self._review_typed_tool('android_emulator','.json','Development: reviewed Android emulator smoke')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Stop quiet test',
@@ -1827,6 +1828,7 @@ class DeepThorTDesktop(tk.Tk):
                  'installer_project':('.iss','Development: reviewed installer source'),
                  'android_emulator':('.json','Development: reviewed Android emulator smoke'),
                  'game_project_generation':('.zip','Development: reviewed game project'),
+                 'game_asset_generation':('.zip','Development: reviewed sprite atlas'),
                  'x4_xml_processing':('.xml','Development: reviewed X4 XML diff'),
                  'merge_conflict':('.txt','Git: reviewed conflict proposal'),
                  'remote_mcp':('.json','Integration: reviewed remote MCP'),
