@@ -1057,3 +1057,7 @@ Transfer video palette accepts `{"video":"clip.mp4","reference":"ref.png","start
 ## Reviewed video object removal (Pass 237)
 
 Remove masked video object accepts `{"video":"clip.mp4","plate":"clean.png","mask":"mask.png","start_frame":0,"end_frame":48}`. Silent H.264 clip, up to 60 frames at 640×480; matching RGB clean plate and opaque grayscale mask (white replaces, black preserves). Fixed reviewed mask across interval; verified lossless RGB output. No automatic segmentation, tracking or neural inpainting.
+
+## Reviewed camera motion (Pass 238)
+
+Generate camera motion accepts `{"video":"clip.mp4","start_frame":0,"end_frame":48,"width":320,"height":240,"keyframes":[{"frame":0,"crop":[0,0,640,480]},{"frame":47,"crop":[80,60,480,360]}]}`. Silent H.264, 2–60 selected frames, up to 640×480; 2–8 ordered keyframes relative to the selected interval with exact first and last endpoints. Smoothstep crop interpolation and lossless RGB verification. No new viewpoints, physical 3D motion or audio.

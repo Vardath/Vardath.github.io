@@ -295,6 +295,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_video_background_ability.py -v
       - run: python -m unittest discover -s tests -p test_video_style_ability.py -v
       - run: python -m unittest discover -s tests -p test_video_object_removal_ability.py -v
+      - run: python -m unittest discover -s tests -p test_camera_motion_ability.py -v
       - run: python -m unittest discover -s tests -p test_project_queue.py -v
   native-windows:
     runs-on: windows-latest
@@ -817,6 +818,8 @@ jobs:
           python -m unittest discover -s tests -p test_video_style_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_video_object_removal_ability.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_camera_motion_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_project_queue.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
