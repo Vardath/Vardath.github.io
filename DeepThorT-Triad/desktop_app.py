@@ -770,7 +770,7 @@ class DeepThorTDesktop(tk.Tk):
         log_header=ttk.Frame(activity_page);log_header.pack(fill='x',pady=3)
         self.follow_activity=tk.BooleanVar(value=True)
         ttk.Checkbutton(log_header,text='Follow latest activity',variable=self.follow_activity).pack(side='right')
-        ttk.Label(log_header,text='Recorded desktop activity',style='Muted.TLabel').pack(side='left')
+        ttk.Label(log_header,text='Recent desktop activity · bounded display; full diagnostic logging unchanged',style='Muted.TLabel').pack(side='left')
         log_nav=ttk.Frame(activity_page);log_nav.pack(fill='x')
         log_frame=ttk.Frame(activity_page);log_frame.pack(fill='both',expand=True)
         self.activity=self._text(log_frame,readonly=True,height=18)
@@ -1296,7 +1296,13 @@ class DeepThorTDesktop(tk.Tk):
         record(STATE,'desktop','activity',message=str(info))
         self.activity.config(state='normal')
         stamp=datetime.now().strftime('%H:%M:%S')
-        self.activity.insert('end',f'[{stamp}] {info}\n')
+        # Keep the durable diagnostic event above; only bound the Tk display.
+        display=str(info)
+        if len(display)>4000:display=display[:4000]+' … [display truncated; see diagnostics]'
+        self.activity.insert('end',f'[{stamp}] {display}\n')
+        lines=int(self.activity.index('end-1c').split('.')[0])
+        if lines>2400:
+            self.activity.delete('1.0',f'{lines-2000+1}.0')
         if self.follow_activity.get():self.activity.see('end')
         self.activity.config(state='disabled')
     def report_callback_exception(self, exc_type, exc, tb):
@@ -3246,6 +3252,7 @@ class DeepThorTDesktop(tk.Tk):
         index=self.tabs.index('current')
         if index==1:self._refresh_jobs()
         elif index==3:self._refresh_tasks()
+        elif index==5:self._show_janus_status()
         elif index==8:self._refresh_command_centre()
         elif index==9:self._refresh_approval_centre()
         elif index==10:self._refresh_knowledge_centre()
@@ -10285,8 +10292,9 @@ class DeepThorTDesktop(tk.Tk):
 
     def _refresh_janus_view(self):
         if not self.winfo_exists():return
-        self._show_janus_status()
+        if self.tabs.index('current')==5:self._show_janus_status()
         # Local, non-modal notification; actual message stays in its persistent inbox.
+        # The lightweight unread notification remains active on every workspace.
         try:
             for role,store in (('janus',self.janus),('sentinel',self.sentinel)):
                 items=store.interface_messages(limit=1)
@@ -10602,7 +10610,8 @@ class DeepThorTDesktop(tk.Tk):
     def _render_operations(self,counts):
         self._operation_snapshot=self._observed_operations()
         sync_table(self.operation_table,[(key,values) for key,(_,values) in self._operation_snapshot.items()])
-        waiting=', '.join(f'{k}: {counts.get(k,0)}' for k in ('queued','paused','needs_input','waiting_approval','waiting_verification','waiting_repair'))
+        waiting=(', '.join(f'{k}: {counts.get(k,0)}' for k in ('queued','paused','needs_input','waiting_approval','waiting_verification','waiting_repair'))
+                 if counts is not None else 'unavailable; next sample will retry')
         self.operation_notice.set(('Admissions paused' if self.queue_paused else 'Admissions enabled (other gates may apply)')+
             ' · '+str(len(self._operation_snapshot))+' observed activities. Selected workspace stored jobs: '+waiting)
 
@@ -10635,6 +10644,11 @@ class DeepThorTDesktop(tk.Tk):
         media=getattr(self,'media_process',None)
         loading_seconds = max(0, int(time.monotonic()-self.node_started)) if self.node_loading and self.node_started else 0
         self._write_desktop_heartbeat()
+        import sqlite3
+        try:
+            counts=self.jobs.count(self._project_key())
+        except (OSError,ValueError,sqlite3.Error):
+            counts=None
         try:
             sentinel_health=self.sentinel.snapshot()
             worker_pid=sentinel_health.get('janus_pid')
@@ -10667,7 +10681,7 @@ class DeepThorTDesktop(tk.Tk):
                    loading_seconds=loading_seconds,active_job=self.active_job,
                    active_conversation=self.active_conversation,
                    queue_paused=self.queue_paused,
-                   queued=self.jobs.count(self._project_key()).get('queued',0),
+                   queued=counts.get('queued',0) if counts is not None else None,
                    measured_processes=summary)
         actual='\n'.join(f"  {x['name']}: {x['system_cpu_percent']:.1f}% system CPU; "
                          f"{x['working_set_bytes']/2**20:.0f} MiB resident; "
@@ -10677,7 +10691,7 @@ class DeepThorTDesktop(tk.Tk):
               + (f' | Loading {loading_seconds//60}m {loading_seconds%60:02d}s' if self.node_loading else '') + '\n'
               f"Current approved job: {('#'+str(active['id'])+' '+active['mode']+' ('+str(elapsed)+'s elapsed)') if active else 'none'}\n"
               f"Local tool PID: {tool.pid if tool else 'none'} | Installer PID: {install.pid if install else 'none'} | Media PID: {media.pid if media and media.poll() is None else 'none'}\n"
-              f"Queue: {'paused' if self.queue_paused else 'running if model ready'}; pending: {self.jobs.count(self._project_key()).get('queued',0)}\n"
+              f"Queue: {'paused' if self.queue_paused else 'running if model ready'}; pending: {counts.get('queued',0) if counts is not None else 'unavailable'}\n"
               f"Supervision: 50% aggregate CPU cap, up to 65% RAM-sized commit limit under DeepThorT.exe\n"
               f"Reported resident model workers: {len(roles)} | "+', '.join(r+' PID '+str(pid) for r,pid in roles.items())+'\n'
               f'Council detail: {self._council_status()}\n'
@@ -10724,14 +10738,18 @@ class DeepThorTDesktop(tk.Tk):
         worker_rows=operative_rows(model_health,model_pid, bool(self._creative_lane_thread and self._creative_lane_thread.is_alive()))
         sync_table(self.operative_table,worker_rows)
         self.command_centre.live(self.process_summary.get(),worker_rows,len(measured))
-        self._render_operations(self.jobs.count(self._project_key()))
+        self._render_operations(counts)
         self.resource_notice.set(f'{len(measured)} tracked process samples · observed at '+datetime.now().strftime('%H:%M:%S')
                                  if measured else 'No tracked process measurements available on this OS or at this time')
-        if self.active_job is not None:self._refresh_jobs()
+        if self.active_job is not None and self.tabs.index('current')==1:self._refresh_jobs()
         self.after(2200,self._process_snapshot)
 
     def _handle_events(self):
-        for _ in range(100):
+        # Yield to Tk between event bursts. Individual handlers retain their
+        # existing ordering and semantics; a single slow handler is not preempted.
+        deadline=time.monotonic()+.035
+        for index in range(100):
+            if index and time.monotonic()>=deadline:break
             try:event=self.events.get_nowait()
             except queue.Empty:break
             kind=event[0]
