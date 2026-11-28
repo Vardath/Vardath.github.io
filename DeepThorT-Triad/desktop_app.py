@@ -103,7 +103,7 @@ ROOT = Path(__file__).resolve().parent
 STATE = ROOT / 'state'
 from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
-from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff
+from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = (PALETTE[k] for k in ('base','panel','input','text','muted','accent'))
 GREEN, YELLOW = PALETTE['success'], PALETTE['warning']
 MAX_INFERENCE_PROMPT = 7500  # current OpenVINO IR endpoint requires <=8000 / message
@@ -669,18 +669,45 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Label(tasks_tab,text='Tasks are a durable plan. Only verified completed work should be marked complete.',style='Muted.TLabel').pack(anchor='w',pady=8)
 
         # TRUE PROCESS STATUS, NO INVENTED TOKEN PROGRESS
-        self.process_info=self._text(process_tab,readonly=True,height=8)
-        self.process_info.pack(fill='x',pady=(6,4))
+        self.process_summary=tk.StringVar(value='Waiting for observed process data')
+        ttk.Label(process_tab,textvariable=self.process_summary,style='Muted.TLabel',wraplength=640).pack(anchor='w',pady=(6,3))
+        process_tabs=ttk.Notebook(process_tab);process_tabs.pack(fill='both',expand=True,pady=(0,5))
+        resources=ttk.Frame(process_tabs);details=ttk.Frame(process_tabs);activity_page=ttk.Frame(process_tabs)
+        for page,title in ((resources,'Measured resources'),(details,'Process details'),(activity_page,'Activity log')):
+            process_tabs.add(page,text=title)
+        self.resource_notice=tk.StringVar(value='No sample yet')
+        ttk.Label(resources,textvariable=self.resource_notice,style='Muted.TLabel',wraplength=640).pack(anchor='w',pady=4)
+        resource_frame=ttk.Frame(resources);resource_frame.pack(fill='both',expand=True)
+        self.resource_table=ttk.Treeview(resource_frame,columns=('name','pid','cpu','resident','private'),show='headings',selectmode='browse',height=8)
+        for key,label,width in (('name','Observed process',180),('pid','PID',65),('cpu','System CPU %',95),
+                                ('resident','Resident MiB',105),('private','Private MiB',105)):
+            self.resource_table.heading(key,text=label)
+            self.resource_table.column(key,width=width,minwidth=50,stretch=key=='name')
+        source_scrollbars(resource_frame,self.resource_table)
+        ttk.Label(resources,text='Tracked process samples only; not total job-object accounting. Private commit and resident memory differ.',style='Muted.TLabel',wraplength=640).pack(anchor='w',pady=4)
+        process_frame=ttk.Frame(details);process_frame.pack(fill='both',expand=True)
+        self.process_info=self._text(process_frame,readonly=True,height=8)
+        scroll_text(process_frame,self.process_info)
         pbar=ttk.Frame(process_tab);pbar.pack(fill='x',pady=3)
         ttk.Button(pbar,text='Cancel running job',command=self._cancel_active).pack(side='left',padx=3)
         ttk.Button(pbar,text='Stop tool / install process',command=self._cancel_tool).pack(side='left',padx=3)
-        ttk.Button(pbar,text='Locate latest diagnostics',command=self._locate_diagnostics).pack(side='left',padx=3)
-        ttk.Button(pbar,text='Retry JANUS model',command=self._retry_council).pack(side='left',padx=3)
-        ttk.Button(pbar,text='Run latest test',command=self._run_latest_test).pack(side='left',padx=3)
+        action_menu(pbar,'Diagnostics & tests',[
+            ('Locate latest diagnostics',self._locate_diagnostics),('Export diagnostics',self._export_diagnostics),
+            ('Retry JANUS model',self._retry_council),('Run latest test',self._run_latest_test),
+        ]).pack(side='left',padx=3)
         ttk.Button(pbar,text='Stop latest test',command=self._stop_latest_test).pack(side='left',padx=3)
-        tk.Label(process_tab,text='ACTIVITY AND WORK LOG (actual events)',bg=BG,fg=MUTED).pack(anchor='w',pady=(10,4))
-        self.activity=self._text(process_tab,readonly=True,height=18)
-        self.activity.pack(fill='both',expand=True)
+        log_header=ttk.Frame(activity_page);log_header.pack(fill='x',pady=3)
+        self.follow_activity=tk.BooleanVar(value=True)
+        ttk.Checkbutton(log_header,text='Follow latest activity',variable=self.follow_activity).pack(side='right')
+        ttk.Label(log_header,text='Recorded desktop activity',style='Muted.TLabel').pack(side='left')
+        log_nav=ttk.Frame(activity_page);log_nav.pack(fill='x')
+        log_frame=ttk.Frame(activity_page);log_frame.pack(fill='both',expand=True)
+        self.activity=self._text(log_frame,readonly=True,height=18)
+        scroll_text(log_frame,self.activity)
+        self.activity_navigator=SourceNavigator(log_nav,self.activity)
+        self.activity_navigator.pack(fill='x')
+        self.activity_navigator.term.trace_add('write',lambda *_:self.follow_activity.set(False))
+        self.activity_navigator.line.trace_add('write',lambda *_:self.follow_activity.set(False))
 
         # JANUS: keep instruction controls on a short, visible row even when
         # Windows DPI scaling makes the original long toolbar overflow.
@@ -1097,7 +1124,8 @@ class DeepThorTDesktop(tk.Tk):
         record(STATE,'desktop','activity',message=str(info))
         self.activity.config(state='normal')
         stamp=datetime.now().strftime('%H:%M:%S')
-        self.activity.insert('end',f'[{stamp}] {info}\n');self.activity.see('end')
+        self.activity.insert('end',f'[{stamp}] {info}\n')
+        if self.follow_activity.get():self.activity.see('end')
         self.activity.config(state='disabled')
     def report_callback_exception(self, exc_type, exc, tb):
         """Tk normally prints callbacks to an invisible stderr; always record them."""
@@ -9847,7 +9875,7 @@ class DeepThorTDesktop(tk.Tk):
               f"Local tool PID: {tool.pid if tool else 'none'} | Installer PID: {install.pid if install else 'none'} | Media PID: {media.pid if media and media.poll() is None else 'none'}\n"
               f"Queue: {'paused' if self.queue_paused else 'running if model ready'}; pending: {self.jobs.count(self._project_key()).get('queued',0)}\n"
               f"Supervision: 50% aggregate CPU cap, up to 65% RAM-sized commit limit under DeepThorT.exe\n"
-              f"Resident models: {len(roles)}/3 | "+', '.join(r+' PID '+str(pid) for r,pid in roles.items())+'\n'
+              f"Reported resident model workers: {len(roles)} | "+', '.join(r+' PID '+str(pid) for r,pid in roles.items())+'\n'
               f'Council detail: {self._council_status()}\n'
               f"JANUS instructions: {len(self.instruction_inbox.list(str(self.project) if self.project else None,limit=100))} recent saved\n"
               f"Quiet Godot: {'running' if self._quiet_test_active else 'inactive'}; headless, dummy audio; low priority, no visual proof\n"
@@ -9883,7 +9911,14 @@ class DeepThorTDesktop(tk.Tk):
         text+='\nJANUS Sentinel: '+str(sentinel_health.get('state','not started'))+(
             ' | '+str(sentinel_health.get('detail','')) if sentinel_health else '')+'\n'
         text+='JANUS worker PID: '+str(worker_pid or 'not running')+' | Sentinel PID: '+str(sentinel_health.get('sentinel_pid') or 'not running')+'\n'
-        self._show(self.process_info,text)
+        replace_readonly(self.process_info,text)
+        self.process_summary.set(f"Local model: {'ready' if self.node_ready else 'loading' if self.node_loading else 'stopped'}"
+            f"  ·  Job: {('#'+str(active['id'])) if active else 'none'}"
+            f"  ·  Reply: {self.active_conversation or 'none'}"
+            f"  ·  Queue: {'paused' if self.queue_paused else 'enabled'}")
+        sync_table(self.resource_table,measured_process_rows(measured))
+        self.resource_notice.set(f'{len(measured)} tracked process samples · observed at '+datetime.now().strftime('%H:%M:%S')
+                                 if measured else 'No tracked process measurements available on this OS or at this time')
         if self.active_job is not None:self._refresh_jobs()
         self.after(2200,self._process_snapshot)
 
