@@ -499,3 +499,24 @@ class ApplicationWorkflowTests(unittest.TestCase):
             self.assertEqual(len(staged),1)
             self.assertEqual(src.read_bytes(),before)
             self.assertFalse(json.loads(staged[0].read_text())['execution_authorized'])
+
+
+    def test_native_grid_e2e_fixture_and_log(self):
+        from deepthort_local.end_to_end_testing import fixture,assess_log,STAGES,path
+        s={'title':'E2E','width':5,'height':5,'cell_size':24,'start':[0,0],
+           'goal':[4,4],'walls':[[1,1]],'collectibles':[[3,3]]}
+        script,r=fixture(s)
+        self.assertIn('game._unhandled_input(touch)',script)
+        self.assertEqual(r['early_goal_steps'],8)
+        self.assertGreaterEqual(r['win_steps'],8)
+        self.assertEqual(path((0,0),(2,0),5,5,{(1,0)}).__len__(),4)
+        good='\n'.join('JANUS_GRID_E2E '+stage+' passed' for stage in STAGES)
+        self.assertTrue(assess_log(good)['native_gameplay_fixture_verified'])
+        for bad in (good+'\nSCRIPT ERROR: fail',good+'\nJANUS_GRID_E2E touch passed',good.replace('reset passed','reset failed')):
+            with self.assertRaises(ValueError):assess_log(bad)
+
+    def test_native_grid_e2e_unusable_fixture(self):
+        from deepthort_local.end_to_end_testing import fixture
+        s={'title':'E2E','width':5,'height':5,'cell_size':24,'start':[0,0],
+           'goal':[4,4],'walls':[[0,1]],'collectibles':[[1,0]]}
+        with self.assertRaises(ValueError):fixture(s)
