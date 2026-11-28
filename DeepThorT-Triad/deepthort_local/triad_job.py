@@ -107,11 +107,23 @@ def memory_specialist_admission():
             raise RuntimeError('Insufficient measured headroom for independent memory model')
     finally:close(root)
 
+def isolated_env(cwd,environ=None):
+    """Explicit allowlist for fixed auxiliary workers; not an access sandbox."""
+    environ=os.environ if environ is None else environ
+    root=environ.get('SystemRoot') or environ.get('SYSTEMROOT')
+    if not isinstance(root,str) or not root or '\0' in root:
+        raise ValueError('Windows SystemRoot unavailable')
+    cwd=str(Path(cwd).resolve(strict=True))
+    return {'SystemRoot':root,'WINDIR':root,'TEMP':cwd,'TMP':cwd,
+            'USERPROFILE':cwd,'PATH':str(Path(root)/'System32')}
+
 @contextmanager
-def child_server(command,cwd,log_path,*,group=None,memory_limit=None,memory_specialist=False,process_limit=None):
+def child_server(command,cwd,log_path,*,group=None,memory_limit=None,memory_specialist=False,process_limit=None,clean_environment=False):
     verify_root_cap()
     if process_limit is not None and (type(process_limit) is not int or process_limit!=1 or group is not None or memory_specialist):
         raise ValueError('Only single-process auxiliary isolation is supported')
+    if type(clean_environment) is not bool or (clean_environment and (process_limit!=1 or memory_limit is None or group is not None or memory_specialist)):
+        raise ValueError('Clean environment requires a bounded single-process auxiliary job')
     if memory_specialist:
         from .triad_profiles import ROOT,runtime_path
         if (memory_limit is not None or group is None or len(command)!=6
@@ -159,6 +171,12 @@ def child_server(command,cwd,log_path,*,group=None,memory_limit=None,memory_spec
                 raise RuntimeError('Auxiliary job limits did not match')
         si=StartupInfo();si.cb=ctypes.sizeof(si)
         cmd=ctypes.create_unicode_buffer(subprocess.list2cmdline(command))
+        env_buffer=None
+        flags=CREATE_SUSPENDED|CREATE_NO_WINDOW|IDLE_PRIORITY_CLASS
+        if clean_environment:
+            env=isolated_env(cwd)
+            env_buffer=ctypes.create_unicode_buffer('\0'.join(k+'='+v for k,v in sorted(env.items(),key=lambda x:x[0].upper()))+'\0\0')
+            flags|=0x00000400  # CREATE_UNICODE_ENVIRONMENT
         # CREATE_NO_WINDOW must not leave C/C++ stdout and stderr invalid.
         # Inherit only the explicitly prepared file handles (Python sockets
         # and the cleanup job are non-inheritable). Reset inheritability
@@ -171,8 +189,8 @@ def child_server(command,cwd,log_path,*,group=None,memory_limit=None,memory_spec
             try:
                 os.set_handle_inheritable(out,True)
                 os.set_handle_inheritable(inp,True)
-                check(create(command[0],cmd,None,None,True,CREATE_SUSPENDED|CREATE_NO_WINDOW|IDLE_PRIORITY_CLASS,
-                             None,str(cwd),ctypes.byref(si),ctypes.byref(proc)),'Create suspended model')
+                check(create(command[0],cmd,None,None,True,flags,
+                             ctypes.cast(env_buffer,P) if env_buffer is not None else None,str(cwd),ctypes.byref(si),ctypes.byref(proc)),'Create suspended model')
                 launched=True
             finally:
                 os.set_handle_inheritable(out,False)

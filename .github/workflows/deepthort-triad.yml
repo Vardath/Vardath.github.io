@@ -278,6 +278,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_software_deployment_ability.py -v
       - run: python -m unittest discover -s tests -p test_worktree_batch_ability.py -v
       - run: python -m unittest discover -s tests -p test_execution_isolation_ability.py -v
+      - run: python -m unittest discover -s tests -p test_restricted_environment_ability.py -v
       - run: python -m unittest discover -s tests -p test_project_queue.py -v
   native-windows:
     runs-on: windows-latest
@@ -773,6 +774,8 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_execution_isolation_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_restricted_environment_ability.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_project_queue.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v
@@ -781,6 +784,8 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Native Windows active-process isolation fixture
         run: python deepthort_local/execution_isolation.py --native-ci
+      - name: Native Windows restricted Python environment fixture
+        run: python deepthort_local/restricted_environment.py --native-ci
       - name: Install pinned native runtime in isolated venv
         run: |
           python -m venv runtime/openvino-env

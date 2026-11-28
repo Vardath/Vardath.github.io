@@ -232,7 +232,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 220 | 52 | Automated software deployment | Partial: reviewed exact artifact hash, bounded release ZIP audit and atomic non-overwriting local versioned publication. Pass 221 CI pending; remote target, installation and runtime/CI release acceptance outstanding. |
 | 221 | 220 | Multiple isolated work environments | Partial: reviewed batch creation of 2–3 distinct unused Git branch worktrees, exact pre/post inventory checks and stop on partial failure. Pass 222 CI pending; automatic project assignment and OS isolation outstanding. |
 | 222 | 238 | Operating-system-level execution isolation (existing process-level restrictions; not a security sandbox) | Partial: native optional one-active-process nested Job Object limit, policy readback, fixed baseline and descendant-blocking probe. Pass 223 CI pending; security sandbox remains absent. |
-| 223 | 335 | Restricted execution environments | Existing partial; completion not started in this programme |
+| 223 | 335 | Restricted execution environments | Partial: fixed reviewed Python syntax worker with exact staged input, allowlisted Windows environment, isolated interpreter flags and single-process nested job. Pass 224 CI pending; arbitrary-code sandbox outstanding. |
 | 224 | 63 | Automated game distribution | Not started in this programme |
 | 225 | 168 | Email reading and searching | Not started in this programme |
 | 226 | 169 | Email sending | Not started in this programme |
@@ -1111,3 +1111,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 223 — 28 November 2026
 - Extend existing Windows nested cleanup job with opt-in single active process limit, verified policy readback before resume. Add fixed benign baseline and descendant-blocking native probe, resource/log/time limits, review and receipt; explicit Windows native CI execution plus source regression on both hosts. No filesystem, network or privilege isolation claim. Next rank 223 / ID 335 restricted execution environments. No installer.
+
+## Pass 224 — 28 November 2026
+- Add opt-in clean environment to bounded single-process Windows auxiliary jobs. Reviewed Python syntax-only worker stages exact bytes, uses isolated/no-site/no-bytecode interpreter flags, 128 MiB nested commit cap, verifies environment key inventory and source digest. Native Windows CI valid and invalid source fixtures; no project execution, external Docker workload, filesystem or network sandbox. Next rank 224 / ID 63 automated game distribution. No installer.
