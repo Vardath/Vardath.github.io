@@ -569,7 +569,7 @@ class DeepThorTDesktop(tk.Tk):
         self.approval_centre=ApprovalCentre(approval_tab,self._refresh_approval_centre,self._inspect_approval_job,self._inspect_pc_action,
             [('Network permissions…',self._network_permissions_dialog),('Computer & Tools',lambda:self.tabs.select(6)),('Processes',lambda:self.tabs.select(4)),('Approved process controls',lambda:self.tabs.select(5))],self._open_approval_job,self._inspect_approval_grant)
         self.approval_centre.pack(fill='both',expand=True)
-        self.knowledge_centre=KnowledgeMemoryCentre(memory_tab,self._refresh_knowledge_centre,self._open_project_knowledge)
+        self.knowledge_centre=KnowledgeMemoryCentre(memory_tab,self._refresh_knowledge_centre,self._open_project_knowledge,self._open_indexed_document)
         self.knowledge_centre.pack(fill='both',expand=True)
         self.studio_centre=StudioCentre(studio_tab,self._refresh_studio,self._studio_tool_category,self._inspect_studio_artifact,self._browse_studio_media,self._preview_studio_media)
         self.studio_centre.pack(fill='both',expand=True)
@@ -1989,14 +1989,30 @@ class DeepThorTDesktop(tk.Tk):
         except Exception as e:messagebox.showerror('Cannot queue',str(e));return
         self._log(f'{mode.capitalize()} job #{ident} queued; inference runs locally.')
         self._refresh_jobs()
-    def _open_project_knowledge(self):
+    def _open_project_knowledge(self,selected_path=None):
         if not self.project:
             messagebox.showinfo('Choose project','Select a project workspace first.',parent=self);return
         from deepthort_local.knowledge_dialog import KnowledgeDialog
         old=getattr(self,'_knowledge_dialog',None)
         if old is not None and old.window.winfo_exists():
-            old.window.lift();return
-        self._knowledge_dialog=KnowledgeDialog(self)
+            if old.root==Path(self.project).resolve(strict=True):
+                if selected_path is not None:old.select_path(selected_path)
+                old.window.lift();return
+            old.close()
+        self._knowledge_dialog=KnowledgeDialog(self,selected_path=selected_path)
+
+    def _open_indexed_document(self,relative):
+        if not self.project or getattr(self.knowledge_centre,'project',None)!=self._project_key():
+            self.knowledge_centre.library_notice.set('Workspace changed; refresh library records.')
+            return
+        try:
+            rows=self.capabilities.knowledge.inspection_records(self.project,
+                exclude=self.inspection_exclusions.paths(self.project))
+            if relative not in {row['path'] for row in rows}:
+                raise ValueError('Document no longer enrolled or is excluded.')
+            self._open_project_knowledge(selected_path=relative)
+        except (OSError,ValueError,RuntimeError) as exc:
+            self.knowledge_centre.library_notice.set('Library navigation unavailable: '+str(exc)[:180])
 
     def _install_spreadsheet_tools(self):
         if self.disk_gate.gaming():return
@@ -3306,6 +3322,13 @@ class DeepThorTDesktop(tk.Tk):
         except (OSError,ValueError,sqlite3.Error) as exc:
             self.knowledge_centre.render(project,[],self.memory_observer.inspection_snapshot())
             self.knowledge_centre.notice.set('Memory receipt snapshot unavailable: '+str(exc)[:180])
+        try:
+            rows=self.capabilities.knowledge.inspection_records(self.project,
+                exclude=self.inspection_exclusions.paths(self.project)) if self.project else []
+            self.knowledge_centre.render_library(project,rows)
+        except (OSError,ValueError,sqlite3.Error) as exc:
+            self.knowledge_centre.render_library(project,[])
+            self.knowledge_centre.library_notice.set('Library snapshot unavailable: '+str(exc)[:180])
 
     def _refresh_approval_centre(self):
         import sqlite3

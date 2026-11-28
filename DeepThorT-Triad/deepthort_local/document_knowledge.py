@@ -403,6 +403,18 @@ class DocumentKnowledge:
             db.execute('INSERT OR IGNORE INTO knowledge_removed_v1 VALUES (?,?)', (key, relative))
         return True
 
+    def inspection_records(self, root, *, exclude=()):
+        """Stored enrollment only; no source reads, extraction or index mutation."""
+        from contextlib import closing
+        excluded={str(path).replace('\\','/').casefold() for path in exclude}
+        with closing(sqlite3.connect(self.path.resolve(strict=True).as_uri()+'?mode=ro',
+                                     uri=True,timeout=.25)) as db:
+            db.execute('PRAGMA query_only=ON')
+            rows=db.execute('SELECT path,sha,locator,origin,fragments FROM knowledge_docs_v1 '
+                            'WHERE project=? ORDER BY path LIMIT ?',(_key(root),MAX_DOCUMENTS)).fetchall()
+        return [dict(path=path,sha256=digest,locator=locator,origin=origin,fragments=fragments)
+                for path,digest,locator,origin,fragments in rows if path.casefold() not in excluded]
+
     def documents(self, root):
         with self._db() as db:
             rows = db.execute('SELECT path,sha,locator,origin,fragments FROM knowledge_docs_v1 '

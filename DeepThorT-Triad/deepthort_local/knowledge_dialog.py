@@ -29,8 +29,9 @@ def selected_relative(root, selected, excluded=()):
 
 
 class KnowledgeDialog:
-    def __init__(self, app):
+    def __init__(self, app, selected_path=None):
         self.app = app
+        self.pending_selection = selected_path
         self.root = Path(app.project).resolve(strict=True)
         self.index = app.capabilities.knowledge
         self.cancel = threading.Event()
@@ -138,6 +139,7 @@ class KnowledgeDialog:
                     for row in rows:
                         self.tree.insert('', 'end', values=('Current' if row['current'] else 'Stale',
                                          row['origin'], row['fragments'], row['path']))
+                    self.select_path(self.pending_selection)
                 self.output.configure(state='normal')
                 self.output.delete('1.0', 'end')
                 self.output.insert('1.0', message)
@@ -146,6 +148,17 @@ class KnowledgeDialog:
             else:
                 self.status.set(value)
         self.window.after(100, self.poll)
+
+    def select_path(self, path):
+        self.pending_selection=path
+        if path is None:return
+        selected=self.tree.selection()
+        if selected:self.tree.selection_remove(*selected)
+        for item in self.tree.get_children():
+            if self.tree.item(item,'values')[3]==path:
+                self.tree.selection_set(item);self.tree.see(item)
+                self.pending_selection=None
+                break
 
     def close(self):
         self.cancel.set()
