@@ -735,6 +735,7 @@ class DeepThorTDesktop(tk.Tk):
         auth_actions=ttk.Frame(media_tab);auth_actions.pack(fill='x',pady=2)
         input_actions=ttk.Frame(media_tab);input_actions.pack(fill='x',pady=2)
         game_test_actions=ttk.Frame(media_tab);game_test_actions.pack(fill='x',pady=2)
+        ttk.Button(game_test_actions,text='Balance grid game…',command=lambda:self._review_typed_tool('game_balancing','.json','Development: reviewed grid balancing')).pack(side='left',padx=3)
         ttk.Button(game_test_actions,text='Autoplay grid game…',command=lambda:self._review_typed_tool('autonomous_gameplay','.json','Development: reviewed autonomous gameplay')).pack(side='left',padx=3)
         ttk.Button(game_test_actions,text='Test rendered grid game…',command=lambda:self._review_typed_tool('visual_gameplay','.zip','Development: reviewed visual gameplay')).pack(side='left',padx=3)
         ttk.Button(game_test_actions,text='Test controller input…',command=lambda:self._review_typed_tool('controller_input','.json','Development: reviewed controller fixture')).pack(side='left',padx=3)
@@ -1881,6 +1882,7 @@ class DeepThorTDesktop(tk.Tk):
                  'background_desktop':('.json','Development: reviewed background desktop'),
                  'live_screen':('.json','Development: reviewed live screen'),
                  'controller_input':('.json','Development: reviewed controller fixture'),
+                 'game_balancing':('.json','Development: reviewed grid balancing'),
                  'autonomous_gameplay':('.json','Development: reviewed autonomous gameplay'),
                  'visual_gameplay':('.zip','Development: reviewed visual gameplay'),
                  'image_discovery':('.json','Research: reviewed image discovery'),

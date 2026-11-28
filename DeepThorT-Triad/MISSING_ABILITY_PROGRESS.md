@@ -223,7 +223,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 211 | 60 | Game controller input simulation | Partial: host-generated native Godot synthetic joypad button and axis event fixture, action press/release oracle and capped execution. Pass 212 CI pending. Native engine acceptance, OS virtual controllers and external games outstanding. |
 | 212 | 58 | Visual gameplay testing | Partial: native non-headless Godot generated grid fixture, before/after viewport PNGs, expected movement and pixel oracle, evidence ZIP. Pass 213 source and native Windows CI green (46012372590); not merged. Native GPU/display and external game acceptance outstanding. |
 | 213 | 59 | Autonomous game playing and testing | Partial: bounded nearest-objective route selection and native generated Godot keyboard trajectory with per-step state oracle. Pass 214 CI pending; native and general external game acceptance outstanding. |
-| 214 | 61 | Automated game balancing | Not started in this programme |
+| 214 | 61 | Automated game balancing | Partial: bounded deterministic collectible relocation search against explicit route-length target, source-guarded candidate/report. Pass 215 CI pending; native and human balance validation outstanding. |
 | 215 | 57 | Unreal Engine integration | Not started in this programme |
 | 216 | 254 | Unity integration | Existing partial; completion not started in this programme |
 | 217 | 256 | General game modification | Existing partial; completion not started in this programme |
@@ -1084,3 +1084,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ### Pass 214 CI coverage correction
 - Explicitly register the new autonomous gameplay regression in both Linux and Windows CI; repair missing PowerShell exit checks on adjacent image-style/image-to-image suites. Native Godot still unverified. Require fresh green CI before merging.
+
+## Pass 215 — 28 November 2026
+- Add reviewed automated grid balancing against an explicit input-step target. Evaluate up to 32 neighboring collectible relocations, preserve geometry/objective count and report baseline, candidate, target attainment and unverified quality. Reuse actual autonomous route oracle, exact guard and non-overwriting output; no source edits or native/human difficulty claims. Next rank 215 / ID 57 Unreal Engine integration. No installer.
