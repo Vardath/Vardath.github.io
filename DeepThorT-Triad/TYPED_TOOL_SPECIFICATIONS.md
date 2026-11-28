@@ -1049,3 +1049,7 @@ Animate still image accepts `{"image":"still.png","width":320,"height":240,"fps"
 ## Reviewed video background replacement (Pass 235)
 
 Replace video background accepts `{"video":"clip.mp4","background":"bg.png","start_frame":0,"end_frame":48,"key":[0,255,0],"tolerance":30,"feather":20}`. One silent H.264 MP4 with matching opaque RGB PNG, maximum 640×480 and 60 selected frames, exact source/codec guards, framewise max-channel chroma distance and feathered compositing. New lossless H.264 MP4 verified by RGB decode. No segmentation, audio or playback-quality claim.
+
+## Reviewed video palette transfer (Pass 236)
+
+Transfer video palette accepts `{"video":"clip.mp4","reference":"ref.png","start_frame":0,"end_frame":48,"strength_percent":80}`. Silent H.264 clip, up to 60 frames at 640×480, opaque reference PNG up to one megapixel. One shared monotonic RGB quantile LUT across the interval, blended by strength; verified lossless RGB video output. No neural style synthesis or visual quality claim.
