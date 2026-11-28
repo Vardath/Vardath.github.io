@@ -1029,3 +1029,7 @@ Google Drive accepts `{"operation":"list","account":"owner@example.com","folder_
 ## Reviewed social media publishing (Pass 230)
 
 Publish Mastodon accepts a mastodon.social local username (without @), literal text up to 400 characters, and public or unlisted visibility. Supply a transient access token with read:accounts and write:statuses scopes. Exact final confirmation; fixed account verification followed by one POST and account/visibility-bound provider receipt. No automatic retry, media, scheduling, other instances, credential storage or proof of rendered text/reach. Live acceptance outstanding.
+
+## Reviewed REAPER batch conversion (Pass 231)
+
+REAPER audio conversion selects an exact existing project-relative PCM16 WAV (mono/stereo, up to 60 seconds, 22050/44100/48000 Hz), trusted separately installed reaper.exe, different target rate and new project-relative WAV. Uses reviewed fixed batch-converter CLI (documented at https://github.com/ReaTeam/Doc/blob/master/REAPER%20CLI.txt), separate temporary config, capped native child and fixed staging. Rechecks exact source and executable, output sample rate, channels, width and duration; no arbitrary project/script/FX, overwrites or native quality claim. Real REAPER acceptance outstanding.
