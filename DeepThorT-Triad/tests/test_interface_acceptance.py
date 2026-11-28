@@ -196,3 +196,28 @@ class IntegratedInterfaceTests(unittest.TestCase):
         self.assertEqual(len(rows),1)
         self.assertEqual(rows[0][1][:4],('Gemma','Request #'+str(ident),'compose','queued'))
         self.assertFalse(assignment_rows('other',app.graphs.path,app.delegations.path))
+
+    def test_grant_inspection_scope_revocation_and_policy(self):
+        from deepthort_local.project_authority import issue_grant,inspect_grant,revoke_grant
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve()
+            project=root/'project';project.mkdir()
+            folder=root/'grants'
+            job={'id':51,'project':str(project),'chat_id':'test','mode':'build',
+                 'state':'queued','approval_key':'fixture'}
+            steps=[{'id':1,'sequence':1,'path':'file.txt','description':'fixture'}]
+            self.assertIsNone(inspect_grant(folder,job,steps,enabled=True))
+            issue_grant(folder,job,steps)
+            self.assertEqual(inspect_grant(folder,job,steps,enabled=True)['status'],'Recorded active')
+            self.assertEqual(inspect_grant(folder,job,steps,enabled=False)['status'],'Policy disabled')
+            mismatch=inspect_grant(folder,job,[dict(steps[0],description='different')],enabled=True)
+            self.assertEqual(mismatch['status'],'Identity mismatch')
+            self.assertFalse(mismatch['files'])
+            revoke_grant(folder,51)
+            self.assertEqual(inspect_grant(folder,job,steps,enabled=True)['status'],'Not currently eligible')
+            app=self.app
+            app.approval_centre.render('old',[],[],[('51',('51','Recorded active','1','date'))])
+            app.approval_centre.grant_table.selection_set('51')
+            app.approval_centre.render('new',[],[])
+            self.assertFalse(app.approval_centre.grant_table.get_children())
+            self.assertFalse(app.approval_centre.grant_table.selection())

@@ -17,6 +17,7 @@ TOOLTIPS = {
     'Filter artifacts': 'Filter discovered workspace file formats without opening or executing files.',
     'Inspect artifact metadata': 'Read the selected file metadata within the current inspection scope.',
     'Inspect artifact / preview': 'Read bounded file metadata, plain text preview and matching historical source checkpoint evidence.',
+    'Open exact job in Work queue': 'Navigate to the same job for the existing review and revoke controls; does not approve or revoke.',
     'Refresh assignment evidence': 'Inspect recorded workspace contracts and delegated stages, without starting or changing work.',
     'Memory receipts': 'Navigate to historical asynchronous memory receipts; does not request recall.',
     'Refresh memory overview': 'Read historical memory receipt metadata and observer counts without triggering recall.',

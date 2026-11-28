@@ -554,7 +554,7 @@ def pc_action_rows(actions):
 
 class ApprovalCentre(ttk.Frame):
     """Read-only record inspection. Never grant, launch, cancel or replay here."""
-    def __init__(self,parent,refresh,inspect_job,inspect_action,links):
+    def __init__(self,parent,refresh,inspect_job,inspect_action,links,open_job=None,inspect_grant=None):
         super().__init__(parent)
         self.notice=tk.StringVar(self,value='Refresh to inspect saved records.')
         header=ttk.Frame(self);header.pack(fill='x',pady=5)
@@ -574,6 +574,17 @@ class ApprovalCentre(ttk.Frame):
             'Recent JANUS action ledger, across workspaces. Not a complete operating-system audit.',
             [('id','Action',55),('state','State',95),('label','Action label',210),
              ('source','Approval source',125),('stamp','Approved at',150)],inspect_action)
+        grants=ttk.Frame(tabs);tabs.add(grants,text='Project grant records')
+        self.grant_table,self.grant_detail=self._pane(grants,
+            'Stored grant scope, not a current authorization. Per-action checks still apply.',
+            [('id','Job',55),('status','Record status',160),('files','Files',55),
+             ('expiry','Expiry',200)],inspect_grant or (lambda ident:'Unavailable'))
+        if open_job:
+            for page,table in ((jobs,self.job_table),(grants,self.grant_table)):
+                def navigate(table=table):
+                    selected=table.selection()
+                    if selected:open_job(selected[0])
+                ttk.Button(page,text='Open exact job in Work queue',command=navigate).pack(anchor='w',pady=2)
 
     def _pane(self,parent,caption,columns,inspect):
         ttk.Label(parent,text=caption,wraplength=620).pack(anchor='w',pady=4)
@@ -592,16 +603,19 @@ class ApprovalCentre(ttk.Frame):
         ttk.Button(parent,text='Inspect selected record',command=show).pack(anchor='w')
         return tree,detail
 
-    def render(self,project,jobs,actions):
+    def render(self,project,jobs,actions,grants=()):
         if getattr(self,'project',None)!=project:
-            selected=self.job_table.selection()
-            if selected:self.job_table.selection_remove(*selected)
+            for table in (self.job_table,self.grant_table):
+                selected=table.selection()
+                if selected:table.selection_remove(*selected)
         self.project=project
         sync_table(self.job_table,jobs)
         sync_table(self.action_table,actions)
+        sync_table(self.grant_table,grants)
         replace_readonly(self.job_detail,'Select a workspace record for historical evidence.')
         replace_readonly(self.action_detail,'Select a PC action to inspect its recorded approval and result.')
-        self.notice.set(f'{project} · {len(jobs)} review/blocker rows · {len(actions)} recent PC action records')
+        replace_readonly(self.grant_detail,'Select a grant to inspect its recorded scope. No action is authorized here.')
+        self.notice.set(f'{project} · {len(jobs)} review/blocker rows · {len(actions)} recent PC action records · {len(grants)} grant records')
 
 
 class KnowledgeMemoryCentre(ttk.Frame):
