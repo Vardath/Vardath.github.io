@@ -694,6 +694,9 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(tbar,text='Add task',command=self._add_task).pack(side='left',padx=3)
         ttk.Button(tbar,text='Complete / reopen',command=self._toggle_task).pack(side='left',padx=3)
         ttk.Button(tbar,text='Send to prompt',command=self._task_to_chat).pack(side='left',padx=3)
+        action_menu(tbar,'Linked job',[
+            ('Link existing job…',self._link_task_job),('Remove job link',self._unlink_task_job),
+            ('Inspect linked job evidence',self._inspect_task_job),('Open linked job',self._open_task_job)]).pack(side='left',padx=3)
         task_filter=ttk.Frame(tasks_tab);task_filter.pack(fill='x',pady=(0,5))
         self.task_filter=tk.StringVar(value='All states')
         self.task_query=tk.StringVar(value='')
@@ -703,11 +706,16 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(task_filter,text='Filter tasks',command=self._refresh_tasks).pack(side='left',padx=3)
         ttk.Label(task_filter,textvariable=self.task_count,style='Muted.TLabel').pack(side='left',padx=3)
         task_view=ttk.Frame(tasks_tab);task_view.pack(fill='both',expand=True)
-        self.task_tree=ttk.Treeview(task_view,columns=('state','description'),show='headings')
-        for x,title,w in (('state','Status',130),('description','Task / project plan',700)):
+        self.task_tree=ttk.Treeview(task_view,columns=('state','description','job'),show='headings')
+        for x,title,w in (('state','Manual status',110),('description','Task / project plan',340),('job','Recorded linked job',200)):
             self.task_tree.heading(x,text=title);self.task_tree.column(x,width=w,stretch=x=='description')
-        scroll_text(task_view,self.task_tree)
-        ttk.Label(tasks_tab,text='Tasks are a durable plan. Only verified completed work should be marked complete.',style='Muted.TLabel').pack(anchor='w',pady=8)
+        source_scrollbars(task_view,self.task_tree)
+        self.task_notice=tk.StringVar(value='Manual completion is separate from job and test evidence.')
+        ttk.Label(tasks_tab,textvariable=self.task_notice,style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=4)
+        task_detail_frame=ttk.Frame(tasks_tab);task_detail_frame.pack(fill='x',pady=4)
+        self.task_evidence=self._text(task_detail_frame,readonly=True,height=6)
+        scroll_text(task_detail_frame,self.task_evidence)
+        ttk.Label(tasks_tab,text='Linking a job does not approve it or mark the task complete.',style='Muted.TLabel').pack(anchor='w',pady=4)
 
         # TRUE PROCESS STATUS, NO INVENTED TOKEN PROGRESS
         self.process_summary=tk.StringVar(value='Waiting for observed process data')
@@ -3143,7 +3151,8 @@ class DeepThorTDesktop(tk.Tk):
 
     def _command_tab_changed(self,event=None):
         index=self.tabs.index('current')
-        if index==8:self._refresh_command_centre()
+        if index==3:self._refresh_tasks()
+        elif index==8:self._refresh_command_centre()
         elif index==9:self._refresh_approval_centre()
         elif index==10:self._refresh_knowledge_centre()
         elif index==11:self._refresh_studio()
@@ -7544,14 +7553,83 @@ class DeepThorTDesktop(tk.Tk):
         if title:self.tasks.add(str(self.project),title);self._refresh_tasks()
     def _refresh_tasks(self):
         if not hasattr(self,'task_tree'):return
-        rows=[(str(i),('Done' if done else 'Planned',title)) for i,title,done in self.tasks.items(str(self.project))] if self.project else []
+        rows=[]
+        if self.project:
+            project=self._project_key()
+            links=self.tasks.links(project)
+            # Bounded existing queue snapshot. Missing from snapshot is not a failure.
+            jobs={j['id']:j for j in self.jobs.items(project)}
+            for i,title,done in self.tasks.items(project):
+                ident=links.get(i)
+                record=jobs.get(ident)
+                label=(f"#{ident} · {record['state']}" if record else f'#{ident} · outside snapshot') if ident else 'Not linked'
+                rows.append((str(i),('Done' if done else 'Planned',title,label)))
         visible=filter_status_rows(rows,self.task_filter.get(),self.task_query.get())
         sync_table(self.task_tree,visible)
         self.task_count.set(f'{len(visible)} / {len(rows)} tasks')
+        self.task_notice.set('Manual completion is separate from job and test evidence.')
+        self._show(self.task_evidence,'Select a task and inspect its linked job evidence explicitly.')
     def _selected_task(self):
         pick=self.task_tree.selection()
         if not pick or not self.project:return None
         return next((x for x in self.tasks.items(str(self.project)) if x[0]==int(pick[0])),None)
+    def _link_task_job(self):
+        task=self._selected_task()
+        if not task:return
+        project=self._project_key()
+        rows=[(j['id'],f"#{j['id']} · {j['state']} · {j['mode']} · {j.get('target') or j.get('detail') or ''}"[:260])
+              for j in self.jobs.items(project) if j['mode'] not in ('chat','plan','edit')]
+        if not rows:
+            self.task_notice.set('No existing Work queue jobs in this workspace.')
+            return
+        def link(ident):
+            if self._project_key()!=project:return
+            job=self.jobs.get(int(ident))
+            if not job or job['project']!=project or job['mode'] in ('chat','plan','edit'):return
+            try:self.tasks.link(project,task[0],int(ident))
+            except (OSError,ValueError) as exc:
+                self.task_notice.set('Link unavailable: '+str(exc));return
+            self._refresh_tasks()
+        SearchPicker(self,'Link existing job to task (no approval)',rows,link)
+
+    def _unlink_task_job(self):
+        task=self._selected_task()
+        if task:
+            self.tasks.link(self._project_key(),task[0],None)
+            self._refresh_tasks()
+
+    def _linked_task_job(self):
+        task=self._selected_task()
+        if not task:return None
+        ident=self.tasks.links(self._project_key()).get(task[0])
+        job=self.jobs.get(ident) if ident else None
+        return job if job and job['project']==self._project_key() else None
+
+    def _inspect_task_job(self):
+        job=self._linked_task_job()
+        if not job:
+            self._show(self.task_evidence,'No linked job in this workspace.')
+            return
+        lines=[f"Job #{job['id']} · {job['state']} · {job['mode']}",str(job.get('detail') or ''),
+               'Recorded graph evidence; manual task status unchanged.']
+        graph=self.graphs.status(job['id'])
+        if graph:
+            lines.append('Graph state: '+graph['state'])
+            lines.extend(f"{n['kind']} · {n['title']} · {n['state']} · {n.get('note','')}" for n in graph['nodes'][:60])
+            lines.extend(f"Dependency: {e['node']} requires {e['depends_on']}" for e in graph['edges'][:60])
+        else:lines.append('No recorded dependency graph.')
+        self._show(self.task_evidence,'\n'.join(lines))
+
+    def _open_task_job(self):
+        job=self._linked_task_job()
+        if not job:
+            self.task_notice.set('No linked job in this workspace.');return
+        self.job_filter.set('All states');self.job_query.set('')
+        self._refresh_jobs()
+        if self.job_tree.exists(str(job['id'])):
+            self.job_tree.selection_set(str(job['id']));self.job_tree.see(str(job['id']));self.tabs.select(1)
+        else:self.task_notice.set('Linked job outside current bounded Work queue view.')
+
     def _toggle_task(self):
         t=self._selected_task()
         if t:self.tasks.mark(str(self.project),t[0],not t[2]);self._refresh_tasks()
