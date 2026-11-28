@@ -5,6 +5,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .web_search import query_checked,token_checked,search
 
 def show(app):
@@ -13,7 +14,7 @@ def show(app):
     if app._quitting or app.queue_paused or app._explicit_model_stop or app.disk_gate.gaming() or app.janus.status().get('paused'):
         messagebox.showwarning('Research paused','Resume work and stop gaming before a network request.',parent=app);return
     project=app._project_key();chat=app.current_chat
-    dialog=tk.Toplevel(app);dialog.title('General internet search');dialog.geometry('820x500');dialog.transient(app)
+    dialog=tk.Toplevel(app);dialog.title('General internet search');fit_dialog(dialog,820,500);dialog.transient(app)
     ttk.Label(dialog,text='Brave Search API. A user-supplied key and active provider account are required. Only the entered query is sent. Snippets are not verified page contents.',wraplength=790).pack(anchor='w',padx=8,pady=6)
     output=tk.Text(dialog,wrap='word',state='disabled');output.pack(fill='both',expand=True,padx=8,pady=6)
     status=tk.StringVar(value='No network request performed.')

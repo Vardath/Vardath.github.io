@@ -4,6 +4,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .github_account import inspect,MAX_PAGE
 
 def show(app):
@@ -24,7 +25,7 @@ def show(app):
     if page is None:return
     if not messagebox.askyesno('Approve account inventory','Use the connected read-only session to verify account identity and retrieve public repository page '+str(page)+'? Three HTTPS GET requests; no changes or private repository access.',parent=app):return
     if not permitted():return
-    dlg=tk.Toplevel(app);dlg.title('GitHub account inventory');dlg.geometry('760x540');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('GitHub account inventory');fit_dialog(dlg,760,540);dlg.transient(app)
     state=tk.StringVar(value='Retrieving approved public repository page…')
     ttk.Label(dlg,textvariable=state,wraplength=720).pack(fill='x',padx=8,pady=8)
     view=tk.Text(dlg,wrap='word',state='disabled');view.pack(fill='both',expand=True,padx=8,pady=8)

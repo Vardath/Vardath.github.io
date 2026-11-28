@@ -6,6 +6,7 @@ import threading
 import time
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .condition_monitor import checked,observe,MIN_INTERVAL,MAX_INTERVAL,MAX_CHECKS
 from .scheduled_tasks import utc_stamp
 
@@ -49,7 +50,7 @@ def show(app):
     project=app._project_key();chat=app.current_chat;store=app.condition_watches
     if project=='(general)' or not chat or chat not in {i for i,_ in app.chats.list(project)}:
         messagebox.showwarning('Condition monitoring unavailable','Open a project chat first.',parent=app);return
-    dialog=tk.Toplevel(app);dialog.title('Condition watches');dialog.geometry('820x440');dialog.transient(app)
+    dialog=tk.Toplevel(app);dialog.title('Condition watches');fit_dialog(dialog,820,440);dialog.transient(app)
     ttk.Label(dialog,text='Monitor exact local project files with fixed read-only predicates. No arbitrary scripts, page reads or new execution grants.',wraplength=790).pack(anchor='w',padx=8,pady=6)
     tree=ttk.Treeview(dialog,columns=('state','due','status','remaining','condition'),show='headings',selectmode='browse')
     for key,label,width in (('state','State',75),('due','Next UTC',165),('status','Last observation',135),('remaining','Remaining',80),('condition','Condition',350)):

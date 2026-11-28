@@ -2,6 +2,7 @@
 from __future__ import annotations
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .scheduled_tasks import utc_stamp
 from .event_triggers import MAX_OCCURRENCES
 
@@ -9,7 +10,7 @@ def show(app):
     project=app._project_key();chat=app.current_chat;store=app.event_triggers
     if not chat or chat not in {i for i,_ in app.chats.list(project)}:
         messagebox.showwarning('Event rules unavailable','Open the bound chat first.',parent=app);return
-    dialog=tk.Toplevel(app);dialog.title('Event-triggered requests');dialog.geometry('840x470');dialog.transient(app)
+    dialog=tk.Toplevel(app);dialog.title('Event-triggered requests');fit_dialog(dialog,840,470);dialog.transient(app)
     ttk.Label(dialog,text='Bind future observed website or file-condition events to an exact conversation prompt. No historical replay, overlapping requests or new execution authority.',wraplength=810).pack(anchor='w',padx=8,pady=6)
     tree=ttk.Treeview(dialog,columns=('state','source','event','remaining','request','prompt'),show='headings',selectmode='browse')
     for key,label,width in (('state','State',80),('source','Monitor',105),('event','Event',115),
