@@ -963,6 +963,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(image_restore_actions,text='Pose-guided image…',command=self._queue_pose_image).pack(side='left',padx=3)
         ttk.Button(image_restore_actions,text='Depth-guided image…',command=self._queue_depth_image).pack(side='left',padx=3)
         ttk.Button(image_restore_actions,text='Sketch to image…',command=self._queue_sketch_image).pack(side='left',padx=3)
+        ttk.Button(image_restore_actions,text='Same-character scene…',command=lambda:self._queue_image_to_image(inpaint=True,character=True)).pack(side='left',padx=3)
         self.refine_image=tk.BooleanVar(value=True)
         tk.Checkbutton(media_tab,text='Ask local coding model to refine image description before generation',
                        variable=self.refine_image,bg=BG,fg=TEXT,selectcolor=PANEL,
@@ -1625,10 +1626,10 @@ class DeepThorTDesktop(tk.Tk):
             self._log(f'Pose-guided image job #{ident} queued.');self._refresh_jobs();self.tabs.select(1)
         except Exception as e:messagebox.showerror('Cannot queue pose-guided image',str(e),parent=self)
 
-    def _queue_image_to_image(self,reference=False,inpaint=False,outpaint=False,object_edit=None):
+    def _queue_image_to_image(self,reference=False,inpaint=False,outpaint=False,object_edit=None,character=False):
         if not self.project:
             messagebox.showinfo('Choose project','Select a local project workspace first.',parent=self);return
-        from deepthort_local.image_to_image import review,review_reference,review_mask,review_outpaint,review_removal,review_replacement
+        from deepthort_local.image_to_image import review,review_reference,review_mask,review_outpaint,review_removal,review_replacement,review_character
         try:
             root=Path(self._project_key()).resolve(strict=True)
             selected=filedialog.askopenfilename(parent=self,initialdir=str(root),filetypes=[('PNG image','*.png')])
@@ -1659,7 +1660,10 @@ class DeepThorTDesktop(tk.Tk):
                 ref=Path(picked).absolute().relative_to(root).as_posix()
                 palette=simpledialog.askinteger('Reference palette strength','Palette strength 1–100%:',minvalue=1,maxvalue=100,initialvalue=80,parent=self)
                 if palette is None:return
-            removed_object=None;replacement_object=None
+            removed_object=None;replacement_object=None;character_name=None
+            if character:
+                character_name=simpledialog.askstring('Character reference','Character label. Use black mask pixels for the entire unchanged character; white for the new scene.',parent=self)
+                if not character_name:return
             if object_edit in ('remove','replace'):
                 removed_object=simpledialog.askstring('Selected object','Describe the existing object selected by the mask:',parent=self)
                 if not removed_object:return
@@ -1673,7 +1677,8 @@ class DeepThorTDesktop(tk.Tk):
             if strength is None:return
             target=f'janus-img2img-{uuid.uuid4().hex[:12]}.png'
             seed=secrets.randbelow(2**32)
-            if object_edit=='replace':s=review_replacement(root,source,mask,target,prompt,removed_object,replacement_object,size,15,strength,seed)
+            if character:s=review_character(root,source,mask,target,prompt,character_name,size,15,strength,seed)
+            elif object_edit=='replace':s=review_replacement(root,source,mask,target,prompt,removed_object,replacement_object,size,15,strength,seed)
             elif object_edit=='remove':s=review_removal(root,source,mask,target,prompt,removed_object,size,15,strength,seed)
             elif outpaint:s=review_outpaint(root,source,target,prompt,size,offset_x,offset_y,15,strength,seed)
             elif inpaint:s=review_mask(root,source,mask,target,prompt,size,15,strength,seed)
@@ -1683,6 +1688,7 @@ class DeepThorTDesktop(tk.Tk):
                 f"Source: {source}\nOutput: {target}\nPrompt: {prompt}\n{size} × {size}; 15 steps; strength {strength}%; seed {s['seed']}\n"
                 + (f'Reference: {ref}; palette strength {palette}% (palette guidance only).\n' if reference else '')
                 + (f'Mask: {mask}; only white pixels will be replaced.\n' if inpaint else '')
+                + (f'Character: {character_name}; exact protected pixels retained, same pose and placement only.\n' if character else '')
                 + (f'Object to remove: {removed_object}; visual success requires review.\n' if object_edit=='remove' else '')
                 + (f'Replace: {removed_object} with {replacement_object}; visual success requires review.\n' if object_edit=='replace' else '')
                 + (f'Expand canvas; original image at ({offset_x}, {offset_y}), original pixels retained.\n' if outpaint else '')

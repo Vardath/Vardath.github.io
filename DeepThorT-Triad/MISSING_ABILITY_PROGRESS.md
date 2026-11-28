@@ -267,7 +267,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 255 | 218 | Autonomous self-development | Extended partial: recurring-fault investigation may autonomously apply a host-defined restricted expression interpreter and fixed malformed/valid row oracle to an independently reviewed memory eligibility predicate; durable pass/fail/unsupported receipt. Pass 256 CI pending; broader isolated runtime testing, validated repair integration and native acceptance outstanding. |
 | 256 | 209 | Complete application rollback and restoration | Extended partial: explicit reviewed rollback of exact installed V71 diagnostic source, bound to original package, ledger, live source and verified baseline; pre-write receipt and retained candidate. Pass 257 CI pending. Whole-application version/state/runtime restoration and native acceptance outstanding. |
 | 257 | 332 | Network permission controls | Extended partial: persistent owner-reviewed shared pinned HTTPS restriction (existing approvals, deny all, exact host allowlist), rechecked before DNS, request and TLS connection. Pass 258 CI pending. Other stacks, subprocesses and OS network isolation remain outside this scope. |
-| 258 | 96 | Consistent character generation across images | Not started in this programme |
+| 258 | 96 | Consistent character generation across images | Partial: reviewed fixed reference character and mask, repeated offline diffusion of surrounding scene with exact protected pixel/position identity; reject stale region and no-op. Pass 259 CI pending. New-pose/viewpoint identity generation and native visual acceptance outstanding. |
 | 259 | 104 | Neural text-to-video generation | Not started in this programme |
 | 260 | 301 | Full cinematic production | Existing partial; completion not started in this programme |
 | 261 | 106 | Video-to-video generation | Not started in this programme |
@@ -1219,3 +1219,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 258 — 28 November 2026
 - Add durable owner-controlled restrictions for existing shared pinned HTTPS transport; exact hostname allowlist, blocked, or original reviewed behaviour. Recheck before DNS, each HTTP request and connection; malformed policy fails closed. Does not grant access, weaken approval or affect local inference. Desktop owner confirmation and three regression scenarios. Other HTTP libraries, external tools, in-flight transmissions and OS firewall/sandbox remain outside scope. Next rank 258 / ID 96 consistent character generation across images. No installer.
+
+
+## Pass 259 — 28 November 2026
+- Extend existing offline masked image generation with reusable character reference identity across distinct generated scene variants. Bind exact character label, source, mask and position/pixel digest; preserve protected pixels exactly, reject no-op and tiny regions; use existing local diffusion backend, not a new model. Desktop action and three fixtures with scripted image backend. No face recognition, independent character identity inference, new pose, viewpoint or native quality claim. Next rank 259 / ID 104 neural text-to-video generation. No installer.

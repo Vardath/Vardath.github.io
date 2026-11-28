@@ -1,4 +1,4 @@
-import tempfile,threading,unittest
+import tempfile,threading,unittest,time
 from pathlib import Path
 from deepthort_local.conversation_workflow import ConversationStore
 from deepthort_local.project_queue import QueuePolicy
@@ -33,10 +33,30 @@ class ParallelTests(unittest.TestCase):
                     barrier.wait()
                     return '{"kind":"advice","finding":"Evidence needed","guidance":"Review tests"}'
             errors=[]
-            results=m.run(path,Client,('janus','sentinel'),lambda:False,health,7,p.snapshot,on_error=lambda e:errors.append(repr(e)))
+            results=m.run(path,Client,('janus','sentinel'),lambda:False,health,7,p.snapshot,on_error=errors.append)
             self.assertEqual(errors,[])
-            self.assertEqual({r['role'] for r in results},{'janus','sentinel'})
+            self.assertEqual({r['role'] for r in results},{'janus','sentinel'},repr(errors))
             self.assertEqual(store.get(first)['state'],'pending');self.assertEqual(store.get(second)['state'],'pending')
+    def test_short_competing_transaction_does_not_discard_advice(self):
+        with tempfile.TemporaryDirectory() as td:
+            path,store,p,a,b,first,second=self.setup_inputs(td)
+            acquired=threading.Event();errors=[]
+            def lock():
+                from contextlib import closing
+                with closing(m.q.connect(path)) as db,db:
+                    db.execute('BEGIN IMMEDIATE');acquired.set();time.sleep(.25)
+            thread=threading.Thread(target=lock)
+            thread.start()
+            try:
+                self.assertTrue(acquired.wait(2))
+                class Client:
+                    def chat_as(self,*args,**kwargs):
+                        return '{"kind":"advice","finding":"Finding","guidance":"Advice"}'
+                results=m.run(path,Client,('janus','sentinel'),lambda:False,health,7,p.snapshot,on_error=errors.append)
+                self.assertEqual({x['role'] for x in results},{'janus','sentinel'},repr(errors))
+            finally:thread.join(3)
+            self.assertEqual(store.get(first)['state'],'pending')
+            self.assertEqual(store.get(second)['state'],'pending')
     def test_nested_workspaces_and_late_hold(self):
         with tempfile.TemporaryDirectory() as td:
             path,store,p,a,b,first,second=self.setup_inputs(td)
