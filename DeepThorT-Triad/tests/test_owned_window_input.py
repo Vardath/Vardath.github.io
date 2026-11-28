@@ -55,3 +55,30 @@ class GuiOperationTests(unittest.TestCase):
             self.assertTrue(b.set_text(parent,os.getpid(),101,'hello',still_owned=lambda pid:pid==os.getpid()))
             with self.assertRaises(ValueError):b.set_text(parent,os.getpid(),102,'x',still_owned=lambda pid:True)
             with self.assertRaises(ValueError):b.set_text(parent,os.getpid(),101,'x',still_owned=lambda pid:False)
+
+class BackgroundDesktopTests(unittest.TestCase):
+    def test_expected_title_not_equivalent_to_task_success(self):
+        from deepthort_local.background_desktop import result_for,checked
+        s={'executable':'app.exe','seconds':15,'expected_window_title':'Ready'}
+        observed={'status':'window_observed','windows':[{'title':'Ready','hung':False}],
+                  'shared_root_cap_verified':True,'separate_desktop':True,'foreground_switched':False}
+        r=result_for(s,observed)
+        self.assertTrue(r['expected_window_observed'])
+        self.assertFalse(r['functional_success_verified'])
+        self.assertFalse(result_for(s,dict(observed,status='preempted'))['expected_window_observed'])
+        self.assertFalse(result_for(s,dict(observed,windows=[{'title':'Other','hung':False}]))['expected_window_observed'])
+        with self.assertRaises(ValueError):result_for(s,dict(observed,shared_root_cap_verified=False))
+        with self.assertRaises(ValueError):checked(dict(s,seconds=46))
+    def test_review_guards_exact_project_binary(self):
+        import tempfile
+        import json
+        from pathlib import Path
+        from deepthort_local.background_desktop import review,validate
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve()
+            (root/'app.exe').write_bytes(b'fixture')
+            (root/'spec.json').write_text(json.dumps({'executable':'app.exe','seconds':15,'expected_window_title':'Ready'}))
+            plan,_=review(root,'spec.json','result.json')
+            self.assertEqual(validate(root,plan)[2].run_seconds,15)
+            (root/'app.exe').write_bytes(b'changed')
+            with self.assertRaises(ValueError):validate(root,plan)

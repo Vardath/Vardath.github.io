@@ -3,7 +3,7 @@
 This is NOT a VM, security sandbox, automated gameplay test or graphics proof.
 An explicitly user-approved project-local .exe is started on a separate desktop
 (not switched into view). DeepThorT NEVER sends input to either desktop.
-The child inherits the existing <=20% CPU/committed-memory Windows Job Object;
+The child must inherit the verified current shared Windows Job Object;
 a nested kill-on-close job prevents a launched process tree lingering after test.
 A foreign GUI engine can fail to render on a non-input desktop; that failure is
 reported, not disguised as a successful visual test. No third-party installs.
@@ -24,6 +24,7 @@ import threading
 import time
 
 from .quiet_playtest import is_capped_windows_process, QuietPressureGuard, WindowsPressureSampler
+from .source_security import linked
 
 MAX_RUN_SECONDS = 45
 MAX_WINDOWS = 12
@@ -54,7 +55,7 @@ def plan_isolated_gui(project: str | Path, executable: str | Path, *, seconds: i
     try:
         root = Path(project)
         target = Path(executable)
-        if root.is_symlink() or target.is_symlink() or not root.is_dir() or not target.is_file():
+        if not root.is_dir() or not target.is_file() or any(linked(x) for x in (target,*target.parents,root,*root.parents) if x.exists()):
             raise IsolatedGuiError('Use a real project folder and existing executable (not symlinks)')
         root = root.resolve(strict=True)
         target = target.resolve(strict=True)
@@ -64,7 +65,7 @@ def plan_isolated_gui(project: str | Path, executable: str | Path, *, seconds: i
         current = root
         for component in rel.parts:
             current = current / component
-            if current.is_symlink():
+            if linked(current):
                 raise IsolatedGuiError('Symlinks in executable path are not accepted')
         if target.stat().st_size < 1 or target.stat().st_size > 512 * 1024 * 1024:
             raise IsolatedGuiError('Executable size outside safe inspection bounds')
@@ -243,6 +244,8 @@ class NativeWin32Desktop:
             foreground_game=None, pressure=None) -> dict:
         if not is_capped_windows_process():
             raise IsolatedGuiError('Capped DeepThorT.exe is required; refusing uncapped GUI launch')
+        from .triad_job import verify_root_cap
+        verify_root_cap()
         assert_plan_unchanged(plan)
         if stop.is_set():
             return {'status': 'cancelled', 'detail': 'Stopped before launch', 'windows': []}
@@ -296,8 +299,13 @@ class NativeWin32Desktop:
             in_job = self._fn(self.k, 'IsProcessInJob',
                               [h, h, ctypes.POINTER(wintypes.BOOL)], wintypes.BOOL)
             member = wintypes.BOOL()
-            self._check(in_job(proc.hProcess, None, ctypes.byref(member)), 'IsProcessInJob')
-            self._check(member.value, 'Child has no resource-capped inherited job')
+            root_job=self._fn(self.k,'OpenJobObjectW',[d,wintypes.BOOL,wintypes.LPCWSTR],h)(0x0004,False,os.environ['DEEPTHORT_TRIAD_ROOT_JOB'])
+            self._check(root_job,'Open exact inherited shared job')
+            try:
+                for scope in (root_job,testjob):
+                    self._check(in_job(proc.hProcess,scope,ctypes.byref(member)),'IsProcessInJob exact scope')
+                    self._check(member.value,'Child outside approved job scope')
+            finally:close(root_job)
             resume = self._fn(self.k, 'ResumeThread', [h], d)
             self._check(resume(proc.hThread) != 0xffffffff, 'ResumeThread')
             wait = self._fn(self.k, 'WaitForSingleObject', [h, d], d)
@@ -341,7 +349,8 @@ class NativeWin32Desktop:
             if status == 'window_observed' and not reason:
                 reason = 'Visible window metadata recorded; no visual rendering or input acceptance proven'
             return {'status': status, 'detail': reason, 'pid': pid,
-                    'exit_code': code, 'windows': windows}
+                    'exit_code': code, 'windows': windows,'shared_root_cap_verified':True,
+                    'separate_desktop':True,'foreground_switched':False}
         finally:
             # Terminate even when nested-job assignment failed while suspended.
             # Closing the nested job additionally kills any child descendants.
@@ -350,6 +359,7 @@ class NativeWin32Desktop:
                     terminate = self._fn(self.k, 'TerminateProcess',
                                          [h, wintypes.UINT], wintypes.BOOL)
                     terminate(proc.hProcess, 1)
+                    self._fn(self.k,'WaitForSingleObject',[h,d],d)(proc.hProcess,15000)
                 except (OSError, AttributeError):
                     pass
             if testjob:

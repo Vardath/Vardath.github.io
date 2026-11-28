@@ -218,7 +218,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 206 | 28 | Mouse control | Partial: bounded native Windows client-coordinate move and click messages to a hidden owned window, exact event oracle, no global input. Pass 207 CI pending. External application input and physical pointer control outstanding. |
 | 207 | 29 | Keyboard control | Partial: bounded native literal ASCII and named key down/up messages to hidden owned window, exact sequence readback and no global input. Pass 208 CI pending. External applications, Unicode and physical key input outstanding. |
 | 208 | 27 | Graphical application operation | Partial: reviewed project executable launched in capped cleanup scope, exact unique window and direct non-password standard Edit control, native literal set/readback. Pass 209 CI pending. External native acceptance and broader application controls outstanding. |
-| 209 | 237 | Background desktop execution | Existing partial; completion not started in this programme |
+| 209 | 237 | Background desktop execution | Partial: hardened existing separate desktop runner with exact named root/cleanup membership and linked-path refusal; reviewed queue-compatible launch and expected window observation receipt. Pass 210 CI pending. Native external background acceptance and broader operation outstanding. |
 | 210 | 4 | Live screen interpretation | Not started in this programme |
 | 211 | 60 | Game controller input simulation | Not started in this programme |
 | 212 | 58 | Visual gameplay testing | Not started in this programme |
@@ -1066,3 +1066,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 209 — 27 November 2026
 - Add reviewed operation of a freshly launched trusted project executable under the existing Windows cap/cleanup. Exact child PID, unique visible window title/class and direct standard Edit control ID; reject password/read-only controls and verify literal native set/readback. No arbitrary HWND, global input or arbitrary commands. Application may have side effects; not a sandbox. Native own-control regression and exact spec tests; external app acceptance outstanding. Next rank 209 / ID 237 background desktop execution. No installer.
+
+## Pass 210 — 27 November 2026
+- Harden existing isolated desktop runner with exact current shared Windows cap and child membership in named root and nested cleanup job, linked-path refusal and bounded termination wait. Add reviewed queue-compatible background launch for exact project binary, bounded duration and expected window-title observation; no foreground switch or input. Preserve existing separate desktop UI and audit. Receipt and guard fixtures; native external background execution still requires acceptance. Next rank 210 / ID 4 live screen interpretation. No installer.
