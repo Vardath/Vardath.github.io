@@ -275,3 +275,33 @@ class IntegratedInterfaceTests(unittest.TestCase):
             with patch.object(app,'_project_key',return_value=project+'-different'):
                 callback('first')
             reopen.assert_called_once_with('second')
+
+
+    def test_secondary_event_picker_cancel_and_exact_selection(self):
+        import tkinter as tk
+        from tkinter import ttk
+        from deepthort_local.event_trigger_dialog import choose_future_event
+        parent=tk.Toplevel(self.app)
+        self.addCleanup(lambda:parent.destroy() if parent.winfo_exists() else None)
+        options={'first':({'label':'Long recorded label '*200},'changed'),
+                 'second':({'label':'Other exact monitor'},'changed')}
+        def click(button_text,selection=None):
+            editor=next(w for w in parent.winfo_children() if isinstance(w,tk.Toplevel))
+            combo=next(w for w in editor.winfo_children() if isinstance(w,ttk.Combobox))
+            if selection is not None:combo.set(selection)
+            for frame in editor.winfo_children():
+                for button in frame.winfo_children():
+                    if isinstance(button,ttk.Button) and button.cget('text')==button_text:
+                        button.invoke();return
+            self.fail('Secondary picker control not found')
+        parent.after(50,lambda:click('Cancel'))
+        self.assertIsNone(choose_future_event(parent,options))
+        parent.after(50,lambda:click('Continue','second'))
+        self.assertEqual(choose_future_event(parent,options),'second')
+        parent.grab_release()
+
+    def test_screen_review_thumbnail_reserves_controls(self):
+        from deepthort_local.screen_capture_dialog import capture_preview_bounds
+        self.assertEqual(capture_preview_bounds(860,600),(800,440))
+        self.assertEqual(capture_preview_bounds(550,400),(510,240))
+        self.assertEqual(capture_preview_bounds(20,20),(1,1))

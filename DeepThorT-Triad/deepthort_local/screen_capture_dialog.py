@@ -54,10 +54,12 @@ def show(app):
         if not permitted():return
         from PIL import Image,ImageTk
         preview=tk.Toplevel(app);preview.title('Review captured region');preview.transient(app)
+        w,h=fit_dialog(preview,860,600)
+        preview.bind('<Escape>',lambda event:preview.destroy())
+        ttk.Label(preview,text='Local snapshot only. Save a new project PNG, or discard.',wraplength=max(100,w-24)).pack(pady=4)
         with Image.open(io.BytesIO(payload)) as image:
-            image.thumbnail((800,440));photo=ImageTk.PhotoImage(image.copy(),master=preview)
-        label=ttk.Label(preview,image=photo);label.image=photo;label.pack(padx=10,pady=8)
-        ttk.Label(preview,text='Local snapshot only. Save a new project PNG, or discard.').pack(pady=4)
+            image.thumbnail(capture_preview_bounds(w,h));photo=ImageTk.PhotoImage(image.copy(),master=preview)
+        label=ttk.Label(preview,image=photo);label.image=photo;label.pack(fill='both',expand=True,padx=10,pady=8)
         def publish():
             if not permitted():preview.destroy();return
             relative=simpledialog.askstring('Save screenshot','New project-relative PNG path (no overwrite):',initialvalue='screen-snapshot.png',parent=preview)
@@ -70,9 +72,14 @@ def show(app):
             if permitted() and messagebox.askyesno('Interpret saved screenshot',
                 'Queue this exact saved snapshot for the existing local offline vision model? Its caption is not verified and will appear in the job history.',parent=app) and permitted():
                 app._queue_special('vision',prompt_for(r['sha256']),[str(Path(project).resolve()/relative)])
-        buttons=ttk.Frame(preview);buttons.pack(pady=8)
+        buttons=ttk.Frame(preview);buttons.pack(pady=8,before=label)
         ttk.Button(buttons,text='Save reviewed screenshot…',command=publish).pack(side='left',padx=5)
         ttk.Button(buttons,text='Discard',command=preview.destroy).pack(side='left',padx=5)
         preview.grab_set();app.wait_window(preview)
     dlg.after(3000,take)
     dlg.grab_set();app.wait_window(dlg)
+
+
+def capture_preview_bounds(width,height):
+    """Reserve native review controls; reduce only the display copy, never saved bytes."""
+    return max(1,min(800,width-40)),max(1,min(440,height-160))
