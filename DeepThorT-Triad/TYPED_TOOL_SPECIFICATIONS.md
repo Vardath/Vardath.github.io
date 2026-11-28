@@ -841,3 +841,7 @@ Manage stopped container button. JSON for create: `{"operation":"create","name":
 ## Integrated five-model acceptance (Pass 189)
 
 Run latest test now includes a fixed linked native five-role MIDI task in addition to the previous checks. Recall, amended plan, score contract, rejection of deliberately stale tempo, actual Gemma MIDI generation and Sentinel final verification must all satisfy independent exact oracles. Text worker PIDs and memory policy must remain stable. No arbitrary model code, user project writes or automatic installation; the existing creative task staging and diagnostic receipt are retained. This is a sequential integrated task, not proof of simultaneous five-way inference or broad autonomous production. Native Windows execution is required.
+
+## Autonomous self-evaluation (Pass 190)
+
+Existing JANUS worker evaluates the latest local acceptance report at most once per minute while active and not gaming. Only known probe IDs and enumerated statuses are used; bounded same-test history distinguishes regressions from blocked or inconclusive evidence. Failed/blocked/inconclusive probes generate evidence-keyed recommendations, never executable actions. Cancelled tests are not defects. No raw probe detail or model output is copied. Passing probes are narrow evidence only.

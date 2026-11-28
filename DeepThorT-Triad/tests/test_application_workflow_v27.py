@@ -407,3 +407,51 @@ class ApplicationWorkflowTests(unittest.TestCase):
         manifest=load_test(Path(__file__).resolve().parents[1]/'LATEST_TEST.json')
         self.assertEqual(len(manifest['checks']),24)
         self.assertEqual(manifest['checks'][-1],'five_model_acceptance')
+
+
+    def test_autonomous_self_evaluation_history_and_dedup(self):
+        import tempfile,json
+        from pathlib import Path
+        from deepthort_local.self_evaluation import assess,recommend_once
+        from deepthort_local.latest_acceptance import SCHEMA
+        with tempfile.TemporaryDirectory() as tmp:
+            state=Path(tmp);folder=state/'latest-tests';folder.mkdir()
+            def report(day,status):
+                return {'schema':SCHEMA,'test_id':'fixture','completed_utc':f'2026-11-{day:02d}T00:00:00+00:00',
+                    'outcome':'failed' if status=='failed' else 'blocked',
+                    'results':[{'check':'five_model_acceptance','status':status,'detail':'ignored'},
+                               {'check':'shared_cap','status':'blocked'}]}
+            (folder/'LatestTest-20261125-000000-000001.json').write_text(json.dumps(report(25,'passed')))
+            (folder/'LatestTest-20261126-000000-000001.json').write_text(json.dumps(report(26,'passed')))
+            (folder/'latest.json').write_text(json.dumps(report(27,'failed')))
+            r=assess(state)
+            self.assertEqual(r['comparable_history'],2)
+            self.assertTrue(r['findings'][0]['regression'])
+            self.assertEqual(r['findings'][1]['consecutive_observations'],3)
+            self.assertFalse(r['execution_authorized'])
+            class Store:
+                def __init__(self):self.rows={}
+                def recommend(self,**kw):
+                    key=kw['evidence_key']
+                    if key in self.rows:return False
+                    self.rows[key]=kw;return True
+            store=Store()
+            self.assertEqual(recommend_once(state,store),2)
+            self.assertEqual(recommend_once(state,store),0)
+            self.assertNotIn('ignored',str(store.rows))
+            self.assertIn('not classify as a model defect',str(store.rows))
+
+    def test_autonomous_self_evaluation_refuses_inconsistent_evidence(self):
+        import tempfile,json
+        from pathlib import Path
+        from deepthort_local.self_evaluation import assess
+        from deepthort_local.latest_acceptance import SCHEMA
+        with tempfile.TemporaryDirectory() as tmp:
+            state=Path(tmp);folder=state/'latest-tests';folder.mkdir()
+            data={'schema':SCHEMA,'test_id':'fixture','completed_utc':'2026-11-27T00:00:00+00:00',
+                  'outcome':'passed','results':[{'check':'shared_cap','status':'failed'}]}
+            (folder/'latest.json').write_text(json.dumps(data))
+            with self.assertRaises(ValueError):assess(state)
+            data['outcome']='failed';data['results'].append(data['results'][0])
+            (folder/'latest.json').write_text(json.dumps(data))
+            with self.assertRaises(ValueError):assess(state)

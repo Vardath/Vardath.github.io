@@ -63,6 +63,7 @@ class JanusWorker:
         self._counsel=LocalCounsel(Path(state_db).parent/'janus-counsel.sqlite3')
         self._counsel_thread=None
         self._last_counsel_attempt=time.monotonic()-300.0
+        self._last_self_evaluation=time.monotonic()-60.0
 
     def observe_once(self) -> dict:
         # Full deterministic 11x7 society cycles continue while the ONNX
@@ -70,6 +71,12 @@ class JanusWorker:
         gaming=self.game_gate.gaming()
         state=self.store.tick(self.jobs_db,gaming=gaming)
         if not gaming and not self._stopping and not state.get('paused'):
+            if time.monotonic()-self._last_self_evaluation>=60:
+                self._last_self_evaluation=time.monotonic()
+                from deepthort_local.self_evaluation import recommend_once
+                try:recommend_once(self.store.path.parent,self.store)
+                except (OSError,ValueError,TypeError,KeyError) as exc:
+                    record(self.store.path.parent,'janus_worker','self_evaluation_deferred',error_type=type(exc).__name__)
             if not self._consider_worker_reports():
                 if not self._consider_live_work():self._consider_local_alternatives(state)
         return state
