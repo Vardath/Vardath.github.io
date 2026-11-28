@@ -37,10 +37,12 @@ def checked(s):
         raise ValueError('Choose guidance 1–15')
     return s
 
-def inventory():
-    base=ROOT/'models';folder=base/'shap-e-text'
+def inventory(profile='text'):
+    if profile not in ('text','image'):raise ValueError('Unknown mesh model profile')
+    expected_class,encoder=('ShapEPipeline','text_encoder') if profile=='text' else ('ShapEImg2ImgPipeline','image_encoder')
+    base=ROOT/'models';folder=base/('shap-e-'+profile)
     if linked(base) or linked(folder) or not folder.is_dir():
-        raise ValueError('Separately provision trusted local Shap-E text safetensors model')
+        raise ValueError('Separately provision trusted local Shap-E safetensors model')
     files={};total=0;entries=0
     for directory,dirs,names in os.walk(folder,followlinks=False):
         here=Path(directory)
@@ -65,9 +67,9 @@ def inventory():
     if 'model_index.json' not in files:
         raise ValueError('Missing Shap-E model index')
     index=json.loads(guard.read_bound(folder/'model_index.json',8*1024**2).decode('utf8'))
-    if not isinstance(index,dict) or index.get('_class_name')!='ShapEPipeline':
-        raise ValueError('Expected native ShapEPipeline configuration')
-    for component in ('prior','text_encoder','shap_e_renderer'):
+    if not isinstance(index,dict) or index.get('_class_name')!=expected_class:
+        raise ValueError('Expected reviewed native Shap-E pipeline configuration')
+    for component in ('prior',encoder,'shap_e_renderer'):
         if not any(k.startswith(component+'/') and k.endswith('.safetensors') for k in files):
             raise ValueError('Missing component safetensors: '+component)
     return {'path':str(folder),'inventory_sha':canonical_sha(files),'bytes':total}
