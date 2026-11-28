@@ -977,3 +977,7 @@ Test Unreal editor accepts `{"project_name":"JanusTest"}`. Set `UNREAL_EDITOR_CM
 ## Reviewed Unity integration (Pass 217)
 
 Test Unity editor accepts `{"editor_version":"6000.0.42f1"}` (use exact installed stable Unity version, not an example unless installed). Set `UNITY_EDITOR_EXE` to trusted licensed Unity.exe. Fixed batch-mode C# creates, saves and reopens one scene in a temporary project and verifies root name and transform, project identity and engine version. Hashes of scene and log retained in JSON receipt. No external project, installation, licence automation, gameplay or build. Unity may write host caches or use networking. Native acceptance pending.
+
+## Reviewed game data modification (Pass 218)
+
+Prepare game data mod accepts `{"asset":"data/ships.json","mod_id":"ship_balance","edits":[{"path":["ships",0,"speed"],"expected":10,"value":20}]}`. Up to 32 existing scalar edits, same-type bounded integers, Booleans or strings only. Exact source and literal keys/array indices, no wildcard or executable patch. The new ZIP contains `override/<asset>` and `janus-mod-receipt.json`, with original/modified digests and inverse semantic replay verification. Original asset remains unchanged. This is a generic staging format, not an installable game-specific loader or compatibility certification.
