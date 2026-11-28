@@ -8618,7 +8618,7 @@ class DeepThorTDesktop(tk.Tk):
             messagebox.showwarning('Worktree review unavailable',error,parent=self);return
         rows=review['worktrees']['rows']
         display='Registered worktrees (1 = primary):\n'+'\n'.join(f"{i}. {r['path']} | {r['ref'] or 'detached'}" for i,r in enumerate(rows,1))
-        operation=simpledialog.askstring('Manage worktrees',display+'\n\nEnter ADD or REMOVE, or cancel to close inventory.',parent=self)
+        operation=simpledialog.askstring('Manage worktrees',display+'\n\nEnter ADD, BATCH or REMOVE, or cancel to close inventory.',parent=self)
         if not operation:return
         operation=operation.strip().lower()
         try:
@@ -8633,6 +8633,15 @@ class DeepThorTDesktop(tk.Tk):
                 folder=simpledialog.askstring('New worktree directory','Name of new directory inside '+parent,parent=self)
                 if not folder:return
                 args={'branch':name,'parent':parent,'name':folder}
+            elif operation=='batch':
+                parent=filedialog.askdirectory(title='Choose common existing parent for separate checkouts',parent=self)
+                if not parent:return
+                available=[r['ref'][11:] for r in review['branches'] if r['ref'] not in {w['ref'] for w in rows}]
+                raw=simpledialog.askstring('Multiple work environments','Choose 2–3 unused branches and new directory names as JSON object list with branch and name. Available: '+', '.join(available),parent=self)
+                if not raw:return
+                entries=json.loads(raw)
+                if not isinstance(entries,list) or not 2<=len(entries)<=3 or any(not isinstance(x,dict) or set(x)!={'branch','name'} for x in entries):raise ValueError('Use two or three branch/name objects')
+                args={'assignments':[dict(x,parent=parent) for x in entries]}
             elif operation=='remove':
                 if len(rows)<2:raise ValueError('No linked worktree to remove')
                 i=simpledialog.askinteger('Remove linked worktree',display+'\n\nSelect a linked worktree number:',minvalue=2,maxvalue=len(rows),parent=self)
@@ -8643,18 +8652,23 @@ class DeepThorTDesktop(tk.Tk):
                 if not self._branch_switch_allowed(str(target)):
                     raise ValueError('Finish or cancel incomplete project jobs and roadmaps in the target first')
                 args={'path':str(target)}
-            else:raise ValueError('Choose ADD or REMOVE')
+            else:raise ValueError('Choose ADD, BATCH or REMOVE')
             if (self._quitting or not self.project or str(self.project)!=project or self.disk_gate.gaming()
                     or self.active_job is not None or self.active_conversation is not None or self._reviewed_git_pending()
                     or self._project_midi_pending or (self._creative_lane_thread and self._creative_lane_thread.is_alive())
                     or any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process))):
                 raise ValueError('Project or resource state changed; review again')
-            from deepthort_local.git_commit import worktree_plan
+            from deepthort_local.git_commit import worktree_plan,worktree_batch_plan
             from deepthort_local.action_guards import snapshot_file
-            plan=worktree_plan(executable,project,review,operation,**args)
-            target=plan['target']
-            path=target['destination']['path'] if operation=='add' else target['path']
-            detail=operation.upper()+' '+path+'\nBranch: '+target['ref']+'\nCommit: '+target['head']
+            if operation=='batch':
+                plan=worktree_batch_plan(executable,project,review,**args)
+                detail='Create separate work environments:\n'+'\n'.join(t['destination']['path']+' | '+t['ref']+' | '+t['head'] for t in plan['targets'])+'\nA partial failure stops remaining creations; inspect inventory before retry.'
+                if len(json.dumps(plan,ensure_ascii=True))>=4096:raise ValueError('Batch approval exceeds queue argument bound; shorten paths')
+            else:
+                plan=worktree_plan(executable,project,review,operation,**args)
+                target=plan['target']
+                path=target['destination']['path'] if operation=='add' else target['path']
+                detail=operation.upper()+' '+path+'\nBranch: '+target['ref']+'\nCommit: '+target['head']
             if operation=='remove':detail+='\n\nRemove only the clean linked checkout. Keep the branch and its commits.'
             else:detail+='\n\nCreate a separate checkout in a new directory. Git filters can run with your rights; only approve a trusted repo.'
             if not messagebox.askyesno('Approve local worktree operation',detail+'\n\nNo force, push or security sandbox.',parent=self):return

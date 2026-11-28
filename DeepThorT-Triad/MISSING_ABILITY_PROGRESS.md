@@ -230,7 +230,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 218 | 42 | Integrated development environment (IDE) integration | Partial: reviewed VS Code native CLI identity probe, existing real Python LSP diagnostics and portable workspace handoff ZIP. Pass 219 CI pending; native CLI, extension and interactive IDE integration outstanding. |
 | 219 | 51 | Continuous integration and deployment (CI/CD) management | Partial: reviewed GitHub Actions exact run/attempt/job observation and fail-closed required-job green gate. Pass 220 CI pending; live network, rerun and deployment control outstanding. |
 | 220 | 52 | Automated software deployment | Partial: reviewed exact artifact hash, bounded release ZIP audit and atomic non-overwriting local versioned publication. Pass 221 CI pending; remote target, installation and runtime/CI release acceptance outstanding. |
-| 221 | 220 | Multiple isolated work environments | Existing partial; completion not started in this programme |
+| 221 | 220 | Multiple isolated work environments | Partial: reviewed batch creation of 2–3 distinct unused Git branch worktrees, exact pre/post inventory checks and stop on partial failure. Pass 222 CI pending; automatic project assignment and OS isolation outstanding. |
 | 222 | 238 | Operating-system-level execution isolation (existing process-level restrictions; not a security sandbox) | Existing partial; completion not started in this programme |
 | 223 | 335 | Restricted execution environments | Existing partial; completion not started in this programme |
 | 224 | 63 | Automated game distribution | Not started in this programme |
@@ -1105,3 +1105,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 221 — 28 November 2026
 - Add reviewed immutable local release deployment to existing project-local release directory, exact versioned filename and artifact digest, archive safety/CRC bounds and atomic non-overwriting publication of original bytes. Preserve previous releases; no installation, execution, remote deployment or CI claim. Two regressions on both CI hosts. Next rank 221 / ID 220 multiple isolated work environments. No installer.
+
+## Pass 222 — 28 November 2026
+- Extend existing reviewed Git worktree management with a bounded batch of two or three nonoverlapping local checkouts for independent work environments. Exact branch heads and destinations, complete inventory recheck before every creation, stop on partial failure without automatic deletion or retry. Native Git fixtures on both CI hosts. Shared repository metadata; not an OS sandbox. Next rank 222 / ID 238 OS-level execution isolation. No installer.
