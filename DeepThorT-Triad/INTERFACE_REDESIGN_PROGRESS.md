@@ -11,3 +11,6 @@ Register: [INTERFACE_REDESIGN_REGISTER.md](INTERFACE_REDESIGN_REGISTER.md). Base
 
 ## Pass 001 — 28 November 2026
 Inspected desktop_app.py main UI construction (eight fixed notebook tabs, project sidebar, global controls, and inline dialogs), tooltips, current layout regression, and production row structure. Files & Images has over 40 action rows; normal-height windows cannot accommodate this layout. Added UI-only lattice_ui.py and integrated it without changing tab indices, tool callback bindings, approval rules, model/runtime or persisted state. Added GUI regression for searchable tool access and empty/restored queries. Candidate CI pending; no native Windows visual acceptance or installer. Next: chat-first shell/navigation, compact global controls and queue/workspace visibility. Complete per-dialog inventory and high-DPI inspection remain outstanding.
+
+### Pass 001 CI registration
+The inherited workflow did not run test_layout_v12.py. Add an isolated native Tk shelf test to both CI jobs (Xvfb on Linux, Tk on Windows) to verify search, restoration, exact callback identity, horizontal scrolling and the mark without launching inference. Full desktop integration regression is retained for native acceptance; both candidate and predecessor CI remain pending until checked.
