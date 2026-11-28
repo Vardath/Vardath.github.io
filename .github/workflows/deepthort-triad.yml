@@ -344,7 +344,9 @@ jobs:
       - run: python -m unittest discover -s tests -p test_os_sandbox_probe_ability.py -v
   native-windows:
     runs-on: windows-latest
-    timeout-minutes: 15
+    # Full regression matrix has exceeded the previous 15-minute runner budget.
+    # Keep every check and allow normal variability in hosted Windows execution.
+    timeout-minutes: 30
     defaults:
       run:
         working-directory: DeepThorT-Triad
