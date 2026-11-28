@@ -798,6 +798,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(api_actions,text='Generate installer project…',command=lambda:self._review_typed_tool('installer_project','.iss','Development: reviewed installer source')).pack(side='left',padx=3)
         ttk.Button(api_actions,text='Inspect GitHub PR…',command=self._show_github_pr_review).pack(side='left',padx=3)
         git_extra_actions=ttk.Frame(media_tab);git_extra_actions.pack(fill='x',pady=2)
+        ttk.Button(git_extra_actions,text='Prepare game distribution…',command=lambda:self._review_typed_tool('game_distribution','.zip','Development: reviewed game distribution')).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Deploy local release…',command=lambda:self._review_typed_tool('software_deployment','.zip','Development: reviewed local release deployment')).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Inspect GitHub CI…',command=self._show_github_ci).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Propose clean merge…',command=lambda:self._review_typed_tool('merge_conflict','.txt','Git: reviewed conflict proposal')).pack(side='left',padx=3)
@@ -1897,6 +1898,7 @@ class DeepThorTDesktop(tk.Tk):
                  'controller_input':('.json','Development: reviewed controller fixture'),
                  'restricted_environment':('.json','Development: reviewed restricted environment'),
                  'execution_isolation':('.json','Development: reviewed process isolation'),
+                 'game_distribution':('.zip','Development: reviewed game distribution'),
                  'software_deployment':('.zip','Development: reviewed local release deployment'),
                  'ide_integration':('.zip','Development: reviewed IDE handoff'),
                  'game_modification':('.zip','Development: reviewed game data override'),
