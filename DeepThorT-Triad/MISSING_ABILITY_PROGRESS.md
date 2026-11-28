@@ -192,7 +192,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 180 | 255 | X4 asset and XML processing | Partial: reviewed exact extracted macro/component XML numeric attribute diff generation, unique literal selectors, expected-value guards and independent local replay. Pass 181 CI pending. Combined DLC/mod schema, arbitrary diff operations and native game acceptance outstanding. |
 | 181 | 257 | Game asset generation | Partial: reviewed explicit pixel-art sprite/tileset generation with transparent RGBA atlas, named frame rectangles, pivots, animation sequences and editable source archive. Pass 182 CI pending. Semantic/neural asset generation and native engine import outstanding. |
 | 182 | 258 | Level generation | Partial: reviewed seeded grid level generation, exact obstacle and collectible counts, connected walkable cells, minimum goal distance and compatible editable Godot game specification. Pass 183 CI pending. Other level types and native playtesting outstanding. |
-| 183 | 259 | Procedural world generation | Existing partial; completion not started in this programme |
+| 183 | 259 | Procedural world generation | Partial: reviewed seeded adjacent-region graph with exact extra links, deterministic biome labels and independent connected playable-level specifications, verified region/objective reachability. Pass 184 CI pending. Native world travel, terrain and engine integration outstanding. |
 | 184 | 260 | NPC behaviour generation | Existing partial; completion not started in this programme |
 | 185 | 261 | Collision testing | Existing partial; completion not started in this programme |
 | 186 | 262 | Android game compilation | Existing partial; completion not started in this programme |
@@ -985,3 +985,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 183 — 27 November 2026
 - Implement reviewed deterministic connected-grid generation, with seed, exact wall percentage (rounded down), collectible count and minimum goal distance. Verify all walkable cells and objectives remain reachable and emit the existing game generator's input schema. Tests cover determinism, distinct seeds, connectivity, bounds and source changes. Native playtesting and non-grid level generation outstanding. Next rank 183 / ID 259 procedural world generation. No installer.
+
+## Pass 184 — 27 November 2026
+- Add reviewed bounded procedural region world generation using the existing connected-level generator. Exact adjacent region spanning graph with optional additional links, deterministic region seeds, biome metadata and embedded editable level specifications. Verify graph connectivity and link counts, preserve original source, reject stale inputs/overwrite. Two regression cases. No native world travel, biome rendering or engine integration claim. Next rank 184 / ID 260 NPC behaviour generation. No installer.

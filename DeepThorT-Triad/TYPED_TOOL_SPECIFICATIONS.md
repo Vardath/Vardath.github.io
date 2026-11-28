@@ -817,3 +817,7 @@ Generate sprite atlas button. JSON keys `size` (8/16/24/32), `palette` (1–16 a
 ## Reviewed connected level generation (Pass 183)
 
 Generate connected level button. JSON: `{"title":"Crystal Grid","width":10,"height":8,"cell_size":24,"seed":17,"wall_percent":35,"collectible_count":5,"minimum_goal_distance":16}`. Grid and viewport bounds match the game generator. Start is the top-left cell, goal bottom-right. Seed selects obstacle removal and collectibles deterministically; all remaining open cells must remain connected, exact wall count is rounded down, all objectives reachable. Output JSON is directly usable by Generate grid game. Refuses unsatisfied constraints; does not claim native playtesting.
+
+## Reviewed procedural region world (Pass 184)
+
+Generate region world button. JSON: `{"title":"Crystal World","columns":3,"rows":2,"seed":17,"region_width":8,"region_height":6,"cell_size":24,"wall_percent":25,"collectible_count":3,"extra_links":1}`. The 2–4 by 2–4 region grid has a seeded adjacent spanning tree plus 0 to (columns−1)*(rows−1) extra links. Each region includes a deterministic biome label, distinct seed and checked connected-level specification usable by Generate grid game if extracted. JSON is editable and verified; no integrated world travel or terrain rendering is implied.

@@ -553,6 +553,7 @@ class DeepThorTDesktop(tk.Tk):
                    command=self._run_quiet_scene).pack(side='left',padx=7)
         ttk.Button(restorebar,text='Generate X4 XML diff…',command=lambda:self._review_typed_tool('x4_xml_processing','.xml','Development: reviewed X4 XML diff')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Generate sprite atlas…',command=lambda:self._review_typed_tool('game_asset_generation','.zip','Development: reviewed sprite atlas')).pack(side='left',padx=3)
+        ttk.Button(restorebar,text='Generate region world…',command=lambda:self._review_typed_tool('world_generation','.json','Development: reviewed region world')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Generate connected level…',command=lambda:self._review_typed_tool('level_generation','.json','Development: reviewed connected level')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Generate grid game…',command=lambda:self._review_typed_tool('game_project_generation','.zip','Development: reviewed game project')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Android emulator smoke…',command=lambda:self._review_typed_tool('android_emulator','.json','Development: reviewed Android emulator smoke')).pack(side='left',padx=3)
@@ -1831,6 +1832,7 @@ class DeepThorTDesktop(tk.Tk):
                  'game_project_generation':('.zip','Development: reviewed game project'),
                  'game_asset_generation':('.zip','Development: reviewed sprite atlas'),
                  'level_generation':('.json','Development: reviewed connected level'),
+                 'world_generation':('.json','Development: reviewed region world'),
                  'x4_xml_processing':('.xml','Development: reviewed X4 XML diff'),
                  'merge_conflict':('.txt','Git: reviewed conflict proposal'),
                  'remote_mcp':('.json','Integration: reviewed remote MCP'),
