@@ -16,7 +16,7 @@ from deepthort_local.disk_gate import require_storage
 SCHEMA='janus-video-trimming-v1'
 MAX_FRAMES=120
 def checked(s):
-    if not isinstance(s,dict) or set(s)!={'clips','fps'} or type(s['fps']) is not int or s['fps'] not in (24,25,30):
+    if not isinstance(s,dict) or set(s) not in ({'clips','fps'},{'clips','fps','transitions'}) or type(s['fps']) is not int or s['fps'] not in (24,25,30):
         raise ValueError('Choose explicit 24, 25 or 30 fps and ordered clips')
     clips=s['clips']
     if not isinstance(clips,list) or not 1<=len(clips)<=4:raise ValueError('Choose 1–4 distinct MP4 clips')
@@ -29,8 +29,45 @@ def checked(s):
             raise ValueError('Invalid frame range or repeated source')
         if 'edit' in c:checked_edit(c['edit'])
         names.add(c['video'].casefold());total+=b-a
-    if total>MAX_FRAMES:raise ValueError('Initial sequence supports at most 120 output frames')
+    if total>MAX_FRAMES:raise ValueError('Initial sequence supports at most 120 selected input frames')
+    checked_transitions(s)
     return s
+
+def checked_transitions(s):
+    clips=s['clips'];transitions=s.get('transitions',[{'kind':'cut','frames':0} for _ in clips[1:]])
+    if not isinstance(transitions,list) or len(transitions)!=len(clips)-1:
+        raise ValueError('Choose one transition per adjacent clip pair')
+    overlaps=[]
+    for item in transitions:
+        if not isinstance(item,dict) or set(item)!={'kind','frames'} or type(item['frames']) is not int:
+            raise ValueError('Invalid transition fields')
+        n=item['frames']
+        if not ((item['kind']=='cut' and n==0) or (item['kind']=='crossfade' and 1<=n<=12)):
+            raise ValueError('Use cut/0 or crossfade/1–12 frames')
+        overlaps.append(n)
+    for i,c in enumerate(clips):
+        before=overlaps[i-1] if i else 0;after=overlaps[i] if i<len(overlaps) else 0
+        if before+after>=c['end_frame']-c['start_frame']:
+            raise ValueError('Each clip must retain at least one non-transition frame')
+    return transitions
+
+def append_transition(selected,edited,size,transition):
+    stride=size[0]*size[1]*3;n=transition['frames']
+    if not n:
+        selected.extend(edited);return
+    if len(selected)<n*stride or len(edited)<n*stride:
+        raise ValueError('Insufficient transition frames')
+    from deepthort_local.texture_pixels import image_module
+    Image=image_module();offset=len(selected)-n*stride
+    for i in range(n):
+        a=offset+i*stride;b=i*stride
+        # Exclude endpoint duplicates; exact expected pixels checked after encoding.
+        with Image.frombytes('RGB',size,bytes(selected[a:a+stride])) as left:
+            with Image.frombytes('RGB',size,edited[b:b+stride]) as right:
+                with Image.blend(left,right,(i+1)/(n+1)) as blend:
+                    selected[a:a+stride]=blend.tobytes()
+    selected.extend(edited[n*stride:])
+
 
 def checked_edit(e):
     if not isinstance(e,dict) or set(e)!={'crop','rotation','flip'}:
@@ -123,7 +160,7 @@ def observe(raws,s,tools,folder,*,render):
     checked(s)
     if len(raws)!=len(s['clips']):raise ValueError('Clip count mismatch')
     verify_guards(list(tools));ff,fp=(g['path'] for g in tools)
-    folder=Path(folder);items=[];dimensions=None;selected=bytearray()
+    folder=Path(folder);items=[];dimensions=None;selected=bytearray();transitions=checked_transitions(s)
     for i,(raw,c) in enumerate(zip(raws,s['clips'])):
         path=folder/f'input-{i}.mp4';path.write_bytes(raw)
         m=probe(fp,path);size=(m['width'],m['height'])
@@ -137,10 +174,13 @@ def observe(raws,s,tools,folder,*,render):
             item['selected_rgb_sha256']=hashlib.sha256(frames).hexdigest()
             edited=edit_frames(frames,size,edit)
             item['edited_rgb_sha256']=hashlib.sha256(edited).hexdigest()
-            selected.extend(edited)
+            append_transition(selected,edited,out_size,transitions[i-1] if i else {'kind':'cut','frames':0})
         items.append(item)
-    if not render:return None,{'clips':items,'width':dimensions[0],'height':dimensions[1],'fps':s['fps']}
-    w,h=dimensions;count=sum(c['end_frame']-c['start_frame'] for c in s['clips'])
+    count=sum(c['end_frame']-c['start_frame'] for c in s['clips'])-sum(t['frames'] for t in transitions)
+    if not render:return None,{'clips':items,'width':dimensions[0],'height':dimensions[1],'fps':s['fps'],
+        'transitions':transitions,'output_frames':count}
+    w,h=dimensions
+    if len(selected)!=count*w*h*3:raise ValueError('Transition sequence length mismatch')
     raw_path=folder/'sequence.rgb';raw_path.write_bytes(selected)
     out=folder/'sequence.mp4'
     verify_guards(list(tools))
@@ -157,7 +197,7 @@ def observe(raws,s,tools,folder,*,render):
         raise ValueError('Output RGB frames differ from selected input sequence')
     verify_guards(list(tools))
     return payload,{'clips':items,'width':w,'height':h,'fps':s['fps'],'frames':count,
-                    'duration_seconds':count/s['fps'],'selected_rgb_sha256':hashlib.sha256(selected).hexdigest(),
+                    'duration_seconds':count/s['fps'],'transitions':transitions,'selected_rgb_sha256':hashlib.sha256(selected).hexdigest(),
                     'decoded_rgb_sequence_verified':True,'audio_supported':False,'visual_playback_verified':False,
                     'encoding':'lossless H.264 RGB; playback compatibility may vary'}
 
@@ -189,7 +229,7 @@ def review(root,source,output,exclude=()):
     paths=_paths(Path(plan['root']),s,plan['exclude'])
     plan['guards'].extend(snapshot_file(p) for p in paths);plan['guards'].extend(installed(root))
     _,m=operation(root,plan,False)
-    return plan,dict(s,observations=m,scope='Short silent H.264 MP4 clips only; frame-index sequence with optional crop, clockwise rotation and flip; no audio, retiming or transitions.')
+    return plan,dict(s,observations=m,scope='Short silent H.264 MP4 clips only; frame-index sequence with optional crop, clockwise rotation and flip; optional crossfade/cut transitions; no audio or retiming.')
 def execute(root,plan):
     _,dst,_=validate(root,plan);payload,r=operation(root,plan,True)
     sha=guard.publish(payload,dst,lambda:validate(root,plan))
