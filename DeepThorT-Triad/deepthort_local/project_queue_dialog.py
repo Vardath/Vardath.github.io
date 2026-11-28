@@ -3,18 +3,21 @@ import tkinter as tk
 from tkinter import ttk,messagebox
 from pathlib import Path
 from .project_queue import grouped
+from .lattice_ui import fit_dialog,source_scrollbars
 
 def show(app):
-    dlg=tk.Toplevel(app);dlg.title('Project and task queues');dlg.geometry('1000x560')
+    dlg=tk.Toplevel(app);dlg.title('Project and task queues');fit_dialog(dlg,1000,560)
     ttk.Label(dlg,text='Projects and task chats run in priority order when eligible. Pause holds new stages; an already admitted operation may finish safely. Blocked tasks can yield to eligible work.',wraplength=940).pack(padx=10,pady=8)
     panes=ttk.Panedwindow(dlg,orient='horizontal');panes.pack(fill='both',expand=True,padx=8,pady=4)
     left=ttk.Frame(panes);right=ttk.Frame(panes);panes.add(left,weight=1);panes.add(right,weight=3)
-    pt=ttk.Treeview(left,columns=('status','tasks'),show='tree headings',selectmode='browse')
+    left_table=ttk.Frame(left);left_table.pack(fill='both',expand=True)
+    pt=ttk.Treeview(left_table,columns=('status','tasks'),show='tree headings',selectmode='browse')
     pt.heading('#0',text='Project');pt.heading('status',text='State');pt.heading('tasks',text='Tasks')
-    pt.column('#0',width=150);pt.column('status',width=90);pt.column('tasks',width=55);pt.pack(fill='both',expand=True)
-    tt=ttk.Treeview(right,columns=('state','prompt'),show='headings',selectmode='browse')
+    pt.column('#0',width=150);pt.column('status',width=90);pt.column('tasks',width=55);source_scrollbars(left_table,pt)
+    right_table=ttk.Frame(right);right_table.pack(fill='both',expand=True)
+    tt=ttk.Treeview(right_table,columns=('state','prompt'),show='headings',selectmode='browse')
     tt.heading('state',text='State');tt.heading('prompt',text='Task / current prompt');tt.column('state',width=200);tt.column('prompt',width=430)
-    tt.pack(fill='both',expand=True)
+    source_scrollbars(right_table,tt)
     state={'projects':{},'ids':{},'tasks':{},'view':None}
     def selected_project():
         sel=pt.selection();return state['ids'].get(sel[0]) if sel else None
@@ -40,7 +43,7 @@ def show(app):
             pt.delete(*pt.get_children());state.update(projects=groups,ids={},view=view)
             for i,(p,ts) in enumerate(groups.items(),1):
                 key=str(i);state['ids'][key]=p
-                pt.insert('','end',iid=key,text=Path(p).name or p,values=('Paused' if not view.allowed({'project':p}) else 'Ready',len(ts)))
+                pt.insert('','end',iid=key,text=f'{i}. {Path(p).name or p}',values=('Paused' if not view.allowed({'project':p}) else 'Ready',len(ts)))
                 if p==oldp:pt.selection_set(key)
             if not pt.selection() and pt.get_children():pt.selection_set(pt.get_children()[0])
             tasks(keep=oldc)
@@ -74,7 +77,7 @@ def show(app):
         removed=sorted(app.project_queue.snapshot().removed)
         if not removed:
             messagebox.showinfo('Removed projects','No removed projects.',parent=dlg);return
-        win=tk.Toplevel(dlg);win.title('Restore removed project');win.geometry('740x300')
+        win=tk.Toplevel(dlg);win.title('Restore removed project');fit_dialog(win,740,300)
         ttk.Label(win,text='Choose a project. Restored projects return at the end of the queue, paused.').pack(padx=8,pady=8)
         box=tk.Listbox(win,exportselection=False);box.pack(fill='both',expand=True,padx=8)
         for p in removed:box.insert('end',p)

@@ -103,7 +103,7 @@ ROOT = Path(__file__).resolve().parent
 STATE = ROOT / 'state'
 from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
-from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_project_rows, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre, StudioCentre, studio_artifact_rows, SettingsCentre, settings_policy_rows
+from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_project_rows, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre, StudioCentre, studio_artifact_rows, SettingsCentre, settings_policy_rows, WorkspaceNavigator, fit_dialog
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = (PALETTE[k] for k in ('base','panel','input','text','muted','accent'))
 GREEN, YELLOW = PALETTE['success'], PALETTE['warning']
 MAX_INFERENCE_PROMPT = 7500  # current OpenVINO IR endpoint requires <=8000 / message
@@ -484,6 +484,7 @@ class DeepThorTDesktop(tk.Tk):
             self.files.bind('<Control-Button-1>',self._project_file_context_menu)
         ttk.Button(left,text='Propose new project file…',command=self._new_file).pack(fill='x',padx=10,pady=(0,11))
 
+        navigation=ttk.Frame(right);navigation.pack(fill='x',pady=(0,4))
         self.tabs=ttk.Notebook(right);self.tabs.pack(fill='both',expand=True)
         chat,queue_tab,files_tab,tasks_tab,process_tab,janus_tab,hardware_tab,media_tab=(ttk.Frame(self.tabs) for _ in range(8))
         for frame,title in ((chat,'Chats'),(queue_tab,'Work queue'),(files_tab,'File review'),
@@ -494,6 +495,9 @@ class DeepThorTDesktop(tk.Tk):
         memory_tab=ttk.Frame(self.tabs);self.tabs.add(memory_tab,text='Knowledge & Memory')
         studio_tab=ttk.Frame(self.tabs);self.tabs.add(studio_tab,text='Studio')
         settings_tab=ttk.Frame(self.tabs);self.tabs.add(settings_tab,text='Settings & Integrations')
+        self.workspace_navigator=WorkspaceNavigator(navigation,self.tabs)
+        self.workspace_navigator.pack(fill='x')
+        self.bind('<Control-F6>',lambda event:(self.workspace_navigator.focus_choice(),'break')[1],add='+')
         # CHAT: separate persisted sessions and a tall, scrollable prompt editor.
         chatbar=ttk.Frame(chat);chatbar.pack(fill='x',pady=(4,3))
         ttk.Button(chatbar,text='+ New chat',command=self._new_chat).pack(side='left')
@@ -595,7 +599,7 @@ class DeepThorTDesktop(tk.Tk):
         # REAL PERSISTENT WORK QUEUE
         qhead=ttk.Frame(queue_tab);qhead.pack(fill='x',pady=8)
         self.queue_summary=tk.StringVar(value='No queued work')
-        ttk.Label(qhead,textvariable=self.queue_summary,style='Muted.TLabel').pack(side='left',padx=4)
+        ttk.Label(queue_tab,textvariable=self.queue_summary,style='Muted.TLabel',wraplength=620).pack(anchor='w',padx=4,pady=(0,3))
         self.pause_queue=ttk.Button(qhead,text='Pause queue',command=self._toggle_queue)
         self.pause_queue.pack(side='right',padx=4)
         ttk.Button(qhead,text='Refresh',command=self._refresh_jobs).pack(side='right',padx=4)
@@ -620,15 +624,14 @@ class DeepThorTDesktop(tk.Tk):
         qt=ttk.Frame(queue_tab);qt.pack(fill='x',pady=4)
         ttk.Button(qt,text='Cancel selected',command=self._cancel_job).pack(side='left',padx=3)
         ttk.Button(qt,text='Resume selected',command=self._resume_job).pack(side='left',padx=3)
-        ttk.Button(qt,text='Review legacy plan',command=self._approve_build_plan).pack(side='left',padx=3)
         ttk.Button(qt,text='Verify build',command=self._verify_build).pack(side='left',padx=3)
-        ttk.Button(qt,text='Load prompt into editor',command=self._load_job_prompt).pack(side='left',padx=3)
+        action_menu(qt,'Selected job actions',[('Review legacy plan',self._approve_build_plan),('Load prompt into editor',self._load_job_prompt)]).pack(side='left',padx=3)
         workbar=ttk.Frame(queue_tab);workbar.pack(fill='x',pady=(0,5))
         self.project_work_enabled=tk.BooleanVar(value=self._project_policy['enabled'])
         ttk.Checkbutton(workbar,text='Continue approved file steps and fixed tests without repeated prompts',
                         variable=self.project_work_enabled,command=self._set_project_work_policy).pack(side='left',padx=3)
-        ttk.Button(workbar,text='Revoke selected job automation',
-                   command=self._revoke_selected_project_work).pack(side='left',padx=8)
+        ttk.Button(queue_tab,text='Revoke selected job automation',
+                   command=self._revoke_selected_project_work).pack(anchor='w',padx=3,pady=(0,4))
         restorebar=ttk.Frame(queue_tab);restorebar.pack(fill='x',pady=(0,3))
         action_menu(restorebar,'Backups & checkpoints',[
             ('Backup SQLite…',lambda:self._review_typed_tool('database_backup','.zip','Database: reviewed backup')),
@@ -2334,7 +2337,7 @@ class DeepThorTDesktop(tk.Tk):
             import importlib
             tool=importlib.import_module('deepthort_local.'+module)
             plan,spec=tool.review(project,relative,output,self.inspection_exclusions.paths(project))
-            dialog=tk.Toplevel(self);dialog.title('Review exact operation specification');dialog.geometry('860x620');dialog.transient(self)
+            dialog=tk.Toplevel(self);dialog.title('Review exact operation specification');fit_dialog(dialog,860,620);dialog.transient(self)
             ttk.Label(dialog,text=label+' — new output: '+output).pack(anchor='w',padx=8,pady=6)
             ttk.Label(dialog,text='Original inputs preserved. Structural verification only; review actual output.').pack(anchor='w',padx=8)
             frame=ttk.Frame(dialog);frame.pack(fill='both',expand=True,padx=8,pady=8)
@@ -2470,7 +2473,7 @@ class DeepThorTDesktop(tk.Tk):
             if not output:return
             from deepthort_local.pdf_document import review
             plan,doc=review(project,relative,output,self.inspection_exclusions.paths(project))
-            dialog=tk.Toplevel(self);dialog.title('Review exact PDF document content');dialog.geometry('860x620');dialog.transient(self)
+            dialog=tk.Toplevel(self);dialog.title('Review exact PDF document content');fit_dialog(dialog,860,620);dialog.transient(self)
             ttk.Label(dialog,text='New output: '+output+' — source '+relative).pack(anchor='w',padx=8,pady=6)
             ttk.Label(dialog,text='Content and page style below. Structural text checks only; review rendered PDF afterwards.').pack(anchor='w',padx=8)
             frame=ttk.Frame(dialog);frame.pack(fill='both',expand=True,padx=8,pady=8)
@@ -2580,6 +2583,9 @@ class DeepThorTDesktop(tk.Tk):
         self.file_query.set('')
         self.job_filter.set('All states');self.job_query.set('')
         self.task_filter.set('All states');self.task_query.set('')
+        for table in (self.job_tree,self.task_tree):
+            selected=table.selection()
+            if selected:table.selection_remove(*selected)
         self.file_filter_status.set('Filter by path; Esc clears')
         self.current_file=None;self.proposed=None;self.proposal_job=None;self.proposal_step=None
         self.file_title.set('Choose a file in the selected workspace')
@@ -2913,7 +2919,7 @@ class DeepThorTDesktop(tk.Tk):
         if not excluded:
             messagebox.showinfo('No excluded files','All project files are visible in inspection.',parent=self)
             return
-        dlg=tk.Toplevel(self);dlg.title('Restore excluded project files');dlg.geometry('580x370')
+        dlg=tk.Toplevel(self);dlg.title('Restore excluded project files');fit_dialog(dlg,580,370)
         dlg.transient(self);dlg.configure(bg=BG)
         tk.Label(dlg,text='Select file(s) to inspect again. No project files are modified.',
                  bg=BG,fg=TEXT,wraplength=550).pack(anchor='w',padx=12,pady=8)
@@ -3747,7 +3753,7 @@ class DeepThorTDesktop(tk.Tk):
             messagebox.showwarning('Roadmap approval blocked',str(error),parent=self)
             return
         dialog=tk.Toplevel(self);dialog.title('Approve complete ordered roadmap')
-        dialog.transient(self);dialog.geometry('850x620')
+        dialog.transient(self);fit_dialog(dialog,850,620)
         ttk.Label(dialog,text='One consent for every exact listed milestone. Successors require current predecessor '
                   'verification. Writes retain backups; fixed tests execute project code with your Windows permissions. '
                   'Amendments invalidate this consent. Tool installation follows its own policy. '
@@ -7315,7 +7321,7 @@ class DeepThorTDesktop(tk.Tk):
         return proposal or self._branch_switch_allowed(project)
 
     def _review_source_diff(self,review,parent,*,inspection_only=False):
-        dialog=tk.Toplevel(parent);dialog.title('Inspect proposed diff' if inspection_only else 'Review exact source change');dialog.geometry('850x620');dialog.transient(parent);dialog.configure(bg=BG)
+        dialog=tk.Toplevel(parent);dialog.title('Inspect proposed diff' if inspection_only else 'Review exact source change');fit_dialog(dialog,850,620);dialog.transient(parent);dialog.configure(bg=BG)
         base=review['base']
         ttk.Label(dialog,text=base['path']+' — '+('syntax checked (not tested)' if review['syntax_checked'] else 'no built-in syntax checker; not tested')).pack(anchor='w',padx=8,pady=6)
         ttk.Label(dialog,text='Current source SHA-256: '+(base['sha'] or 'new file'),style='Muted.TLabel',wraplength=760).pack(anchor='w',padx=8)
@@ -7350,7 +7356,7 @@ class DeepThorTDesktop(tk.Tk):
                 raise ValueError('Restore the excluded file before editing')
         except (OSError,ValueError) as exc:
             messagebox.showwarning('Edit unavailable',str(exc),parent=self);return
-        dialog=tk.Toplevel(self);dialog.title('Edit '+base['path']);dialog.geometry('900x650');dialog.transient(self)
+        dialog=tk.Toplevel(self);dialog.title('Edit '+base['path']);fit_dialog(dialog,900,650);dialog.transient(self)
         frame=ttk.Frame(dialog);frame.pack(fill='both',expand=True,padx=8,pady=8)
         editor=self._text(frame,wrap='none',font=('Consolas',11))
         y=ttk.Scrollbar(frame,command=editor.yview);x=ttk.Scrollbar(frame,orient='horizontal',command=editor.xview)
@@ -9062,7 +9068,7 @@ class DeepThorTDesktop(tk.Tk):
         if error:
             messagebox.showwarning('Git review unavailable',error,parent=self);return
         dialog=tk.Toplevel(self);dialog.title('Review exact staged Git commit')
-        dialog.geometry('850x600');dialog.transient(self)
+        fit_dialog(dialog,850,600);dialog.transient(self)
         identity=review['identity']
         ttk.Label(dialog,text='Local branch: '+identity['ref']+' | Parent: '+identity['head'][:12]).pack(anchor='w',padx=8,pady=5)
         selected='selected_tree' in identity
@@ -9320,7 +9326,7 @@ class DeepThorTDesktop(tk.Tk):
         if error:
             messagebox.showwarning('Dependency audit unavailable',error,parent=self);return
         if not self._editor_idle(project,proposal=True):return
-        dialog=tk.Toplevel(self);dialog.title('Review dependency advisory lookup');dialog.geometry('740x550');dialog.transient(self)
+        dialog=tk.Toplevel(self);dialog.title('Review dependency advisory lookup');fit_dialog(dialog,740,550);dialog.transient(self)
         ttk.Label(dialog,text='Online OSV lookup: the exact package names, versions and ecosystems below will be sent to api.osv.dev.',wraplength=700).pack(anchor='w',padx=8,pady=8)
         ttk.Label(dialog,text=f"{plan['count']} unique versions; {observed['omitted']} unsupported entries omitted. No source upload, installation or automatic fixes.",wraplength=700).pack(anchor='w',padx=8)
         frame=ttk.Frame(dialog);frame.pack(fill='both',expand=True,padx=8,pady=8)
@@ -9414,7 +9420,7 @@ class DeepThorTDesktop(tk.Tk):
         if self._quitting or not self.project or str(self.project)!=project:return
         if error:
             messagebox.showwarning('Git inspection failed',error,parent=self);return
-        dialog=tk.Toplevel(self);dialog.title('Local Git status and history');dialog.geometry('850x600');dialog.transient(self)
+        dialog=tk.Toplevel(self);dialog.title('Local Git status and history');fit_dialog(dialog,850,600);dialog.transient(self)
         frame=ttk.Frame(dialog);frame.pack(fill='both',expand=True,padx=8,pady=8)
         view=tk.Text(frame,wrap='none',font=('Consolas',10))
         y=ttk.Scrollbar(frame,command=view.yview);x=ttk.Scrollbar(frame,orient='horizontal',command=view.xview)
@@ -9737,7 +9743,7 @@ class DeepThorTDesktop(tk.Tk):
             messagebox.showerror('Could not read cores',str(exc),parent=self);return
         dialogue=tk.Toplevel(self)
         dialogue.title('JANUS & Sentinel — 22 outer / 154 inner faculties')
-        dialogue.geometry('960x740');dialogue.configure(bg=BG)
+        fit_dialog(dialogue,960,740);dialogue.configure(bg=BG)
         out=self._text(dialogue,readonly=True,height=34,font=('Consolas',9))
         out.pack(fill='both',expand=True,padx=10,pady=10)
         payload={'JANUS':main,'SENTINEL':watch.get('cores',{}),

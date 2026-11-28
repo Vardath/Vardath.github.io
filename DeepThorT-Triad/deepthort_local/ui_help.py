@@ -9,6 +9,8 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    'Quick navigation': 'Open any primary workspace, even when native notebook tabs overflow. Ctrl+F6 focuses the workspace selector.',
+    'Selected job actions': 'Existing selected-job review and prompt loading commands.',
     'Refresh settings overview': 'Read existing saved policy values without changing settings or connecting external services.',
     'Refresh artifacts': 'Read the existing bounded workspace file snapshot; no new disk scan.',
     'Production categories': 'Navigate to original production controls filtered by category; no tool runs.',

@@ -2,7 +2,7 @@
 import tkinter as tk
 from tkinter import ttk
 import unittest
-from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre, StudioCentre, studio_artifact_rows, SettingsCentre, settings_policy_rows
+from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre, StudioCentre, studio_artifact_rows, SettingsCentre, settings_policy_rows, WorkspaceNavigator, dialog_dimensions, fit_dialog
 
 
 class LatticeShelfTests(unittest.TestCase):
@@ -308,3 +308,24 @@ class LatticeShelfTests(unittest.TestCase):
         self.assertIn('only',dict(rows)['upgrades'][2])
         self.assertEqual(dict(rows)['network'][1],'blocked')
         self.assertIn('not runtime verification',centre.notice.get())
+
+
+    def test_workspace_navigation_preserves_all_exact_indices(self):
+        notebook=ttk.Notebook(self.root)
+        names=tuple('Workspace '+str(i) for i in range(13))
+        for name in names:notebook.add(ttk.Frame(notebook),text=name)
+        navigator=WorkspaceNavigator(self.root,notebook)
+        self.assertEqual(navigator.names,names)
+        navigator.current.set(names[-1]);navigator.select()
+        self.assertEqual(notebook.index('current'),12)
+        notebook.select(0);navigator.sync()
+        self.assertEqual(navigator.current.get(),names[0])
+
+    def test_dialog_dimensions_fit_small_display(self):
+        self.assertEqual(dialog_dimensions(1000,740,1138,765),(1000,655))
+        self.assertEqual(dialog_dimensions(900,650,800,600),(728,490))
+        dialog=tk.Toplevel(self.root)
+        w,h=fit_dialog(dialog,900,650)
+        self.assertLessEqual(w,dialog.winfo_screenwidth())
+        self.assertLessEqual(h,dialog.winfo_screenheight())
+        dialog.destroy()

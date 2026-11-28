@@ -9,6 +9,7 @@ from pathlib import Path
 
 from .document_knowledge import SUFFIXES
 from .ui_help import install_tooltips
+from .lattice_ui import fit_dialog,source_scrollbars
 
 
 def selected_relative(root, selected, excluded=()):
@@ -37,7 +38,7 @@ class KnowledgeDialog:
         self.busy = False
         self.window = tk.Toplevel(app)
         self.window.title('Project knowledge library')
-        self.window.geometry('780x520')
+        fit_dialog(self.window,780,520)
         self.window.transient(app)
         self.window.protocol('WM_DELETE_WINDOW', self.close)
         ttk.Label(self.window, text=str(self.root), wraplength=740).pack(anchor='w', padx=8, pady=6)
@@ -69,10 +70,7 @@ class KnowledgeDialog:
                                    ('count','Fragments',85), ('path','Document',420)):
             self.tree.heading(name, text=label)
             self.tree.column(name, width=width, stretch=name == 'path')
-        scroll = ttk.Scrollbar(frame, orient='vertical', command=self.tree.yview)
-        self.tree.configure(yscrollcommand=scroll.set)
-        scroll.pack(side='right', fill='y')
-        self.tree.pack(fill='both', expand=True)
+        source_scrollbars(frame,self.tree)
         querybar = ttk.Frame(self.window)
         querybar.pack(fill='x', padx=8)
         self.query = ttk.Entry(querybar)
