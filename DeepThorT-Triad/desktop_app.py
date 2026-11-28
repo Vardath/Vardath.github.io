@@ -905,6 +905,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(motion_actions,text='Remove masked video object…',command=lambda:self._review_typed_tool('video_object_removal','.mp4','Video: reviewed masked removal')).pack(side='left',padx=3)
         camera_actions=ttk.Frame(media_tab);camera_actions.pack(fill='x',pady=2)
         ttk.Button(camera_actions,text='Generate camera motion…',command=lambda:self._review_typed_tool('camera_motion','.mp4','Video: reviewed camera motion')).pack(side='left',padx=3)
+        ttk.Button(camera_actions,text='Synchronise mouth cues…',command=lambda:self._review_typed_tool('lip_sync','.mp4','Video: reviewed mouth synchronisation')).pack(side='left',padx=3)
         mesh_review_actions=ttk.Frame(media_tab);mesh_review_actions.pack(fill='x',pady=2)
         ttk.Button(mesh_review_actions,text='Unwrap UV atlas…',command=lambda:self._review_typed_tool('uv_unwrapping','.obj','Mesh: reviewed UV atlas')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Simplify mesh…',command=lambda:self._review_typed_tool('mesh_simplification','.obj','Mesh: reviewed simplification')).pack(side='left',padx=3)
@@ -1920,6 +1921,7 @@ class DeepThorTDesktop(tk.Tk):
                  'video_style':('.mp4','Video: reviewed palette transfer'),
                  'video_object_removal':('.mp4','Video: reviewed masked removal'),
                  'camera_motion':('.mp4','Video: reviewed camera motion'),
+                 'lip_sync':('.mp4','Video: reviewed mouth synchronisation'),
                  'video_timeline':('.mp4','Video: reviewed timeline'),
                  'video_highlights':('.mp4','Video: reviewed highlights'),
                  'video_interpretation':('.json','Video: reviewed interpretation'),
