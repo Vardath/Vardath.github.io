@@ -108,3 +108,19 @@ class LiveScreenTests(unittest.TestCase):
             with self.assertRaises(ValueError):checked(dict(s,**patch))
         with tempfile.TemporaryDirectory() as tmp:
             with self.assertRaises(ValueError):samples(s,(100,100),tmp,approved=True,screen_size=lambda:(90,90))
+
+class ControllerInputTests(unittest.TestCase):
+    def test_fixed_action_generation_and_strict_evidence(self):
+        from deepthort_local.controller_input import script,assess,checked
+        s={'actions':[{'kind':'button','button':'A'},{'kind':'axis','axis':'LEFT_X','direction':-1}]}
+        gd=script(s)
+        self.assertIn('InputEventJoypadButton.new()',gd)
+        self.assertIn('InputEventJoypadMotion.new()',gd)
+        self.assertIn('event_1.axis_value = -1.0',gd)
+        self.assertIn('Input.parse_input_event(release_1)',gd)
+        log='JANUS_CONTROLLER 0 passed\nJANUS_CONTROLLER 1 passed\n'
+        self.assertTrue(assess(s,log)['engine_action_press_release_verified'])
+        for bad in ('',log+'ERROR: broken',log+'JANUS_CONTROLLER 0 passed\n'):
+            with self.assertRaises(ValueError):assess(s,bad)
+        for a in ({'kind':'button','button':'unknown'},{'kind':'axis','axis':'LEFT_X','direction':True},{'kind':'button','button':'A','device':1}):
+            with self.assertRaises(ValueError):checked({'actions':[a]})

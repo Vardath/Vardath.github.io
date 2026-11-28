@@ -220,7 +220,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 208 | 27 | Graphical application operation | Partial: reviewed project executable launched in capped cleanup scope, exact unique window and direct non-password standard Edit control, native literal set/readback. Pass 209 CI pending. External native acceptance and broader application controls outstanding. |
 | 209 | 237 | Background desktop execution | Partial: hardened existing separate desktop runner with exact named root/cleanup membership and linked-path refusal; reviewed queue-compatible launch and expected window observation receipt. Pass 210 CI pending. Native external background acceptance and broader operation outstanding. |
 | 210 | 4 | Live screen interpretation | Partial: approved bounded live primary-region samples and existing offline caption engine, exact sample identity and local evidence receipt. Pass 211 CI pending. Native live screen and semantic acceptance, ongoing interpretation outstanding. |
-| 211 | 60 | Game controller input simulation | Not started in this programme |
+| 211 | 60 | Game controller input simulation | Partial: host-generated native Godot synthetic joypad button and axis event fixture, action press/release oracle and capped execution. Pass 212 CI pending. Native engine acceptance, OS virtual controllers and external games outstanding. |
 | 212 | 58 | Visual gameplay testing | Not started in this programme |
 | 213 | 59 | Autonomous game playing and testing | Not started in this programme |
 | 214 | 61 | Automated game balancing | Not started in this programme |
@@ -1072,3 +1072,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 211 — 27 November 2026
 - Extend one-shot screenshot interpretation with reviewed 2–4 live region samples, separate visible confirmation, bounded intervals, display/pressure checks and exact local sample hashes. Reuse offline Florence caption engine and temporary non-project staging; publish captions only, no continuous capture or model authority. Add sampling and changed-source fixtures. Native vision acceptance outstanding. Next rank 211 / ID 60 controller input simulation. No installer.
+
+## Pass 212 — 27 November 2026
+- Add reviewed Godot controller simulation for fixed joypad buttons and signed axis directions using Input.parse_input_event, InputMap and press/release checks in a host-generated headless fixture. Shared resource cap, exact runtime guard, ordered engine evidence and no external game or OS virtual driver. Source fixtures added; native controller fixture acceptance outstanding. Next rank 212 / ID 58 visual gameplay testing. No installer.
