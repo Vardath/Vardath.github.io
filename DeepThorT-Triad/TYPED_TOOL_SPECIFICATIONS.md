@@ -961,3 +961,7 @@ Test controller input accepts `{"actions":[{"kind":"button","button":"A"},{"kind
 ## Reviewed rendered grid gameplay test (Pass 213)
 
 Test rendered grid game accepts the same JSON as Generate grid game. Launches a freshly generated native Godot game with rendering enabled, then sends one in-engine keyboard event and checks state plus before/after viewport player pixels. A visible window may appear briefly; no desktop input is injected. ZIP contains two PNGs and a verified receipt if the narrow movement oracle passes. Native display/GPU and installed Godot required; no overall gameplay or visual quality certification. Native acceptance pending.
+
+## Reviewed autonomous grid gameplay (Pass 214)
+
+Autoplay grid game accepts the same JSON as Generate grid game. Selects a nearest reachable remaining collectible, then the goal, with at most 512 input steps. Fresh native headless Godot fixture sends synthetic in-engine key press/release events and compares every ordered observed state to the independently calculated trace, including victory. New JSON receipt only. Requires installed native Godot and shared Windows cap; no global input, external games, general game agent or native acceptance claim.

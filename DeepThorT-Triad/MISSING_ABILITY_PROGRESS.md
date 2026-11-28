@@ -221,8 +221,8 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 209 | 237 | Background desktop execution | Partial: hardened existing separate desktop runner with exact named root/cleanup membership and linked-path refusal; reviewed queue-compatible launch and expected window observation receipt. Pass 210 CI pending. Native external background acceptance and broader operation outstanding. |
 | 210 | 4 | Live screen interpretation | Partial: approved bounded live primary-region samples and existing offline caption engine, exact sample identity and local evidence receipt. Pass 211 CI pending. Native live screen and semantic acceptance, ongoing interpretation outstanding. |
 | 211 | 60 | Game controller input simulation | Partial: host-generated native Godot synthetic joypad button and axis event fixture, action press/release oracle and capped execution. Pass 212 CI pending. Native engine acceptance, OS virtual controllers and external games outstanding. |
-| 212 | 58 | Visual gameplay testing | Partial: native non-headless Godot generated grid fixture, before/after viewport PNGs, expected movement and pixel oracle, evidence ZIP. Pass 213 CI pending. Native GPU/display and external game acceptance outstanding. |
-| 213 | 59 | Autonomous game playing and testing | Not started in this programme |
+| 212 | 58 | Visual gameplay testing | Partial: native non-headless Godot generated grid fixture, before/after viewport PNGs, expected movement and pixel oracle, evidence ZIP. Pass 213 source and native Windows CI green (46012372590); not merged. Native GPU/display and external game acceptance outstanding. |
+| 213 | 59 | Autonomous game playing and testing | Partial: bounded nearest-objective route selection and native generated Godot keyboard trajectory with per-step state oracle. Pass 214 CI pending; native and general external game acceptance outstanding. |
 | 214 | 61 | Automated game balancing | Not started in this programme |
 | 215 | 57 | Unreal Engine integration | Not started in this programme |
 | 216 | 254 | Unity integration | Existing partial; completion not started in this programme |
@@ -1078,3 +1078,9 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 213 — 27 November 2026
 - Add reviewed actual non-headless rendered grid gameplay probe, synthetic in-engine keyboard movement, generated before/after viewport PNGs, independent state/pixel checks and verified evidence archive. Existing capped Godot runner, no global input or arbitrary external game. Pixel oracle fixture added; actual native GPU/display verification outstanding. Next rank 213 / ID 59 autonomous game playing and testing. No installer.
+
+## Pass 214 — 28 November 2026
+- Add bounded autonomous nearest-objective route selection and native in-engine keyboard input through the full generated grid level; independently compare every ordered position, remaining count and victory against expected trace. Reviewed capped native execution, exact source/runtime guards and non-overwriting JSON receipt. Native engine acceptance and general external gameplay outstanding. Next rank 214 / ID 61 automated game balancing. No installer.
+
+### Pass 214 CI coverage correction
+- Explicitly register the new autonomous gameplay regression in both Linux and Windows CI; repair missing PowerShell exit checks on adjacent image-style/image-to-image suites. Native Godot still unverified. Require fresh green CI before merging.
