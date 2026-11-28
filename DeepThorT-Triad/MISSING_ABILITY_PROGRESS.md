@@ -278,7 +278,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 266 | 126 | Reference-guided music generation | Partial: supported tempo/key estimates from exact reference, seeded independent diatonic score and stereo PCM synthesis; ambiguous evidence refused. Pass 267 CI pending; neural style/reference conditioning and listening acceptance outstanding. |
 | 267 | 127 | Song continuation | Partial: append independently synthesized tempo/key-conditioned section from trailing audio evidence, preserve exact original stereo PCM, bounded boundary bridge, verified new WAV. Pass 268 CI pending; neural continuation, stylistic continuity and listening acceptance outstanding. |
 | 268 | 128 | Individual song section replacement and editing | Partial: exact same-duration PCM section replacement or gain edit with internal boundary fades, unchanged outside samples, clipping refusal and output verification. Pass 269 CI pending; neural inpainting and listening acceptance outstanding. |
-| 269 | 156 | Neural text-to-3D generation | Not started in this programme |
+| 269 | 156 | Neural text-to-3D generation | Partial: optional reviewed offline Shap-E text mesh, bounded CPU settings and model inventory, strict verified geometry-only OBJ. Pass 270 CI pending; trusted model acquisition, native inference, material and visual acceptance outstanding. |
 | 270 | 157 | Image-to-3D reconstruction | Not started in this programme |
 | 271 | 158 | Multi-view 3D reconstruction | Not started in this programme |
 | 272 | 196 | GPU-accelerated text inference | Not started in this programme |
@@ -1263,3 +1263,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 269 — 28 November 2026
 - Add reviewed sample-frame song section replacement/gain editing, exact matching replacement duration/rate/channels, inside-only boundary fades, no clipping, unchanged outside interval and duration, exact verified WAV. Three actual PCM and stale replacement regression cases in both CI jobs. Neural regeneration/listening not claimed. Next rank 269 / ID 156 neural text-to-3D generation.
+
+
+## Pass 270 — 28 November 2026
+- Rank 269 / ID 156: local optional Shap-E text-to-mesh generation with reviewed bounded prompt/seed/steps/guidance, protected CPU execution and trusted safetensors inventory. Validate triangle indices, coordinates, duplicates, degeneracy and exact OBJ roundtrip before non-overwriting publication. Three fixture regressions registered in both CI jobs. Native inference and creative acceptance outstanding; no model download, installer, resource-cap or permission change.
