@@ -834,6 +834,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(background_review_actions,text='Replace background…',command=lambda:self._review_typed_tool('background_replacement','.png','Image: reviewed background replacement')).pack(side='left',padx=3)
         ttk.Button(background_review_actions,text='Recognize text (OCR)…',command=lambda:self._review_typed_tool('ocr','.json','Image: reviewed OCR')).pack(side='left',padx=3)
         video_review_actions=ttk.Frame(media_tab);video_review_actions.pack(fill='x',pady=2)
+        ttk.Button(video_review_actions,text='Capture screen region…',command=self._show_screen_capture).pack(side='left',padx=3)
         ttk.Button(video_review_actions,text='Interpret video…',command=lambda:self._review_typed_tool('video_interpretation','.json','Video: reviewed interpretation')).pack(side='left',padx=3)
         ttk.Button(video_review_actions,text='Trim/sequence video…',command=lambda:self._review_typed_tool('video_trimming','.mp4','Video: reviewed sequence')).pack(side='left',padx=3)
         mesh_review_actions=ttk.Frame(media_tab);mesh_review_actions.pack(fill='x',pady=2)
@@ -1676,6 +1677,10 @@ class DeepThorTDesktop(tk.Tk):
 
     def _show_speech_to_text(self):
         from deepthort_local.speech_to_text_dialog import show
+        show(self)
+
+    def _show_screen_capture(self):
+        from deepthort_local.screen_capture_dialog import show
         show(self)
 
     def _show_microphone(self):
@@ -5810,8 +5815,15 @@ class DeepThorTDesktop(tk.Tk):
                         raise ValueError('Read Image requires exactly one selected picture')
                     node=shutil.which('node')
                     if not node:raise RuntimeError('Node.js not installed')
-                    program=[node,str(ROOT/'vision_caption.mjs'),paths[0]]
-                    output=self._capture_media_process(program,'Local image analysis')
+                    from deepthort_local.screen_capture import PREFIX,exact_snapshot
+                    if prompt.startswith(PREFIX):
+                        raw=exact_snapshot(j['project'],paths[0],prompt)
+                        with tempfile.TemporaryDirectory(prefix='janus-screen-') as tmp:
+                            snapshot=Path(tmp)/'reviewed.png';snapshot.write_bytes(raw)
+                            output=self._capture_media_process([node,str(ROOT/'vision_caption.mjs'),str(snapshot)],'Local reviewed screen analysis')
+                    else:
+                        program=[node,str(ROOT/'vision_caption.mjs'),paths[0]]
+                        output=self._capture_media_process(program,'Local image analysis')
                     line=next((x for x in output.splitlines() if x.startswith('IMAGE_CAPTION_JSON: ')),None)
                     if not line:raise RuntimeError('Vision model returned no verified caption; inspect Processes log.')
                     caption=json.loads(line.split('IMAGE_CAPTION_JSON: ',1)[1])['caption']

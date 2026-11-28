@@ -179,7 +179,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 167 | 296 | Editable graphic design | Partial: reviewed named SVG groups, independently editable shapes/text, stable IDs, visibility and opacity, strict geometry and exact source/non-overwrite guards. Pass 168 CI pending. External editor, visual rendering, interactive authoring and model-led acceptance outstanding. |
 | 168 | 103 | Visual multimedia generation workflow graphs | Partial: read-only dataflow preview of exact frozen recipes, external inputs and predecessor artifact edges in both model-designed and manually composed workflow reviews. Pass 169 CI pending. Interactive node authoring and native UI acceptance outstanding. |
 | 169 | 107 | Existing video interpretation | Partial: reviewed explicit silent H.264 frame samples, actual decoded frame hashes/timestamps and existing offline Florence multi-frame captions, exact source/runtime guards and JSON publication. Pass 170 CI pending. Continuous video, audio and native model accuracy outstanding. |
-| 170 | 236 | Screen capture and interpretation | Existing partial; completion not started in this programme |
+| 170 | 236 | Screen capture and interpretation | Partial: explicit bounded single primary-monitor region, countdown, in-memory preview, separately approved non-overwriting PNG and exact-hash offline vision queue handoff. Pass 171 CI pending. Native Windows capture, DPI behavior, caption quality and continuous screen interpretation outstanding. |
 | 171 | 298 | Video editing | Existing partial; completion not started in this programme |
 | 172 | 300 | Video transitions | Existing partial; completion not started in this programme |
 | 173 | 111 | Video motion tracking | Not started in this programme |
@@ -946,3 +946,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 170 — 27 November 2026
 - Add bounded local silent MP4 sampled-frame interpretation with actual FFmpeg decoding, frame identities/timestamps and a single batch of existing offline Florence vision captions. Review exact source, frame choices and runtime guards before dispatch; output JSON is new and semantic accuracy explicitly unverified. No new model or backend. Fixture regressions use actual video decoding and scripted captions, not native inference. Next rank 170 / ID 236 screen capture and interpretation. No installer.
+
+## Pass 171 — 27 November 2026
+- Add explicit one-shot primary-screen region capture with countdown and cancellation, bounded RGB PNG, in-memory preview and separate guarded project publication. Optional second approval queues the exact hash-checked screenshot into existing offline vision job; private copy prevents reading a changed source. No continuous capture or upload. Two synthetic regressions in existing microphone/capture suite. Native display/DPI and model acceptance outstanding. Next rank 171 / ID 298 video editing. No installer.
