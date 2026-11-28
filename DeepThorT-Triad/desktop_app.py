@@ -558,6 +558,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(restorebar,text='Generate region world…',command=lambda:self._review_typed_tool('world_generation','.json','Development: reviewed region world')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Generate connected level…',command=lambda:self._review_typed_tool('level_generation','.json','Development: reviewed connected level')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Generate grid game…',command=lambda:self._review_typed_tool('game_project_generation','.zip','Development: reviewed game project')).pack(side='left',padx=3)
+        ttk.Button(restorebar,text='Compile Android debug APK…',command=lambda:self._review_typed_tool('android_game_compilation','.apk','Development: reviewed Android APK export')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Android emulator smoke…',command=lambda:self._review_typed_tool('android_emulator','.json','Development: reviewed Android emulator smoke')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Stop quiet test',
                    command=self._stop_quiet_scene).pack(side='left',padx=3)
@@ -1831,6 +1832,7 @@ class DeepThorTDesktop(tk.Tk):
                  'code_refactoring':('.py','Development: reviewed local refactor'),
                  'installer_project':('.iss','Development: reviewed installer source'),
                  'android_emulator':('.json','Development: reviewed Android emulator smoke'),
+                 'android_game_compilation':('.apk','Development: reviewed Android APK export'),
                  'game_project_generation':('.zip','Development: reviewed game project'),
                  'game_asset_generation':('.zip','Development: reviewed sprite atlas'),
                  'level_generation':('.json','Development: reviewed connected level'),
@@ -1865,7 +1867,7 @@ class DeepThorTDesktop(tk.Tk):
             view.insert('1.0',json.dumps(spec,ensure_ascii=False,indent=2));view.configure(state='disabled')
             approved=[False]
             def approve():approved[0]=True;dialog.destroy()
-            ttk.Button(dialog,text='Approve emulator launch + report' if module=='android_emulator' else 'Approve exact REST request + output' if module=='rest_api' else 'Approve remote MCP discovery + output' if module=='remote_mcp' else 'Approve local HTTP requests + output' if module in ('api_testing','application_monitoring') else 'Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations','academic_discovery','website_crawling','multi_source_research') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
+            ttk.Button(dialog,text='Approve trusted Godot import + debug APK export' if module=='android_game_compilation' else 'Approve emulator launch + report' if module=='android_emulator' else 'Approve exact REST request + output' if module=='rest_api' else 'Approve remote MCP discovery + output' if module=='remote_mcp' else 'Approve local HTTP requests + output' if module in ('api_testing','application_monitoring') else 'Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations','academic_discovery','website_crawling','multi_source_research') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
             ttk.Button(dialog,text='Cancel',command=dialog.destroy).pack(side='right',padx=8,pady=8)
             dialog.grab_set();self.wait_window(dialog)
             if not approved[0] or not self._editor_idle(project,proposal=True):return

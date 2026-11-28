@@ -829,3 +829,7 @@ Generate NPC behaviour button. Input JSON has `level` (inline existing Generate 
 ## Reviewed swept collision testing (Pass 186)
 
 Test swept collisions button. JSON: `{"obstacles":[{"id":"wall","rect":[5,0,1,4]}],"cases":[{"id":"fast","rect":[0,0,1,1],"delta":[10,0],"expected_first":["wall"]}]}`. Each rectangle is integer [x,y,width,height], each displacement [dx,dy]; up to 64 obstacles and 64 cases. Closed boundaries count touching at t=0 and t=1. Reports exact rational first contact time [numerator,denominator], all contacts and independently expected versus observed first-contact IDs. Empty expectation means no contact. Failed fixture publishes report but exits nonzero. No native game engine or 3D claim.
+
+## Reviewed Android game compilation (Pass 187)
+
+Compile Android debug APK button. JSON: `{"archive":"game.zip","preset":"Android"}`. Trusted Godot 4 source ZIP must include root `project.godot` and `export_presets.cfg` with one matching Android all-resources preset, explicit `gradle_build/use_gradle_build=false`, no custom template or embedded signing credentials. Requires separately installed Godot (GODOT_EXECUTABLE or PATH), configured SDK/debug settings and matching installed export templates. Fixed headless import and debug export execute trusted code in a staged copy with existing Windows cap and nested cleanup; this is not an OS security sandbox or enforced offline. New APK only, structural/CRC verification, no signature or device acceptance. Source preserved; no automatic install or custom Gradle/release build.
