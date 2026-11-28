@@ -2627,13 +2627,15 @@ class DeepThorTDesktop(tk.Tk):
         self.expanded_composer.set(prefs['expanded_composer'])
         self.follow_activity.set(prefs['follow_activity'])
         for key in FILTERS:getattr(self,key).set(prefs[key])
+        # Select synchronously: a deferred page selection can overwrite the
+        # user's first navigation (or an immediate programmatic navigation).
+        names=tuple(self.tabs.tab(t,'text') for t in self.tabs.tabs())
+        if prefs['page'] in names:self.tabs.select(names.index(prefs['page']))
         def layout():
             if self._quitting:return
             width=self.workspace_split.winfo_width()
             if width>1:self.workspace_split.sashpos(0,sidebar_position(prefs,width))
             self._resize_composer()
-            names=tuple(self.tabs.tab(t,'text') for t in self.tabs.tabs())
-            if prefs['page'] in names:self.tabs.select(names.index(prefs['page']))
         self.after_idle(layout)
 
     def _save_display_preferences(self):

@@ -484,3 +484,13 @@ class IntegratedInterfaceTests(unittest.TestCase):
         self.assertEqual(app.task_filter.get(),'Done')
         self.assertTrue(app.expanded_composer.get())
         self.assertEqual(app.input.get('1.0','end-1c'),'private unsent prompt')
+
+
+    def test_startup_display_restore_never_overrides_subsequent_navigation(self):
+        app=self.app
+        app._display_preferences=dict(app._display_preferences,page='Tasks')
+        app._restore_display_preferences()
+        self.assertEqual(app.tabs.index('current'),3)
+        app.tabs.select(7)
+        app.update_idletasks()
+        self.assertEqual(app.tabs.index('current'),7)
