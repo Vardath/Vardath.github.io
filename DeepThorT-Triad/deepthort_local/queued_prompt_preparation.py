@@ -31,7 +31,9 @@ def checked(body,role=None):
         specialist.checked(body['specialist'])
     return body
 def connect(path):
-    db=sqlite3.connect(path,timeout=.05);db.row_factory=sqlite3.Row;return db
+    # Allow short competing advisory transactions to finish on slow hosts.
+    # No lock is held during model inference; dispatch and authority are unchanged.
+    db=sqlite3.connect(path,timeout=2);db.row_factory=sqlite3.Row;return db
 def rows(path,project=None,limit=100):
     with closing(connect(path)) as db:
         where="WHERE c.project=?" if project is not None else ""
