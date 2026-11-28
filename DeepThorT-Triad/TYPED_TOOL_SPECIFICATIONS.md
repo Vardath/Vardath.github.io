@@ -989,3 +989,7 @@ Prepare IDE handoff accepts `{"document":"src/main.py"}`. Set `VSCODE_CLI_EXE` t
 ## Reviewed CI observation (Pass 220)
 
 Inspect GitHub CI accepts JSON `{"repository":"Owner/Repo","run_id":123,"commit":"<40 lowercase hexadecimal characters>","required_jobs":["source","native-windows"]}`. Requires a transient Actions-read token. Three bounded HTTPS GET requests verify exact repository, commit, run and attempt, complete job page (max 30), and required jobs completed successfully. Snapshot only; no automatic merge, rerun, remote writes or deployment authority. Native network acceptance pending.
+
+## Reviewed local software deployment (Pass 221)
+
+Deploy local release accepts `{"artifact":"artifact.zip","name":"Example","version":"1.2.3","sha256":"<exact artifact SHA-256>"}`. Choose an existing project-local release directory and new filename `Example-1.2.3.zip`. Verifies the exact source digest, archive bounds, member paths and CRC, then atomically publishes identical bytes without overwriting. Earlier releases remain intact. No extraction, installation, execution, remote transfer or CI acceptance claim.
