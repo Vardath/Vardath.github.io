@@ -5410,7 +5410,7 @@ class DeepThorTDesktop(tk.Tk):
         try:
             if not is_capped_windows_process():
                 raise QuietPlaytestError('Only available under the capped Windows DeepThorT.exe launcher. '
-                    'A Python development launch cannot guarantee the shared 50% CPU / up to 65% RAM-sized commit limit.')
+                    'A Python development launch cannot guarantee the automatic 50–85% CPU / up to 80% RAM-sized commit limit.')
             project=Path(self.project or '')
             exe=godot_executable(tools=getattr(self,'inventory',None))
             if not exe:

@@ -20,8 +20,11 @@ from typing import Callable, Sequence
 
 from .resource_policy import MEDIUM_CPU, MEDIUM_RAM, HIGH_CPU, HIGH_RAM
 
-MAX_CPU_PERCENT = HIGH_CPU
-MAX_RAM_PERCENT = HIGH_RAM
+MAX_CPU_PERCENT = 85
+MAX_RAM_PERCENT = 80
+# Literal limits are inspected by the governed diagnostic source checker.
+if (MAX_CPU_PERCENT,MAX_RAM_PERCENT)!=(HIGH_CPU,HIGH_RAM):
+    raise RuntimeError('Automatic resource policy and hard ceiling disagree')
 CPU_RATE_CONTROL_ENABLE = 0x1
 CPU_RATE_CONTROL_HARD_CAP = 0x4
 JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE = 0x2000

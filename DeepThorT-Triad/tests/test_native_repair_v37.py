@@ -55,10 +55,12 @@ class NativeRepairTests(unittest.TestCase):
 
     def test_caps_and_reserve(self):
         g=1024**3
-        self.assertEqual((MAX_CPU_PERCENT,MAX_RAM_PERCENT),(50,65))
+        self.assertEqual((MAX_CPU_PERCENT,MAX_RAM_PERCENT),(85,80))
         self.assertEqual(calculate_ram_limit(40*g,40*g),26*g)
         self.assertEqual(calculate_ram_limit(40*g,20*g),16*g)
-        with self.assertRaises(ValueError):calculate_ram_limit(40*g,40*g,66)
+        self.assertEqual(calculate_ram_limit(40*g,40*g,80),32*g)
+        self.assertEqual(calculate_ram_limit(40*g,20*g,65,15),14*g)
+        with self.assertRaises(ValueError):calculate_ram_limit(40*g,40*g,81)
 
 if __name__=='__main__':
     unittest.main()
