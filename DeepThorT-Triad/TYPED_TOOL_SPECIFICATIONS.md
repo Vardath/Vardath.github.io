@@ -793,3 +793,7 @@ Add optional top-level `"upscale":{"scale":2,"method":"lanczos"}` to the existin
 ## Reviewed multitrack video timelines (Pass 177)
 
 Files & Images → Multitrack video. JSON keys `width`, `height`, `fps`, `duration_frames`, `background` (RGB triplet), `tracks`. Each track has `name` and `clips`; clips have `video`, inclusive `start_frame`, exclusive `end_frame`, timeline offset `at`, `x`, `y`, and integer `opacity` 0–100. Tracks are ordered bottom-to-top. Up to three tracks/four distinct short silent H.264 sources, 640×480 canvas, 120 output frames, matching source rate. Clips cannot overlap on the same track; different tracks may overlap. Gaps show the background. The rendered RGB sequence is independently decoded and verified. Audio and interactive timeline editing are not provided yet.
+
+## Reviewed automatic video highlights (Pass 178)
+
+Files & Images → Extract highlights. JSON: `{"video":"clip.mp4","start_frame":0,"end_frame":120,"segment_frames":12,"max_segments":3,"min_change":15}`. Rank windows by mean absolute consecutive-frame RGB change at 32×24, select up to four nonoverlapping segments in chronological order and render a new silent MP4. Scan 2–120 frames, window 2–30 frames, threshold 1–100. Report source segment positions and scores. If nothing qualifies, publish nothing. Visual activity is not semantic importance; no audio or narrative selection.
