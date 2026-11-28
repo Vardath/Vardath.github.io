@@ -281,7 +281,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 269 | 156 | Neural text-to-3D generation | Partial: optional reviewed offline Shap-E text mesh, bounded CPU settings and model inventory, strict verified geometry-only OBJ. Pass 270 CI pending; trusted model acquisition, native inference, material and visual acceptance outstanding. |
 | 270 | 157 | Image-to-3D reconstruction | Partial: reviewed local Shap-E image-conditioned shape estimation, exact source PNG, bounded settings and verified OBJ. Pass 271 CI pending; native model provisioning, inferred surface quality and metric accuracy outstanding. |
 | 271 | 158 | Multi-view 3D reconstruction | Partial: calibrated sparse fusion of three to five rectified views, all-view mutual matching and depth/reprojection consensus, exact source verification and JSON cloud. Pass 272 CI pending; arbitrary camera pose recovery, dense mesh and real-photo acceptance outstanding. |
-| 272 | 196 | GPU-accelerated text inference | Not started in this programme |
+| 272 | 196 | GPU-accelerated text inference | Partial: explicit reviewed one-shot OpenVINO GPU generation using existing local IR, bounded supervised process and receipt; Pass 273 CI pending. Actual hardware inference, utilisation, speedup, VRAM constraints and resident production routing outstanding. |
 | 273 | 198 | AI model format conversion | Not started in this programme |
 | 274 | 197 | AI model quantisation | Not started in this programme |
 | 275 | 39 | Remote computer control | Not started in this programme |
@@ -1275,3 +1275,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 272 — 28 November 2026
 - Rank 271 / ID 158: reviewed sparse multi-view reconstruction, common reference frame, owner-specified parallel baselines, independently matched depth agreement and reprojection checks. Bounded aggregate matching work, exact source guards, verified point cloud output. Three fixture regressions registered in both CI jobs. No automatic calibration, arbitrary pose recovery, dense mesh or native real-photo acceptance claim.
+
+
+## Pass 273 — 28 November 2026
+- Rank 272 / ID 196: experimental opt-in native GPU text generation with explicit device, exact reviewed profile, bounded prompt/token count, inherited Windows supervisor, gaming/host reserve/time limits and no configured CPU fallback. Three fixture regressions registered in both CI jobs. GPU VRAM is not capped by the Windows Job Object; no production CPU worker or permission policy changes. Actual driver/model compatibility, acceleration and performance acceptance remain outstanding.
