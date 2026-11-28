@@ -2,7 +2,7 @@
 import tkinter as tk
 from tkinter import ttk
 import unittest
-from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_job_rows
+from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows
 
 
 class LatticeShelfTests(unittest.TestCase):
@@ -241,3 +241,20 @@ class LatticeShelfTests(unittest.TestCase):
         self.assertEqual(self.calls,['7'])
         centre.render('another workspace',[],rows,{'complete':1})
         self.assertEqual(centre.jobs.selection(),())
+
+
+    def test_approval_centre_separates_job_review_and_action_identity(self):
+        centre=ApprovalCentre(self.root,lambda:None,lambda ident:self.calls.append(('job',ident)),
+                               lambda ident:self.calls.append(('action',ident)),[])
+        jobs=approval_job_rows([{'id':5,'state':'waiting_approval','target':'main.py'},
+                                {'id':6,'state':'complete'}])
+        actions=pc_action_rows([{'id':5,'status':'approved','label':'Check','approval_source':'user'}])
+        centre.render('workspace',jobs,actions)
+        self.assertEqual(centre.job_table.get_children(),('5',))
+        self.assertEqual(centre.action_table.get_children(),('5',))
+        self.assertEqual(self.calls,[])
+        self.assertEqual(centre.job_table.selection(),())
+        self.assertEqual(centre.action_table.selection(),())
+        centre.job_table.selection_set('5')
+        centre.render('other workspace',[],actions)
+        self.assertEqual(centre.job_table.selection(),())

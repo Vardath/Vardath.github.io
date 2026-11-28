@@ -9,6 +9,9 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    'Refresh approvals': 'Read existing job and approved action records without creating any permissions.',
+    'Existing permission controls': 'Navigate to the existing reviewed permission and process controls.',
+    'Inspect selected record': 'Read the exact stored record and historical evidence without executing anything.',
     'Refresh overview': 'Read saved project queue and workspace job metadata without approving or executing anything.',
     'Go to workspace': 'Navigate to an existing workspace screen.',
     'Open selected job': 'Inspect an exact selected job from the current workspace; never approves or executes it.',
@@ -147,6 +150,7 @@ TOOLTIPS = {
 }
 
 TABS = {
+    'Approvals & PC Activity': 'Read outstanding workspace review states and recent recorded PC actions; no approval or execution occurs here.',
     'Command Centre': 'Review project priorities, recorded job states and live operative observations. Navigate to existing controls without granting new authority.',
     'Chats': 'Manage saved conversations, submit instructions, draft a plan and request a file revision.',
     'Work queue': 'Inspect approved task dependencies, real tests/repairs, source revisions and blockers. Explicit rollback quarantines new files and invalidates old approvals.',
