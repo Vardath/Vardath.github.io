@@ -103,7 +103,7 @@ ROOT = Path(__file__).resolve().parent
 STATE = ROOT / 'state'
 from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
-from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice
+from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = (PALETTE[k] for k in ('base','panel','input','text','muted','accent'))
 GREEN, YELLOW = PALETTE['success'], PALETTE['warning']
 MAX_INFERENCE_PROMPT = 7500  # current OpenVINO IR endpoint requires <=8000 / message
@@ -754,59 +754,92 @@ class DeepThorTDesktop(tk.Tk):
         scroll_text(message_frame,self.janus_events_text)
 
         # MACHINE DISCOVERY, PLANNING, OPT-IN INSTALLER AND TESTING TOOLS
-        hwbar=ttk.Frame(hardware_tab);hwbar.pack(fill='x',pady=7)
-        ttk.Button(hwbar,text='Scan this computer',command=self._refresh_inventory).pack(side='left',padx=3)
-        ttk.Button(hwbar,text='Check tools needed for prompt',command=self._plan_tools).pack(side='left',padx=3)
-        ttk.Button(hwbar,text='Investigate app…',command=self._investigate_tool).pack(side='left',padx=3)
-        ttk.Button(hwbar,text='Enroll app…',command=self._enroll_learning_tool).pack(side='left',padx=3)
-        ttk.Button(hwbar,text='Learn procedure…',command=self._draft_tool_procedure).pack(side='left',padx=3)
-        ttk.Button(hwbar,text='Run learned procedure…',command=self._run_learned_procedure).pack(side='left',padx=3)
-        ttk.Button(hwbar,text='Tool workflows…',command=self._tool_workflow_dialog).pack(side='left',padx=3)
-        ttk.Button(hwbar,text='JANUS workflow…',command=self._design_tool_workflow).pack(side='left',padx=3)
-        ttk.Button(hwbar,text='Shared skills…',command=self._portable_skill_dialog).pack(side='left',padx=3)
-        ttk.Button(hwbar,text='Shared procedures…',command=self._portable_procedure_dialog).pack(side='left',padx=3)
-        ttk.Button(hwbar,text='Local MCP…',command=self._local_mcp_dialog).pack(side='left',padx=3)
-        ttk.Button(hwbar,text='Asset import check…',command=self._asset_import_check).pack(side='left',padx=3)
-        xr=ttk.Frame(hardware_tab);xr.pack(fill='x',pady=(4,4))
-        ttk.Button(xr,text='Inspect X4 sources',command=self._inspect_x4_sources).pack(side='left',padx=3)
-        ttk.Button(xr,text='Choose X4 game folder…',command=self._choose_x4_game).pack(side='left',padx=3)
-        ttk.Button(xr,text='Choose extracted X4 XML…',command=self._choose_x4_refs).pack(side='left',padx=3)
-        ttk.Button(xr,text='Extract X4 XML (approval required)…',command=self._extract_x4_references).pack(side='left',padx=3)
-        self.x4_source_info=self._text(hardware_tab,readonly=True,height=10)
-        self.x4_source_info.pack(fill='both',expand=False,pady=(4,8))
-        self._show(self.x4_source_info,'X4 sources not inspected. Use Inspect X4 sources to discover your installed game and any extracted XML. No downloads or changes occur during inspection.')
-        self.machine_text=self._text(hardware_tab,readonly=True,height=20)
-        self.machine_text.pack(fill='both',expand=True)
-        action=ttk.Frame(hardware_tab);action.pack(fill='x',pady=(9,4))
-        ttk.Label(action,text='Local software tools:',style='Muted.TLabel').pack(side='left',padx=4)
+        hardware_tabs=ttk.Notebook(hardware_tab);hardware_tabs.pack(fill='both',expand=True,pady=5)
+        discovered=ttk.Frame(hardware_tabs);machine=ttk.Frame(hardware_tabs)
+        workflows=ttk.Frame(hardware_tabs);software=ttk.Frame(hardware_tabs)
+        x4_page=ttk.Frame(hardware_tabs)
+        for page,title in ((discovered,'Detected tools'),(machine,'Computer'),(workflows,'Workflows & checks'),(software,'Install & permissions'),(x4_page,'X4 sources')):
+            hardware_tabs.add(page,text=title)
+        hwbar=ttk.Frame(discovered);hwbar.pack(fill='x',pady=4)
+        ttk.Button(hwbar,text='Scan this computer',command=self._refresh_inventory).pack(side='left',padx=3,pady=3)
+        ttk.Button(hwbar,text='Check tools needed for prompt',command=self._plan_tools).pack(side='left',padx=3,pady=3)
+        self.inventory_notice=tk.StringVar(value='No computer scan recorded')
+        ttk.Label(discovered,textvariable=self.inventory_notice,style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=4)
+        filterbar=ttk.Frame(discovered);filterbar.pack(fill='x',pady=4)
+        self.inventory_filter=tk.StringVar(value='All states')
+        self.inventory_query=tk.StringVar(value='')
+        ttk.Combobox(filterbar,textvariable=self.inventory_filter,values=('All states','Found','Missing'),state='readonly',width=13).pack(side='left',padx=3)
+        ttk.Entry(filterbar,textvariable=self.inventory_query).pack(side='left',fill='x',expand=True,padx=3)
+        ttk.Button(filterbar,text='Filter tools',command=self._render_tool_inventory).pack(side='left',padx=3)
+        inv_frame=ttk.Frame(discovered);inv_frame.pack(fill='both',expand=True)
+        self.inventory_table=ttk.Treeview(inv_frame,columns=('name','state','purpose','location','verification'),show='headings',selectmode='browse')
+        for col,title,width in (('name','Program',130),('state','Detection',80),('purpose','Purpose',180),('location','Location',240),('verification','CLI evidence',120)):
+            self.inventory_table.heading(col,text=title);self.inventory_table.column(col,width=width,stretch=col=='location')
+        source_scrollbars(inv_frame,self.inventory_table)
+        ttk.Label(discovered,text='Detection is not permission, a successful installation, or verification of functionality.',style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=5)
+        machine_frame=ttk.Frame(machine);machine_frame.pack(fill='both',expand=True)
+        self.machine_text=self._text(machine_frame,readonly=True,height=20)
+        scroll_text(machine_frame,self.machine_text)
+        workflow_bar=ttk.Frame(workflows);workflow_bar.pack(fill='x',pady=4)
+        action_menu(workflow_bar,'Discover & learn',[
+            ('Investigate app…',self._investigate_tool),
+            ('Enroll app…',self._enroll_learning_tool),
+            ('Learn procedure…',self._draft_tool_procedure),
+            ('Run learned procedure…',self._run_learned_procedure),
+        ]).pack(side='left',padx=3,pady=3)
+        action_menu(workflow_bar,'Design & share',[
+            ('Tool workflows…',self._tool_workflow_dialog),
+            ('JANUS workflow…',self._design_tool_workflow),
+            ('Shared skills…',self._portable_skill_dialog),
+            ('Shared procedures…',self._portable_procedure_dialog),
+        ]).pack(side='left',padx=3,pady=3)
+        action_menu(workflow_bar,'Integrations',[
+            ('Local MCP…',self._local_mcp_dialog),
+            ('Asset import check…',self._asset_import_check),
+        ]).pack(side='left',padx=3,pady=3)
+        checks=ttk.Frame(workflows);checks.pack(fill='x',pady=8)
+        ttk.Label(checks,text='Approved local project checks:',style='Muted.TLabel').pack(anchor='w',padx=4)
+        self.check_choice=tk.StringVar(value='Git: status')
+        self.check_menu=ttk.Combobox(checks,textvariable=self.check_choice,state='readonly',width=24,
+            values=('Git: status','Git: inspect history','Git: review staged commit','Git: commit selected files','Git: manage local branches','Git: manage worktrees','Python: unit tests','Python: integration suite','Python: test coverage','Python: performance profile','Security: dependency audit','Security: source scan','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
+        self.check_menu.pack(side='left',padx=4)
+        ttk.Button(checks,text='Review & run…',command=self._run_project_check).pack(side='left',padx=3,pady=3)
+        ttk.Button(checks,text='Find app capabilities…',command=self._search_application_capabilities).pack(side='left',padx=3,pady=3)
+        ttk.Label(workflows,text='Review the exact procedure or command before execution. Learned and shared procedures do not grant execution authority.',style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=8)
+        action=ttk.Frame(software);action.pack(fill='x',pady=5)
+        ttk.Label(software,text='Recognised catalog software',style='Muted.TLabel').pack(anchor='w')
         self.install_choice=tk.StringVar(value='Godot')
         self.install_menu=ttk.Combobox(action,textvariable=self.install_choice,values=sorted(INSTALL_CATALOG),state='readonly',width=20)
         self.install_menu.pack(side='left',padx=5)
-        ttk.Button(action,text='Install selected catalog tool…',command=self._approve_tool_install).pack(side='left',padx=3)
-        ttk.Button(action,text='Find official tool page…',command=self._find_official_tool_page).pack(side='left',padx=3)
-        ttk.Button(action,text='Search packages online…',command=self._search_online_tools).pack(side='left',padx=3)
-        ttk.Button(action,text='Discovered packages…',command=self._show_discovered_packages).pack(side='left',padx=3)
-        autonomy=ttk.Frame(hardware_tab);autonomy.pack(fill='x',pady=(2,6))
+        ttk.Button(action,text='Install selected catalog tool…',command=self._approve_tool_install).pack(side='left',padx=3,pady=3)
+        ttk.Button(action,text='Find official tool page…',command=self._find_official_tool_page).pack(side='left',padx=3,pady=3)
+        acquire=ttk.Frame(software);acquire.pack(fill='x',pady=5)
+        action_menu(acquire,'Online discovery',[
+            ('Search packages online…',self._search_online_tools),
+            ('Discovered packages…',self._show_discovered_packages),
+        ]).pack(side='left',padx=3,pady=3)
+        ttk.Button(acquire,text='Inspect package ID…',command=self._inspect_package_id).pack(side='left',padx=3,pady=3)
+        ttk.Button(acquire,text='Install inspected package…',command=self._approve_inspected_install).pack(side='left',padx=3,pady=3)
+        ttk.Label(software,text='Automation permissions',style='Muted.TLabel').pack(anchor='w',pady=(8,3))
+        autonomy=ttk.Frame(software);autonomy.pack(fill='x',pady=4)
         self.autonomy_enabled=tk.BooleanVar(value=self._autonomy_policy['enabled'])
         self.autonomy_upgrades=tk.BooleanVar(value=self._autonomy_policy['allow_upgrades'])
         ttk.Checkbutton(autonomy,text='Automatically manage routine project tools',
                         variable=self.autonomy_enabled,command=self._set_tool_autonomy).pack(side='left',padx=3)
         ttk.Checkbutton(autonomy,text='Allow tool upgrades',
                         variable=self.autonomy_upgrades,command=self._set_tool_autonomy).pack(side='left',padx=12)
-        checks=ttk.Frame(hardware_tab);checks.pack(fill='x',pady=(3,10))
-        ttk.Label(checks,text='Approved local project checks:',style='Muted.TLabel').pack(side='left',padx=4)
-        self.check_choice=tk.StringVar(value='Git: status')
-        self.check_menu=ttk.Combobox(checks,textvariable=self.check_choice,state='readonly',width=24,
-            values=('Git: status','Git: inspect history','Git: review staged commit','Git: commit selected files','Git: manage local branches','Git: manage worktrees','Python: unit tests','Python: integration suite','Python: test coverage','Python: performance profile','Security: dependency audit','Security: source scan','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
-        self.check_menu.pack(side='left',padx=4)
-        ttk.Button(checks,text='Review & run…',command=self._run_project_check).pack(side='left',padx=3)
-        ttk.Button(checks,text='Find app capabilities…',command=self._search_application_capabilities).pack(side='left',padx=3)
-        acquire=ttk.Frame(hardware_tab);acquire.pack(fill='x',pady=(0,5))
-        ttk.Label(acquire,text='Discovered software — separate review:',style='Muted.TLabel').pack(side='left',padx=4)
-        ttk.Button(acquire,text='Inspect package ID…',command=self._inspect_package_id).pack(side='left',padx=5)
-        ttk.Button(acquire,text='Install inspected package…',command=self._approve_inspected_install).pack(side='left',padx=5)
-        tk.Label(hardware_tab,text='After approving a build plan, recognised project tools can install/upgrade automatically. Windows UAC remains active. Unknown software is never automatically executed.',
-                 bg=BG,fg=MUTED,wraplength=750).pack(anchor='w',pady=(0,7))
+        ttk.Label(software,text='After approving a build plan, recognised project tools may install or upgrade only within enabled policy. Windows UAC remains active. Unknown software is never automatically executed.',style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=8)
+        xr=ttk.Frame(x4_page);xr.pack(fill='x',pady=4)
+        ttk.Button(xr,text='Inspect X4 sources',command=self._inspect_x4_sources).pack(side='left',padx=3,pady=3)
+        action_menu(xr,'X4 paths & extraction',[
+            ('Choose X4 game folder…',self._choose_x4_game),
+            ('Choose extracted X4 XML…',self._choose_x4_refs),
+            ('Extract X4 XML (approval required)…',self._extract_x4_references),
+        ]).pack(side='left',padx=3,pady=3)
+        x4_frame=ttk.Frame(x4_page);x4_frame.pack(fill='both',expand=True)
+        self.x4_source_info=self._text(x4_frame,readonly=True,height=10)
+        scroll_text(x4_frame,self.x4_source_info)
+        self._show(self.x4_source_info,'X4 sources not inspected. Use Inspect X4 sources to discover your installed game and any extracted XML. No downloads or changes occur during inspection.')
 
         # MEDIA: explicit local file and image handling. No cloud image calls.
         media_head=ttk.Frame(media_tab);media_head.pack(fill='x',pady=8)
@@ -7244,7 +7277,21 @@ class DeepThorTDesktop(tk.Tk):
             self.tabs.select(0)
 
     # ----------- resource discovery / developer tools ------------
+    def _render_tool_inventory(self):
+        tools=(self.inventory or {}).get('tools',[])
+        evidence={}
+        for tool in tools:
+            result=self._tool_verification.get(tool['name'])
+            if result:
+                current=self._tool_verification.current(tool['name'])
+                evidence[tool['name']]=('Version verified' if current else 'Stale / changed' if result['status']=='version_verified' else result['status'].replace('_',' '))
+        state=self.inventory_filter.get();query=self.inventory_query.get()
+        rows=[(key,values) for key,values in inventory_rows(tools,evidence) if (state=='All states' or state==values[1]) and matches_query(' '.join(values),query)]
+        sync_table(self.inventory_table,rows)
+        self.inventory_notice.set(f'{len(rows)} / {len(tools)} known tools · {sum(bool(t.get("found")) for t in tools)} detected' if self.inventory else 'No computer scan recorded')
+
     def _refresh_inventory(self):
+        self.inventory_notice.set('Scanning known program locations…')
         self._show(self.machine_text,'Scanning computer hardware, drives and known program locations…')
         path=self.project
         game_dir=self.x4_game_dir
@@ -8519,11 +8566,10 @@ class DeepThorTDesktop(tk.Tk):
         if not rows:
             messagebox.showinfo('Software discovery','No persisted discovery candidates for this project.',parent=self)
             return
-        ids={r['package_id'] for r in rows}
-        choice=simpledialog.askstring('Unverified discovery candidates',
-            '\n'.join(r['name']+' — '+r['package_id'] for r in rows)+
-            '\n\nEnter one exact ID to inspect its current catalog metadata. Nothing will be installed.',parent=self)
-        if choice is not None and choice.strip() in ids:self._inspect_package_id(choice.strip())
+        project=self._project_key()
+        def inspect(ident):
+            if self._project_key()==project:self._inspect_package_id(ident)
+        SearchPicker(self,'Unverified packages — inspect only',[(r['package_id'],r['name']+' — '+r['package_id']) for r in rows],inspect)
 
     def _search_online_tools(self):
         """Consent-gated, read-only search: results are not approved installers."""
@@ -10006,6 +10052,7 @@ class DeepThorTDesktop(tk.Tk):
                             (f" — {result['version']}" if current else ''))
                 if proof_notes:summary+='\n\nPost-install CLI checks (NOT playtesting):\n'+'\n'.join(proof_notes)
                 self._show(self.machine_text,summary)
+                self._render_tool_inventory()
                 (STATE/'computer-inventory.json').write_text(json.dumps(self.inventory,indent=2),encoding='utf-8')
                 snapshot=summarize_inventory(self.inventory)
                 save_snapshot(STATE/'last-engine-inventory.json',snapshot)
@@ -10028,6 +10075,7 @@ class DeepThorTDesktop(tk.Tk):
                 self._log('Post-install version verification error for '+event[1]+': '+event[2])
             elif kind=='inventory_error':
                 self._log('Computer scan problem: '+event[1]);self._show(self.machine_text,'Discovery error: '+event[1])
+                self.inventory_notice.set('Scan failed; displayed results may be from the previous scan')
             elif kind=='x4_auto_report':
                 self.x4_report=event[1]
                 self._x4_report_project=str(self.project)

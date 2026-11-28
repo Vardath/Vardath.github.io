@@ -431,3 +431,10 @@ class SocietyLattice(ttk.Frame):
         data=records.get(self.role)
         body=json.dumps(data,indent=2,ensure_ascii=False) if isinstance(data,dict) and data else 'No recorded appraisal for this core.'
         replace_readonly(self.detail,self.society.get()+' · '+self.role+'\nRecorded observations, not a neural thought transcript.\n'+body)
+
+
+def inventory_rows(tools,evidence):
+    """Discovery, verification and execution authority are separate concepts."""
+    return [(str(tool['name']),(str(tool['name']),'Found' if tool.get('found') else 'Missing',
+             str(tool.get('purpose') or ''),str(tool.get('location') or '—'),
+             str(evidence.get(tool['name'],'Not verified')))) for tool in tools]

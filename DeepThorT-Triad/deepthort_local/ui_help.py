@@ -9,6 +9,12 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    'Filter tools': 'Filter existing computer scan results without scanning, installing or granting permission.',
+    'Discover & learn': 'Investigate or explicitly enrol tools and review learned procedures.',
+    'Design & share': 'Review local workflows and portable skills or procedures.',
+    'Integrations': 'Review local MCP and asset import operations.',
+    'Online discovery': 'Discover unverified software candidates; installation requires separate review.',
+    'X4 paths & extraction': 'Configure X4 reference paths and separately approve extraction.',
     'Five operatives': 'Observed worker roles; Gemma activity is not a residency claim.',
     'Diagnostics & tests': 'Existing diagnostics, test and model recovery operations; no operation starts by opening this menu.',
     'Follow latest activity': 'Scroll to new desktop log entries as they arrive. Disable to read or search older entries.',
