@@ -184,7 +184,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 172 | 300 | Video transitions | Partial: reviewed explicit cut/crossfade boundaries with 1–12 overlap frames, per-clip non-overlap reserve, exact output frame count and decoded RGB verification. Pass 173 CI pending. Audio transitions, wider effects and native playback outstanding. |
 | 173 | 111 | Video motion tracking | Partial: reviewed fixed-template RGB patch translation with bounded search/error threshold, ambiguity/loss stop, frame/timestamp evidence and guarded JSON output. Pass 174 CI pending. Scale, rotation, occlusion recovery and semantic tracking outstanding. |
 | 174 | 113 | Video frame interpolation | Partial: reviewed 2x midpoint RGB frame blending inside each clip, duration-preserving final frame, doubled overlap lengths and lossless decoded output verification. Pass 175 CI pending. Motion-compensated/neural interpolation and native playback outstanding. |
-| 175 | 114 | Video upscaling | Not started in this programme |
+| 175 | 114 | Video upscaling | Partial: reviewed 2–4x nearest/bicubic/Lanczos video enlargement with shared RGB budget, up to 1280x960, existing edits and transitions/interpolation integration, exact decoded output verification. Pass 176 CI pending. Neural detail recovery and native playback outstanding. |
 | 176 | 120 | Multitrack video editing timelines | Not started in this programme |
 | 177 | 121 | Automatic video highlight extraction | Not started in this programme |
 | 178 | 62 | Android emulator operation | Not started in this programme |
@@ -961,3 +961,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 175 — 27 November 2026
 - Add optional 2x midpoint blending to existing reviewed video editor. Generate only within each clip, retain duration using last-frame duplication, preserve hard-cut boundaries, double explicit crossfade overlaps and verify exact decoded output pixels/rate. Two tests use real FFmpeg roundtrip. No neural or motion-compensated interpolation or native playback acceptance. Next rank 175 / ID 114 video upscaling. No installer.
+
+## Pass 176 — 27 November 2026
+- Extend the existing guarded video editor with optional 2–4x classical enlargement per edited frame. Bound output geometry and aggregate RGB bytes to the existing rendering budget, integrate with interpolation and transitions, and verify lossless decoded output. Two regressions use real FFmpeg roundtrip. No neural super-resolution or native playback claim. Next rank 176 / ID 120 multitrack video editing timelines. No installer.

@@ -169,3 +169,26 @@ class VideoTrimmingTests(unittest.TestCase):
         with self.assertRaises(ValueError):checked(self.s)
         self.s['interpolation']='neural'
         with self.assertRaises(ValueError):checked(self.s)
+
+
+    def test_video_upscale_exact_pixels_and_metadata(self):
+        from deepthort_local.video_trimming import upscale_frames,probe
+        self.s={'fps':24,'clips':[{'video':'a.mp4','start_frame':0,'end_frame':3}],
+                'upscale':{'scale':2,'method':'nearest'}}
+        self.save();plan,p=review(self.root,'spec.json','up.mp4')
+        self.assertEqual((p['observations']['width'],p['observations']['height']),(32,32))
+        r=execute(self.root,plan)
+        expected=b''.join(bytes(c)*1024 for c in [(255,0,0),(0,255,0),(0,0,255)])
+        self.assertEqual(decode(self.ff,self.root/'up.mp4',0,3,32,32),expected)
+        self.assertEqual(r['frames'],3);self.assertFalse(r['neural_super_resolution_used'])
+        self.assertEqual(upscale_frames(bytes([1,2,3,4,5,6]),(2,1),self.s['upscale']),
+                         bytes([1,2,3]*2+[4,5,6]*2)*2)
+    def test_upscale_bounds_and_combined_interpolation(self):
+        from deepthort_local.video_trimming import upscale_size
+        with self.assertRaises(ValueError):upscale_size((640,480),{'scale':3,'method':'lanczos'})
+        self.s={'fps':24,'clips':[{'video':'a.mp4','start_frame':0,'end_frame':2}],
+                'upscale':{'scale':3,'method':'bicubic'},'interpolation':'blend2x'}
+        self.save();plan,_=review(self.root,'spec.json','combined.mp4')
+        r=execute(self.root,plan);self.assertEqual((r['width'],r['height'],r['frames'],r['fps']),(48,48,4,48))
+        self.s['upscale']['scale']=True
+        with self.assertRaises(ValueError):checked(self.s)
