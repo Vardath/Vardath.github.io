@@ -551,6 +551,7 @@ class DeepThorTDesktop(tk.Tk):
                    command=self._restore_source_checkpoint).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Quiet Godot scene test',
                    command=self._run_quiet_scene).pack(side='left',padx=7)
+        ttk.Button(restorebar,text='Generate grid game…',command=lambda:self._review_typed_tool('game_project_generation','.zip','Development: reviewed game project')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Android emulator smoke…',command=lambda:self._review_typed_tool('android_emulator','.json','Development: reviewed Android emulator smoke')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Stop quiet test',
                    command=self._stop_quiet_scene).pack(side='left',padx=3)
@@ -1824,6 +1825,7 @@ class DeepThorTDesktop(tk.Tk):
                  'code_refactoring':('.py','Development: reviewed local refactor'),
                  'installer_project':('.iss','Development: reviewed installer source'),
                  'android_emulator':('.json','Development: reviewed Android emulator smoke'),
+                 'game_project_generation':('.zip','Development: reviewed game project'),
                  'merge_conflict':('.txt','Git: reviewed conflict proposal'),
                  'remote_mcp':('.json','Integration: reviewed remote MCP'),
                  'rest_api':('.json','Integration: reviewed REST request'),

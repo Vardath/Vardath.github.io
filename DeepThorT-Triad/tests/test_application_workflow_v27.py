@@ -47,3 +47,36 @@ class ApplicationWorkflowTests(unittest.TestCase):
             self.assertEqual(monitor(alive,log,10,sampler,clock=lambda:t[0],sleep=sleep)['status'],'resource_reserve_unavailable')
             alive.return_value=False;alive.code.return_value=3
             self.assertEqual(monitor(alive,log,10,sampler,clock=lambda:t[0],sleep=sleep)['process_exit_code'],3)
+
+
+    def test_grid_game_project_source_and_reachability(self):
+        import io,json,zipfile
+        from deepthort_local.game_project_generation import generate,checked
+        s={'title':'Crystal Maze','width':6,'height':5,'cell_size':32,'start':[0,0],'goal':[5,4],
+           'walls':[[2,0],[2,1],[2,2]],'collectibles':[[1,2],[4,3]]}
+        data,r=generate(s);self.assertTrue(r['all_objectives_reachable']);self.assertFalse(r['engine_executed'])
+        self.assertEqual(data,generate(s)[0])
+        with zipfile.ZipFile(io.BytesIO(data)) as z:
+            self.assertEqual(set(z.namelist()),{'project.godot','main.tscn','game.gd','README.txt','level.json'})
+            self.assertEqual(json.loads(z.read('level.json')),s)
+            self.assertIn(b'run/main_scene="res://main.tscn"',z.read('project.godot'))
+            self.assertIn(b'path="res://game.gd"',z.read('main.tscn'))
+            self.assertIn(b'var next_cell := player + delta',z.read('game.gd'))
+            self.assertIn(b'Vector2i(4, 3)',z.read('game.gd'))
+        with self.assertRaises(ValueError):checked(dict(s,walls=[[2,i] for i in range(5)]))
+        with self.assertRaises(ValueError):checked(dict(s,collectibles=[[0,0]]))
+    def test_grid_game_review_and_stale_input(self):
+        import tempfile,json
+        from pathlib import Path
+        from deepthort_local.game_project_generation import review,execute
+        s={'title':'Game','width':5,'height':5,'cell_size':24,'start':[0,0],'goal':[4,4],
+           'walls':[],'collectibles':[[1,1]]}
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();path=root/'spec.json';path.write_text(json.dumps(s))
+            plan,_=review(root,'spec.json','game.zip')
+            path.write_text(json.dumps(dict(s,title='Changed')))
+            with self.assertRaises(ValueError):execute(root,plan)
+            self.assertFalse((root/'game.zip').exists())
+            plan,_=review(root,'spec.json','game.zip');r=execute(root,plan)
+            self.assertEqual(r['status'],'editable_game_source_generated')
+            with self.assertRaises(ValueError):execute(root,plan)
