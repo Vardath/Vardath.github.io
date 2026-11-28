@@ -284,7 +284,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 272 | 196 | GPU-accelerated text inference | Partial: explicit reviewed one-shot OpenVINO GPU generation using existing local IR, bounded supervised process and receipt; Pass 273 CI pending. Actual hardware inference, utilisation, speedup, VRAM constraints and resident production routing outstanding. |
 | 273 | 198 | AI model format conversion | Partial: reviewed bidirectional bounded NPZ/SafeTensors weight conversion, exact tensor roundtrip and new outputs. Pass 274 CI pending; full model graph, tokenizer, large-checkpoint conversion and inference acceptance outstanding. |
 | 274 | 197 | AI model quantisation | Partial: reviewed selected F16/F32 tensor symmetric INT8 weight bundle with explicit scales and independent reconstruction error checks. Pass 275 CI pending; runnable model graph, INT4, calibration and runtime/quality acceptance outstanding. |
-| 275 | 39 | Remote computer control | Not started in this programme |
+| 275 | 39 | Remote computer control | Partial: explicit authorised-host RDP client handoff with reviewed configuration, network restriction, manual authentication and bounded cleanup. Pass 276 CI pending; actual remote session, autonomous input and native connection acceptance outstanding. |
 | 276 | 40 | Virtual computer environments | Not started in this programme |
 | 277 | 206 | Virtual machine isolation | Not started in this programme |
 | 278 | 205 | Operating-system-level execution sandboxing | Not started in this programme |
@@ -1287,3 +1287,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 275 — 28 November 2026
 - Rank 274 / ID 197: bounded signed INT8 quantisation of explicitly selected F16/F32 weights with per-tensor scales, rejection of nonfinite input and excessive error, independent stored-value reconstruction check, unchanged unselected tensors and verified ZIP output. Three regression tests registered in both CI jobs. Full model/runtime integration, INT4, calibration and inference quality remain outstanding. No existing model or resource-cap changes.
+
+
+## Pass 276 — 28 November 2026
+- Rank 275 / ID 39: reviewed manual remote desktop client handoff, exact host/port, explicit owner authority and network restriction, resource redirection disabled by requested profile, supervised bounded client execution and observation receipt. Three regression tests registered in both CI jobs. Native remote connectivity, independent host identity, actual remote session cleanup and autonomous input remain outstanding. No remote agent, password collection, network-policy bypass or arbitrary shell.
