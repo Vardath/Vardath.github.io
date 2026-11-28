@@ -2,7 +2,7 @@
 import tkinter as tk
 from tkinter import ttk
 import unittest
-from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice
+from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows
 
 
 class LatticeShelfTests(unittest.TestCase):
@@ -215,3 +215,10 @@ class LatticeShelfTests(unittest.TestCase):
         self.assertNotIn('project evidence',lattice.detail.get('1.0','end'))
         lattice.select('Memory')
         self.assertIn('No recorded appraisal',lattice.detail.get('1.0','end'))
+
+
+    def test_inventory_distinguishes_discovery_and_verification(self):
+        rows=dict(inventory_rows([{'name':'Godot','found':True,'location':'C:/Godot','purpose':'Games'},
+                                  {'name':'Blender','found':False,'purpose':'Meshes'}],{'Godot':'Stale / changed'}))
+        self.assertEqual(rows['Godot'][1:5],('Found','Games','C:/Godot','Stale / changed'))
+        self.assertEqual(rows['Blender'][1:5],('Missing','Meshes','—','Not verified'))

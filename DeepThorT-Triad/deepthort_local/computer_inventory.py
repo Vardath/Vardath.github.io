@@ -232,7 +232,7 @@ def scan_computer(install_dir: str | Path, project_dir: str | Path | None = None
         'project_folder': str(Path(project_dir).resolve()) if project_dir else None,
         'cpu': _cpu_name(), 'logical_processors': os.cpu_count(),
         'ram_bytes': total, 'free_ram_bytes': available,
-        'deepthort_max_cpu_percent':40, 'deepthort_max_memory_commit_bytes':total*50//100,
+        'deepthort_max_cpu_percent':50, 'deepthort_max_memory_commit_bytes':total*65//100,
         'gpu': _gpu_names() if include_gpu else [], 'drives': _drives(),
         'tools': detected_tools,
         'engine_preflight': project_preflight,
@@ -247,8 +247,8 @@ def format_inventory(data: dict) -> str:
          f"Current project: {data['project_folder'] or 'None selected'}",'',
          f"CPU: {data['cpu']} ({data['logical_processors']} logical processors)",
          f"Installed RAM: {gib(data['ram_bytes'])} | Available: {gib(data['free_ram_bytes'])}",
-         f"DeepThorT memory-commit budget: {gib(data['deepthort_max_memory_commit_bytes'])} (up to 50% of physical RAM; commit ceiling, not working set)",
-         'DeepThorT CPU cap: 40% of whole system (when launched via DeepThorT.exe)',
+         f"DeepThorT memory-commit budget: {gib(data['deepthort_max_memory_commit_bytes'])} (theoretical maximum 65% of physical RAM; actual admission may be lower; commit ceiling, not working set)",
+         'DeepThorTriad configured CPU ceiling: 50% of whole system (when launched under the Windows supervisor)',
          'Disk usage: low-priority / game-aware, NOT an enforced 20% disk bandwidth cap',
          f"GPU: {', '.join(data['gpu']) if data['gpu'] else 'Not detected / optional scan skipped'}", '', 'Disks:']
     for d in data['drives']:
