@@ -873,3 +873,7 @@ Inspect webpage elements accepts `{"url":"https://example.org/docs/"}`. Exact ap
 ## Goal-directed static website navigation (Pass 197)
 
 Find webpage by heading accepts `{"seed":"https://example.org/docs/","path_prefix":"/docs/","max_pages":4,"max_depth":2,"target_heading":"Installation guide"}`. Following explicit scope approval, read robots and inspect up to five public static pages (depth at most two), rank discovered in-scope links by visible source label and URL terms, and stop when exact normalized heading text is observed. A JSON receipt records attempted pages, evidence fingerprints, selected path and source locators. Missing target is not proof of absence. No live browser, JavaScript, credential use, form submission or external navigation.
+
+## Reviewed static control selection (Pass 198)
+
+Select webpage control accepts `{"inspection":"elements.json","locator":"/html[1]/body[1]/a[1]","tag":"a","action":"read_link","path_prefix":"/docs/","destination":"https://example.org/docs/install/"}`. Use a prior static element inspection. Read-link action requires an explicit exact same-host directory destination, robots permission and identical source response hash and selected row before the destination read. `identify` with `destination:null` is offline identification of an observed anchor, button, input, textarea, select, label or form; no current state claim. No live DOM click, input, form submission, credentials, redirects or script execution.

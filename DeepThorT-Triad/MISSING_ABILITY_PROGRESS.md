@@ -206,7 +206,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 194 | 19 | Autonomous deep research | Partial: bounded approved multi-site crawl with question-gap link prioritisation, literal excerpts, duplicate detection and evidence coverage report. Pass 195 CI pending. Semantic synthesis, broader search and native network acceptance outstanding. |
 | 195 | 31 | Webpage element inspection | Partial: reviewed public static HTML structural element inspection, controls/links/labels/headings, bounded locators and no input values or activation. Pass 196 CI pending. Rendered DOM, accessibility and authenticated/browser acceptance outstanding. |
 | 196 | 30 | Autonomous website navigation | Partial: reviewed public static goal-directed navigation using link-label/URL ranking, exact target heading stop, bounded frontier and path receipt. Pass 197 CI pending. Live browser navigation and native network acceptance outstanding. |
-| 197 | 32 | Website interaction and control selection | Not started in this programme |
+| 197 | 32 | Website interaction and control selection | Partial: exact static control selection from guarded inspection, offline identification and approved same-host link read after robots and source/control revalidation. Pass 198 CI pending. Actual browser click, form input and authenticated sessions outstanding. |
 | 198 | 35 | Browser-based file downloads | Not started in this programme |
 | 199 | 34 | Browser-based file uploads | Not started in this programme |
 | 200 | 33 | Automated online form completion | Not started in this programme |
@@ -1027,3 +1027,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 197 — 27 November 2026
 - Add goal-directed public static website navigation. Rank inspected same-scope links by target heading terms, stop on exact heading observation, record parent-link locators, path and response hashes. Preserve robots, depth, request, deadline and public HTTPS protections. Distinguish target not observed from absent. Two fixtures cover ranking/path and denial/cancellation. Live browser and native network acceptance outstanding. Next rank 197 / ID 32 website interaction and control selection. No installer.
+
+## Pass 198 — 27 November 2026
+- Add reviewed static control selection and read-only link navigation from a guarded inspection receipt. Unique exact locator/tag, explicit same-host destination, robots checks and full source hash/control revalidation before reading target. Offline historical identification for other controls. No actual browser activation, form changes, scripts or cookies. Fixtures verify exact selection, stale source and scope refusals. Native network and live browser interaction outstanding. Next rank 198 / ID 35 browser-based file downloads. No installer.

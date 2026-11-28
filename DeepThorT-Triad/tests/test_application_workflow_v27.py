@@ -710,3 +710,48 @@ class ApplicationWorkflowTests(unittest.TestCase):
         self.assertEqual(r['status'],'heading_not_observed_within_budget')
         self.assertEqual(len(r['robots_blocked']),1);self.assertEqual(len(calls),2)
         self.assertIsNone(r['match'])
+
+
+    def test_reviewed_website_control_exact_link_read(self):
+        from deepthort_local.website_control_selection import selected,run
+        from deepthort_local.webpage_elements import extract_elements
+        from deepthort_local.webpage_retrieval import extract
+        source='https://example.org/docs/';target=source+'install/'
+        raw=b'<a href="/docs/install/">Install</a><button>Reset</button>'
+        inspected=extract_elements(source,raw,'text/html','utf-8')
+        spec={'inspection':'elements.json','locator':'/a[1]','tag':'a','action':'read_link','path_prefix':'/docs/','destination':target}
+        e=selected(spec,inspected);calls=[];now=[0.]
+        def get(url,*,approved,cancelled,extractor=extract):
+            self.assertTrue(approved);self.assertFalse(cancelled());calls.append(url)
+            if url.endswith('robots.txt'):return extractor(url,b'User-agent: *\nDisallow: /private/','text/plain','utf-8')
+            return extractor(url,raw if url==source else b'<h1>Installation</h1>','text/html','utf-8')
+        def sleep(n):now[0]+=n
+        with self.assertRaises(ValueError):run(spec,e,retrieve=get)
+        self.assertEqual(calls,[])
+        result=run(spec,e,approved=True,retrieve=get,clock=lambda:now[0],sleep=sleep)
+        self.assertEqual(calls,['https://example.org/robots.txt',source,target])
+        self.assertTrue(result['source_rechecked']);self.assertTrue(result['link_read'])
+        self.assertFalse(result['control_activated'])
+        identify=dict(spec,locator='/button[1]',tag='button',action='identify',destination=None)
+        r=run(identify,selected(identify,inspected),approved=True,retrieve=lambda *a,**k:self.fail('Offline selection used network'))
+        self.assertFalse(r['source_rechecked'])
+
+    def test_reviewed_website_control_refuses_changed_source_and_scope(self):
+        from deepthort_local.website_control_selection import selected,run,checked
+        from deepthort_local.webpage_elements import extract_elements
+        from deepthort_local.webpage_retrieval import extract
+        source='https://example.org/docs/';target=source+'install/'
+        raw=b'<a href="/docs/install/">Install</a>'
+        p=extract_elements(source,raw,'text/html','utf-8')
+        spec={'inspection':'elements.json','locator':'/a[1]','tag':'a','action':'read_link','path_prefix':'/docs/','destination':target}
+        with self.assertRaises(ValueError):selected(dict(spec,destination='https://other.org/docs/install/'),p)
+        with self.assertRaises(ValueError):checked(dict(spec,tag='button'))
+        now=[0.];calls=[]
+        def get(url,*,approved,cancelled,extractor=extract):
+            calls.append(url)
+            if url.endswith('robots.txt'):return extractor(url,b'User-agent: *\nDisallow: /private/','text/plain','utf-8')
+            self.assertEqual(url,source)
+            return extractor(url,raw+b'<!-- changed -->','text/html','utf-8')
+        def sleep(n):now[0]+=n
+        with self.assertRaises(ValueError):run(spec,selected(spec,p),approved=True,retrieve=get,clock=lambda:now[0],sleep=sleep)
+        self.assertEqual(len(calls),2)
