@@ -730,7 +730,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Label(process_tab,textvariable=self.process_summary,style='Muted.TLabel',wraplength=640).pack(anchor='w',pady=(6,3))
         process_tabs=ttk.Notebook(process_tab);process_tabs.pack(fill='both',expand=True,pady=(0,5))
         resources=ttk.Frame(process_tabs);details=ttk.Frame(process_tabs);activity_page=ttk.Frame(process_tabs)
-        for page,title in ((resources,'Measured resources'),(details,'Process details'),(activity_page,'Activity log')):
+        operations=ttk.Frame(process_tabs)
+        for page,title in ((resources,'Measured resources'),(operations,'Operations & blockers'),(details,'Process details'),(activity_page,'Activity log')):
             process_tabs.add(page,text=title)
         self.resource_notice=tk.StringVar(value='No sample yet')
         ttk.Label(resources,textvariable=self.resource_notice,style='Muted.TLabel',wraplength=640).pack(anchor='w',pady=4)
@@ -742,12 +743,25 @@ class DeepThorTDesktop(tk.Tk):
             self.resource_table.column(key,width=width,minwidth=50,stretch=key=='name')
         source_scrollbars(resource_frame,self.resource_table)
         ttk.Label(resources,text='Tracked process samples only; not total job-object accounting. Private commit and resident memory differ.',style='Muted.TLabel',wraplength=640).pack(anchor='w',pady=4)
+        self.operation_notice=tk.StringVar(value='Waiting for an existing process snapshot.')
+        ttk.Label(operations,textvariable=self.operation_notice,wraplength=620).pack(anchor='w',pady=4)
+        action_bar=ttk.Frame(operations);action_bar.pack(fill='x',pady=3)
+        ttk.Button(action_bar,text='Stop selected operation…',command=self._stop_selected_operation).pack(side='left')
+        ttk.Button(action_bar,text='Work queue',command=lambda:self.tabs.select(1)).pack(side='left',padx=4)
+        ttk.Button(action_bar,text='Chats',command=lambda:self.tabs.select(0)).pack(side='left',padx=4)
+        ttk.Label(operations,text='Only listed targeted stop routes are available here. Broker cancellation can interrupt other inference. Queue pause controls admission; it is not an immediate process stop.',wraplength=620).pack(anchor='w',pady=4)
+        operation_frame=ttk.Frame(operations);operation_frame.pack(fill='both',expand=True)
+        self.operation_table=ttk.Treeview(operation_frame,columns=('operation','state','boundary'),show='headings',selectmode='browse')
+        for key,label,width in (('operation','Observed operation',180),('state','State / identity',180),('boundary','Stop / recovery boundary',330)):
+            self.operation_table.heading(key,text=label);self.operation_table.column(key,width=width,stretch=key=='boundary')
+        source_scrollbars(operation_frame,self.operation_table)
+        self._operation_snapshot={}
         process_frame=ttk.Frame(details);process_frame.pack(fill='both',expand=True)
         self.process_info=self._text(process_frame,readonly=True,height=8)
         scroll_text(process_frame,self.process_info)
-        pbar=ttk.Frame(process_tab);pbar.pack(fill='x',pady=3)
+        pbar=ttk.Frame(process_tab);pbar.pack(fill='x',pady=3,before=process_tabs)
         ttk.Button(pbar,text='Cancel running job',command=self._cancel_active).pack(side='left',padx=3)
-        ttk.Button(pbar,text='Stop tool / install process',command=self._cancel_tool).pack(side='left',padx=3)
+        ttk.Button(pbar,text='Stop tools / install / media…',command=self._cancel_tool).pack(side='left',padx=3)
         action_menu(pbar,'Diagnostics & tests',[
             ('Locate latest diagnostics',self._locate_diagnostics),('Export diagnostics',self._export_diagnostics),
             ('Retry JANUS model',self._retry_council),('Run latest test',self._run_latest_test),
@@ -5294,7 +5308,7 @@ class DeepThorTDesktop(tk.Tk):
             self._log(f'Job #{ident}: cancelled local test; local Triad stays running.')
         elif job['state']=='running' and self.active_job==ident:
             if not messagebox.askyesno('Cancel local inference',
-                    'Cancel this active job? The OpenVINO IR worker will stop, but previous '
+                    'Cancel this active job? If the shared OpenVINO broker is used it may interrupt other inference; previous '
                     'approved files and backups remain.',parent=self):
                 return
             cycle=self.cycles.get(ident)
@@ -10302,7 +10316,9 @@ class DeepThorTDesktop(tk.Tk):
     def _cancel_tool(self):
         procs=[p for p in (self.tool_process,self.install_process,self.media_process) if p and p.poll() is None]
         if not procs:return
-        if messagebox.askyesno('Stop process','Stop the running tool or installation? Partial changes from an installer cannot be automatically rolled back.',parent=self):
+        if messagebox.askyesno('Stop external processes','Stop ALL currently observed tool, installation and media processes listed below?\n'+
+                '\n'.join('PID '+str(p.pid) for p in procs)+
+                '\nPartial installation changes cannot be automatically rolled back. This is not an individual process stop.',parent=self):
             if (self._auto_verification_in_flight is not None and
                 self.tool_process in procs):
                 self._stopped_auto_tests.add(self._auto_verification_in_flight)
@@ -10547,6 +10563,69 @@ class DeepThorTDesktop(tk.Tk):
         elif self.node_loading:
             threading.Thread(target=lambda:self.events.put(('health_detail',local_server_status())),daemon=True).start()
         self.after(3500,self._poll_server)
+    def _observed_operations(self):
+        """No extra polling, SQL reads, execution or inferred worker ownership."""
+        rows={}
+        def add(key,identity,label,state,boundary):
+            rows[key]=(identity,(label,state,boundary))
+        if self.active_job is not None:
+            add('job',self.active_job,'Approved job',f'Active #{self.active_job}',
+                'Cancel exact job; shared broker may stop')
+        if self.active_conversation is not None:
+            add('reply',self.active_conversation,'Conversation request',f'Active #{self.active_conversation}',
+                'Use original chat stop control; may restart shared broker')
+        if self._auto_verification_in_flight is not None:
+            add('verification',self._auto_verification_in_flight,'Approved verification',f'Active #{self._auto_verification_in_flight}',
+                'Cancel exact verification via existing job control')
+        if self._latest_test_thread and self._latest_test_thread.is_alive():
+            add('latest',self._latest_test_thread,'Latest acceptance test',
+                'Stop requested' if self._latest_test_cancel.is_set() else 'Running',
+                'Cooperative stop; bounded in-flight call may finish')
+        if self._quiet_test_active is not None:
+            add('quiet',self._quiet_test_active,'Quiet Godot test',
+                'Stop requested' if self._quiet_test_stopped else 'Active / launching','Existing quiet-test stop')
+        if self._gui_test_active is not None:
+            add('gui',self._gui_test_active,'Isolated GUI test',
+                'Stop requested' if self._gui_test_stop.is_set() else 'Active / launching','Existing isolated-test stop')
+        for key,label,proc in (('tool','External tool',self.tool_process),('install','Installer',self.install_process),('media','Media process',self.media_process)):
+            if proc and proc.poll() is None:
+                add(key,proc,label,f'PID {proc.pid}','Use existing broad stop controls; may stop other external processes')
+        if self._creative_lane_thread and self._creative_lane_thread.is_alive():
+            add('creative',self._creative_lane_thread,'Creative lane','Thread observed active',
+                'No independent stop route exposed here; Stop AI is global')
+        if self._council_busy:
+            add('council',None,'Council instruction','Busy flag set','Wait for completion; Stop AI is global')
+        if getattr(self,'_web_research_active',False):
+            add('integration',None,'Reviewed integration','Busy flag set','Use original session dialog; not service-specific')
+        return rows
+
+    def _render_operations(self,counts):
+        self._operation_snapshot=self._observed_operations()
+        sync_table(self.operation_table,[(key,values) for key,(_,values) in self._operation_snapshot.items()])
+        waiting=', '.join(f'{k}: {counts.get(k,0)}' for k in ('queued','paused','needs_input','waiting_approval','waiting_verification','waiting_repair'))
+        self.operation_notice.set(('Admissions paused' if self.queue_paused else 'Admissions enabled (other gates may apply)')+
+            ' · '+str(len(self._operation_snapshot))+' observed activities. Selected workspace stored jobs: '+waiting)
+
+    def _stop_selected_operation(self):
+        picked=self.operation_table.selection()
+        if not picked:return
+        key=picked[0]
+        previous=self._operation_snapshot.get(key)
+        current=self._observed_operations().get(key)
+        if not previous or not current or previous[0] is not current[0] and not (
+                key in ('job','verification','reply') and previous[0]==current[0]):
+            self.operation_notice.set('Operation changed or ended; refresh from the next sample before stopping.')
+            return
+        if key in ('job','verification'):
+            self._cancel_id(current[0]);return
+        if key not in ('latest','quiet','gui'):
+            self.operation_notice.set('No independent stop route here. '+current[1][2]);return
+        if not messagebox.askyesno('Stop exact operation',current[1][0]+'? '+current[1][2],parent=self):return
+        latest=self._observed_operations().get(key)
+        if not latest or latest[0] is not current[0]:
+            self.operation_notice.set('Operation changed during confirmation; nothing stopped.');return
+        {'latest':self._stop_latest_test,'quiet':self._stop_quiet_scene,'gui':self._stop_isolated_gui}[key]()
+
     def _process_snapshot(self):
         model_pid=self.node.pid if self.node and self.node.poll() is None else None
         tool=self.tool_process if self.tool_process and self.tool_process.poll() is None else None
@@ -10645,6 +10724,7 @@ class DeepThorTDesktop(tk.Tk):
         worker_rows=operative_rows(model_health,model_pid, bool(self._creative_lane_thread and self._creative_lane_thread.is_alive()))
         sync_table(self.operative_table,worker_rows)
         self.command_centre.live(self.process_summary.get(),worker_rows,len(measured))
+        self._render_operations(self.jobs.count(self._project_key()))
         self.resource_notice.set(f'{len(measured)} tracked process samples · observed at '+datetime.now().strftime('%H:%M:%S')
                                  if measured else 'No tracked process measurements available on this OS or at this time')
         if self.active_job is not None:self._refresh_jobs()
