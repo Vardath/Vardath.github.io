@@ -1137,3 +1137,7 @@ Files & Images → Generate section song. JSON keys `title`, `peak_dbfs`, `secti
 
 ### Rhythm-conditioned music from audio (Pass 265)
 Files & Images → Music from audio rhythm. JSON `{"audio":"beat.wav","root_midi":45,"seed":18,"peak_dbfs":-3,"pattern":"electronic"}`. Source 3–20 seconds of PCM16 mono/stereo WAV, 8–48 kHz. Need 3–100 distinct transients. Uses measured timing and accents to synthesize bass and percussion; no source audio samples copied. Alternative pattern `soft`. Output 24 kHz stereo PCM WAV with exact sample verification. No neural music or melody transcription claim.
+
+
+### Melody-to-song arrangement (Pass 266)
+Files & Images → Song from melody. JSON: `{"audio":"melody.wav","bpm":120,"min_pitch":48,"max_pitch":80,"gate_dbfs":-45,"tonic":0,"mode":"major","repeats":2,"lead_timbre":"sine","backing_timbre":"organ","peak_dbfs":-3}`. Input 3–20 second mono PCM16 WAV at 8 or 16 kHz; explicit tonic 0=C through 11=B and major/minor. Preserves detected pitch and timing, adds diatonic triads chosen by overlap and bass, repeats up to three times within 30 seconds. Existing synthesizer timbres and verified stereo PCM. No claim of neural composition, lyrics, polyphonic recognition or listening quality.

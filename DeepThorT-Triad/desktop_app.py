@@ -868,6 +868,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(ambience_actions,text='Generate sung vowels…',command=lambda:self._review_typed_tool('singing_voice_generation','.wav','Audio: reviewed sung vowels')).pack(side='left',padx=3)
         ttk.Button(ambience_actions,text='Generate section song…',command=lambda:self._review_typed_tool('section_song','.wav','Audio: reviewed section song')).pack(side='left',padx=3)
         ttk.Button(ambience_actions,text='Music from audio rhythm…',command=lambda:self._review_typed_tool('audio_to_music','.wav','Audio: reviewed rhythm-conditioned music')).pack(side='left',padx=3)
+        ttk.Button(ambience_actions,text='Song from melody…',command=lambda:self._review_typed_tool('melody_to_song','.wav','Audio: reviewed melody arrangement')).pack(side='left',padx=3)
         ttk.Button(ambience_actions,text='Generate vocal harmony…',command=lambda:self._review_typed_tool('vocal_harmony_generation','.wav','Audio: reviewed vocal harmony')).pack(side='left',padx=3)
         speech_review_actions=ttk.Frame(media_tab);speech_review_actions.pack(fill='x',pady=2)
         ttk.Button(speech_review_actions,text='Multilingual speech…',command=self._show_multilingual_speech).pack(side='left',padx=3)
@@ -1912,6 +1913,7 @@ class DeepThorTDesktop(tk.Tk):
                  'singing_voice_generation':('.wav','Audio: reviewed sung vowels'),
                  'section_song':('.wav','Audio: reviewed section song'),
                  'audio_to_music':('.wav','Audio: reviewed rhythm-conditioned music'),
+                 'melody_to_song':('.wav','Audio: reviewed melody arrangement'),
                  'vocal_harmony_generation':('.wav','Audio: reviewed vocal harmony'),
                  'audio_source_isolation':('.zip','Audio: reviewed spatial isolation'),
                  'audio_to_midi':('.mid','Audio: reviewed MIDI transcription'),
