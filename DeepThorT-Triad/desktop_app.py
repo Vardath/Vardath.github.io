@@ -103,7 +103,7 @@ ROOT = Path(__file__).resolve().parent
 STATE = ROOT / 'state'
 from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
-from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query
+from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = (PALETTE[k] for k in ('base','panel','input','text','muted','accent'))
 GREEN, YELLOW = PALETTE['success'], PALETTE['warning']
 MAX_INFERENCE_PROMPT = 7500  # current OpenVINO IR endpoint requires <=8000 / message
@@ -561,14 +561,24 @@ class DeepThorTDesktop(tk.Tk):
         self.pause_queue=ttk.Button(qhead,text='Pause queue',command=self._toggle_queue)
         self.pause_queue.pack(side='right',padx=4)
         ttk.Button(qhead,text='Refresh',command=self._refresh_jobs).pack(side='right',padx=4)
-        ttk.Button(qhead,text='Roadmap automation',command=self._roadmap_automation).pack(side='right',padx=4)
-        ttk.Button(qhead,text='Scheduled requests…',command=self._scheduled_requests).pack(side='right',padx=4)
+        ttk.Button(qhead,text='Project queues…',command=self._show_queued_prompts).pack(side='right',padx=4)
         monitorbar=ttk.Frame(queue_tab);monitorbar.pack(fill='x',pady=2)
-        ttk.Button(monitorbar,text='Project queues…',command=self._show_queued_prompts).pack(side='left',padx=3)
-        ttk.Button(monitorbar,text='Website monitors…',command=self._website_monitor_dialog).pack(side='left',padx=3)
-        ttk.Button(monitorbar,text='Network permissions…',command=self._network_permissions_dialog).pack(side='left',padx=3)
-        ttk.Button(monitorbar,text='Condition watches…',command=self._condition_monitor_dialog).pack(side='left',padx=3)
-        ttk.Button(monitorbar,text='Event-triggered requests…',command=self._event_trigger_dialog).pack(side='left',padx=3)
+        action_menu(monitorbar,'Scheduling & monitors',[
+            ('Roadmap automation',self._roadmap_automation),
+            ('Scheduled requests…',self._scheduled_requests),
+            ('Website monitors…',self._website_monitor_dialog),
+            ('Network permissions…',self._network_permissions_dialog),
+            ('Condition watches…',self._condition_monitor_dialog),
+            ('Event-triggered requests…',self._event_trigger_dialog),
+        ]).pack(side='left',padx=3)
+        self.job_filter=tk.StringVar(value='All states')
+        self.job_query=tk.StringVar(value='')
+        self.job_filter_count=tk.StringVar(value='')
+        ttk.Combobox(monitorbar,textvariable=self.job_filter,state='readonly',width=18,
+            values=('All states','Active','Waiting / blocked','Completed / stopped')).pack(side='left',padx=3)
+        ttk.Entry(monitorbar,textvariable=self.job_query,width=20).pack(side='left',fill='x',expand=True,padx=3)
+        ttk.Button(monitorbar,text='Filter jobs',command=self._refresh_jobs).pack(side='left',padx=3)
+        ttk.Label(monitorbar,textvariable=self.job_filter_count,style='Muted.TLabel').pack(side='left',padx=3)
         qt=ttk.Frame(queue_tab);qt.pack(fill='x',pady=4)
         ttk.Button(qt,text='Cancel selected',command=self._cancel_job).pack(side='left',padx=3)
         ttk.Button(qt,text='Resume selected',command=self._resume_job).pack(side='left',padx=3)
@@ -582,40 +592,38 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(workbar,text='Revoke selected job automation',
                    command=self._revoke_selected_project_work).pack(side='left',padx=8)
         restorebar=ttk.Frame(queue_tab);restorebar.pack(fill='x',pady=(0,3))
-        ttk.Button(restorebar,text='Backup SQLite…',command=lambda:self._review_typed_tool('database_backup','.zip','Database: reviewed backup')).pack(side='left',padx=3)
-        ttk.Button(restorebar,text='Restore SQLite copy…',command=lambda:self._review_typed_tool('database_restore','.db','Database: reviewed restore')).pack(side='left',padx=3)
-        ttk.Button(restorebar,text='Restore source checkpoint…',
-                   command=self._restore_source_checkpoint).pack(side='left',padx=3)
-        ttk.Button(restorebar,text='Quiet Godot scene test',
-                   command=self._run_quiet_scene).pack(side='left',padx=7)
-        ttk.Button(restorebar,text='Generate X4 XML diff…',command=lambda:self._review_typed_tool('x4_xml_processing','.xml','Development: reviewed X4 XML diff')).pack(side='left',padx=3)
-        ttk.Button(restorebar,text='Generate sprite atlas…',command=lambda:self._review_typed_tool('game_asset_generation','.zip','Development: reviewed sprite atlas')).pack(side='left',padx=3)
-        ttk.Button(restorebar,text='Test native grid game…',command=lambda:self._review_typed_tool('end_to_end_testing','.json','Development: reviewed native grid test')).pack(side='left',padx=3)
-        ttk.Button(restorebar,text='Test swept collisions…',command=lambda:self._review_typed_tool('collision_testing','.json','Development: reviewed collision tests')).pack(side='left',padx=3)
-        ttk.Button(restorebar,text='Generate NPC behaviour…',command=lambda:self._review_typed_tool('npc_behaviour','.zip','Development: reviewed NPC behaviour')).pack(side='left',padx=3)
-        ttk.Button(restorebar,text='Generate region world…',command=lambda:self._review_typed_tool('world_generation','.json','Development: reviewed region world')).pack(side='left',padx=3)
-        ttk.Button(restorebar,text='Generate connected level…',command=lambda:self._review_typed_tool('level_generation','.json','Development: reviewed connected level')).pack(side='left',padx=3)
-        ttk.Button(restorebar,text='Generate grid game…',command=lambda:self._review_typed_tool('game_project_generation','.zip','Development: reviewed game project')).pack(side='left',padx=3)
-        ttk.Button(restorebar,text='Manage stopped container…',command=lambda:self._review_typed_tool('container_management','.json','Development: reviewed stopped container')).pack(side='left',padx=3)
-        ttk.Button(restorebar,text='Compile Android debug APK…',command=lambda:self._review_typed_tool('android_game_compilation','.apk','Development: reviewed Android APK export')).pack(side='left',padx=3)
-        ttk.Button(restorebar,text='Android emulator smoke…',command=lambda:self._review_typed_tool('android_emulator','.json','Development: reviewed Android emulator smoke')).pack(side='left',padx=3)
-        ttk.Button(restorebar,text='Stop quiet test',
-                   command=self._stop_quiet_scene).pack(side='left',padx=3)
-        guibar=ttk.Frame(queue_tab);guibar.pack(fill='x',pady=(0,3))
-        ttk.Button(guibar,text='Isolated GUI smoke test…',
-                   command=self._run_isolated_gui).pack(side='left',padx=3)
-        ttk.Button(guibar,text='Stop isolated GUI test',
-                   command=self._stop_isolated_gui).pack(side='left',padx=3)
-        ttk.Label(queue_tab,text='v45: Windows programs can be observed on a separate desktop with no input takeover. '
-                  'Shares the original 50% CPU job cap; NOT visual proof, VM isolation or game playtesting.', 
-                  style='Muted.TLabel').pack(anchor='w',pady=(0,5))
-        self.job_tree=ttk.Treeview(queue_tab,columns=('state','mode','chat','detail'),show='headings',height=12)
+        action_menu(restorebar,'Backups & checkpoints',[
+            ('Backup SQLite…',lambda:self._review_typed_tool('database_backup','.zip','Database: reviewed backup')),
+            ('Restore SQLite copy…',lambda:self._review_typed_tool('database_restore','.db','Database: reviewed restore')),
+            ('Restore source checkpoint…',self._restore_source_checkpoint),
+        ]).pack(side='left',padx=3)
+        action_menu(restorebar,'Development & testing',[
+            ('Quiet Godot scene test',self._run_quiet_scene),
+            ('Generate X4 XML diff…',lambda:self._review_typed_tool('x4_xml_processing','.xml','Development: reviewed X4 XML diff')),
+            ('Generate sprite atlas…',lambda:self._review_typed_tool('game_asset_generation','.zip','Development: reviewed sprite atlas')),
+            ('Test native grid game…',lambda:self._review_typed_tool('end_to_end_testing','.json','Development: reviewed native grid test')),
+            ('Test swept collisions…',lambda:self._review_typed_tool('collision_testing','.json','Development: reviewed collision tests')),
+            ('Generate NPC behaviour…',lambda:self._review_typed_tool('npc_behaviour','.zip','Development: reviewed NPC behaviour')),
+            ('Generate region world…',lambda:self._review_typed_tool('world_generation','.json','Development: reviewed region world')),
+            ('Generate connected level…',lambda:self._review_typed_tool('level_generation','.json','Development: reviewed connected level')),
+            ('Generate grid game…',lambda:self._review_typed_tool('game_project_generation','.zip','Development: reviewed game project')),
+            ('Manage stopped container…',lambda:self._review_typed_tool('container_management','.json','Development: reviewed stopped container')),
+            ('Compile Android debug APK…',lambda:self._review_typed_tool('android_game_compilation','.apk','Development: reviewed Android APK export')),
+            ('Android emulator smoke…',lambda:self._review_typed_tool('android_emulator','.json','Development: reviewed Android emulator smoke')),
+            ('Isolated GUI smoke test…',self._run_isolated_gui),
+        ]).pack(side='left',padx=3)
+        ttk.Button(restorebar,text='Stop quiet test',command=self._stop_quiet_scene).pack(side='left',padx=3)
+        ttk.Button(restorebar,text='Stop isolated GUI test',command=self._stop_isolated_gui).pack(side='left',padx=3)
+        ttk.Label(queue_tab,text='Selected project jobs · graph and verification evidence below. Isolated GUI tests are not visual proof or VM isolation.',style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=(0,4))
+        job_view=ttk.Frame(queue_tab);job_view.pack(fill='both',expand=True)
+        self.job_tree=ttk.Treeview(job_view,columns=('state','mode','chat','detail'),show='headings',height=12)
         for column,title,width in (('state','Status',125),('mode','Type',70),('chat','Chat',120),('detail','Work and progress',540)):
             self.job_tree.heading(column,text=title);self.job_tree.column(column,width=width,stretch=column=='detail')
-        self.job_tree.pack(fill='both',expand=True)
+        scroll_text(job_view,self.job_tree)
         self.job_tree.bind('<<TreeviewSelect>>',self._job_selected)
-        self.job_details=self._text(queue_tab,readonly=True,height=10)
-        self.job_details.pack(fill='both',expand=False,pady=(6,0))
+        job_detail_frame=ttk.Frame(queue_tab);job_detail_frame.pack(fill='x',pady=(6,0))
+        self.job_details=self._text(job_detail_frame,readonly=True,height=10)
+        scroll_text(job_detail_frame,self.job_details)
         ttk.Button(queue_tab,text='Open selected task journal folder',command=self._open_task_journal).pack(anchor='w')
 
         # FILE REVIEW
@@ -635,10 +643,19 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(tbar,text='Add task',command=self._add_task).pack(side='left',padx=3)
         ttk.Button(tbar,text='Complete / reopen',command=self._toggle_task).pack(side='left',padx=3)
         ttk.Button(tbar,text='Send to prompt',command=self._task_to_chat).pack(side='left',padx=3)
-        self.task_tree=ttk.Treeview(tasks_tab,columns=('state','description'),show='headings')
+        task_filter=ttk.Frame(tasks_tab);task_filter.pack(fill='x',pady=(0,5))
+        self.task_filter=tk.StringVar(value='All states')
+        self.task_query=tk.StringVar(value='')
+        self.task_count=tk.StringVar(value='')
+        ttk.Combobox(task_filter,textvariable=self.task_filter,state='readonly',width=15,values=('All states','Planned','Done')).pack(side='left',padx=3)
+        ttk.Entry(task_filter,textvariable=self.task_query).pack(side='left',fill='x',expand=True,padx=3)
+        ttk.Button(task_filter,text='Filter tasks',command=self._refresh_tasks).pack(side='left',padx=3)
+        ttk.Label(task_filter,textvariable=self.task_count,style='Muted.TLabel').pack(side='left',padx=3)
+        task_view=ttk.Frame(tasks_tab);task_view.pack(fill='both',expand=True)
+        self.task_tree=ttk.Treeview(task_view,columns=('state','description'),show='headings')
         for x,title,w in (('state','Status',130),('description','Task / project plan',700)):
             self.task_tree.heading(x,text=title);self.task_tree.column(x,width=w,stretch=x=='description')
-        self.task_tree.pack(fill='both',expand=True)
+        scroll_text(task_view,self.task_tree)
         ttk.Label(tasks_tab,text='Tasks are a durable plan. Only verified completed work should be marked complete.',style='Muted.TLabel').pack(anchor='w',pady=8)
 
         # TRUE PROCESS STATUS, NO INVENTED TOKEN PROGRESS
@@ -2374,6 +2391,8 @@ class DeepThorTDesktop(tk.Tk):
     def _set_project(self,path):
         self.project=Path(path).resolve()
         self.file_query.set('')
+        self.job_filter.set('All states');self.job_query.set('')
+        self.task_filter.set('All states');self.task_query.set('')
         self.file_filter_status.set('Filter by path; Esc clears')
         self.current_file=None;self.proposed=None;self.proposal_job=None;self.proposal_step=None
         for row in self.files.get_children():self.files.delete(row)
@@ -4457,8 +4476,8 @@ class DeepThorTDesktop(tk.Tk):
 
     def _refresh_jobs(self):
         if not hasattr(self,'job_tree'):return
-        for item in self.job_tree.get_children():self.job_tree.delete(item)
         project=self._project_key()
+        displayed=[]
         rows=[j for j in self.jobs.items(project) if j['mode'] not in ('chat','plan','edit')]
         for j in rows:
             graph=self.graphs.status(j['id'])
@@ -4474,7 +4493,12 @@ class DeepThorTDesktop(tk.Tk):
             if j['id']==self.active_job:
                 detail=f"{j['detail']} — {int(time.monotonic()-self.active_started)}s elapsed"
             else:detail=j['detail']
-            self.job_tree.insert('','end',iid=str(j['id']),values=(j['state'],j['mode'],j['chat_id'][-7:],detail))
+            displayed.append((str(j['id']),(j['state'],j['mode'],j['chat_id'][-7:],detail)))
+        visible=filter_status_rows(displayed,self.job_filter.get(),self.job_query.get())
+        sync_table(self.job_tree,visible)
+        self.job_filter_count.set(f'{len(visible)} / {len(displayed)}')
+        if not self.job_tree.selection():
+            self._show(self.job_details,'Select a job to inspect its journal, dependencies and verification evidence.')
         count={}
         for j in rows:count[j['state']]=count.get(j['state'],0)+1
         summary='   '.join(f'{k}: {v}' for k,v in sorted(count.items())) or 'No approved jobs'
@@ -4486,7 +4510,8 @@ class DeepThorTDesktop(tk.Tk):
         self.queue_summary.set(('PAUSED  |  ' if self.queue_paused else 'ACTIVE  |  ')+summary)
     def _selected_job(self):
         x=self.job_tree.selection()
-        return self.jobs.get(int(x[0])) if x else None
+        job=self.jobs.get(int(x[0])) if x else None
+        return job if job and job['project']==self._project_key() else None
     def _job_selected(self,_event=None):
         job=self._selected_job()
         if not job:return
@@ -7125,10 +7150,10 @@ class DeepThorTDesktop(tk.Tk):
         if title:self.tasks.add(str(self.project),title);self._refresh_tasks()
     def _refresh_tasks(self):
         if not hasattr(self,'task_tree'):return
-        for x in self.task_tree.get_children():self.task_tree.delete(x)
-        if self.project:
-            for i,title,done in self.tasks.items(str(self.project)):
-                self.task_tree.insert('','end',iid=str(i),values=('Done' if done else 'Planned',title))
+        rows=[(str(i),('Done' if done else 'Planned',title)) for i,title,done in self.tasks.items(str(self.project))] if self.project else []
+        visible=filter_status_rows(rows,self.task_filter.get(),self.task_query.get())
+        sync_table(self.task_tree,visible)
+        self.task_count.set(f'{len(visible)} / {len(rows)} tasks')
     def _selected_task(self):
         pick=self.task_tree.selection()
         if not pick or not self.project:return None
