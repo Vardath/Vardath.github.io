@@ -286,7 +286,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 274 | 197 | AI model quantisation | Partial: reviewed selected F16/F32 tensor symmetric INT8 weight bundle with explicit scales and independent reconstruction error checks. Pass 275 CI pending; runnable model graph, INT4, calibration and runtime/quality acceptance outstanding. |
 | 275 | 39 | Remote computer control | Partial: explicit authorised-host RDP client handoff with reviewed configuration, network restriction, manual authentication and bounded cleanup. Pass 276 CI pending; actual remote session, autonomous input and native connection acceptance outstanding. |
 | 276 | 40 | Virtual computer environments | Partial: reviewed diskless offline QEMU virtual-computer launch from exact staged boot ISO under shared Windows cap, with bounded observation. Pass 277 CI pending; guest boot, interactive desktop and native emulator acceptance outstanding. |
-| 277 | 206 | Virtual machine isolation | Not started in this programme |
+| 277 | 206 | Virtual machine isolation | Partial: fixed QEMU guest read-only media boundary probe, BIOS write denial and unchanged host media evidence; Pass 278 CI pending. Native QEMU acceptance and general host/network security isolation remain unverified. |
 | 278 | 205 | Operating-system-level execution sandboxing | Not started in this programme |
 
 ## Register expansion — 27 November 2026
@@ -1295,3 +1295,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 277 — 28 November 2026
 - Rank 276 / ID 40: reviewed temporary QEMU software-emulated virtual computer using trusted installed runtime, fixed command, exact boot ISO digest and staged copy, one vCPU and bounded guest memory. No configured network, host shares or persistent disk. Native child scope and resource monitoring; three fixture regressions registered in both CI jobs. Native QEMU availability, guest boot, guest interaction and independent isolation proof outstanding.
+
+
+## Pass 278 — 28 November 2026
+- Rank 277 / ID 206: fixed benign x86 boot-sector guest probe with reproducible assembly, read/write-denial/reread checks, exact guest marker, unchanged media digest, resource-bounded QEMU execution and new report. Three fixture regressions registered in both CI jobs; native QEMU execution and general isolation not verified.
