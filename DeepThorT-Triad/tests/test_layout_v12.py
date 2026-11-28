@@ -36,7 +36,12 @@ class OriginalWindowLayoutTests(unittest.TestCase):
         self.assertIs(self.app.reply_notice,self.app.chat_connection)
         self.assertFalse(hasattr(self.app,'reply_banner'))
         self.app.geometry('1320x860');self.app.update()
+        self.assertEqual(int(self.app.input.cget('height')),5)
+        self.app.input.insert('1.0','Preserve draft')
+        self.app.expanded_composer.set(True);self.app._resize_composer()
         self.assertEqual(int(self.app.input.cget('height')),12)
+        self.assertEqual(self.app.input.get('1.0','end-1c'),'Preserve draft')
+        self.app.expanded_composer.set(False);self.app._resize_composer()
         self._assert_action_buttons_visible()
 
     def test_buttons_not_clipped_in_screenshot_sized_window(self):

@@ -2,7 +2,7 @@
 import tkinter as tk
 from tkinter import ttk
 import unittest
-from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark
+from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows
 
 
 class LatticeShelfTests(unittest.TestCase):
@@ -62,3 +62,27 @@ class LatticeShelfTests(unittest.TestCase):
         self.assertGreaterEqual(len(mark.find_all()), 4)
         self.assertEqual(mark.cget('bg'), PALETTE['base'])
         mark.destroy()
+
+
+    def test_action_menu_is_inert_until_exact_choice(self):
+        control = action_menu(self.root, 'System', [
+            ('Start', lambda: self.calls.append('start')),
+            ('Stop', lambda: self.calls.append('stop'))])
+        menu = control.nametowidget(control.cget('menu'))
+        self.assertEqual(self.calls, [])
+        self.assertEqual(menu.entrycget(1, 'label'), 'Stop')
+        menu.invoke(1)
+        self.assertEqual(self.calls, ['stop'])
+
+    def test_composer_resize_preserves_draft_and_scroll(self):
+        frame = ttk.Frame(self.root)
+        text = tk.Text(frame, height=5, undo=True)
+        bar = scroll_text(frame, text)
+        text.insert('1.0', 'unsent draft')
+        for height, expanded, expected in [(860, False, 5), (860, True, 12),
+                                           (650, True, 3), (765, False, 3)]:
+            self.assertEqual(composer_rows(height, expanded), expected)
+            text.configure(height=expected)
+        self.assertEqual(text.get('1.0', 'end-1c'), 'unsent draft')
+        self.assertTrue(text.cget('yscrollcommand'))
+        self.assertTrue(bar.cget('command'))
