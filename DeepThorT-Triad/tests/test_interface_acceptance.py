@@ -125,3 +125,33 @@ class IntegratedInterfaceTests(unittest.TestCase):
                 bottom=app.winfo_rooty()+app.winfo_height()
                 self.assertTrue(all(b.winfo_ismapped() for b in buttons))
                 self.assertLessEqual(max(b.winfo_rooty()+b.winfo_height() for b in buttons),bottom)
+
+    def test_studio_bounded_preview_and_checkpoint_identity(self):
+        import hashlib
+        from types import SimpleNamespace
+        from deepthort_local.studio_inspection import inspect_bytes, matching_checkpoints
+        from deepthort_local.workspace import MAX_READ_BYTES
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve()
+            data=b'hello artifact'
+            (root/'note.txt').write_bytes(data)
+            result=inspect_bytes(root,'note.txt')
+            digest=hashlib.sha256(data).hexdigest()
+            self.assertEqual(result['preview'],'hello artifact')
+            self.assertEqual(result['sha256'],digest)
+            (root/'large.txt').write_bytes(b'x'*(MAX_READ_BYTES+1))
+            self.assertIsNone(inspect_bytes(root,'large.txt')['sha256'])
+            (root/'binary.txt').write_bytes(b'hello\x00')
+            self.assertIsNone(inspect_bytes(root,'binary.txt')['preview'])
+            (root/'long.txt').write_text('z'*13000,encoding='utf-8')
+            self.assertEqual(len(inspect_bytes(root,'long.txt')['preview']),12000)
+            with self.assertRaises(ValueError):
+                inspect_bytes(root,'../outside.txt')
+            jobs=SimpleNamespace(items=lambda project,limit:[{'project':str(root),'mode':'build','id':3}],
+                                 steps=lambda ident:[{'path':'note.txt'}])
+            checkpoints=SimpleNamespace(list=lambda ident:[
+                {'project':str(root),'job_id':3,'id':'wrong-hash','reason':'artifact_saved','files':{'note.txt':'0'*64}},
+                {'project':'other','job_id':3,'id':'wrong-project','reason':'artifact_saved','files':{'note.txt':digest}},
+                {'project':str(root),'job_id':3,'id':'exact','reason':'artifact_saved','files':{'note.txt':digest}}])
+            self.assertEqual(matching_checkpoints(str(root),'note.txt',digest,jobs,checkpoints),
+                             [(3,'exact','artifact_saved')])

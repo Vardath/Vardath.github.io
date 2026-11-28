@@ -3169,9 +3169,26 @@ class DeepThorTDesktop(tk.Tk):
             allowed=self.inspection_exclusions.filter(self.project,self._visible_project_paths)
             if relative not in allowed or (not self.show_all_project_files.get() and relative.casefold() not in self._current_project_file_scope()):
                 return 'File no longer in the bounded inspection scope.'
-            path=safe_target(self.project,relative,must_exist=True)
-            if not path.is_file():return 'Not a regular file.'
-            return f"{relative}\nSize: {path.stat().st_size:,} bytes\nType: {path.suffix or '(none)'}\nObserved workspace file only; authorship, successful generation and verification are not established."
+            from deepthort_local.studio_inspection import inspect_bytes,matching_checkpoints
+            import sqlite3
+            observed=inspect_bytes(self.project,relative)
+            lines=[relative,f"Size: {observed['size']:,} bytes",
+                   "Type: "+(observed['suffix'] or '(none)'),
+                   "Observed SHA-256: "+(observed['sha256'] or 'not measured'),
+                   observed['note'],
+                   'Observed file only; authorship, successful generation and verification are not established.']
+            if observed['sha256']:
+                try:
+                    matches=matching_checkpoints(self._project_key(),relative,observed['sha256'],
+                                                self.jobs,self.checkpoints)
+                    lines.append('Matching sealed source checkpoint manifests (latest 20 workspace jobs; up to 5 matches):')
+                    lines.extend(f'Job #{job} · {checkpoint} · {reason}' for job,checkpoint,reason in matches)
+                    if not matches:lines.append('No exact match in this bounded source-checkpoint search.')
+                except (OSError,ValueError,KeyError,TypeError,sqlite3.Error) as exc:
+                    lines.append('Checkpoint evidence unavailable: '+str(exc)[:180])
+            if observed['preview'] is not None:
+                lines.extend(['','PLAIN TEXT PREVIEW — READ ONLY',observed['preview']])
+            return '\n'.join(lines)
         except (OSError,ValueError) as exc:return 'Inspection unavailable: '+str(exc)[:200]
 
     def _refresh_knowledge_centre(self):

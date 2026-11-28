@@ -711,7 +711,7 @@ class StudioCentre(ttk.Frame):
         for key,label,width in (('category','Type',95),('path','Workspace path',390),('extension','Format',70)):
             self.table.heading(key,text=label);self.table.column(key,width=width,stretch=key=='path')
         source_scrollbars(frame,self.table)
-        ttk.Button(self,text='Inspect artifact metadata',command=self.inspect).pack(anchor='w',pady=4)
+        ttk.Button(self,text='Inspect artifact / preview',command=self.inspect).pack(anchor='w',pady=4)
         detail_frame=ttk.Frame(self);detail_frame.pack(fill='x')
         self.detail=tk.Text(detail_frame,height=5,state='disabled',wrap='word',bg=PALETTE['input'],fg=PALETTE['text'])
         scroll_text(detail_frame,self.detail)
@@ -725,7 +725,7 @@ class StudioCentre(ttk.Frame):
         self.project=project;self.rows=rows
         self.notice.set(f'{project} · {len(rows)} matching file formats in bounded workspace snapshot')
         self.filter()
-        replace_readonly(self.detail,'Select a file to inspect its metadata. No file is executed.')
+        replace_readonly(self.detail,'Select a file to inspect bounded metadata, available text and checkpoint evidence. No file is executed.')
 
     def filter(self):
         sync_table(self.table,filter_status_rows(self.rows,self.category.get(),self.query.get()))
