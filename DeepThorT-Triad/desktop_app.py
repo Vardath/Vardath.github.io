@@ -733,6 +733,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(crawl_actions,text='Crawl website…',command=lambda:self._review_typed_tool('website_crawling','.json','Research: reviewed website crawl')).pack(side='left',padx=3)
         browser_actions=ttk.Frame(media_tab);browser_actions.pack(fill='x',pady=2)
         auth_actions=ttk.Frame(media_tab);auth_actions.pack(fill='x',pady=2)
+        input_actions=ttk.Frame(media_tab);input_actions.pack(fill='x',pady=2)
+        ttk.Button(input_actions,text='Test owned-window mouse…',command=lambda:self._review_typed_tool('mouse_control','.json','Development: reviewed mouse fixture')).pack(side='left',padx=3)
         ttk.Button(auth_actions,text='Research signed-in section…',command=lambda:self._review_typed_tool('browser_authenticated_research','.json','Research: reviewed authenticated section')).pack(side='left',padx=3)
         ttk.Button(auth_actions,text='Manual browser sign-in…',command=lambda:self._review_typed_tool('browser_authenticated','.json','Research: reviewed manual browser session')).pack(side='left',padx=3)
         ttk.Button(browser_actions,text='Replay form in browser…',command=lambda:self._review_typed_tool('browser_automation','.json','Research: reviewed native browser replay')).pack(side='left',padx=3)
@@ -1865,6 +1867,7 @@ class DeepThorTDesktop(tk.Tk):
                  'browser_automation':('.json','Research: reviewed native browser replay'),
                  'browser_authenticated':('.json','Research: reviewed manual browser session'),
                  'browser_authenticated_research':('.json','Research: reviewed authenticated section'),
+                 'mouse_control':('.json','Development: reviewed mouse fixture'),
                  'image_discovery':('.json','Research: reviewed image discovery'),
                  'scientific_citations':('.json','Research: reviewed citation check'),
                  'academic_discovery':('.json','Research: reviewed academic discovery'),
@@ -1935,7 +1938,7 @@ class DeepThorTDesktop(tk.Tk):
             view.insert('1.0',json.dumps(spec,ensure_ascii=False,indent=2));view.configure(state='disabled')
             approved=[False]
             def approve():approved[0]=True;dialog.destroy()
-            ttk.Button(dialog,text='Approve visible manual sign-in session' if module in ('browser_authenticated','browser_authenticated_research') else 'Approve disposable browser launch' if module in ('browser_devtools','browser_automation') else 'Approve exact file disclosure + POST' if module=='website_file_upload' else 'Approve native Godot fixture + report' if module=='end_to_end_testing' else 'Approve exact stopped-container operation + report' if module=='container_management' else 'Approve trusted Godot import + debug APK export' if module=='android_game_compilation' else 'Approve emulator launch + report' if module=='android_emulator' else 'Approve exact REST request + output' if module=='rest_api' else 'Approve remote MCP discovery + output' if module=='remote_mcp' else 'Approve local HTTP requests + output' if module in ('api_testing','application_monitoring') else 'Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations','academic_discovery','website_crawling','multi_source_research','autonomous_research','webpage_elements','website_navigation','website_control_selection','website_file_download') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
+            ttk.Button(dialog,text='Approve owned-window input test' if module=='mouse_control' else 'Approve visible manual sign-in session' if module in ('browser_authenticated','browser_authenticated_research') else 'Approve disposable browser launch' if module in ('browser_devtools','browser_automation') else 'Approve exact file disclosure + POST' if module=='website_file_upload' else 'Approve native Godot fixture + report' if module=='end_to_end_testing' else 'Approve exact stopped-container operation + report' if module=='container_management' else 'Approve trusted Godot import + debug APK export' if module=='android_game_compilation' else 'Approve emulator launch + report' if module=='android_emulator' else 'Approve exact REST request + output' if module=='rest_api' else 'Approve remote MCP discovery + output' if module=='remote_mcp' else 'Approve local HTTP requests + output' if module in ('api_testing','application_monitoring') else 'Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations','academic_discovery','website_crawling','multi_source_research','autonomous_research','webpage_elements','website_navigation','website_control_selection','website_file_download') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
             ttk.Button(dialog,text='Cancel',command=dialog.destroy).pack(side='right',padx=8,pady=8)
             dialog.grab_set();self.wait_window(dialog)
             if not approved[0] or not self._editor_idle(project,proposal=True):return
