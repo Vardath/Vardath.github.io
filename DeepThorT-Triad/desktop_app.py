@@ -922,6 +922,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(mesh_review_actions,text='Unwrap UV atlas…',command=lambda:self._review_typed_tool('uv_unwrapping','.obj','Mesh: reviewed UV atlas')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Simplify mesh…',command=lambda:self._review_typed_tool('mesh_simplification','.obj','Mesh: reviewed simplification')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Improve topology…',command=lambda:self._review_typed_tool('mesh_retopology','.obj','Mesh: reviewed planar retopology')).pack(side='left',padx=3)
+        ttk.Button(mesh_review_actions,text='Reconstruct stereo points…',command=lambda:self._review_typed_tool('photogrammetry','.json','Mesh: reviewed stereo reconstruction')).pack(side='left',padx=3)
         blender_review_actions=ttk.Frame(media_tab);blender_review_actions.pack(fill='x',pady=2)
         ttk.Button(blender_review_actions,text='Create editable Blender mesh…',command=self._show_blender_mesh_workflow).pack(side='left',padx=3)
         ttk.Button(blender_review_actions,text='Repair mesh…',command=lambda:self._review_typed_tool('mesh_repair','.obj','Mesh: reviewed repair')).pack(side='left',padx=3)
@@ -1909,6 +1910,7 @@ class DeepThorTDesktop(tk.Tk):
                  'uv_unwrapping':('.obj','Mesh: reviewed UV atlas'),
                  'mesh_simplification':('.obj','Mesh: reviewed simplification'),
                  'mesh_retopology':('.obj','Mesh: reviewed planar retopology'),
+                 'photogrammetry':('.json','Mesh: reviewed stereo reconstruction'),
                  'mesh_repair':('.obj','Mesh: reviewed repair'),
                  'parametric_cad':('.zip','CAD: reviewed convex extrusion'),
                  'scene_composition':('.glb','Scene: reviewed composition'),
