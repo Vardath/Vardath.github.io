@@ -225,7 +225,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 213 | 59 | Autonomous game playing and testing | Partial: bounded nearest-objective route selection and native generated Godot keyboard trajectory with per-step state oracle. Pass 214 CI pending; native and general external game acceptance outstanding. |
 | 214 | 61 | Automated game balancing | Partial: bounded deterministic collectible relocation search against explicit route-length target, source-guarded candidate/report. Pass 215 CI pending; native and human balance validation outstanding. |
 | 215 | 57 | Unreal Engine integration | Partial: guarded installed UE5 Python commandlet against generated temporary project, exact project/version evidence, reviewed capped native launch. Pass 216 CI pending; native engine, assets, build and gameplay acceptance outstanding. |
-| 216 | 254 | Unity integration | Existing partial; completion not started in this programme |
+| 216 | 254 | Unity integration | Partial: installed licensed Unity editor fixed batch-mode C# scene creation/save/reopen probe and exact native receipt under shared cap. Pass 217 CI pending; native acceptance, project integration and builds outstanding. |
 | 217 | 256 | General game modification | Existing partial; completion not started in this programme |
 | 218 | 42 | Integrated development environment (IDE) integration | Not started in this programme |
 | 219 | 51 | Continuous integration and deployment (CI/CD) management | Not started in this programme |
@@ -1090,3 +1090,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 216 — 28 November 2026
 - Add reviewed Unreal Engine 5 Python editor commandlet integration using a generated temporary project with explicit Python plugin, fixed host script and engine/project identity oracle. Exact external runtime guard, capped child cleanup, resource/time/log bounds and non-overwriting report. No user project code or installation. Native engine execution, asset import, builds and gameplay outstanding. Next rank 216 / ID 254 Unity integration. No installer.
+
+## Pass 217 — 28 November 2026
+- Extend Unity Hub discovery with a reviewed installed licensed Unity editor batch-mode integration. Generate temporary project, compile fixed C# editor script, save/reopen scene and assert exact root transform, project and version; retain hashed receipt under shared cap. No external project execution, licence automation, package installation, build or gameplay. Native acceptance outstanding. Next rank 217 / ID 256 general game modification. No installer.

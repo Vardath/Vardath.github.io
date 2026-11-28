@@ -973,3 +973,7 @@ Balance grid game accepts `{"level": <Generate grid game JSON>, "target_steps": 
 ## Reviewed Unreal Engine integration (Pass 216)
 
 Test Unreal editor accepts `{"project_name":"JanusTest"}`. Set `UNREAL_EDITOR_CMD` to an independently installed trusted UE5 `UnrealEditor-Cmd.exe`. Generates a private temporary project with PythonScriptPlugin enabled and runs a fixed editor Python commandlet to report engine version and exact project identity, under the existing Windows resource cap. No external project execution, asset import, packaging or gameplay. Unreal may write host caches or use networking. Native acceptance pending. Commandlet reference: https://dev.epicgames.com/documentation/unreal-engine/scripting-the-unreal-editor-using-python
+
+## Reviewed Unity integration (Pass 217)
+
+Test Unity editor accepts `{"editor_version":"6000.0.42f1"}` (use exact installed stable Unity version, not an example unless installed). Set `UNITY_EDITOR_EXE` to trusted licensed Unity.exe. Fixed batch-mode C# creates, saves and reopens one scene in a temporary project and verifies root name and transform, project identity and engine version. Hashes of scene and log retained in JSON receipt. No external project, installation, licence automation, gameplay or build. Unity may write host caches or use networking. Native acceptance pending.
