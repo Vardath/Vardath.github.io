@@ -103,7 +103,7 @@ ROOT = Path(__file__).resolve().parent
 STATE = ROOT / 'state'
 from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
-from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows
+from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_project_rows, command_job_rows
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = (PALETTE[k] for k in ('base','panel','input','text','muted','accent'))
 GREEN, YELLOW = PALETTE['success'], PALETTE['warning']
 MAX_INFERENCE_PROMPT = 7500  # current OpenVINO IR endpoint requires <=8000 / message
@@ -489,6 +489,7 @@ class DeepThorTDesktop(tk.Tk):
         for frame,title in ((chat,'Chats'),(queue_tab,'Work queue'),(files_tab,'File review'),
                 (tasks_tab,'Tasks'),(process_tab,'Processes'),(janus_tab,'JANUS & Sentinel'),(hardware_tab,'Computer & Tools'),(media_tab,'Files & Images')):
             self.tabs.add(frame,text=title)
+        command_tab=ttk.Frame(self.tabs);self.tabs.add(command_tab,text='Command Centre')
         # CHAT: separate persisted sessions and a tall, scrollable prompt editor.
         chatbar=ttk.Frame(chat);chatbar.pack(fill='x',pady=(4,3))
         ttk.Button(chatbar,text='+ New chat',command=self._new_chat).pack(side='left')
@@ -553,6 +554,11 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(plan_controls,text='Approve plan & queue',command=self._approve_conversation_plan).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Revise existing file',command=lambda:self._queue_input('edit')).pack(side='left',padx=5)
         ttk.Label(ca,text='Conversation first. Only your approved plan becomes an executable job.',style='Muted.TLabel').pack(anchor='w',pady=2)
+
+        self.command_centre=CommandCentre(command_tab,self._refresh_command_centre,self._open_command_job,
+            [(label,lambda index=index:self.tabs.select(index)) for label,index in (('Chats',0),('Work queue',1),('File review',2),('Processes',4),('Operatives',5),('Tools',6))],self._show_queued_prompts)
+        self.command_centre.pack(fill='both',expand=True)
+        self.tabs.bind('<<NotebookTabChanged>>',self._command_tab_changed,add='+')
 
         # REAL PERSISTENT WORK QUEUE
         qhead=ttk.Frame(queue_tab);qhead.pack(fill='x',pady=8)
@@ -3036,6 +3042,38 @@ class DeepThorTDesktop(tk.Tk):
         self.status.set(f'Independent task #{ident} saved in its own chat. Planning queued; no executable authority granted.')
         self._log(f'Independent prompt #{ident} queued without changing active task.')
         if not self.node_ready and not self.node_loading and not self.installing:self._auto_start_if_installed()
+
+    def _command_tab_changed(self,event=None):
+        if self.tabs.index('current')==8:self._refresh_command_centre()
+
+    def _refresh_command_centre(self):
+        import sqlite3
+        try:
+            from deepthort_local.project_queue import inventory,grouped
+            rows=inventory(self.conversations.path,self.jobs.path,self.roadmap_runs.active())
+            view=self.project_queue.snapshot()
+            project=self._project_key()
+            self.command_centre.render(project,command_project_rows(grouped(rows,view),view),
+                command_job_rows(self.jobs.items(project)),self.jobs.count(project))
+        except (OSError,ValueError,sqlite3.Error) as exc:
+            self.command_centre.notice.set('Snapshot unavailable: '+str(exc)[:200])
+
+    def _open_command_job(self,ident):
+        job=self.jobs.get(int(ident))
+        if not job or job['project']!=self._project_key():
+            self.command_centre.notice.set('Job is no longer in this workspace; refresh the snapshot.')
+            return
+        if job['mode'] in ('chat','plan','edit'):
+            self.tabs.select(0)
+            if job['chat_id'] in self.chat_ids:self.chat_tabs.select(self.chat_ids.index(job['chat_id']))
+            return
+        self.job_filter.set('All states');self.job_query.set('')
+        self._refresh_jobs()
+        if self.job_tree.exists(str(ident)):
+            self.job_tree.selection_set(str(ident))
+            self.job_tree.see(str(ident))
+            self.tabs.select(1)
+        else:self.command_centre.notice.set('Job is outside the current bounded queue view.')
 
     def _project_queue_rows(self):
         from deepthort_local.project_queue import inventory
@@ -9975,7 +10013,9 @@ class DeepThorTDesktop(tk.Tk):
             f"  ·  Reply: {self.active_conversation or 'none'}"
             f"  ·  Queue: {'paused' if self.queue_paused else 'enabled'}")
         sync_table(self.resource_table,measured_process_rows(measured))
-        sync_table(self.operative_table,operative_rows(model_health,model_pid, bool(self._creative_lane_thread and self._creative_lane_thread.is_alive())))
+        worker_rows=operative_rows(model_health,model_pid, bool(self._creative_lane_thread and self._creative_lane_thread.is_alive()))
+        sync_table(self.operative_table,worker_rows)
+        self.command_centre.live(self.process_summary.get(),worker_rows,len(measured))
         self.resource_notice.set(f'{len(measured)} tracked process samples · observed at '+datetime.now().strftime('%H:%M:%S')
                                  if measured else 'No tracked process measurements available on this OS or at this time')
         if self.active_job is not None:self._refresh_jobs()
