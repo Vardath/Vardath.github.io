@@ -1065,3 +1065,7 @@ Generate camera motion accepts `{"video":"clip.mp4","start_frame":0,"end_frame":
 ## Reviewed mouth synchronisation (Pass 239)
 
 Synchronise mouth cues accepts face PNG, exact-duration mono PCM16 48 kHz audio WAV, mouth [x,y,w,h], 2–4 matching PNG sprites, cues [{frame,sprite}] (relative zero-based frame and sprite index), fps 24/25/30, frames 2–120. First cue at frame 0; use at least two distinct visible sprites. Output new MP4 with H.264 RGB video and lossless ALAC audio; checks decoded frames and speech bytes and zero stream origins. Requires owner-supplied cue alignment; no phoneme recognition or neural face animation. Native mux/playback acceptance pending.
+
+## Reviewed audio-driven animation (Pass 240)
+
+Animate from audio accepts background RGB PNG, layer PNG, mono PCM16 48 kHz WAV, fps 24/25/30, frames 2–120, anchor [x,y], travel_px 1–240 and reference_rms 1–32768. Exact-duration audio drives vertical layer displacement by per-frame RMS clipped to travel range. Entire range must fit the canvas; changing visible motion required. Reuses reviewed lossless H.264/ALAC mux with exact decoded stream checks. No neural gestures, beat recognition or native playback claim.
