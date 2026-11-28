@@ -269,7 +269,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 257 | 332 | Network permission controls | Extended partial: persistent owner-reviewed shared pinned HTTPS restriction (existing approvals, deny all, exact host allowlist), rechecked before DNS, request and TLS connection. Pass 258 CI pending. Other stacks, subprocesses and OS network isolation remain outside this scope. |
 | 258 | 96 | Consistent character generation across images | Partial: reviewed fixed reference character and mask, repeated offline diffusion of surrounding scene with exact protected pixel/position identity; reject stale region and no-op. Pass 259 CI pending. New-pose/viewpoint identity generation and native visual acceptance outstanding. |
 | 259 | 104 | Neural text-to-video generation | Partial: reviewed optional local SD1.5 + AnimateDiff adapter, fixed CPU profile and seeded frame generation, model inventory/codec guards, lossless RGB roundtrip verification. Pass 260 CI pending; adapter acquisition and live neural generation/quality acceptance outstanding. |
-| 260 | 301 | Full cinematic production | Existing partial; completion not started in this programme |
+| 260 | 301 | Full cinematic production | Partial: reviewed multi-shot H.264 assembly with cuts/crossfades and prepared 48 kHz soundtrack, exact decoded picture and ALAC audio verification. Pass 261 CI pending. Long films, autonomous asset production, native end-to-end and creative acceptance remain outstanding. |
 | 261 | 106 | Video-to-video generation | Not started in this programme |
 | 262 | 118 | Consistent animated character generation | Not started in this programme |
 | 263 | 123 | Full audio song generation with vocals | Not started in this programme |
@@ -1227,3 +1227,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 260 — 28 November 2026
 - Add bounded retry of native Windows isolation fixture only for observed transient host pressure, with fresh complete probes and no pressure-limit change or false acceptance; earlier failing Pass 247 and 252 branches repaired separately. Add optional local AnimateDiff text-to-video using existing SD1.5, separately provisioned trusted motion adapter and existing shared Windows job cap. 256x256, 8–16 frames at 24 fps, seed, exact reviewed model inventory and codecs; verified RGB frame sequence and non-overwriting MP4. Three fixture regressions; no live neural run or motion quality claim, no model download/installer. Next rank 260 / ID 301 full cinematic production.
+
+
+## Pass 261 — 28 November 2026
+- Extend existing shot editor with reviewed 2–3 shot cinematic assembly, optional cuts/crossfades, frame-indexed trims, exact synchronized 48 kHz mono/stereo soundtrack excerpt, H.264/ALAC MP4 mux, full decoded frame and sample verification, immutable source guards and new output only. Three fixtures; register in Linux and Windows CI. No long-form or native creative quality claim. Prior Pass 140 conflict resolved; restricted-environment pressure retry fixed, recent test registration repaired. Next rank 261 / ID 106 video-to-video generation. No installer.

@@ -913,6 +913,7 @@ class DeepThorTDesktop(tk.Tk):
         motion_actions=ttk.Frame(media_tab);motion_actions.pack(fill='x',pady=2)
         ttk.Button(motion_actions,text='Animate still image…',command=lambda:self._review_typed_tool('image_motion','.mp4','Video: reviewed still motion')).pack(side='left',padx=3)
         ttk.Button(motion_actions,text='Neural text to video…',command=lambda:self._review_typed_tool('neural_video','.mp4','Video: reviewed neural generation')).pack(side='left',padx=3)
+        ttk.Button(motion_actions,text='Assemble cinematic shots…',command=lambda:self._review_typed_tool('cinematic_assembly','.mp4','Video: reviewed cinematic assembly')).pack(side='left',padx=3)
         ttk.Button(motion_actions,text='Replace video background…',command=lambda:self._review_typed_tool('video_background','.mp4','Video: reviewed chroma key')).pack(side='left',padx=3)
         ttk.Button(motion_actions,text='Transfer video palette…',command=lambda:self._review_typed_tool('video_style','.mp4','Video: reviewed palette transfer')).pack(side='left',padx=3)
         ttk.Button(motion_actions,text='Remove masked video object…',command=lambda:self._review_typed_tool('video_object_removal','.mp4','Video: reviewed masked removal')).pack(side='left',padx=3)
@@ -1949,6 +1950,7 @@ class DeepThorTDesktop(tk.Tk):
                  'video_trimming':('.mp4','Video: reviewed sequence'),
                  'image_motion':('.mp4','Video: reviewed still motion'),
                  'neural_video':('.mp4','Video: reviewed neural generation'),
+                 'cinematic_assembly':('.mp4','Video: reviewed cinematic assembly'),
                  'video_background':('.mp4','Video: reviewed chroma key'),
                  'video_style':('.mp4','Video: reviewed palette transfer'),
                  'video_object_removal':('.mp4','Video: reviewed masked removal'),
