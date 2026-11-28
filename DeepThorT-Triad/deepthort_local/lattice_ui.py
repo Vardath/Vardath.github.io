@@ -822,8 +822,8 @@ def settings_policy_rows(project,tools,network):
         ('tools',('Routine software management',enabled(tools,'enabled'),'Existing approved software policy')),
         ('upgrades',('Tool upgrades preference',enabled(tools,'allow_upgrades'),'Effective only with routine management')),
         ('network',('Shared HTTPS restrictions',str(network),'Not an OS-wide firewall; existing approvals still apply')),
-        ('cpu',('Configured CPU ceiling','50%','Windows supervised launcher; not measured usage')),
-        ('commit',('Configured maximum RAM-sized commit','65%','Actual admission may be lower; not physical working set')),
+        ('cpu',('Automatic CPU profiles','Medium 50% / High 85%','Game or memory pressure selects Medium; live job readback below')),
+        ('commit',('RAM-sized commit policy','Medium 65% / High 80%','Medium cooperative; root hard ceiling stays safe for resident workers')),
         ('inference',('Primary text inference','Local OpenVINO CPU','External services are separate reviewed integrations')),
     ]
 

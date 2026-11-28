@@ -15,7 +15,7 @@ def format_diagnostic(info: dict, *, model_running: bool, model_ready: bool,
     if model_ready and model_running:
         condition = 'AI is responding on the supervised local server.'
     elif model_loading and model_running:
-        condition = 'AI process started; local OpenVINO IR weights are loading. This can be slow at a 35% CPU limit.'
+        condition = 'AI process started; local OpenVINO IR weights are loading. This can be slow under automatic resource limits.'
     elif model_running:
         condition = 'AI process is running but has not passed its local health check.'
     else:
@@ -42,6 +42,6 @@ def format_diagnostic(info: dict, *, model_running: bool, model_ready: bool,
     if recent_logs and not model_ready:
         lines += ['', 'RECENT MODEL OUTPUT:']
         lines += [line[:300] for line in recent_logs[-8:]]
-    lines += ['', 'System resource protection: 35% CPU hard cap and 35% committed-memory job limit are configured by the launcher.',
+    lines += ['', 'System resource protection: automatic Medium 50% / High 85% CPU hard cap, up to 80% RAM-sized root commit; Medium uses a 65% cooperative admission budget, not forced eviction.',
               'Actual Windows enforcement and gaming performance still require testing on this PC.']
     return '\n'.join(lines)

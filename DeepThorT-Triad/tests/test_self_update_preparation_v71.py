@@ -13,7 +13,10 @@ class SelfUpdateTests(unittest.TestCase):
         self.root=Path(tmp.name);self.state=self.root/'state';self.state.mkdir()
         (self.root/'deepthort_local').mkdir()
         source=Path(__file__).resolve().parents[1]/TARGET
-        self.baseline=source.read_bytes()
+        self.baseline=source.read_bytes().replace(
+            b'System resource protection: automatic Medium 50% / High 85% CPU hard cap, up to 80% RAM-sized root commit; Medium uses a 65% cooperative admission budget, not forced eviction.',
+            b'System resource protection: 35% CPU hard cap and 35% committed-memory job limit are configured by the launcher.')
+        self.assertNotEqual(self.baseline,source.read_bytes())
         (self.root/TARGET).write_bytes(self.baseline)
         (self.root/CAP_SOURCE).write_text('MAX_CPU_PERCENT = 50\nMAX_RAM_PERCENT = 65\n',encoding='utf-8')
         class Client:

@@ -175,9 +175,9 @@ def creative_headroom(*,extra=0):
     """Read real shared job/physical memory limits and historical peak."""
     import ctypes, os
     from ctypes import wintypes
-    from .triad_job import kernel,fn,check,verify_root_cap
+    from .triad_job import kernel,fn,check,effective_admission_sample
     from .win_cpu_cap import ExtendedLimitInfo,JobObjectExtendedLimitInformation
-    cap,available,total=verify_root_cap()
+    cap,available,total=effective_admission_sample()
     k=kernel();H=wintypes.HANDLE;D=wintypes.DWORD;P=ctypes.c_void_p
     close=fn(k,'CloseHandle',[H],wintypes.BOOL)
     query=fn(k,'QueryInformationJobObject',[H,ctypes.c_int,P,D,P],wintypes.BOOL)

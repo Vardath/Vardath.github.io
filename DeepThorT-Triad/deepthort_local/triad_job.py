@@ -23,7 +23,7 @@ def in_job(k,process,job):
         process,job,ctypes.byref(member)),'Process job membership')
     return bool(member.value)
 
-def verify_root_cap():
+def verify_root_cap(*,include_cpu=False):
     k=kernel()
     import re
     name=os.environ.get('DEEPTHORT_TRIAD_ROOT_JOB','')
@@ -48,8 +48,13 @@ def verify_root_cap():
                 or not 0<limits.JobMemoryLimit<=mem.ullTotalPhys*MAX_RAM_PERCENT//100
                 or not limits.BasicLimitInformation.LimitFlags&JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE):
             raise RuntimeError('Inherited job is not the required CPU/commit cap')
-        return int(limits.JobMemoryLimit),int(mem.ullAvailPhys),int(mem.ullTotalPhys)
+        sample=(int(limits.JobMemoryLimit),int(mem.ullAvailPhys),int(mem.ullTotalPhys))
+        return (*sample,int(cpu.CpuRate)) if include_cpu else sample
     finally:close(job)
+def effective_admission_sample():
+    from .resource_policy import admission_budget
+    return admission_budget(*verify_root_cap(include_cpu=True))
+
 CONTROL_RESERVE_BYTES=1024**3
 
 def worker_budget(root_limit):
@@ -62,7 +67,7 @@ def model_group():
     """Nested aggregate worker commit cap, leaving room for desktop/broker.
 
     The group is not a separate CPU budget. Every member remains in the
-    original shared 50% CPU / up to 65% RAM-sized commit root job, and individual cleanup jobs remain nested below it.
+    shared automatic CPU / up to 80% RAM-sized commit root job, and individual cleanup jobs remain nested below it.
     """
     root_limit,_,_=verify_root_cap()
     budget=worker_budget(root_limit)
@@ -92,7 +97,7 @@ def memory_specialist_fits(cap,available,total,peak):
             and available>=MEMORY_SPECIALIST_LIMIT+total//10)
 
 def memory_specialist_admission():
-    cap,available,total=verify_root_cap()
+    cap,available,total=effective_admission_sample()
     k=kernel();H=wintypes.HANDLE;D=wintypes.DWORD;P=ctypes.c_void_p
     close=fn(k,'CloseHandle',[H],wintypes.BOOL)
     root=fn(k,'OpenJobObjectW',[D,wintypes.BOOL,wintypes.LPCWSTR],H)(

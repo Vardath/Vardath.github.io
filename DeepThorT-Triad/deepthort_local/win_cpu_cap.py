@@ -1,4 +1,4 @@
-"""Windows resource supervisor: 50% system CPU and <=65% physical-RAM-sized job commit cap.
+"""Windows resource supervisor: automatic 50–85% system CPU and <=80% physical-RAM-sized job commit cap.
 
 A Windows Job Object encloses the child process AND all its descendants;
 launch DeepThorT's ROOT process under it to limit the entire application.
@@ -18,8 +18,13 @@ import subprocess
 from ctypes import wintypes
 from typing import Callable, Sequence
 
-MAX_CPU_PERCENT = 50
-MAX_RAM_PERCENT = 65
+from .resource_policy import MEDIUM_CPU, MEDIUM_RAM, HIGH_CPU, HIGH_RAM
+
+MAX_CPU_PERCENT = 85
+MAX_RAM_PERCENT = 80
+# Literal limits are inspected by the governed diagnostic source checker.
+if (MAX_CPU_PERCENT,MAX_RAM_PERCENT)!=(HIGH_CPU,HIGH_RAM):
+    raise RuntimeError('Automatic resource policy and hard ceiling disagree')
 CPU_RATE_CONTROL_ENABLE = 0x1
 CPU_RATE_CONTROL_HARD_CAP = 0x4
 JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE = 0x2000
@@ -58,7 +63,7 @@ class MemoryStatus(ctypes.Structure):
 
 
 def calculate_ram_limit(total_physical: int, available_physical: int,
-                        ram_percent: int = MAX_RAM_PERCENT, free_reserve_percent: int = 10) -> int:
+                        ram_percent: int = MEDIUM_RAM, free_reserve_percent: int = 10) -> int:
     """Reject launching if model would jeopardise RAM reserved for foreground games.
 
     JobObjectMemoryLimit caps committed private bytes (not physical working set).
@@ -69,12 +74,12 @@ def calculate_ram_limit(total_physical: int, available_physical: int,
     if total_physical <= 0 or not 0 <= available_physical <= total_physical:
         raise ValueError("Invalid physical RAM values")
     if not 1 <= ram_percent <= MAX_RAM_PERCENT or not 0 <= free_reserve_percent <= 80:
-        raise ValueError("RAM cap must be 1..65% and reserve 0..80%")
+        raise ValueError("RAM cap must be 1..80% and reserve 0..80%")
     ceiling = total_physical * ram_percent // 100
     reserve = total_physical * free_reserve_percent // 100
     # The Job limit is a ceiling, not an allocation. A running foreground
     # game can use much of RAM: allow a smaller *safe* capped job rather than
-    # refusing to launch because its full theoretical 65% is unavailable.
+    # refusing to launch because its full configured is unavailable.
     limit = min(ceiling, max(0, available_physical-reserve))
     minimum = min(2 * 1024**3, total_physical // 10)
     if limit < minimum:
@@ -136,14 +141,16 @@ class ProcessInfo(ctypes.Structure):
 
 
 def run_capped(command: Sequence[str], cwd: str | None = None,
-               percent: int = MAX_CPU_PERCENT, ram_percent: int = MAX_RAM_PERCENT, free_reserve_percent: int = 10,
-               observe: Callable[[int, int, bool], None] | None = None) -> int:
+               percent: int = MEDIUM_CPU, ram_percent: int = MEDIUM_RAM, free_reserve_percent: int = 10,
+               observe: Callable[[int, int, bool], None] | None = None,
+               cpu_policy: Callable[[int, int], int] | None = None,
+               policy_event: Callable[[str], None] | None = None) -> int:
     if os.name != "nt":
-        raise RuntimeError("The 50% hard-cap supervisor requires Windows; refusing uncapped launch")
+        raise RuntimeError("The hard-cap supervisor requires Windows; refusing uncapped launch")
     if not 1 <= percent <= MAX_CPU_PERCENT:
-        raise ValueError("This gaming-safe launcher cannot exceed 50% CPU")
+        raise ValueError("This gaming-safe launcher cannot exceed 85% CPU")
     if not 1 <= ram_percent <= MAX_RAM_PERCENT:
-        raise ValueError("This gaming-safe launcher cannot exceed 65% RAM-sized commit")
+        raise ValueError("This gaming-safe launcher cannot exceed 80% RAM-sized commit")
     if not command or not all(isinstance(x, str) and x for x in command):
         raise ValueError("Nonempty argument vector required")
     suppress_native_error_dialogs()
@@ -163,6 +170,7 @@ def run_capped(command: Sequence[str], cwd: str | None = None,
     if not global_mem_status(ctypes.byref(mem)):
         raise OSError(ctypes.get_last_error(), "GlobalMemoryStatusEx failed; refusing uncapped launch")
     ram_cap_bytes = calculate_ram_limit(mem.ullTotalPhys, mem.ullAvailPhys, ram_percent, free_reserve_percent)
+    query_job = fn("QueryInformationJobObject", [HANDLE, ctypes.c_int, LPVOID, DWORD, LPVOID], wintypes.BOOL)
     create_job = fn("CreateJobObjectW", [LPVOID, wintypes.LPCWSTR], HANDLE)
     set_job = fn("SetInformationJobObject", [HANDLE, ctypes.c_int, LPVOID, DWORD], wintypes.BOOL)
     create_process = fn("CreateProcessW", [wintypes.LPCWSTR, wintypes.LPWSTR,
@@ -200,8 +208,34 @@ def run_capped(command: Sequence[str], cwd: str | None = None,
         limits.BasicLimitInformation.PriorityClass = IDLE_PRIORITY_CLASS
         limits.JobMemoryLimit = ram_cap_bytes
         check(set_job(job, JobObjectExtendedLimitInformation, ctypes.byref(limits), ctypes.sizeof(limits)), "Set job-wide RAM cap, idle priority and kill-on-close")
-        cap = CpuRate(CPU_RATE_CONTROL_ENABLE | CPU_RATE_CONTROL_HARD_CAP, percent * 100)
-        check(set_job(job, JobObjectCpuRateControlInformation, ctypes.byref(cap), ctypes.sizeof(cap)), f"Set hard {percent}% CPU cap")
+        def desired_cpu():
+            if cpu_policy is None:return percent
+            try:
+                if not global_mem_status(ctypes.byref(mem)):return min(percent,MEDIUM_CPU)
+                value=cpu_policy(int(mem.ullAvailPhys),int(mem.ullTotalPhys))
+                if type(value) is not int or not 1<=value<=percent:
+                    return min(percent,MEDIUM_CPU)
+                return value
+            except (OSError,ValueError,RuntimeError,TypeError):
+                return min(percent,MEDIUM_CPU)
+
+        def apply_cpu(rate):
+            flags=CPU_RATE_CONTROL_ENABLE|CPU_RATE_CONTROL_HARD_CAP
+            cap=CpuRate(flags,rate*100)
+            check(set_job(job,JobObjectCpuRateControlInformation,ctypes.byref(cap),ctypes.sizeof(cap)),f'Set hard {rate}% CPU cap')
+            observed=CpuRate()
+            check(query_job(job,JobObjectCpuRateControlInformation,ctypes.byref(observed),ctypes.sizeof(observed),None),'Read CPU cap')
+            if observed.ControlFlags&flags!=flags or observed.CpuRate!=rate*100:
+                raise OSError('CPU hard cap readback mismatch')
+            return rate
+
+        def report(message):
+            if policy_event:
+                try:policy_event(message)
+                except (OSError,ValueError,RuntimeError):pass
+
+        active_cpu=apply_cpu(desired_cpu())
+        report(f'Confirmed shared CPU ceiling: {active_cpu}%')
         si = StartupInfo()
         si.cb = ctypes.sizeof(si)
         cmdline = ctypes.create_unicode_buffer(subprocess.list2cmdline(list(command)))
@@ -221,9 +255,20 @@ def run_capped(command: Sequence[str], cwd: str | None = None,
                 observe(job, ram_cap_bytes, False)
             if resume(process.hThread) == 0xFFFFFFFF:
                 raise OSError(ctypes.get_last_error(), "ResumeThread failed")
-            code = wait(process.hProcess, 5000 if observe else INFINITE)
-            while observe and code == 258:  # WAIT_TIMEOUT
-                observe(job, ram_cap_bytes, False)
+            code = wait(process.hProcess, 5000 if observe or cpu_policy else INFINITE)
+            while (observe or cpu_policy) and code == 258:  # WAIT_TIMEOUT
+                if cpu_policy:
+                    desired=desired_cpu()
+                    if desired!=active_cpu:
+                        try:
+                            active_cpu=apply_cpu(desired)
+                            report(f'Confirmed shared CPU ceiling: {active_cpu}%')
+                        except OSError as exc:
+                            # Do not kill an approved write or lose resident models.
+                            # Retry on next sample; never claim a failed transition.
+                            active_cpu=None
+                            report('CPU profile transition not verified: '+str(exc)[:180])
+                if observe:observe(job, ram_cap_bytes, False)
                 code = wait(process.hProcess, 5000)
             if code != 0:
                 raise OSError(ctypes.get_last_error(), "WaitForSingleObject failed")

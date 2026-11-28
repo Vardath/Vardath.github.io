@@ -57,8 +57,9 @@ def request(port,path,key,body=None,timeout=2):
         raise http_failure(error,include_detail=bool(body and synthetic(body.get('model'),body.get('messages')))) from None
 
 class Pool:
-    def __init__(self,*,resource_sample=None):
+    def __init__(self,*,resource_sample=None,resource_capacity=capacity):
         self.resource_sample=resource_sample
+        self.resource_capacity=resource_capacity
         self.resource_slots=0 if resource_sample is not None else 4
         self.resource_sample_at=-float('inf')
         self.children={};self.memory_child=None;self.memory_stage='not installed';self.locks={r:RoleInbox(r) for r in ALL_PROFILES}
@@ -166,7 +167,7 @@ class Pool:
         # All accesses to admission state occur under the same condition.
         now=time.monotonic()
         if self.resource_sample is not None and now-self.resource_sample_at>=2:
-            try:self.resource_slots=capacity(self.resource_sample())
+            try:self.resource_slots=self.resource_capacity(self.resource_sample())
             except Exception:self.resource_slots=0
             self.resource_sample_at=now
         return min(1,self.resource_slots) if self.serial_memory_mode else self.resource_slots
@@ -286,7 +287,8 @@ def main():
     if not ready():raise SystemExit('Triad weights or runtime missing; install first')
     token=os.environ.get('DEEPTHORT_TRIAD_TOKEN')
     if not token or len(token)<32:raise SystemExit('Use capped desktop launcher')
-    pool=Pool(resource_sample=verify_root_cap)
+    from deepthort_local.resource_policy import managed_slots
+    pool=Pool(resource_sample=lambda:verify_root_cap(include_cpu=True),resource_capacity=managed_slots)
     # Both compatibility ports must be ours before launching any model.
     with ExitStack() as stack:
         servers=[stack.enter_context(ThreadingHTTPServer(('127.0.0.1',p),handler(pool,token,p==8766))) for p in (8765,8766)]
