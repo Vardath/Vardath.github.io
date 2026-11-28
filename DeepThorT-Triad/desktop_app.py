@@ -103,7 +103,7 @@ ROOT = Path(__file__).resolve().parent
 STATE = ROOT / 'state'
 from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
-from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_project_rows, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre, StudioCentre, studio_artifact_rows
+from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_project_rows, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre, StudioCentre, studio_artifact_rows, SettingsCentre, settings_policy_rows
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = (PALETTE[k] for k in ('base','panel','input','text','muted','accent'))
 GREEN, YELLOW = PALETTE['success'], PALETTE['warning']
 MAX_INFERENCE_PROMPT = 7500  # current OpenVINO IR endpoint requires <=8000 / message
@@ -493,6 +493,7 @@ class DeepThorTDesktop(tk.Tk):
         approval_tab=ttk.Frame(self.tabs);self.tabs.add(approval_tab,text='Approvals & PC Activity')
         memory_tab=ttk.Frame(self.tabs);self.tabs.add(memory_tab,text='Knowledge & Memory')
         studio_tab=ttk.Frame(self.tabs);self.tabs.add(studio_tab,text='Studio')
+        settings_tab=ttk.Frame(self.tabs);self.tabs.add(settings_tab,text='Settings & Integrations')
         # CHAT: separate persisted sessions and a tall, scrollable prompt editor.
         chatbar=ttk.Frame(chat);chatbar.pack(fill='x',pady=(4,3))
         ttk.Button(chatbar,text='+ New chat',command=self._new_chat).pack(side='left')
@@ -568,6 +569,27 @@ class DeepThorTDesktop(tk.Tk):
         self.knowledge_centre.pack(fill='both',expand=True)
         self.studio_centre=StudioCentre(studio_tab,self._refresh_studio,self._studio_tool_category,self._inspect_studio_artifact)
         self.studio_centre.pack(fill='both',expand=True)
+        self.settings_centre=SettingsCentre(settings_tab,self._refresh_settings_centre,[
+            ('Local AI & maintenance',[
+                ('Install AI',self._install_ai),('Start AI',self._start_ai),('Stop AI',self._stop_ai),
+                ('Install Vision Model…',self._install_vision),('Install Image Generator…',self._install_image_generator),
+                ('Self-diagnose',self._diagnose),('Run latest test',self._run_latest_test),
+                ('Export diagnostics',self._export_diagnostics),('Review self-update…',self._review_self_installation),
+                ('Rollback self-update…',self._review_self_rollback)]),
+            ('Personal & project settings',[
+                ('Personal preferences…',self._edit_personal_preferences),('Choose folder…',self._choose_project),
+                ('Work queue',lambda:self.tabs.select(1)),('Project queues…',self._show_queued_prompts),
+                ('Computer & Tools',lambda:self.tabs.select(6))]),
+            ('Permissions & integrations',[
+                ('Network permissions…',self._network_permissions_dialog),('Local MCP…',self._local_mcp_dialog),
+                ('Connect GitHub account…',self._show_github_oauth),('GitHub account',self._show_github_account),
+                ('Drive storage',self._show_drive_storage),('Gmail read',self._show_gmail_read),
+                ('OpenAI gateway',self._show_openai_gateway),('Webhook receiver',self._show_webhook_receiver),
+                ('Approvals & PC Activity',lambda:self.tabs.select(9))]),
+            ('Monitoring & help',[
+                ('Processes',lambda:self.tabs.select(4)),('Operatives',lambda:self.tabs.select(5)),
+                ('Locate latest diagnostics',self._locate_diagnostics),('User guide',self._open_user_guide)])])
+        self.settings_centre.pack(fill='both',expand=True)
         self.tabs.bind('<<NotebookTabChanged>>',self._command_tab_changed,add='+')
 
         # REAL PERSISTENT WORK QUEUE
@@ -3105,6 +3127,19 @@ class DeepThorTDesktop(tk.Tk):
         elif index==9:self._refresh_approval_centre()
         elif index==10:self._refresh_knowledge_centre()
         elif index==11:self._refresh_studio()
+        elif index==12:self._refresh_settings_centre()
+
+    def _refresh_settings_centre(self):
+        # Saved policy snapshot only. Do not read tokens, connect, or test external services.
+        try:
+            from deepthort_local import network_permissions
+            current=network_permissions.current()
+            network=current['mode']
+            if network=='allowlist':network+=': '+', '.join(current['hosts'])
+        except (OSError,ValueError,PermissionError,KeyError,TypeError):
+            network='Unavailable — inspect existing network restrictions'
+        self.settings_centre.render(settings_policy_rows(self._project_policy,self._autonomy_policy,network),
+                                   self.model_status.get(),self._project_key())
 
     def _studio_tool_category(self,category):
         self.media_shelf.category.set(category)
