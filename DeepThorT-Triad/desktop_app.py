@@ -349,6 +349,9 @@ class DeepThorTDesktop(tk.Tk):
         self.sentinel = SentinelStore(STATE/'sentinel.sqlite3')
         self.disk_gate = DiskGate(game_names_path=ROOT/'game_executables.txt',game_flag=STATE/'game-active.flag')
         self.settings_file = STATE/'desktop.json'
+        self.display_preferences_file=STATE/'interface-display.json'
+        from deepthort_local.interface_preferences import load as load_display
+        self._display_preferences=load_display(self.display_preferences_file)
         self.x4_settings_file = STATE/'x4-sources.json'
         self.x4_game_dir = ''
         self.x4_reference_dir = ''
@@ -393,6 +396,7 @@ class DeepThorTDesktop(tk.Tk):
         self.after(3000, self._refresh_janus_view)
         self.after(3900, self._council_tick)
         self.protocol('WM_DELETE_WINDOW',self._quit)
+        self._restore_display_preferences()
         self._log('Desktop opened. Native OpenVINO text inference only. Routine catalog tool management: '+
                   ('ENABLED' if self._autonomy_policy['enabled'] else 'OFF')+
                   '; bounded project work: '+('ENABLED' if self._project_policy['enabled'] else 'OFF')+
@@ -446,6 +450,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Label(top,textvariable=self.model_status,style='Muted.TLabel').pack(side='right',padx=8)
 
         body=ttk.Panedwindow(self,orient='horizontal');body.pack(fill='both',expand=True,padx=12,pady=(0,9))
+        self.workspace_split=body
         left=ttk.Frame(body,style='Panel.TFrame',width=290);right=ttk.Frame(body)
         body.add(left,weight=1);body.add(right,weight=5)
         tk.Label(left,text='PROJECT WORKSPACE',font=('Segoe UI Semibold',11),fg=TEXT,bg=PANEL).pack(anchor='w',padx=11,pady=(15,5))
@@ -2608,9 +2613,44 @@ class DeepThorTDesktop(tk.Tk):
     def _restore_project(self):
         try:
             settings=json.loads(self.settings_file.read_text('utf-8'))
-            p=Path(settings.get('project',''))
-            if p.is_dir():self._set_project(p)
-        except (OSError,ValueError,TypeError):pass
+            raw=settings.get('project')
+            if isinstance(raw,str) and raw.strip():
+                p=Path(raw)
+                if p.is_absolute() and p.is_dir():self._set_project(p)
+        except (OSError,ValueError,TypeError,AttributeError):pass
+
+    def _restore_display_preferences(self):
+        from deepthort_local.interface_preferences import geometry,FILTERS,sidebar_position
+        prefs=self._display_preferences
+        w,h=geometry(prefs,self.winfo_screenwidth(),self.winfo_screenheight())
+        self.geometry(f'{w}x{h}')
+        self.expanded_composer.set(prefs['expanded_composer'])
+        self.follow_activity.set(prefs['follow_activity'])
+        for key in FILTERS:getattr(self,key).set(prefs[key])
+        def layout():
+            if self._quitting:return
+            width=self.workspace_split.winfo_width()
+            if width>1:self.workspace_split.sashpos(0,sidebar_position(prefs,width))
+            self._resize_composer()
+            names=tuple(self.tabs.tab(t,'text') for t in self.tabs.tabs())
+            if prefs['page'] in names:self.tabs.select(names.index(prefs['page']))
+        self.after_idle(layout)
+
+    def _save_display_preferences(self):
+        from deepthort_local.interface_preferences import SCHEMA,FILTERS,save
+        try:
+            previous=self._display_preferences
+            normal=self.state()=='normal'
+            raw={'schema':SCHEMA,'width':self.winfo_width() if normal and self.winfo_width()>1 else previous['width'],
+                 'height':self.winfo_height() if normal and self.winfo_height()>1 else previous['height'],
+                 'sidebar':self.workspace_split.sashpos(0) if self.workspace_split.winfo_width()>1 else previous['sidebar'],
+                 'page':self.tabs.tab(self.tabs.select(),'text'),'expanded_composer':self.expanded_composer.get(),
+                 'follow_activity':self.follow_activity.get(),**{key:getattr(self,key).get() for key in FILTERS}}
+            if not save(self.display_preferences_file,raw):
+                self._log('Display preferences could not be saved; existing project and task state is separate.')
+        except (OSError,ValueError,tk.TclError) as exc:
+            self._log('Display preferences unavailable: '+type(exc).__name__)
+
     def _choose_project(self):
         chosen=filedialog.askdirectory(title='Select your existing coding or game project')
         if chosen:self._set_project(Path(chosen))
@@ -11123,6 +11163,7 @@ class DeepThorTDesktop(tk.Tk):
                     messagebox.showerror('Tool error',event[3])
         self.after(125,self._handle_events)
     def _quit(self):
+        self._save_display_preferences()
         self._creative_lane_stop.set()
         self._quitting=True
         self.memory_observer.close()

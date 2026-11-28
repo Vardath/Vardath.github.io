@@ -439,3 +439,48 @@ class IntegratedInterfaceTests(unittest.TestCase):
             self.assertIsNone(app.inventory)
             self.assertIn('Scan failed',app.inventory_notice.get())
             app.project=None
+
+
+    def test_display_preferences_allowlist_and_geometry(self):
+        from deepthort_local.interface_preferences import SCHEMA,load,save,geometry,sidebar_position
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp)/'display.json'
+            self.assertEqual(load(path)['page'],'Chats')
+            self.assertTrue(save(path,{'schema':SCHEMA,'width':9000,'height':800,'sidebar':900,
+                'page':'Studio','expanded_composer':True,'job_filter':'Waiting / blocked',
+                'task_filter':'unrecognized','draft':'private prompt','query':'private filter',
+                'approval':True,'follow_activity':'false'}))
+            row=load(path)
+            self.assertEqual(row['page'],'Studio')
+            self.assertEqual(row['job_filter'],'Waiting / blocked')
+            self.assertEqual(row['task_filter'],'All states')
+            self.assertTrue(row['follow_activity'])
+            self.assertNotIn('draft',row);self.assertNotIn('query',row);self.assertNotIn('approval',row)
+            self.assertEqual(geometry(row,1138,765),(1066,655))
+            self.assertEqual(sidebar_position(row,1000),380)
+            path.write_text('{invalid',encoding='utf-8')
+            self.assertEqual(load(path)['page'],'Chats')
+
+    def test_desktop_display_preferences_roundtrip_without_user_content(self):
+        from deepthort_local.interface_preferences import load
+        app=self.app
+        app.update_idletasks()
+        app.tabs.select(3)
+        app.expanded_composer.set(True)
+        app.task_filter.set('Done')
+        app.task_query.set('private search')
+        app.input.insert('1.0','private unsent prompt')
+        app._save_display_preferences()
+        saved=load(app.display_preferences_file)
+        self.assertEqual(saved['page'],'Tasks')
+        self.assertEqual(saved['task_filter'],'Done')
+        self.assertTrue(saved['expanded_composer'])
+        self.assertNotIn('private',app.display_preferences_file.read_text('utf-8'))
+        app._display_preferences=saved
+        app.tabs.select(0);app.task_filter.set('Planned');app.expanded_composer.set(False)
+        app._restore_display_preferences()
+        app.update_idletasks()
+        self.assertEqual(app.tabs.index('current'),3)
+        self.assertEqual(app.task_filter.get(),'Done')
+        self.assertTrue(app.expanded_composer.get())
+        self.assertEqual(app.input.get('1.0','end-1c'),'private unsent prompt')
