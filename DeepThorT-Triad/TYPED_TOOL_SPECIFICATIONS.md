@@ -1157,3 +1157,7 @@ Files & Images → Edit song section. JSON `{"audio":"song.wav","start_frame":24
 
 ### Local neural text-to-3D (Pass 270)
 Files & Images → Generate 3D from text. JSON: `{"prompt":"a small spacecraft","seed":12,"steps":24,"guidance":4}`. Requires separately provisioned, trusted local Diffusers Shap-E text pipeline with safetensors in `models/shap-e-text`, compatible PyTorch/Diffusers, and protected Windows memory headroom. CPU-only, no downloads. Saves one geometry-only OBJ with existing limits of 20,000 vertices and 20,000 triangles, refusing invalid or oversized results rather than silently reducing them. No material, semantic, native inference performance or mesh manifold acceptance claim. See https://huggingface.co/docs/diffusers/main/api/pipelines/shap_e for pipeline interface.
+
+
+### Local image-to-3D (Pass 271)
+Files & Images → Reconstruct 3D from image. JSON: `{"image":"source.png","seed":12,"steps":24,"guidance":4}`. Requires a separately provisioned trusted Shap-E image pipeline with safetensors in `models/shap-e-image`, compatible local PyTorch/Diffusers and protected Windows memory headroom. Source is a single 64–1024 px RGB PNG. Both Shap-E profiles require compatible safetensors in the current renderer component folder; upstream pickle weights are not loaded by these tools. No downloads or automatic conversion. One verified geometry-only OBJ; unseen surfaces are inferred, not measured, and metric accuracy and materials are not verified.
