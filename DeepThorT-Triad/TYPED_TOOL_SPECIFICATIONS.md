@@ -1153,3 +1153,7 @@ Files & Images → Continue song. Use the Pass 267 reference-music JSON plus `ta
 
 ### Song section replacement and editing (Pass 269)
 Files & Images → Edit song section. JSON `{"audio":"song.wav","start_frame":24000,"end_frame":48000,"fade_frames":1200,"mode":"replace","gain_db":0,"replacement":"part.wav"}`. Source/replacement PCM16 mono/stereo 22.05/24/44.1/48 kHz; replacement must match selected duration, rate and channels exactly. For `gain` omit `replacement` and use nonzero gain. Fades remain inside selection; no clipping or outside sample changes. Saves a new WAV; neural inpainting not provided.
+
+
+### Local neural text-to-3D (Pass 270)
+Files & Images → Generate 3D from text. JSON: `{"prompt":"a small spacecraft","seed":12,"steps":24,"guidance":4}`. Requires separately provisioned, trusted local Diffusers Shap-E text pipeline with safetensors in `models/shap-e-text`, compatible PyTorch/Diffusers, and protected Windows memory headroom. CPU-only, no downloads. Saves one geometry-only OBJ with existing limits of 20,000 vertices and 20,000 triangles, refusing invalid or oversized results rather than silently reducing them. No material, semantic, native inference performance or mesh manifold acceptance claim. See https://huggingface.co/docs/diffusers/main/api/pipelines/shap_e for pipeline interface.
