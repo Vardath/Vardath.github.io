@@ -2,7 +2,7 @@
 import tkinter as tk
 from tkinter import ttk
 import unittest
-from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query
+from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows
 
 
 class LatticeShelfTests(unittest.TestCase):
@@ -114,3 +114,22 @@ class LatticeShelfTests(unittest.TestCase):
             registry.create('two','chat')
             registry.create('one','new chat')
             self.assertEqual(registry.recent_projects(),['one','two'])
+
+
+    def test_queue_filter_preserves_exact_selection_and_never_auto_selects(self):
+        table = ttk.Treeview(self.root, columns=('state','detail'), show='headings')
+        rows = [('1',('running','Build ship')),('2',('waiting_approval','Review ship')),
+                ('3',('completed','Test ship')),('4',('failed','Repair engine'))]
+        sync_table(table,rows)
+        self.assertEqual(table.selection(),())
+        table.selection_set('2')
+        sync_table(table,filter_status_rows(rows,'Waiting / blocked','SHIP'))
+        self.assertEqual(table.selection(),('2',))
+        self.assertEqual(table.get_children(),('2',))
+        sync_table(table,filter_status_rows(rows,'Active','ship'))
+        self.assertEqual(table.get_children(),('1',))
+        self.assertEqual(table.selection(),())
+        sync_table(table,rows)
+        self.assertEqual(table.get_children(),('1','2','3','4'))
+        self.assertEqual(table.selection(),())
+        self.assertEqual(filter_status_rows([('a',('Done','task'))],'Planned',''),[])

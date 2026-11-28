@@ -198,3 +198,32 @@ class SearchPicker(tk.Toplevel):
         ident = self.visible[chosen[0]][0]
         self.destroy()
         self.callback(ident)
+
+
+# Display groups only; never used for dispatch, cancellation or approval.
+STATUS_GROUPS = {
+    'Active': {'queued','pending','running','approved','resuming','building','testing','repairing'},
+    'Waiting / blocked': {'waiting_approval','waiting_sources','waiting','blocked','paused','interrupted'},
+    'Completed / stopped': {'done','completed','succeeded','failed','cancelled','stopped'},
+}
+
+def filter_status_rows(rows, state, query):
+    group = STATUS_GROUPS.get(state)
+    return [(ident,values) for ident,values in rows
+            if (state=='All states' or
+                str(values[0]).casefold() in (group if group is not None else {state.casefold()}))
+            and matches_query(' '.join(str(value) for value in values),query)]
+
+def sync_table(tree, rows):
+    """Update existing rows by exact ID; never select a new target automatically."""
+    existing = set(tree.get_children())
+    wanted = {ident for ident,_ in rows}
+    for ident in existing-wanted:
+        tree.delete(ident)
+    for position,(ident,values) in enumerate(rows):
+        if ident in existing:
+            tree.item(ident,values=values)
+        else:
+            tree.insert('','end',iid=ident,values=values)
+        if tree.index(ident)!=position:
+            tree.move(ident,'',position)

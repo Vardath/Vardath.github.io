@@ -9,6 +9,11 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    'Filter jobs': 'Filter displayed jobs by observed state and text without changing their execution order.',
+    'Filter tasks': 'Filter the manual task board without changing task completion or queue state.',
+    'Scheduling & monitors': 'Existing scheduling, roadmap, network and monitor controls.',
+    'Backups & checkpoints': 'Open reviewed backup, restore and source checkpoint operations.',
+    'Development & testing': 'Access existing development tools and reviewed test operations.',
     'Recent projects…': 'Choose an existing saved workspace by exact path. Current drafts and attachments must be resolved before switching.',
     'Filter files': 'Filter the displayed workspace and verified reference paths only; no source changes or new file scan. Escape clears the filter.',
     'Open selected': 'Open the explicitly selected saved identity, not a matching name alone.',
