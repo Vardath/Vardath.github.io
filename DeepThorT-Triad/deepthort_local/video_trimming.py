@@ -22,14 +22,65 @@ def checked(s):
     if not isinstance(clips,list) or not 1<=len(clips)<=4:raise ValueError('Choose 1–4 distinct MP4 clips')
     names=set();total=0
     for c in clips:
-        if not isinstance(c,dict) or set(c)!={'video','start_frame','end_frame'} or not isinstance(c['video'],str):
+        if not isinstance(c,dict) or set(c) not in ({'video','start_frame','end_frame'},{'video','start_frame','end_frame','edit'}) or not isinstance(c['video'],str):
             raise ValueError('Expected video and inclusive start/exclusive end frame')
         a,b=c['start_frame'],c['end_frame']
         if type(a) is not int or type(b) is not int or not 0<=a<b<=300 or c['video'].casefold() in names:
             raise ValueError('Invalid frame range or repeated source')
+        if 'edit' in c:checked_edit(c['edit'])
         names.add(c['video'].casefold());total+=b-a
     if total>MAX_FRAMES:raise ValueError('Initial sequence supports at most 120 output frames')
     return s
+
+def checked_edit(e):
+    if not isinstance(e,dict) or set(e)!={'crop','rotation','flip'}:
+        raise ValueError('Expected crop, rotation and flip')
+    crop=e['crop']
+    if crop is not None and (not isinstance(crop,list) or len(crop)!=4 or
+        any(type(n) is not int for n in crop) or min(crop[:2])<0 or
+        not 1<=crop[2]<=640 or not 1<=crop[3]<=480 or crop[0]+crop[2]>640 or crop[1]+crop[3]>480):
+        raise ValueError('Invalid crop rectangle')
+    if type(e['rotation']) is not int or e['rotation'] not in (0,90,180,270) or e['flip'] not in ('none','horizontal','vertical'):
+        raise ValueError('Invalid discrete frame orientation')
+    return e
+
+def edited_size(size,edit):
+    if edit is None:return size
+    checked_edit(edit);w,h=size
+    if edit['crop'] is not None:
+        x,y,cw,ch=edit['crop']
+        if x+cw>w or y+ch>h:raise ValueError('Crop lies outside decoded source')
+        w,h=cw,ch
+    if edit['rotation'] in (90,270):w,h=h,w
+    if not 1<=w<=640 or not 1<=h<=480:raise ValueError('Edited frame exceeds output size bound')
+    return w,h
+
+def edit_frames(raw,size,edit):
+    if edit is None:return raw
+    from deepthort_local.texture_pixels import image_module
+    Image=image_module();w,h=size;stride=w*h*3
+    out_size=edited_size(size,edit)
+    if not raw or len(raw)%stride:raise ValueError('Incomplete RGB frames')
+    result=bytearray()
+    for start in range(0,len(raw),stride):
+        with Image.frombytes('RGB',size,raw[start:start+stride]) as frame:
+            current=frame
+            try:
+                if edit['crop'] is not None:
+                    x,y,cw,ch=edit['crop'];current=frame.crop((x,y,x+cw,y+ch))
+                rotations={90:Image.Transpose.ROTATE_270,180:Image.Transpose.ROTATE_180,270:Image.Transpose.ROTATE_90}
+                operations=[]
+                if edit['rotation']:operations.append(rotations[edit['rotation']])
+                if edit['flip']!='none':operations.append(Image.Transpose.FLIP_LEFT_RIGHT if edit['flip']=='horizontal' else Image.Transpose.FLIP_TOP_BOTTOM)
+                for op in operations:
+                    nxt=current.transpose(op)
+                    if current is not frame:current.close()
+                    current=nxt
+                if current.size!=out_size:raise ValueError('Edited frame geometry mismatch')
+                result.extend(current.tobytes())
+            finally:
+                if current is not frame:current.close()
+    return bytes(result)
 
 def run(exe,args,cwd,limit=65536):
     opts={'creationflags':subprocess.CREATE_NO_WINDOW} if sys.platform=='win32' else {}
@@ -76,14 +127,17 @@ def observe(raws,s,tools,folder,*,render):
     for i,(raw,c) in enumerate(zip(raws,s['clips'])):
         path=folder/f'input-{i}.mp4';path.write_bytes(raw)
         m=probe(fp,path);size=(m['width'],m['height'])
-        if m['fps']!=s['fps'] or c['end_frame']>m['frames'] or (dimensions is not None and size!=dimensions):
-            raise ValueError('Source frame range, dimensions or rate do not match reviewed sequence')
-        dimensions=size
-        item=dict(c,source_sha256=hashlib.sha256(raw).hexdigest(),source_format=m)
+        edit=c.get('edit');out_size=edited_size(size,edit)
+        if m['fps']!=s['fps'] or c['end_frame']>m['frames'] or (dimensions is not None and out_size!=dimensions):
+            raise ValueError('Source frame range, edited dimensions or rate do not match reviewed sequence')
+        dimensions=out_size
+        item=dict(c,source_sha256=hashlib.sha256(raw).hexdigest(),source_format=m,edited_size=list(out_size))
         if render:
             frames=decode(ff,path,c['start_frame'],c['end_frame'],*size)
             item['selected_rgb_sha256']=hashlib.sha256(frames).hexdigest()
-            selected.extend(frames)
+            edited=edit_frames(frames,size,edit)
+            item['edited_rgb_sha256']=hashlib.sha256(edited).hexdigest()
+            selected.extend(edited)
         items.append(item)
     if not render:return None,{'clips':items,'width':dimensions[0],'height':dimensions[1],'fps':s['fps']}
     w,h=dimensions;count=sum(c['end_frame']-c['start_frame'] for c in s['clips'])
@@ -135,7 +189,7 @@ def review(root,source,output,exclude=()):
     paths=_paths(Path(plan['root']),s,plan['exclude'])
     plan['guards'].extend(snapshot_file(p) for p in paths);plan['guards'].extend(installed(root))
     _,m=operation(root,plan,False)
-    return plan,dict(s,observations=m,scope='Short silent H.264 MP4 clips only; frame-index sequence, no audio, retiming or transitions.')
+    return plan,dict(s,observations=m,scope='Short silent H.264 MP4 clips only; frame-index sequence with optional crop, clockwise rotation and flip; no audio, retiming or transitions.')
 def execute(root,plan):
     _,dst,_=validate(root,plan);payload,r=operation(root,plan,True)
     sha=guard.publish(payload,dst,lambda:validate(root,plan))

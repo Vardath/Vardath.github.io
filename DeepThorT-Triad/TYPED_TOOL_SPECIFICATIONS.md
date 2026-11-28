@@ -769,3 +769,7 @@ Files & Images → Interpret video. JSON: `{"video":"clip.mp4","frames":[0,24,48
 ## Reviewed screen snapshot (Pass 171)
 
 Files & Images → Capture screen region. Enter primary monitor x,y,width,height (up to 2048 per dimension and 2 megapixels). Confirm one capture after a three-second countdown, then inspect the in-memory preview. Save a new project PNG only after separate confirmation; optional independent approval queues the exact SHA-256-bound saved image for the existing local vision engine. No automatic capture, continuous monitoring or network upload. Windows display scaling and physical-device acceptance remain unverified.
+
+## Expanded video frame editing (Pass 172)
+
+The existing Trim/sequence video tool also accepts an optional `edit` object on each clip: `{"crop":[0,0,320,240],"rotation":90,"flip":"none"}`. Use null for no crop, clockwise rotation 0/90/180/270, and flip none/horizontal/vertical. Apply crop, rotate, then flip. All edited clips must share output dimensions (max 640×480). Existing frame range, 120-frame limit, silent H.264 and exact source checks remain. Output RGB is independently decoded and compared with the expected edited sequence; no native playback claim.
