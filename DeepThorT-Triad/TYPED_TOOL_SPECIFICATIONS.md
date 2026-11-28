@@ -1141,3 +1141,7 @@ Files & Images → Music from audio rhythm. JSON `{"audio":"beat.wav","root_midi
 
 ### Melody-to-song arrangement (Pass 266)
 Files & Images → Song from melody. JSON: `{"audio":"melody.wav","bpm":120,"min_pitch":48,"max_pitch":80,"gate_dbfs":-45,"tonic":0,"mode":"major","repeats":2,"lead_timbre":"sine","backing_timbre":"organ","peak_dbfs":-3}`. Input 3–20 second mono PCM16 WAV at 8 or 16 kHz; explicit tonic 0=C through 11=B and major/minor. Preserves detected pitch and timing, adds diatonic triads chosen by overlap and bass, repeats up to three times within 30 seconds. Existing synthesizer timbres and verified stereo PCM. No claim of neural composition, lyrics, polyphonic recognition or listening quality.
+
+
+### Reference-guided music (Pass 267)
+Files & Images → Music from reference. JSON `{"reference":"ref.wav","min_bpm":60,"max_bpm":180,"channel":"left","bars":2,"seed":17,"lead_timbre":"sine","backing_timbre":"organ","peak_dbfs":-3}`. Use 3–20 seconds of PCM16 audio with supported rhythmic and tonal evidence. Ambiguous tempo or key blocks synthesis. New seeded score shares measured tempo/key only, not source melody or audio samples; 2–4 bars, 22.05 kHz stereo WAV. No neural style or listening claim.
