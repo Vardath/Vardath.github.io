@@ -1101,3 +1101,7 @@ Generate ambient loop accepts `profile` (wind, rain, machine_hum), `duration_sec
 ## Reviewed sung-vowel generation (Pass 248)
 
 Generate sung vowels accepts `notes` (1–24 ordered rows containing `midi` 45–84 or null, `vowel` ah/ee/oo/eh/oh or null for rest, `duration_ms` 150–2000), `vibrato_hz` 4–8, `vibrato_cents` 0–60 and `peak_dbfs` -24 to -3. Total 12 seconds maximum with at least one voiced note. Harmonic formant-shaped synthetic voice with note envelopes and vibrato; 24 kHz mono PCM16 WAV, exact decoded verification. No lyrics, neural singer, voice imitation or listening acceptance.
+
+## Reviewed vocal harmony generation (Pass 249)
+
+Generate vocal harmony accepts `score` (Pass 248 vowel score, maximum 8 seconds), `parts` (2–3 rows containing unique `semitones` -12 to 12 including 0, `gain_db` -24 to 0 and `pan_percent` -100 to 100), and `peak_dbfs` -24 to -3. Transposed notes must remain within MIDI 45–84. Generates the lead and explicit fixed-interval parts with exact shared timing, equal-power panning and shared peak attenuation, as new 24 kHz stereo PCM16 WAV. No key-aware arrangement, existing recording transformation, neural singing or verified listening quality.
