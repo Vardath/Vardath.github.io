@@ -256,7 +256,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 244 | 146 | Custom voice design | Partial: reviewed reusable generic installed-voice design with varispeed, modulation and tone, automatic synthesis and verified audition/preset bundle. Pass 245 CI pending; novel neural timbre creation, independent prosody/formant controls and native listening outstanding. |
 | 245 | 150 | Sound-effect generation | Partial: reviewed deterministic procedural beep, sweep, impact and whoosh synthesis, exact PCM output and bounded seed/timing/tone/peak controls. Pass 246 CI pending; richer sound design, neural text-to-audio and listening acceptance outstanding. |
 | 246 | 151 | Ambient sound generation | Partial: reviewed deterministic procedural stereo wind/rain/machine-hum textures using periodic circular filtering, exact PCM and measured loop-boundary deltas. Pass 247 CI pending; realistic soundscapes, neural synthesis and listening acceptance outstanding. |
-| 247 | 129 | Singing voice generation | Not started in this programme |
+| 247 | 129 | Singing voice generation | Partial: reviewed procedural pitched vowel score with rests, harmonic formant profiles, vibrato and verified PCM. Pass 248 CI pending; intelligible lyric synthesis, expressive neural singing and listening acceptance outstanding. |
 | 248 | 130 | Vocal harmony generation | Not started in this programme |
 | 249 | 165 | Motion capture | Not started in this programme |
 | 250 | 159 | Automated photogrammetry | Not started in this programme |
@@ -1184,3 +1184,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 247 — 28 November 2026
 - Add bounded 4–20 second periodic stereo ambience with wind, rain and machine-hum profiles, seed, texture intensity, stereo width and peak controls; exact WAV roundtrip and measured boundary delta. Three regression fixtures on both hosts. No actual recordings, neural synthesis or verified inaudible seam. Webhook repair PR #311 passed both workflows and merged at 526a025334d57b8ba97c5434f292f4feffba7bf5; post-merge verification required before further merge. Next rank 247 / ID 129 singing voice generation. No installer.
+
+## Pass 248 — 28 November 2026
+- Add bounded local sung-vowel score with 1–24 sequential notes/rests, five fixed vowel formant profiles, vibrato, note envelopes and exact PCM verification. Three regression fixtures on both hosts. No intelligible lyric synthesis, voice imitation, neural singing or listening claim. Pass 229 repaired branch both CI workflows green. Next rank 248 / ID 130 vocal harmony generation. No installer.
