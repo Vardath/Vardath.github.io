@@ -949,3 +949,7 @@ Operate reviewed GUI edit accepts `{"executable":"app.exe","window_title":"Fixtu
 ## Reviewed background desktop execution (Pass 210)
 
 Run on background desktop accepts `{"executable":"app.exe","seconds":15,"expected_window_title":"Ready"}`. Uses the existing separate Windows desktop runner with exact named shared resource job and nested cleanup checks. Bounded to 45 seconds; exact trusted project-local binary (typed-tool maximum 16 MiB). No foreground switch or input. Native code runs with user rights and is not sandboxed; may affect files or network. Receipt distinguishes expected window observation from rendering or functional success. Native external acceptance pending.
+
+## Reviewed live screen interpretation (Pass 211)
+
+Interpret live screen accepts `{"region":[0,0,640,480],"samples":3,"interval_seconds":2}`. Choose a bounded primary-screen rectangle. Separate visible approval and three-second countdown before 2–4 samples. Local offline Florence caption engine; temporary screenshots outside project, report retains captions and hashes. Close sensitive windows before approval. No continuous monitoring, automatic memory ingestion or input. Captions are unverified reference evidence. Requires native Windows and existing local vision installation; acceptance pending.

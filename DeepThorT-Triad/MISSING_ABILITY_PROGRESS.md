@@ -219,7 +219,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 207 | 29 | Keyboard control | Partial: bounded native literal ASCII and named key down/up messages to hidden owned window, exact sequence readback and no global input. Pass 208 CI pending. External applications, Unicode and physical key input outstanding. |
 | 208 | 27 | Graphical application operation | Partial: reviewed project executable launched in capped cleanup scope, exact unique window and direct non-password standard Edit control, native literal set/readback. Pass 209 CI pending. External native acceptance and broader application controls outstanding. |
 | 209 | 237 | Background desktop execution | Partial: hardened existing separate desktop runner with exact named root/cleanup membership and linked-path refusal; reviewed queue-compatible launch and expected window observation receipt. Pass 210 CI pending. Native external background acceptance and broader operation outstanding. |
-| 210 | 4 | Live screen interpretation | Not started in this programme |
+| 210 | 4 | Live screen interpretation | Partial: approved bounded live primary-region samples and existing offline caption engine, exact sample identity and local evidence receipt. Pass 211 CI pending. Native live screen and semantic acceptance, ongoing interpretation outstanding. |
 | 211 | 60 | Game controller input simulation | Not started in this programme |
 | 212 | 58 | Visual gameplay testing | Not started in this programme |
 | 213 | 59 | Autonomous game playing and testing | Not started in this programme |
@@ -1069,3 +1069,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 210 — 27 November 2026
 - Harden existing isolated desktop runner with exact current shared Windows cap and child membership in named root and nested cleanup job, linked-path refusal and bounded termination wait. Add reviewed queue-compatible background launch for exact project binary, bounded duration and expected window-title observation; no foreground switch or input. Preserve existing separate desktop UI and audit. Receipt and guard fixtures; native external background execution still requires acceptance. Next rank 210 / ID 4 live screen interpretation. No installer.
+
+## Pass 211 — 27 November 2026
+- Extend one-shot screenshot interpretation with reviewed 2–4 live region samples, separate visible confirmation, bounded intervals, display/pressure checks and exact local sample hashes. Reuse offline Florence caption engine and temporary non-project staging; publish captions only, no continuous capture or model authority. Add sampling and changed-source fixtures. Native vision acceptance outstanding. Next rank 211 / ID 60 controller input simulation. No installer.
