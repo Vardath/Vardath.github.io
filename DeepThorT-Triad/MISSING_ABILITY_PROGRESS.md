@@ -250,7 +250,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 238 | 115 | Lip synchronisation | Partial: reviewed explicit frame-timed mouth sprites on a still face, exact-duration PCM speech, H.264/ALAC mux and decoded RGB/PCM verification. Pass 239 CI pending; automatic phoneme alignment, neural face animation and native playback acceptance outstanding. |
 | 239 | 119 | Audio-driven animation | Partial: exact PCM framewise RMS envelope drives bounded vertical layer motion with verified H.264/ALAC mux. Pass 240 CI pending; neural gesture/character motion, beat-aware choreography and native playback outstanding. |
 | 240 | 122 | Video dubbing | Partial: reviewed silent clip interval with supplied exact-duration speech WAV, source frame preservation and lossless H.264/ALAC mux verification. Pass 241 CI pending; existing soundtrack replacement, automatic speech generation/alignment and native playback outstanding. |
-| 241 | 149 | Automatic multilingual dubbing | Not started in this programme |
+| 241 | 149 | Automatic multilingual dubbing | Partial: reviewed multilingual text and exact installed voices, automatic per-cue synthesis, 48 kHz conversion, bounded silence padding and verified silent video mux. Pass 242 CI pending; automatic translation, phoneme alignment, original soundtrack replacement and native acceptance outstanding. |
 | 242 | 147 | Voice transformation | Not started in this programme |
 | 243 | 145 | Voice cloning with consent | Not started in this programme |
 | 244 | 146 | Custom voice design | Not started in this programme |
@@ -1165,3 +1165,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 241 — 28 November 2026
 - Add supplied narration dubbing of a reviewed silent H.264 interval, exact mono PCM16 48 kHz duration, lossless RGB and PCM mux verification and exact source/codec guards. Three mocked-codec regression fixtures on both hosts. No existing audio replacement, automatic translation/alignment or native playback acceptance. Next rank 241 / ID 149 multilingual dubbing. No installer.
+
+## Pass 242 — 28 November 2026
+- Add automatic synthesis of supplied reviewed translated cues using exact installed Windows speech voices, local PCM resampling and frame-aligned silence padding without truncation; reject overlapping cues, overlong speech, changed sources/voices/codecs. Reuse lossless RGB/PCM mux verification. Three mocked regression fixtures on both hosts. No automatic translation, existing audio replacement or native playback claim. Next rank 242 / ID 147 voice transformation. No installer.
