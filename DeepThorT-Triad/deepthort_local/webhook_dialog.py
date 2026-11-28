@@ -4,6 +4,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .webhook_receiver import listen,checked
 
 def show(app):
@@ -21,7 +22,7 @@ def show(app):
     except ValueError as e:messagebox.showwarning('Invalid webhook session',str(e),parent=app);return
     if not messagebox.askyesno('Approve local webhook receiver','Listen for one HMAC-signed '+event+' delivery for up to 60 seconds on 127.0.0.1 only? No public listener, payload retention or task execution.',parent=app):return
     if not permitted():return
-    dlg=tk.Toplevel(app);dlg.title('Local signed webhook receiver');dlg.geometry('740x360');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('Local signed webhook receiver');fit_dialog(dlg,740,360);dlg.transient(app)
     state=tk.StringVar(value='Starting local listener…')
     ttk.Label(dlg,textvariable=state,wraplength=700).pack(fill='x',padx=8,pady=8)
     view=tk.Text(dlg,wrap='word',state='disabled');view.pack(fill='both',expand=True,padx=8,pady=8)

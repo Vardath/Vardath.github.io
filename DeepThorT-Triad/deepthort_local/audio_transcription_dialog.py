@@ -3,6 +3,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .audio_transcription import review,transcribe,save
 
 def show(app):
@@ -22,7 +23,7 @@ def show(app):
     except Exception:messagebox.showwarning('Invalid transcription review','Check audio format, protected paths and new JSON output.',parent=app);return
     if not messagebox.askyesno('Approve offline transcription',f'Recognize {source} ({seconds:.2f} s) in bounded windows using installed {culture} recognition. Preview timed report; separately approve saving to {output}. No upload or speaker identification. Window boundaries may split words.',parent=app):return
     if not permitted():return
-    dlg=tk.Toplevel(app);dlg.title('Offline audio transcription');dlg.geometry('800x520');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('Offline audio transcription');fit_dialog(dlg,800,520);dlg.transient(app)
     state=tk.StringVar(value='Starting local recognition…')
     ttk.Label(dlg,textvariable=state,wraplength=760).pack(fill='x',padx=8,pady=8)
     view=tk.Text(dlg,wrap='word',state='disabled');view.pack(fill='both',expand=True,padx=8,pady=8)

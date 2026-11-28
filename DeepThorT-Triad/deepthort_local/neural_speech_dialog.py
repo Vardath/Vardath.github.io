@@ -4,6 +4,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog,filedialog
+from .lattice_ui import fit_dialog
 from .neural_speech import review,render
 from .source_security import exclusions
 
@@ -30,7 +31,7 @@ def show(app):
     if not output:return
     try:plan=review(project,exe,model,output,text,length,noise,variation,app.inspection_exclusions.paths(project))
     except Exception:messagebox.showwarning('Neural voice unavailable','Select trusted compatible installed engine and voice/config, exact supported settings and a new project WAV.',parent=app);return
-    dlg=tk.Toplevel(app);dlg.title('Review optional neural speech');dlg.geometry('820x620');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('Review optional neural speech');fit_dialog(dlg,820,620);dlg.transient(app)
     state=tk.StringVar(value='Review exact engine, voice and text. Piper is optional and must already be installed; review its and the voice license. Cap is not a security sandbox.')
     ttk.Label(dlg,textvariable=state,wraplength=780).pack(fill='x',padx=8,pady=8)
     view=tk.Text(dlg,wrap='word');view.pack(fill='both',expand=True,padx=8,pady=8)

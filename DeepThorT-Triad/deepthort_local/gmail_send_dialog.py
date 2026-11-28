@@ -4,6 +4,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .gmail_send import checked,send
 
 def show(app):
@@ -14,7 +15,7 @@ def show(app):
                 not app.queue_paused and not app._explicit_model_stop and not app.disk_gate.gaming() and
                 not app.janus.status().get('paused'))
     if not permitted():return
-    dlg=tk.Toplevel(app);dlg.title('Compose reviewed Gmail');dlg.geometry('760x650');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('Compose reviewed Gmail');fit_dialog(dlg,760,650);dlg.transient(app)
     fields={}
     for key,label in [('account','Sending account'),('to','Recipient'),('subject','Subject')]:
         row=ttk.Frame(dlg);row.pack(fill='x',padx=8,pady=3);ttk.Label(row,text=label,width=18).pack(side='left')

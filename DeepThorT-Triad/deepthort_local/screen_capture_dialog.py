@@ -2,6 +2,7 @@
 import io
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from pathlib import Path
 from .screen_capture import primary_size,region,capture,save,prompt_for
 
@@ -27,7 +28,7 @@ def show(app):
     if not messagebox.askyesno('Approve single screenshot',
         'Capture the specified visible screen region once, after a 3-second countdown. Close or cover sensitive windows first. Preview stays in memory; no upload, model processing or saving without separate approval.',parent=app):return
     if not permitted():return
-    dlg=tk.Toplevel(app);dlg.title('Screen capture');dlg.transient(app);dlg.geometry('600x170')
+    dlg=tk.Toplevel(app);dlg.title('Screen capture');dlg.transient(app);fit_dialog(dlg,600,170)
     state=tk.StringVar(value='Capture in 3 seconds. Cancel to discard.')
     ttk.Label(dlg,textvariable=state,wraplength=550).pack(padx=12,pady=12)
     cancelled=False

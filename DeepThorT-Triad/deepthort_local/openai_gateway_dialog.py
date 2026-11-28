@@ -5,6 +5,7 @@ import secrets
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox
+from .lattice_ui import fit_dialog
 from .openai_gateway import serve,broker
 from .developer_status import status
 from .task_submission import Inbox
@@ -30,7 +31,7 @@ def show(app):
         inbox=Inbox(project,chat,approved=True)
     if not permitted():return
     key=secrets.token_urlsafe(32);internal=os.environ.get('DEEPTHORT_TRIAD_TOKEN','')
-    dlg=tk.Toplevel(app);dlg.title('Local developer API');dlg.geometry('780x520');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('Local developer API');fit_dialog(dlg,780,520);dlg.transient(app)
     state=tk.StringVar(value='Opening local developer endpoint…')
     ttk.Label(dlg,textvariable=state,wraplength=740).pack(fill='x',padx=8,pady=8)
     ttk.Label(dlg,text='Temporary API key (local clients only; not the internal broker key):').pack(anchor='w',padx=8)

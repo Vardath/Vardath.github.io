@@ -4,6 +4,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .ci_management import checked,inspect
 
 def show(app):
@@ -21,7 +22,7 @@ def show(app):
     if not messagebox.askyesno('Approve CI observation','Read exact GitHub workflow attempt and jobs (three GET requests); no merge, rerun or deployment.\n\n'+json.dumps(s,indent=2),parent=app):return
     token=simpledialog.askstring('GitHub token','Transient Actions-read token (not stored):',show='*',parent=app)
     if not token or not permitted():return
-    dlg=tk.Toplevel(app);dlg.title('GitHub Actions evidence');dlg.geometry('760x540');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('GitHub Actions evidence');fit_dialog(dlg,760,540);dlg.transient(app)
     status=tk.StringVar(value='Retrieving reviewed CI evidence…')
     ttk.Label(dlg,textvariable=status,wraplength=720).pack(fill='x',padx=8,pady=8)
     view=tk.Text(dlg,wrap='word',state='disabled');view.pack(fill='both',expand=True,padx=8,pady=8)

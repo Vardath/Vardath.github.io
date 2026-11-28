@@ -3,6 +3,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .social_publish import checked,publish
 
 def show(app):
@@ -13,7 +14,7 @@ def show(app):
                 not app.queue_paused and not app._explicit_model_stop and not app.disk_gate.gaming() and
                 not app.janus.status().get('paused'))
     if not permitted():return
-    dlg=tk.Toplevel(app);dlg.title('Publish reviewed Mastodon post');dlg.geometry('720x510');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('Publish reviewed Mastodon post');fit_dialog(dlg,720,510);dlg.transient(app)
     ttk.Label(dlg,text='mastodon.social username (without @)').pack(anchor='w',padx=8,pady=4)
     account=tk.StringVar();ttk.Entry(dlg,textvariable=account).pack(fill='x',padx=8)
     visibility=tk.StringVar(value='unlisted')

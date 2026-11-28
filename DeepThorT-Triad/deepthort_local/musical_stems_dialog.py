@@ -4,6 +4,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog,filedialog
+from .lattice_ui import fit_dialog
 from .musical_stems import review,render,EXE,MODEL
 from .source_security import exclusions
 
@@ -24,7 +25,7 @@ def show(app):
     if not output:return
     try:plan=review(project,source,output,exe,model,app.inspection_exclusions.paths(project))
     except Exception:messagebox.showwarning('Stem separation unavailable','Check trusted installed engine/model files, WAV format and new output path.',parent=app);return
-    dlg=tk.Toplevel(app);dlg.title('Review musical stem separation');dlg.geometry('820x620');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('Review musical stem separation');fit_dialog(dlg,820,620);dlg.transient(app)
     state=tk.StringVar(value='Review exact recording, installed tool/models and output. Produces model-estimated vocals and accompaniment; actual listening quality remains unverified. No model download. Resource cap is not a security sandbox.')
     ttk.Label(dlg,textvariable=state,wraplength=780).pack(fill='x',padx=8,pady=8)
     view=tk.Text(dlg,wrap='word');view.pack(fill='both',expand=True,padx=8,pady=8)

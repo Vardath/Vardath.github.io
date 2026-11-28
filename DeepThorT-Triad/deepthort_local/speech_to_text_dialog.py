@@ -3,6 +3,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .speech_to_text import review,recognize
 
 def show(app):
@@ -20,7 +21,7 @@ def show(app):
     except Exception:messagebox.showwarning('Audio unavailable','Invalid, protected or unsupported WAV or culture.',parent=app);return
     if not messagebox.askyesno('Approve offline dictation','Recognize '+relative+' ('+str(round(seconds,2))+' seconds) using the exact installed '+culture+' Windows desktop recognizer? No cloud, automatic chat submission or file changes.',parent=app):return
     if not permitted():return
-    dlg=tk.Toplevel(app);dlg.title('Local speech-to-text');dlg.geometry('740x440');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('Local speech-to-text');fit_dialog(dlg,740,440);dlg.transient(app)
     state=tk.StringVar(value='Recognizing reviewed local WAV…')
     ttk.Label(dlg,textvariable=state,wraplength=700).pack(fill='x',padx=8,pady=8)
     view=tk.Text(dlg,wrap='word',state='disabled');view.pack(fill='both',expand=True,padx=8,pady=8)
