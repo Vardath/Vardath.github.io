@@ -224,13 +224,17 @@ def filter_status_rows(rows, state, query):
 
 def sync_table(tree, rows):
     """Update existing rows by exact ID; never select a new target automatically."""
+    rows=list(rows)
     existing = set(tree.get_children())
     wanted = {ident for ident,_ in rows}
     for ident in existing-wanted:
         tree.delete(ident)
     for position,(ident,values) in enumerate(rows):
         if ident in existing:
-            tree.item(ident,values=values)
+            # Tcl may round-trip numeric values as strings or ints.
+            # Compare displayed values rather than type representations.
+            if tuple(map(str,tree.item(ident,'values')))!=tuple(map(str,values)):
+                tree.item(ident,values=values)
         else:
             tree.insert('','end',iid=ident,values=values)
         if tree.index(ident)!=position:

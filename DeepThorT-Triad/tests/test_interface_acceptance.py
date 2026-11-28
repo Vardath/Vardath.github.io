@@ -576,3 +576,43 @@ class IntegratedInterfaceTests(unittest.TestCase):
             broad.assert_not_called();global_stop.assert_not_called()
         self.assertIn('No independent stop',app.operation_notice.get())
         app.tool_process=None
+
+
+    def test_unchanged_table_rows_do_not_rewrite_or_reorder(self):
+        from deepthort_local.lattice_ui import sync_table
+        import tkinter.ttk as ttk
+        tree=ttk.Treeview(self.app,columns=('value',),show='headings')
+        rows=[(str(i),(i,)) for i in range(200)]
+        sync_table(tree,rows)
+        tree.selection_set('17')
+        original=tree.item
+        writes=[]
+        def item(ident,*args,**kwargs):
+            if kwargs:writes.append(ident)
+            return original(ident,*args,**kwargs)
+        with patch.object(tree,'item',side_effect=item),patch.object(tree,'move',wraps=tree.move) as move:
+            sync_table(tree,rows)
+            self.assertEqual(writes,[])
+            move.assert_not_called()
+            sync_table(tree,[('0',('changed',)),*rows[1:]])
+            self.assertEqual(writes,['0'])
+        self.assertEqual(tree.selection(),('17',))
+        tree.destroy()
+
+    def test_activity_display_bounded_without_dropping_durable_events(self):
+        app=self.app
+        with patch('desktop_app.record') as log:
+            app._log('long fixture '+('z'*10000))
+            self.assertIn('display truncated',app.activity.get('1.0','end'))
+            self.assertIn('z'*10000,log.call_args.kwargs['message'])
+            app.activity.configure(state='normal')
+            app.activity.insert('end','fixture line\n'*2500)
+            app.activity.configure(state='disabled')
+            app._log('trim fixture')
+            self.assertLessEqual(int(app.activity.index('end-1c').split('.')[0]),2001)
+            self.assertIn('trim fixture',app.activity.get('1.0','end'))
+
+    def test_operation_counts_unavailable_are_not_reported_as_zero(self):
+        app=self.app
+        app._render_operations(None)
+        self.assertIn('unavailable',app.operation_notice.get())
