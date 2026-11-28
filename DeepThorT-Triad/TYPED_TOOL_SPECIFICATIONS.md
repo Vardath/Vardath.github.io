@@ -1133,3 +1133,7 @@ Files & Images → Animate same character. JSON keys: `character_name`, `artwork
 
 ### Structured vocal section song (Pass 264)
 Files & Images → Generate section song. JSON keys `title`, `peak_dbfs`, `sections` (2–6 definitions) and `order` (2–24 names, all definitions represented). A definition has `name`, `arrangement` (canonical musical arrangement JSON with bpm/parts), `voices` (instrumental synthesis voice settings), `vocal` (existing sung-vowel score JSON or null), `vocal_gain_db` (−24 to 0). At least one section must be voiced. Match vocal durations to the backing score within two samples; no arbitrary duration extension. Section duration 0.25–12 seconds, unique work ≤36 seconds, total ≤120 seconds. Output 24 kHz stereo PCM16 WAV; exact repeated sections, shared peak ceiling, deterministic synthetic vocals, not intelligible lyrics or neural song creation.
+
+
+### Rhythm-conditioned music from audio (Pass 265)
+Files & Images → Music from audio rhythm. JSON `{"audio":"beat.wav","root_midi":45,"seed":18,"peak_dbfs":-3,"pattern":"electronic"}`. Source 3–20 seconds of PCM16 mono/stereo WAV, 8–48 kHz. Need 3–100 distinct transients. Uses measured timing and accents to synthesize bass and percussion; no source audio samples copied. Alternative pattern `soft`. Output 24 kHz stereo PCM WAV with exact sample verification. No neural music or melody transcription claim.
