@@ -584,7 +584,7 @@ class ApprovalCentre(ttk.Frame):
                 def navigate(table=table):
                     selected=table.selection()
                     if selected:open_job(selected[0])
-                ttk.Button(page,text='Open exact job in Work queue',command=navigate).pack(anchor='w',pady=2)
+                ttk.Button(page,text='Open exact job in Work queue',command=navigate).pack(anchor='w',pady=2,before=table.master)
 
     def _pane(self,parent,caption,columns,inspect):
         ttk.Label(parent,text=caption,wraplength=620).pack(anchor='w',pady=4)
@@ -600,7 +600,7 @@ class ApprovalCentre(ttk.Frame):
         def show():
             selected=tree.selection()
             if selected:replace_readonly(detail,inspect(selected[0]))
-        ttk.Button(parent,text='Inspect selected record',command=show).pack(anchor='w')
+        ttk.Button(parent,text='Inspect selected record',command=show).pack(anchor='w',before=frame)
         return tree,detail
 
     def render(self,project,jobs,actions,grants=()):

@@ -2,12 +2,24 @@
 
 Register: [INTERFACE_REDESIGN_REGISTER.md](INTERFACE_REDESIGN_REGISTER.md). Baseline main `3688f6094872050f5ad3c010ac88e091ea1c8c43`, previous missing-ability programme pass 279 merged. Baseline main workflow [46093350764](https://github.com/Vardath/Vardath.github.io/actions/runs/46093350764) was in progress during inspection. Do not merge until predecessor and exact candidate checks are green.
 
+## Finite interface completion checklist — owner-directed scope freeze
+
+All 18 original register areas have an implementation candidate. The remaining work is limited to these five items; regression fixes required for green are permitted, but do not introduce new capabilities or expand this list without owner direction. Earlier per-pass partial notes below are historical, not additional open-ended feature requests.
+
+| ID | Status | Defined completion boundary |
+|---|---|---|
+| IC-01 | Candidate implementation | Secondary dialog geometry, reachable review actions, responsive warning text and exact searchable archive navigation; verify remaining concrete secondary constructors and fixture interactions. |
+| IC-02 | Pending | Studio: bounded safe image/audio/video inspection and explicit existing playback route where available; disclose unsupported formats, limits and missing provenance. No new media engines, unbounded scans or production pipelines. |
+| IC-03 | Pending | Knowledge: integrate existing indexed project reference and recall evidence navigation; retain existing enrollment, search and removal permissions. No new memory engine or indexing pipeline. |
+| IC-04 | Pending | Settings: expose existing stored per-model readiness and integration configuration/status without probing external accounts or exposing secrets. No new integrations or installations. |
+| IC-05 | Pending | Final regression repair, reconcile register/guide/progress, sequential exact PR and main CI green, record limitations of fixture testing. Real user-PC/high-DPI and five-model live acceptance remain explicitly unverified unless actually performed. |
+
+Stop interface implementation after these bounded items are complete. Do not generate an installer without explicit direction. Completion does not require speculative new schedulers, exhaustive OS audit, unimplemented adapters or inventing unavailable historical receipts.
+
 ## Ledger
 | ID | Status | Evidence |
 |---|---|---|
-| UI-001 | Partial, candidate | Shared Nordic palette, angular serpent mark, correct visible application name, consistent selection and entry colours. Header/navigation reflow still required. |
-| UI-010 | Partial, candidate | Existing media production rows housed in searchable two-axis scroll shelf, compact preview; original labels and callbacks retained. Full categorisation/preview redesign pending. |
-| UI-002–009, UI-011–018 | Pending | Screen source inventory recorded in register; further implementation and native acceptance required. |
+| UI-001–018 | Addressed by candidates | Passes 001–021 cover all register areas; outstanding bounded completion is tracked above. Candidate success is not equivalent to merged or real-PC verification. |
 
 ## Pass 001 — 28 November 2026
 Inspected desktop_app.py main UI construction (eight fixed notebook tabs, project sidebar, global controls, and inline dialogs), tooltips, current layout regression, and production row structure. Files & Images has over 40 action rows; normal-height windows cannot accommodate this layout. Added UI-only lattice_ui.py and integrated it without changing tab indices, tool callback bindings, approval rules, model/runtime or persisted state. Added GUI regression for searchable tool access and empty/restored queries. Candidate CI pending; no native Windows visual acceptance or installer. Next: chat-first shell/navigation, compact global controls and queue/workspace visibility. Complete per-dialog inventory and high-DPI inspection remain outstanding.
@@ -97,3 +109,7 @@ Approvals & PC Activity now includes a project grant record tab (latest 40 build
 
 ## Pass 021 — 28 November 2026 — task board linkage
 Complete the manual Tasks screen's durable job association: optional explicit link to an existing exact workspace Work queue job, persistent additive task_job_links table, recorded job state, graph node/dependency evidence inspector, unlink and exact queue navigation. Existing tasks, manual completion semantics and send-to-prompt behavior retained. No auto-completion, grant, dispatch, task deletion or inferred association. Bounded queue snapshot labels missing records without claiming failure; explicit inspection revalidates workspace. Tests cover persistence, isolation, manual completion independence and recorded graph display. Pass 020 Linux integrated step green at preparation; exact PR/main gate and other Windows regressions still running. No installer.
+
+
+## Pass 022 — 28 November 2026 — finite completion and secondary navigation
+Owner-directed completion checklist added above; earlier open-ended notes superseded for this phase. Pass 007 merged PR 355 after exact PR 46104644485 and predecessor main 46104638954 green; PR 356 opened for pass 008. Pass 018 full CI green 46104726666. IC-01 candidate: searchable archived conversation picker with explicit exact ID/workspace recheck; fit instruction inbox and untrusted script review to shared geometry; Escape cancels roadmap/script reviews; responsive roadmap warning and review buttons precede expanding evidence; approval inspection and exact job navigation controls positioned before expandable table. No grant/consent/dispatch changes. Added archive scope regression. Further concrete secondary dialog audit and CI required before IC-01 closure. No installer.
