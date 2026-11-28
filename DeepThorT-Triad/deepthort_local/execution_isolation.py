@@ -38,11 +38,15 @@ def assess(baseline,restricted):
             'descendant_execution_blocked_in_probe':True,'security_sandbox':False,
             'filesystem_isolation':False,'network_isolation':False,'arbitrary_code_safe':False}
 
+class HostPressure(ValueError):
+    """Transient observed host resource pressure; never a passed fixture."""
+
 def run(stage):
     verify_root_cap()
     from deepthort_local.quiet_playtest import WindowsPressureSampler
     sampler=WindowsPressureSampler();_,ram=sampler.read()
-    if ram is None or ram<15:raise ValueError('Insufficient host RAM reserve')
+    if ram is None:raise ValueError('Host RAM reading unavailable')
+    if ram<15:raise HostPressure('Host free RAM below 15% admission reserve')
     exe=str(Path(sys._base_executable).resolve(strict=True))
     logs=[]
     for i,code in enumerate(('print("'+CHILD_MARKER+'")',PROBE)):
@@ -53,12 +57,23 @@ def run(stage):
             deadline=time.monotonic()+15
             while alive():
                 cpu,free=sampler.read()
-                if time.monotonic()>=deadline or free is None or free<10 or (cpu is not None and cpu>=90) or log.stat().st_size>8192:
-                    raise ValueError('Native probe stopped on resource/time/log bound')
+                if time.monotonic()>=deadline:raise ValueError('Native probe timed out')
+                if log.stat().st_size>8192:raise ValueError('Native probe log exceeds bound')
+                if free is None:raise ValueError('Host RAM reading unavailable')
+                if free<10 or (cpu is not None and cpu>=90):
+                    raise HostPressure(f'Native probe stopped: CPU busy={cpu!r}, free RAM={free:.1f}%')
                 time.sleep(.1)
             if alive.code()!=0:raise ValueError('Native probe returned nonzero exit status')
         logs.append(guard.read_bound(log,8192).decode('utf-8'))
     return dict(assess(*logs),shared_root_cap_verified=True,nested_job_readback_verified=True)
+
+def retry_native_ci(operation, *, sleep=time.sleep):
+    """Retry only transient pressure, with fresh complete probes each time."""
+    for attempt in range(5):
+        try:return operation()
+        except HostPressure:
+            if attempt==4:raise
+            sleep(5*(attempt+1))
 
 def validate(root,plan):
     return guard.validate(root,plan,schema=SCHEMA,checked=checked,output_suffix='.json')
@@ -93,8 +108,10 @@ def main():
                 else:print('Native fixture produced no diagnostic receipt; exit code '+str(code),flush=True)
                 return code
         if a.inside:
-            with tempfile.TemporaryDirectory(prefix='janus-native-isolation-') as tmp:
-                report(run(Path(tmp)))
+            def attempt():
+                with tempfile.TemporaryDirectory(prefix='janus-native-isolation-') as tmp:
+                    return run(Path(tmp))
+            report(retry_native_ci(attempt) if a.ci_receipt else attempt())
         else:
             print(json.dumps(execute(a.root,json.loads(a.plan)),sort_keys=True),flush=True)
         return 0
