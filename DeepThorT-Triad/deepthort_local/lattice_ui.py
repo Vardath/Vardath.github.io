@@ -69,7 +69,7 @@ class ToolShelf(ttk.Frame):
         return 'break'
 
     @staticmethod
-    def _options(widget):
+    def _pack_options(widget):
         options = widget.pack_info()
         options.pop('in', None)
         return options
@@ -77,10 +77,10 @@ class ToolShelf(ttk.Frame):
     def index_buttons(self):
         self._index = []
         for row in self.rows.winfo_children():
-            buttons = [(w, self._options(w)) for w in row.winfo_children()
+            buttons = [(w, self._pack_options(w)) for w in row.winfo_children()
                        if isinstance(w, ttk.Button) and w.winfo_manager() == 'pack']
             if buttons:
-                self._index.append((row, self._options(row), buttons))
+                self._index.append((row, self._pack_options(row), buttons))
                 for widget in [row] + [w for w, _ in buttons]:
                     for event in ('<MouseWheel>', '<Button-4>', '<Button-5>'):
                         widget.bind(event, self._wheel, add='+')

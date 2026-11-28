@@ -14,3 +14,6 @@ Inspected desktop_app.py main UI construction (eight fixed notebook tabs, projec
 
 ### Pass 001 CI registration
 The inherited workflow did not run test_layout_v12.py. Add an isolated native Tk shelf test to both CI jobs (Xvfb on Linux, Tk on Windows) to verify search, restoration, exact callback identity, horizontal scrolling and the mark without launching inference. Full desktop integration regression is retained for native acceptance; both candidate and predecessor CI remain pending until checked.
+
+### Pass 001 correction — 28 November
+Both Linux and Windows candidate jobs failed the new shelf test because the helper `_options` shadowed Tkinter's internal widget configuration method. Rename the helper to `_pack_options` and retain its original geometry-option extraction behavior. No change to commands or permissions. [Failed run](https://github.com/Vardath/Vardath.github.io/actions/runs/46094122618); corrected candidate requires fresh green checks.
