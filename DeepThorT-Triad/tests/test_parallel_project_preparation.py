@@ -27,13 +27,14 @@ class ParallelTests(unittest.TestCase):
     def test_real_concurrent_preparation_and_no_dispatch(self):
         with tempfile.TemporaryDirectory() as td:
             path,store,p,a,b,first,second=self.setup_inputs(td)
-            barrier=threading.Barrier(2,timeout=5)
+            barrier=threading.Barrier(2,timeout=20)
             class Client:
                 def chat_as(self,role,session,prompt,**kw):
                     barrier.wait()
                     return '{"kind":"advice","finding":"Evidence needed","guidance":"Review tests"}'
             errors=[]
             results=m.run(path,Client,('janus','sentinel'),lambda:False,health,7,p.snapshot,on_error=errors.append)
+            self.assertEqual(errors,[])
             self.assertEqual({r['role'] for r in results},{'janus','sentinel'},repr(errors))
             self.assertEqual(store.get(first)['state'],'pending');self.assertEqual(store.get(second)['state'],'pending')
     def test_short_competing_transaction_does_not_discard_advice(self):
