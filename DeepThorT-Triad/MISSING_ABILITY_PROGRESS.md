@@ -251,7 +251,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 239 | 119 | Audio-driven animation | Partial: exact PCM framewise RMS envelope drives bounded vertical layer motion with verified H.264/ALAC mux. Pass 240 CI pending; neural gesture/character motion, beat-aware choreography and native playback outstanding. |
 | 240 | 122 | Video dubbing | Partial: reviewed silent clip interval with supplied exact-duration speech WAV, source frame preservation and lossless H.264/ALAC mux verification. Pass 241 CI pending; existing soundtrack replacement, automatic speech generation/alignment and native playback outstanding. |
 | 241 | 149 | Automatic multilingual dubbing | Partial: reviewed multilingual text and exact installed voices, automatic per-cue synthesis, 48 kHz conversion, bounded silence padding and verified silent video mux. Pass 242 CI pending; automatic translation, phoneme alignment, original soundtrack replacement and native acceptance outstanding. |
-| 242 | 147 | Voice transformation | Not started in this programme |
+| 242 | 147 | Voice transformation | Partial: reviewed local varispeed pitch/duration, optional ring modulation and low-pass tone on bounded mono PCM16, exact decoded output verification. Pass 243 CI pending; independent pitch/formant control, neural conversion and listening acceptance outstanding. |
 | 243 | 145 | Voice cloning with consent | Not started in this programme |
 | 244 | 146 | Custom voice design | Not started in this programme |
 | 245 | 150 | Sound-effect generation | Not started in this programme |
@@ -1168,3 +1168,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 242 — 28 November 2026
 - Add automatic synthesis of supplied reviewed translated cues using exact installed Windows speech voices, local PCM resampling and frame-aligned silence padding without truncation; reject overlapping cues, overlong speech, changed sources/voices/codecs. Reuse lossless RGB/PCM mux verification. Three mocked regression fixtures on both hosts. No automatic translation, existing audio replacement or native playback claim. Next rank 242 / ID 147 voice transformation. No installer.
+
+## Pass 243 — 28 November 2026
+- Add reviewed mono PCM voice effects: 75–150% varispeed, optional ring modulation and low-pass tone, bounded 5–20 second source and exact decoded output verification. Three regression fixtures on both hosts. Varispeed alters pitch and duration together; no voice identity imitation, formant-preserving pitch shift, neural conversion or native listening claim. Next rank 243 / ID 145 consent-based voice cloning. No installer.
+- CI repair: Windows webhook rejection could reset the connection when the wrong event was rejected before consuming its bounded body (run 46070481079). Parser repair and deterministic split-body regression staged in PR #311, Pass 229 and Pass 242; successor includes repair. Do not advance merges until exact required CI is green.
