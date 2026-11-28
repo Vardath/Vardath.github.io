@@ -860,6 +860,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(audio_review_actions,text='Consent voice synthesis…',command=lambda:self._review_typed_tool('voice_cloning','.wav','Audio: consent voice synthesis')).pack(side='left',padx=3)
         ttk.Button(audio_review_actions,text='Design custom voice…',command=lambda:self._review_typed_tool('custom_voice_design','.zip','Audio: reviewed voice design')).pack(side='left',padx=3)
         ttk.Button(audio_review_actions,text='Generate sound effect…',command=lambda:self._review_typed_tool('sound_effect_generation','.wav','Audio: reviewed sound effect')).pack(side='left',padx=3)
+        ambience_actions=ttk.Frame(media_tab);ambience_actions.pack(fill='x',pady=2)
+        ttk.Button(ambience_actions,text='Generate ambient loop…',command=lambda:self._review_typed_tool('ambient_sound_generation','.wav','Audio: reviewed ambience')).pack(side='left',padx=3)
         speech_review_actions=ttk.Frame(media_tab);speech_review_actions.pack(fill='x',pady=2)
         ttk.Button(speech_review_actions,text='Multilingual speech…',command=self._show_multilingual_speech).pack(side='left',padx=3)
         ttk.Button(speech_review_actions,text='Podcast generation…',command=self._show_podcast_generation).pack(side='left',padx=3)
@@ -1887,6 +1889,7 @@ class DeepThorTDesktop(tk.Tk):
                  'voice_cloning':('.wav','Audio: consent voice synthesis'),
                  'custom_voice_design':('.zip','Audio: reviewed voice design'),
                  'sound_effect_generation':('.wav','Audio: reviewed sound effect'),
+                 'ambient_sound_generation':('.wav','Audio: reviewed ambience'),
                  'audio_source_isolation':('.zip','Audio: reviewed spatial isolation'),
                  'audio_to_midi':('.mid','Audio: reviewed MIDI transcription'),
                  'musical_arrangement':('.mid','Audio: reviewed arrangement'),

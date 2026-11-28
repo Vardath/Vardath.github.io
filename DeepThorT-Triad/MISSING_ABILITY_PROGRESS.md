@@ -255,7 +255,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 243 | 145 | Voice cloning with consent | Partial: optional reviewed owner-installed XTTS CLI, exact consent attestation, reference and engine guards, capped CPU synthesis and verified WAV. Pass 244 CI pending; actual installed engine/model acceptance, consent verification and perceptual voice similarity outstanding. |
 | 244 | 146 | Custom voice design | Partial: reviewed reusable generic installed-voice design with varispeed, modulation and tone, automatic synthesis and verified audition/preset bundle. Pass 245 CI pending; novel neural timbre creation, independent prosody/formant controls and native listening outstanding. |
 | 245 | 150 | Sound-effect generation | Partial: reviewed deterministic procedural beep, sweep, impact and whoosh synthesis, exact PCM output and bounded seed/timing/tone/peak controls. Pass 246 CI pending; richer sound design, neural text-to-audio and listening acceptance outstanding. |
-| 246 | 151 | Ambient sound generation | Not started in this programme |
+| 246 | 151 | Ambient sound generation | Partial: reviewed deterministic procedural stereo wind/rain/machine-hum textures using periodic circular filtering, exact PCM and measured loop-boundary deltas. Pass 247 CI pending; realistic soundscapes, neural synthesis and listening acceptance outstanding. |
 | 247 | 129 | Singing voice generation | Not started in this programme |
 | 248 | 130 | Vocal harmony generation | Not started in this programme |
 | 249 | 165 | Motion capture | Not started in this programme |
@@ -1181,3 +1181,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 246 — 28 November 2026
 - Owner naming correction: DeepThorTriad is the application; JANUS is the executive operative. Correct window title and capability register/progress headings; preserve historical identifiers, schemas and state. Add bounded procedural game sound effects with exact PCM verification and deterministic seeded noise; three regression fixtures on both hosts. No neural audio or native listening claim. Fix FFmpeg provisioning on Pass 237 and cumulative successor by restricting apt to signed Ubuntu sources after unrelated Microsoft repository HTTP 403; actual render test unchanged. Next rank 246 / ID 151 ambient sound generation. No installer.
+
+## Pass 247 — 28 November 2026
+- Add bounded 4–20 second periodic stereo ambience with wind, rain and machine-hum profiles, seed, texture intensity, stereo width and peak controls; exact WAV roundtrip and measured boundary delta. Three regression fixtures on both hosts. No actual recordings, neural synthesis or verified inaudible seam. Webhook repair PR #311 passed both workflows and merged at 526a025334d57b8ba97c5434f292f4feffba7bf5; post-merge verification required before further merge. Next rank 247 / ID 129 singing voice generation. No installer.

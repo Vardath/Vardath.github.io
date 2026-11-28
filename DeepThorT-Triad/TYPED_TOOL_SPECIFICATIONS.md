@@ -1093,3 +1093,7 @@ Design custom voice accepts `name`, exact installed `voice` (`id`, `name`, `cult
 ## Reviewed sound-effect generation (Pass 246)
 
 Generate sound effect accepts `effect` (ui_beep, sweep, impact, whoosh), `duration_ms` 100–3000, `start_hz` and `end_hz` 40–5000, `noise_percent` 0–100, `seed` 0–2147483647 and `peak_dbfs` -24 to -1. Beep requires constant frequency and zero noise; sweep requires varying frequency; whoosh requires noise. Local procedural synthesis produces a new 24 kHz mono PCM16 WAV, exact decoded sample checks, bounded peak and zero endpoints. No neural generation, samples or listening verification.
+
+## Reviewed ambient sound generation (Pass 247)
+
+Generate ambient loop accepts `profile` (wind, rain, machine_hum), `duration_seconds` 4–20, `intensity_percent` 10–100, `stereo_width_percent` 0–100, `seed` 0–2147483647 and `peak_dbfs` -30 to -3. Local seeded noise, circular moving-average filtering and integer-cycle modulation produce a new 24 kHz stereo PCM16 WAV. Width zero produces identical channels. Peak and exact PCM roundtrip verified; measured loop boundary difference does not prove an inaudible seam. No neural sound generation or actual environmental recordings.
