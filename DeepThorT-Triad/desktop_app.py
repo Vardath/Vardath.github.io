@@ -103,7 +103,7 @@ ROOT = Path(__file__).resolve().parent
 STATE = ROOT / 'state'
 from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
-from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_project_rows, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre, StudioCentre, studio_artifact_rows, SettingsCentre, settings_policy_rows, WorkspaceNavigator, fit_dialog
+from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_project_rows, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre, StudioCentre, studio_artifact_rows, SettingsCentre, settings_policy_rows, WorkspaceNavigator, fit_dialog, VerticalWorkspaceNavigator, lattice_border, indigo_buttons, wrap_action_row
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = (PALETTE[k] for k in ('base','panel','input','text','muted','accent'))
 GREEN, YELLOW = PALETTE['success'], PALETTE['warning']
 MAX_INFERENCE_PROMPT = 7500  # current OpenVINO IR endpoint requires <=8000 / message
@@ -424,6 +424,12 @@ class DeepThorTDesktop(tk.Tk):
         s.configure('TEntry',fieldbackground=INPUT,foreground=TEXT,insertcolor=TEXT)
         s.configure('TScrollbar',background=PALETTE['control'],troughcolor=BG)
         s.map('TButton',foreground=[('disabled',MUTED)])
+        s.configure('Shell.TNotebook',background=BG,borderwidth=0)
+        s.layout('Shell.TNotebook.Tab',[])
+        s.configure('TPanedwindow',background=PALETTE['border'],sashwidth=6)
+        s.configure('Treeview',rowheight=30)
+        s.configure('Treeview.Heading',font=('Segoe UI Semibold',10),padding=(7,5))
+        indigo_buttons(self,s)
 
     def _text(self,parent,*,readonly=False,height=10,font=('Consolas',10),wrap='word'):
         w=tk.Text(parent,height=height,wrap=wrap,font=font,bg=INPUT,fg=TEXT,
@@ -433,27 +439,38 @@ class DeepThorTDesktop(tk.Tk):
         return w
 
     def _make_ui(self):
-        top=ttk.Frame(self);top.pack(fill='x',padx=14,pady=(11,7))
-        dragon_mark(top).pack(side='left',padx=(0,6))
-        tk.Label(top,text='DeepThorTriad',font=('Segoe UI Semibold',17),bg=BG,fg=ACCENT).pack(side='left')
-        # Keep routine start/stop visible; advanced operations remain individually selectable.
-        action_menu(top,'System & maintenance',[
-            ('Install AI',self._install_ai),('Self-diagnose',self._diagnose),
-            ('Run latest test',self._run_latest_test),('Export diagnostics',self._export_diagnostics),
-            ('Review self-update…',self._review_self_installation),
-            ('Rollback self-update…',self._review_self_rollback),
-        ]).pack(side='right',padx=4)
-        ttk.Button(top,text='User guide',command=self._open_user_guide).pack(side='right',padx=4)
-        ttk.Button(top,text='Stop AI',command=self._stop_ai).pack(side='right',padx=4)
-        ttk.Button(top,text='Start AI',command=self._start_ai).pack(side='right',padx=4)
+        top=ttk.Frame(self);top.pack(fill='x',padx=18,pady=(8,2))
+        dragon_mark(top).pack(side='left',padx=(0,8))
+        tk.Label(top,text='DeepThorTriad',font=('Segoe UI Semibold',20),bg=BG,fg=TEXT).pack(side='left')
         self.model_status=tk.StringVar(value='AI: not started')
         ttk.Label(top,textvariable=self.model_status,style='Muted.TLabel').pack(side='right',padx=8)
-
-        body=ttk.Panedwindow(self,orient='horizontal');body.pack(fill='both',expand=True,padx=12,pady=(0,9))
+        commands=ttk.Frame(self);commands.pack(fill='x',padx=15,pady=(0,3))
+        for label,callback in (('Install AI',self._install_ai),('Start AI',self._start_ai),
+                ('Stop AI',self._stop_ai),('Run latest test',self._run_latest_test),
+                ('Export diagnostics',self._export_diagnostics),('Self-diagnose',self._diagnose),
+                ('User guide',self._open_user_guide)):
+            ttk.Button(commands,text=label,command=callback,
+                       style='Primary.TButton' if label=='Start AI' else 'TButton').pack(side='left')
+        action_menu(commands,'Updates',[
+            ('Review self-update…',self._review_self_installation),
+            ('Rollback self-update…',self._review_self_rollback),
+        ]).pack(side='left')
+        wrap_action_row(commands)
+        lattice_border(self).pack(fill='x',padx=12)
+        shell=ttk.Frame(self);shell.pack(fill='both',expand=True,padx=8,pady=2)
+        lattice_border(shell,vertical=True).pack(side='left',fill='y')
+        lattice_border(shell,vertical=True).pack(side='right',fill='y')
+        body=ttk.Panedwindow(shell,orient='horizontal');body.pack(fill='both',expand=True,padx=3)
+        lattice_border(self).pack(fill='x',padx=12,pady=(0,4))
         self.workspace_split=body
-        left=ttk.Frame(body,style='Panel.TFrame',width=290);right=ttk.Frame(body)
-        body.add(left,weight=1);body.add(right,weight=5)
-        tk.Label(left,text='PROJECT WORKSPACE',font=('Segoe UI Semibold',11),fg=TEXT,bg=PANEL).pack(anchor='w',padx=11,pady=(15,5))
+        rail=ttk.Frame(body,style='Panel.TFrame',width=178)
+        right=ttk.Frame(body)
+        left=ttk.Frame(body,style='Panel.TFrame',width=250)
+        self.project_inspector=left
+        self._inspector_width=250
+        self.inspector_visible=tk.BooleanVar(value=True)
+        body.add(rail,weight=0);body.add(right,weight=1);body.add(left,weight=0)
+        tk.Label(left,text='PROJECT / CONTEXT',font=('Segoe UI Semibold',11),fg=TEXT,bg=PANEL).pack(anchor='w',padx=11,pady=(15,5))
         ttk.Button(left,text='Choose folder…',command=self._choose_project).pack(fill='x',padx=10,pady=3)
         ttk.Button(left,text='Recent projects…',command=self._pick_recent_project).pack(fill='x',padx=10,pady=3)
         self.project_label=tk.Label(left,text='General chat — no project selected',font=('Segoe UI',9),
@@ -490,7 +507,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(left,text='Propose new project file…',command=self._new_file).pack(fill='x',padx=10,pady=(0,11))
 
         navigation=ttk.Frame(right);navigation.pack(fill='x',pady=(0,4))
-        self.tabs=ttk.Notebook(right);self.tabs.pack(fill='both',expand=True)
+        self.tabs=ttk.Notebook(right,style='Shell.TNotebook');self.tabs.pack(fill='both',expand=True)
         chat,queue_tab,files_tab,tasks_tab,process_tab,janus_tab,hardware_tab,media_tab=(ttk.Frame(self.tabs) for _ in range(8))
         for frame,title in ((chat,'Chats'),(queue_tab,'Work queue'),(files_tab,'File review'),
                 (tasks_tab,'Tasks'),(process_tab,'Processes'),(janus_tab,'JANUS & Sentinel'),(hardware_tab,'Computer & Tools'),(media_tab,'Files & Images')):
@@ -500,14 +517,19 @@ class DeepThorTDesktop(tk.Tk):
         memory_tab=ttk.Frame(self.tabs);self.tabs.add(memory_tab,text='Knowledge & Memory')
         studio_tab=ttk.Frame(self.tabs);self.tabs.add(studio_tab,text='Studio')
         settings_tab=ttk.Frame(self.tabs);self.tabs.add(settings_tab,text='Settings & Integrations')
-        self.workspace_navigator=WorkspaceNavigator(navigation,self.tabs)
-        self.workspace_navigator.pack(fill='x')
+        self.workspace_navigator=VerticalWorkspaceNavigator(rail,self.tabs)
+        self.workspace_navigator.pack(fill='both',expand=True)
+        ttk.Label(navigation,textvariable=self.workspace_navigator.current,
+                  font=('Segoe UI Semibold',16)).pack(side='left',padx=8,pady=4)
+        ttk.Checkbutton(navigation,text='Project inspector',variable=self.inspector_visible,
+                        command=self._toggle_inspector).pack(side='right',padx=7)
+        ttk.Button(navigation,text='Settings',command=lambda:self.tabs.select(12)).pack(side='right')
         self.bind('<Control-F6>',lambda event:(self.workspace_navigator.focus_choice(),'break')[1],add='+')
         # CHAT: separate persisted sessions and a tall, scrollable prompt editor.
         chatbar=ttk.Frame(chat);chatbar.pack(fill='x',pady=(4,3))
         ttk.Button(chatbar,text='+ New chat',command=self._new_chat).pack(side='left')
+        ttk.Button(chatbar,text='Find conversation…',command=self._pick_conversation).pack(side='left')
         action_menu(chatbar,'Conversation',[
-            ('Find conversation…',self._pick_conversation),
             ('Rename chat',self._rename_chat),('Close chat',self._close_chat),
             ('Reopen archived chat…',self._open_archived_chat_menu),
         ]).pack(side='left',padx=4)
@@ -516,6 +538,7 @@ class DeepThorTDesktop(tk.Tk):
         self.attach_file=tk.BooleanVar(value=False)
         tk.Checkbutton(chatbar,text='Include selected project file',variable=self.attach_file,
                        bg=BG,fg=TEXT,selectcolor=PANEL,activebackground=BG,activeforeground=TEXT).pack(side='right')
+        wrap_action_row(chatbar)
         self.attachment_status=tk.StringVar(value='No attachments; text, DOCX, PDF and images supported')
         ttk.Label(chat,textvariable=self.attachment_status,style='Muted.TLabel').pack(anchor='w',pady=2)
         # Reuse the original v10.9 connection/status line. A separate packed
@@ -533,6 +556,8 @@ class DeepThorTDesktop(tk.Tk):
         scroll_text(history_frame,self.chat_history)
         self.chat_history.tag_configure('user',spacing1=6)
         self.chat_history.tag_configure('assistant',spacing1=6)
+        self.chat_history.tag_configure('user_body',background=PALETTE['message'],lmargin1=12,lmargin2=12,rmargin=15,spacing1=4,spacing3=5)
+        self.chat_history.tag_configure('assistant_body',lmargin1=12,lmargin2=12,rmargin=15,spacing1=4,spacing3=5)
         for role,color in (('user',ACCENT),('assistant',GREEN),('warning',YELLOW)):
             self.chat_history.tag_configure(role,foreground=color)
         composer_head=ttk.Frame(chat);composer_head.pack(fill='x',pady=(5,2))
@@ -554,18 +579,20 @@ class DeepThorTDesktop(tk.Tk):
         self.chat_actions=ca
         chat_controls=ttk.Frame(ca);chat_controls.pack(fill='x',pady=(0,3))
         plan_controls=ttk.Frame(ca);plan_controls.pack(fill='x')
-        ttk.Button(chat_controls,text='Send message',command=self._send).pack(side='left')
+        ttk.Button(chat_controls,text='Send message',command=self._send,style='Primary.TButton').pack(side='left')
         ttk.Button(chat_controls,text='Stop reply',command=self._stop_chat_reply).pack(side='left',padx=4)
         ttk.Button(chat_controls,text='Instruction to JANUS',command=self._queue_janus_instruction).pack(side='left',padx=4)
-        action_menu(chat_controls,'Conversation tools',[
-            ('Retry failed reply',self._retry_conversation),('Diagnose AI',self._diagnose),
-            ('Personal preferences…',self._edit_personal_preferences),
-            ('Amend specification',self._amend_project_specification),
+        ttk.Button(chat_controls,text='Retry failed reply',command=self._retry_conversation).pack(side='left')
+        action_menu(chat_controls,'More',[
+            ('Diagnose AI',self._diagnose),('Personal preferences…',self._edit_personal_preferences),
         ]).pack(side='left',padx=4)
         ttk.Button(plan_controls,text='Draft project plan',command=lambda:self._queue_input('plan')).pack(side='left')
         ttk.Button(plan_controls,text='Queue project task',command=self._queue_independent_prompt).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Approve plan & queue',command=self._approve_conversation_plan).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Revise existing file',command=lambda:self._queue_input('edit')).pack(side='left',padx=5)
+        ttk.Button(plan_controls,text='Amend specification',command=self._amend_project_specification).pack(side='left')
+        wrap_action_row(chat_controls)
+        wrap_action_row(plan_controls)
         ttk.Label(ca,text='Conversation first. Only your approved plan becomes an executable job.',style='Muted.TLabel').pack(anchor='w',pady=2)
 
         self.command_centre=CommandCentre(command_tab,self._refresh_command_centre,self._open_command_job,
@@ -693,7 +720,7 @@ class DeepThorTDesktop(tk.Tk):
         source_scrollbars(file_frame,self.file_preview)
         self.file_navigator=SourceNavigator(nav_frame,self.file_preview)
         self.file_navigator.pack(fill='x',pady=(0,4))
-        self._preview('Select a file on the left.\n\nRequest a proposed edit in Chats.\n'
+        self._preview('Select a file in the Project inspector.\n\nRequest a proposed edit in Chats.\n'
                       'Approved unattended jobs may save only exact authorized files with backups; '
                        'other changes require individual file review.')
 
@@ -762,11 +789,12 @@ class DeepThorTDesktop(tk.Tk):
         pbar=ttk.Frame(process_tab);pbar.pack(fill='x',pady=3,before=process_tabs)
         ttk.Button(pbar,text='Cancel running job',command=self._cancel_active).pack(side='left',padx=3)
         ttk.Button(pbar,text='Stop tools / install / media…',command=self._cancel_tool).pack(side='left',padx=3)
-        action_menu(pbar,'Diagnostics & tests',[
-            ('Locate latest diagnostics',self._locate_diagnostics),('Export diagnostics',self._export_diagnostics),
-            ('Retry JANUS model',self._retry_council),('Run latest test',self._run_latest_test),
-        ]).pack(side='left',padx=3)
+        for label,callback in (('Locate latest diagnostics',self._locate_diagnostics),
+                ('Export diagnostics',self._export_diagnostics),('Retry JANUS model',self._retry_council),
+                ('Run latest test',self._run_latest_test)):
+            ttk.Button(pbar,text=label,command=callback).pack(side='left',padx=3)
         ttk.Button(pbar,text='Stop latest test',command=self._stop_latest_test).pack(side='left',padx=3)
+        wrap_action_row(pbar)
         log_header=ttk.Frame(activity_page);log_header.pack(fill='x',pady=3)
         self.follow_activity=tk.BooleanVar(value=True)
         ttk.Checkbutton(log_header,text='Follow latest activity',variable=self.follow_activity).pack(side='right')
@@ -1799,7 +1827,7 @@ class DeepThorTDesktop(tk.Tk):
         self.chat_history.config(state='normal')
         label='You' if role=='user' else 'DeepThorTriad' if role=='assistant' else 'Notice'
         self.chat_history.insert('end',f'{label}:\n',role if role in ('user','assistant') else 'warning')
-        self.chat_history.insert('end',message+'\n\n')
+        self.chat_history.insert('end',message+'\n\n','user_body' if role=='user' else 'assistant_body')
         self.chat_history.see('end');self.chat_history.config(state='disabled')
     def _project_key(self):
         return str(self.project) if self.project else '(general)'
@@ -2643,7 +2671,7 @@ class DeepThorTDesktop(tk.Tk):
         except (OSError,ValueError,TypeError,AttributeError):pass
 
     def _restore_display_preferences(self):
-        from deepthort_local.interface_preferences import geometry,FILTERS,sidebar_position
+        from deepthort_local.interface_preferences import geometry,FILTERS,shell_positions
         prefs=self._display_preferences
         w,h=geometry(prefs,self.winfo_screenwidth(),self.winfo_screenheight())
         self.geometry(f'{w}x{h}')
@@ -2654,12 +2682,34 @@ class DeepThorTDesktop(tk.Tk):
         # user's first navigation (or an immediate programmatic navigation).
         names=tuple(self.tabs.tab(t,'text') for t in self.tabs.tabs())
         if prefs['page'] in names:self.tabs.select(names.index(prefs['page']))
+        self._inspector_width=prefs['inspector']
+        self.inspector_visible.set(prefs['inspector_visible'])
+        self._toggle_inspector()
         def layout():
             if self._quitting:return
             width=self.workspace_split.winfo_width()
-            if width>1:self.workspace_split.sashpos(0,sidebar_position(prefs,width))
+            if width>1:
+                rail,divider=shell_positions(prefs,width)
+                self.workspace_split.sashpos(0,rail)
+                if self.inspector_visible.get():self.workspace_split.sashpos(1,divider)
             self._resize_composer()
         self.after_idle(layout)
+
+    def _toggle_inspector(self):
+        split=self.workspace_split
+        present=str(self.project_inspector) in split.panes()
+        if not self.inspector_visible.get() and present:
+            width=split.winfo_width()
+            if width>1:self._inspector_width=max(180,width-split.sashpos(1))
+            split.forget(self.project_inspector)
+        elif self.inspector_visible.get() and not present:
+            split.add(self.project_inspector,weight=0)
+            def resize():
+                if self.inspector_visible.get() and str(self.project_inspector) in split.panes():
+                    from deepthort_local.interface_preferences import shell_positions
+                    _,divider=shell_positions({'navigation':split.sashpos(0),'inspector':self._inspector_width},split.winfo_width())
+                    split.sashpos(1,divider)
+            self.after_idle(resize)
 
     def _save_display_preferences(self):
         from deepthort_local.interface_preferences import SCHEMA,FILTERS,save
@@ -2669,6 +2719,9 @@ class DeepThorTDesktop(tk.Tk):
             raw={'schema':SCHEMA,'width':self.winfo_width() if normal and self.winfo_width()>1 else previous['width'],
                  'height':self.winfo_height() if normal and self.winfo_height()>1 else previous['height'],
                  'sidebar':self.workspace_split.sashpos(0) if self.workspace_split.winfo_width()>1 else previous['sidebar'],
+                 'navigation':self.workspace_split.sashpos(0) if self.workspace_split.winfo_width()>1 else previous['navigation'],
+                 'inspector':max(180,self.workspace_split.winfo_width()-self.workspace_split.sashpos(1)) if self.inspector_visible.get() and self.workspace_split.winfo_width()>1 else self._inspector_width,
+                 'inspector_visible':self.inspector_visible.get(),
                  'page':self.tabs.tab(self.tabs.select(),'text'),'expanded_composer':self.expanded_composer.get(),
                  'follow_activity':self.follow_activity.get(),**{key:getattr(self,key).get() for key in FILTERS}}
             if not save(self.display_preferences_file,raw):

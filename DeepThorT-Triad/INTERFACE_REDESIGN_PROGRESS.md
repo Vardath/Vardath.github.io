@@ -6,13 +6,13 @@ Owner tested current baseline `5c51073fcb099abcfcc30853c6202064be106768` and rej
 
 | ID | Area | Current status |
 |---|---|---|
-| UI-001 | Application shell | Pending visual/usability redesign |
-| UI-002 | Chat | Pending visual/usability redesign |
-| UI-003 | Projects and panes | Pending visual/usability redesign |
+| UI-001 | Application shell | Foundation candidate; final verification pending |
+| UI-002 | Chat | Foundation candidate; final verification pending |
+| UI-003 | Projects and panes | Foundation candidate; final verification pending |
 | UI-004 | Work queue | Pending visual/usability redesign |
 | UI-005 | File review | Pending visual/usability redesign |
 | UI-006 | Tasks | Pending visual/usability redesign |
-| UI-007 | Processes | Pending visual/usability redesign |
+| UI-007 | Processes | Foundation candidate; final verification pending |
 | UI-008 | Operatives | Pending visual/usability redesign |
 | UI-009 | Computer & Tools | Pending visual/usability redesign |
 | UI-010 | Files & Images | Pending visual/usability redesign |
@@ -32,6 +32,11 @@ Owner tested current baseline `5c51073fcb099abcfcc30853c6202064be106768` and rej
 - No per-screen PRs or full test cycles; no native inference runs for this presentation-only change. Existing automatic CI may still run under repository configuration; do not disable existing protections or report tests that did not occur.
 - Record screenshots, changed UI files, callback and pane checks, result and actual remaining issues. User visual approval pending.
 - Next action: implement UI-001–003 together as the foundation; continue remaining UI areas in the same batch. No installer requested in this turn.
+
+### Visual checkpoint 001 — foundation implementation
+- Candidate branch deepthortriad-indigo-interface: indigo palette, rounded native ttk stateful buttons, continuous woven borders, vertical labelled navigation retaining exact notebook indices, three-pane shell with draggable dividers and collapsible project inspector, bounded display-only pane preferences. Direct install/start/stop/test/diagnostics buttons, visible chat retry/amend/find actions, responsive action strips and message blocks.
+- UI-001–003 candidate implementation (right inspector currently provides project/file context and not a full selected-job inspector); UI-007 direct diagnostic controls candidate. Remaining workspace-specific presentation, dialog review and final acceptance still pending. No backend or model changes, no installer. No manual acceptance run at this checkpoint; verify the complete batch once. Actual visual acceptance not yet claimed.
+- Next: reflow remaining workspace controls, responsive splitters, visible categories and workspace-specific presentation; then final integrated UI checks.
 
 ### Historical ledger (retained unchanged; prior completion states are not current visual acceptance)
 
