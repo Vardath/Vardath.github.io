@@ -431,6 +431,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(top,text='Install AI',command=self._install_ai).pack(side='right',padx=4)
         ttk.Button(top,text='User guide',command=self._open_user_guide).pack(side='right',padx=4)
         ttk.Button(top,text='Self-diagnose',command=self._diagnose).pack(side='right',padx=4)
+        ttk.Button(top,text='Review self-update…',command=self._review_self_installation).pack(side='right',padx=4)
         ttk.Button(top,text='Export diagnostics',command=self._export_diagnostics).pack(side='right',padx=4)
         ttk.Button(top,text='Run latest test',command=self._run_latest_test).pack(side='right',padx=4)
         ttk.Button(top,text='Stop AI',command=self._stop_ai).pack(side='right',padx=4)
@@ -9365,6 +9366,32 @@ class DeepThorTDesktop(tk.Tk):
         self._model_connection_message=str(message)
         if hasattr(self, 'chat_connection'):
             self._render_reply_notice()
+
+    def _self_install_idle(self):
+        return (self.queue_paused and not self._quitting and not self.disk_gate.gaming()
+                and self.active_job is None and self.active_conversation is None and not self._project_midi_pending
+                and not self._reviewed_git_pending() and not self._dispatch_memory_busy()
+                and not self.tool_workflows.busy()
+                and not getattr(self,'_verification_preflight',False)
+                and not getattr(self,'_gui_test_active',None) and not getattr(self,'_quiet_test_active',None)
+                and not any(t and t.is_alive() for t in (getattr(self,'_self_development_thread',None),
+                    getattr(self,'_queued_prompt_preparation_thread',None),getattr(self,'_technical_preparation_thread',None),
+                    self._creative_lane_thread,self._latest_test_thread))
+                and not any(p and p.poll() is None for p in (self.install_process,self.tool_process,self.media_process)))
+
+    def _review_self_installation(self):
+        from deepthort_local import self_installation
+        try:
+            if not self._self_install_idle():raise ValueError('Pause queue and allow existing work to finish first.')
+            plan,summary=self_installation.review(ROOT,STATE)
+            detail=('Install only the independently reviewed and isolated-tested diagnostic wording update?\n\n'
+                    +'Target: '+summary['target']+'\nBefore: '+summary['old']+'\nAfter: '+summary['new']
+                    +'\nSHA-256: '+summary['candidate_sha']+'\n\nAn exact baseline is retained. Normal restart required. No full application acceptance.')
+            if not messagebox.askyesno('Approve exact diagnostic self-update',detail,parent=self):return
+            receipt=self_installation.install(ROOT,STATE,plan,approval=True,idle=self._self_install_idle)
+            self._log('Diagnostic self-update installed; restart normally. Exact rollback baseline retained.')
+        except (OSError,ValueError,PermissionError,RuntimeError,KeyError,sqlite3.Error) as exc:
+            messagebox.showerror('Self-update unavailable',str(exc)[:500],parent=self)
 
     def _diagnose(self, prompt=None):
         info = inspect_local_setup(ROOT)
