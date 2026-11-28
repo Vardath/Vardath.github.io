@@ -34,6 +34,10 @@ class ToolShelf(ttk.Frame):
         bar = ttk.Frame(self)
         bar.pack(fill='x', pady=(2, 4))
         ttk.Label(bar, text='Tool library · Search').pack(side='left', padx=(0, 8))
+        self.category = tk.StringVar(self,value='All tools')
+        self.categories={}
+        self.category_choice=ttk.Combobox(bar,textvariable=self.category,state='readonly',width=17,values=('All tools',))
+        self.category_choice.pack(side='left',padx=(0,6))
         self.query = tk.StringVar(self)
         self.search = ttk.Entry(bar, textvariable=self.query)
         self.search.pack(side='left', fill='x', expand=True)
@@ -58,6 +62,10 @@ class ToolShelf(ttk.Frame):
         self.canvas.bind('<Configure>', self._region)
         self._index = []
         self.query.trace_add('write', self._filter)
+        self.category.trace_add('write',self._filter)
+
+    def set_category(self,row,category):
+        self.categories[row]=category
 
     def _region(self, event=None):
         self.canvas.configure(scrollregion=self.canvas.bbox('all') or (0, 0, 0, 0))
@@ -86,6 +94,7 @@ class ToolShelf(ttk.Frame):
                         widget.bind(event, self._wheel, add='+')
         for event in ('<MouseWheel>', '<Button-4>', '<Button-5>'):
             self.canvas.bind(event, self._wheel, add='+')
+        self.category_choice.configure(values=('All tools',*sorted(set(self.categories.values()))))
         self._filter()
 
     def _filter(self, *args):
@@ -98,7 +107,7 @@ class ToolShelf(ttk.Frame):
             found = False
             for button, button_options in buttons:
                 total += 1
-                if all(word in str(button.cget('text')).casefold() for word in words):
+                if (self.category.get()=='All tools' or self.categories.get(row)==self.category.get()) and all(word in str(button.cget('text')).casefold() for word in words):
                     button.pack(**button_options)
                     found = True
                     shown += 1
@@ -654,3 +663,74 @@ class KnowledgeMemoryCentre(ttk.Frame):
         if not row:return
         replace_readonly(self.detail,'Historical receipt · no authority · current relevance not checked\n'+
                          json.dumps(row,indent=2,ensure_ascii=False))
+
+
+STUDIO_CATEGORIES=('All tools','Images & textures','Music & audio','Video & animation','3D & models',
+                   'Documents','Data & analysis','Games & development','Research & web','Communication')
+
+ARTIFACT_EXTENSIONS={
+ 'Image':{'.png','.jpg','.jpeg','.webp','.svg','.bmp','.gif','.tif','.tiff'},
+ 'Audio':{'.wav','.mp3','.ogg','.flac','.mid','.midi','.m4a'},
+ 'Video':{'.mp4','.webm','.avi','.mov','.mkv'},
+ '3D model':{'.obj','.stl','.gltf','.glb','.blend','.fbx'},
+ 'Document':{'.pdf','.docx','.odt','.pptx','.xlsx','.epub','.md','.txt'},
+ 'Data':{'.csv','.json','.tsv','.ipynb'},
+ 'Package':{'.zip','.apk','.exe','.msi','.pck'},
+}
+
+def studio_artifact_rows(paths):
+    from pathlib import PurePath
+    rows=[]
+    for path in paths:
+        suffix=PurePath(path).suffix.casefold()
+        category=next((name for name,exts in ARTIFACT_EXTENSIONS.items() if suffix in exts),None)
+        if category:rows.append((path,(category,path,suffix)))
+    return rows
+
+
+class StudioCentre(ttk.Frame):
+    """Category routing to original controls and a bounded read-only workspace file index."""
+    def __init__(self,parent,refresh,tools,inspect):
+        super().__init__(parent)
+        self.inspect_callback=inspect
+        self.notice=tk.StringVar(self,value='Open or refresh the Studio.')
+        bar=ttk.Frame(self);bar.pack(fill='x',pady=4)
+        ttk.Label(bar,text='STUDIO',style='Muted.TLabel').pack(side='left')
+        ttk.Button(bar,text='Refresh artifacts',command=refresh).pack(side='right')
+        ttk.Label(self,text='Production tools · choose a category to navigate, not execute.',wraplength=620).pack(anchor='w',pady=4)
+        action_menu(self,'Production categories',[(cat,lambda c=cat:tools(c)) for cat in STUDIO_CATEGORIES]).pack(anchor='w',pady=4)
+        ttk.Label(self,textvariable=self.notice,wraplength=620).pack(anchor='w',pady=4)
+        ttk.Label(self,text='Bounded workspace file snapshot only; large or excluded files may not appear. Presence is not proof of production or testing.',style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=4)
+        filters=ttk.Frame(self);filters.pack(fill='x')
+        self.category=tk.StringVar(self,value='All states')
+        ttk.Combobox(filters,textvariable=self.category,state='readonly',width=13,values=('All states',*ARTIFACT_EXTENSIONS)).pack(side='left')
+        self.query=tk.StringVar(self)
+        ttk.Entry(filters,textvariable=self.query).pack(side='left',fill='x',expand=True,padx=4)
+        ttk.Button(filters,text='Filter artifacts',command=self.filter).pack(side='left')
+        frame=ttk.Frame(self);frame.pack(fill='both',expand=True)
+        self.table=ttk.Treeview(frame,columns=('category','path','extension'),show='headings',selectmode='browse')
+        for key,label,width in (('category','Type',95),('path','Workspace path',390),('extension','Format',70)):
+            self.table.heading(key,text=label);self.table.column(key,width=width,stretch=key=='path')
+        source_scrollbars(frame,self.table)
+        ttk.Button(self,text='Inspect artifact metadata',command=self.inspect).pack(anchor='w',pady=4)
+        detail_frame=ttk.Frame(self);detail_frame.pack(fill='x')
+        self.detail=tk.Text(detail_frame,height=5,state='disabled',wrap='word',bg=PALETTE['input'],fg=PALETTE['text'])
+        scroll_text(detail_frame,self.detail)
+        self.rows=[]
+
+    def render(self,project,rows):
+        if getattr(self,'project',None)!=project:
+            selection=self.table.selection()
+            if selection:self.table.selection_remove(*selection)
+            self.query.set('');self.category.set('All states')
+        self.project=project;self.rows=rows
+        self.notice.set(f'{project} · {len(rows)} matching file formats in bounded workspace snapshot')
+        self.filter()
+        replace_readonly(self.detail,'Select a file to inspect its metadata. No file is executed.')
+
+    def filter(self):
+        sync_table(self.table,filter_status_rows(self.rows,self.category.get(),self.query.get()))
+
+    def inspect(self):
+        selected=self.table.selection()
+        if selected:replace_readonly(self.detail,self.inspect_callback(selected[0]))

@@ -2,7 +2,7 @@
 import tkinter as tk
 from tkinter import ttk
 import unittest
-from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre
+from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre, StudioCentre, studio_artifact_rows
 
 
 class LatticeShelfTests(unittest.TestCase):
@@ -273,3 +273,25 @@ class LatticeShelfTests(unittest.TestCase):
         centre.render('other workspace',[],sample)
         self.assertEqual(centre.table.get_children(),())
         self.assertNotIn('N1',centre.detail.get('1.0','end'))
+
+
+    def test_studio_categories_and_artifact_scope(self):
+        shelf=ToolShelf(self.root)
+        row=ttk.Frame(shelf.rows);row.pack()
+        button=ttk.Button(row,text='Generate song',command=lambda:self.calls.append('song'));button.pack()
+        shelf.set_category(row,'Music & audio')
+        shelf.index_buttons()
+        shelf.category.set('Images & textures')
+        self.assertEqual(shelf.count.get(),'0 / 1 tools')
+        shelf.category.set('Music & audio')
+        self.assertEqual(shelf.count.get(),'1 / 1 tools')
+        self.assertEqual(self.calls,[])
+        studio=StudioCentre(self.root,lambda:None,self.calls.append,lambda path:'Metadata '+path)
+        studio.render('workspace',studio_artifact_rows(['song.mid','image.png','source.py']))
+        self.assertEqual(set(studio.table.get_children()),{'song.mid','image.png'})
+        studio.category.set('Audio');studio.filter()
+        self.assertEqual(studio.table.get_children(),('song.mid',))
+        studio.table.selection_set('song.mid');studio.inspect()
+        self.assertIn('Metadata song.mid',studio.detail.get('1.0','end'))
+        studio.render('other',[])
+        self.assertNotIn('song.mid',studio.detail.get('1.0','end'))
