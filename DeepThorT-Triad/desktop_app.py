@@ -1260,7 +1260,7 @@ class DeepThorTDesktop(tk.Tk):
             'Installation and heavy generation should run when games are closed.')
 
         foot=ttk.Frame(self);foot.pack(fill='x',padx=13,pady=(0,8))
-        self.status=tk.StringVar(value='Idle • 50% total CPU ceiling + up to 65% RAM-sized commit budget')
+        self.status=tk.StringVar(value='Idle • Automatic Medium / High resource policy')
         ttk.Label(foot,textvariable=self.status,style='Muted.TLabel').pack(side='left')
         ttk.Label(foot,text='GPU inference off · Offline generation · No cloud fallback',style='Muted.TLabel').pack(side='right')
 
@@ -2626,7 +2626,7 @@ class DeepThorTDesktop(tk.Tk):
         if not messagebox.askyesno('Install offline image generator',
             'Install CPU PyTorch, Diffusers and Stable Diffusion 1.5 model weights?\n\n'
             'This downloads several GB and can use substantial temporary disk space and memory. '
-            'Inference will run offline and CPU-only under the 50% CPU / up to 65% RAM-sized commit limits.\n\n'
+            'Inference will run offline and CPU-only under the automatic 50–85% CPU / up to 80% RAM-sized commit limits.\n\n'
             'It can be extremely slow and can fail if physical RAM usage exceeds the allowed budget.\n'
             'Approve this one-time installation?',parent=self):return
         self.tabs.select(4)
@@ -3268,8 +3268,21 @@ class DeepThorTDesktop(tk.Tk):
             if network=='allowlist':network+=': '+', '.join(current['hosts'])
         except (OSError,ValueError,PermissionError,KeyError,TypeError):
             network='Unavailable — inspect existing network restrictions'
-        self.settings_centre.render(settings_policy_rows(self._project_policy,self._autonomy_policy,network),
-                                   self.model_status.get(),self._project_key())
+        rows=settings_policy_rows(self._project_policy,self._autonomy_policy,network)
+        try:
+            from deepthort_local.triad_job import verify_root_cap
+            from deepthort_local.resource_policy import admission_budget,MEDIUM_CPU
+            cap,available,total,cpu=verify_root_cap(include_cpu=True)
+            effective,_,_=admission_budget(cap,available,total,cpu)
+            profile='Medium' if cpu<=MEDIUM_CPU*100 else 'High'
+            rows.extend([
+                ('live-resource',('Observed automatic profile',profile+f' ({cpu/100:g}% CPU)','Confirmed Windows root Job Object limit')),
+                ('live-memory',('Root / cooperative commit budget',f'{cap/2**30:.1f} / {effective/2**30:.1f} GiB','Not current RAM use; no forced live eviction')),
+                ('game-resource',('Detected game', 'Yes' if self.disk_gate.gaming() else 'No','Configured executable names or known game-library paths')),
+            ])
+        except (OSError,ValueError,RuntimeError,AttributeError):
+            rows.append(('live-resource',('Observed automatic profile','Unavailable','No verified Windows root Job Object')))
+        self.settings_centre.render(rows,self.model_status.get(),self._project_key())
         from deepthort_local.readiness_inspection import model_records,integration_records
         pid=self.node.pid if self.node and self.node.poll() is None else None
         import sqlite3
@@ -10420,7 +10433,7 @@ class DeepThorTDesktop(tk.Tk):
                  +f"Generation elapsed: {local_status.get('inference_elapsed_seconds',0)}s; "
                  +f"output limit: {local_status.get('inference_max_tokens','?')} tokens.\n"
                  +'This is an accepted local request, not yet a finished reply. '
-                 +'At the 50% CPU limit it may take several minutes.')
+                 +'Under the automatic CPU limit it may take several minutes.')
         self.client.record_local_exchange(self.current_chat, prompt or 'Run local DeepThorT self-diagnosis', report)
         self._reload_chat()
         self._log('Local self-diagnosis requested; no model call or cloud connection used.')
@@ -10507,8 +10520,8 @@ class DeepThorTDesktop(tk.Tk):
             self.recent_ai_logs=[]
             self.last_ai_error=''
             self.model_status.set('AI: loading…')
-            self._set_connection_status('AI loading under 50% CPU cap. Conversations stay separate from approved jobs.')
-            self._log('Starting three resident OpenVINO IR models, CPU-only, shared 50% CPU and up to 65% RAM-sized commit cap.')
+            self._set_connection_status('AI loading under automatic CPU cap. Conversations stay separate from approved jobs.')
+            self._log('Starting three resident OpenVINO IR models, CPU-only, shared automatic 50–85% CPU and up to 80% RAM-sized commit cap.')
             process=self.node
             def output():
                 try:
@@ -10692,7 +10705,7 @@ class DeepThorTDesktop(tk.Tk):
               f"Current approved job: {('#'+str(active['id'])+' '+active['mode']+' ('+str(elapsed)+'s elapsed)') if active else 'none'}\n"
               f"Local tool PID: {tool.pid if tool else 'none'} | Installer PID: {install.pid if install else 'none'} | Media PID: {media.pid if media and media.poll() is None else 'none'}\n"
               f"Queue: {'paused' if self.queue_paused else 'running if model ready'}; pending: {counts.get('queued',0) if counts is not None else 'unavailable'}\n"
-              f"Supervision: 50% aggregate CPU cap, up to 65% RAM-sized commit limit under DeepThorT.exe\n"
+              f"Supervision: automatic 50–85% aggregate CPU cap, up to 80% RAM-sized commit limit under DeepThorT.exe\n"
               f"Reported resident model workers: {len(roles)} | "+', '.join(r+' PID '+str(pid) for r,pid in roles.items())+'\n'
               f'Council detail: {self._council_status()}\n'
               f"JANUS instructions: {len(self.instruction_inbox.list(str(self.project) if self.project else None,limit=100))} recent saved\n"

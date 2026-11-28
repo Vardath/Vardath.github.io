@@ -63,6 +63,13 @@ def _windows_process_names() -> frozenset[str]:
     close.argtypes = (wintypes.HANDLE,)
     close.restype = wintypes.BOOL
 
+    from .resource_policy import game_library_path
+    open_process=kernel32.OpenProcess
+    open_process.argtypes=(wintypes.DWORD,wintypes.BOOL,wintypes.DWORD)
+    open_process.restype=wintypes.HANDLE
+    query_path=kernel32.QueryFullProcessImageNameW
+    query_path.argtypes=(wintypes.HANDLE,wintypes.DWORD,wintypes.LPWSTR,ctypes.POINTER(wintypes.DWORD))
+    query_path.restype=wintypes.BOOL
     # TH32CS_SNAPPROCESS = 0x00000002. Does not request elevated privileges.
     handle = snapshot(0x00000002, 0)
     if not handle or handle == ctypes.c_void_p(-1).value:
@@ -73,11 +80,25 @@ def _windows_process_names() -> frozenset[str]:
         if not first(handle, ctypes.byref(entry)):
             raise OSError(ctypes.get_last_error(), 'Could not enumerate processes')
         names = set()
+        inspected=0
+        library_game=False
         while True:
             if entry.szExeFile:
                 names.add(entry.szExeFile.casefold())
+                if not library_game and inspected<512 and entry.th32ProcessID>4:
+                    inspected+=1
+                    proc=open_process(0x1000,False,entry.th32ProcessID)
+                    if proc:
+                        try:
+                            buf=ctypes.create_unicode_buffer(32768)
+                            size=wintypes.DWORD(len(buf))
+                            if query_path(proc,0,buf,ctypes.byref(size)) and game_library_path(buf.value):
+                                library_game=True
+                        finally:close(proc)
             if not next_entry(handle, ctypes.byref(entry)):
-                break  # ERROR_NO_MORE_FILES is normal at the end of a snapshot.
+                if ctypes.get_last_error()!=18:raise OSError(ctypes.get_last_error(),'Incomplete process snapshot')
+                break
+        if library_game:names.add(':known-game-library:')
         return frozenset(names)
     finally:
         close(handle)
@@ -89,10 +110,11 @@ def games_running(game_names: frozenset[str]) -> bool:
     On Windows API failure, fail safe: pause background disk operations until
     a subsequent check succeeds rather than assuming no game is running.
     """
-    if not game_names or os.name != 'nt':
+    if os.name != 'nt':
         return False
     try:
-        return not _windows_process_names().isdisjoint(game_names)
+        names=_windows_process_names()
+        return ':known-game-library:' in names or not names.isdisjoint(game_names)
     except (OSError, AttributeError, ValueError):
         return True
 
@@ -154,8 +176,10 @@ class DiskGate:
             return True
         now = time.monotonic()
         if now >= self._next_check:
-            self._last_result = (self.game_probe() if self.game_probe is not None else
-                                 games_running(configured_game_names(self.game_names_path)))
+            try:
+                self._last_result = (self.game_probe() if self.game_probe is not None else
+                                     games_running(configured_game_names(self.game_names_path)))
+            except (OSError,ValueError,RuntimeError,TypeError):self._last_result=True
             self._next_check = now + 5.0
         return self._last_result
 
