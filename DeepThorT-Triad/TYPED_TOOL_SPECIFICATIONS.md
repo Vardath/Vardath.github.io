@@ -969,3 +969,7 @@ Autoplay grid game accepts the same JSON as Generate grid game. Selects a neares
 ## Reviewed automated grid balancing (Pass 215)
 
 Balance grid game accepts `{"level": <Generate grid game JSON>, "target_steps": 20}` with up to eight collectibles and 1–512 target input steps. Evaluates at most 32 one-tile collectible relocations, preserving geometry and objective count. The new JSON report includes the original metric, improved candidate level (or unchanged baseline), achieved metric and target attainment. `candidate_level` is reusable as a grid game specification. No original modification or native/human difficulty certification.
+
+## Reviewed Unreal Engine integration (Pass 216)
+
+Test Unreal editor accepts `{"project_name":"JanusTest"}`. Set `UNREAL_EDITOR_CMD` to an independently installed trusted UE5 `UnrealEditor-Cmd.exe`. Generates a private temporary project with PythonScriptPlugin enabled and runs a fixed editor Python commandlet to report engine version and exact project identity, under the existing Windows resource cap. No external project execution, asset import, packaging or gameplay. Unreal may write host caches or use networking. Native acceptance pending. Commandlet reference: https://dev.epicgames.com/documentation/unreal-engine/scripting-the-unreal-editor-using-python
