@@ -1,5 +1,40 @@
 # DeepThorTriad — Interface Redesign Progress
 
+## Reopened visual redesign — 28 November 2026 (current programme)
+
+Owner tested current baseline `5c51073fcb099abcfcc30853c6202064be106768` and rejected the visual result: appearance remained effectively unchanged and controls were harder to locate. Prior functional improvements remain valuable and are retained. Their previous green regression runs do not prove visual acceptance. The revised owner brief in the register supersedes conflicting historical design and verification instructions. 18 stable areas reopened for presentation/usability review; 0 completed against the corrected brief. No application code changed in this planning entry.
+
+| ID | Area | Current status |
+|---|---|---|
+| UI-001 | Application shell | Pending visual/usability redesign |
+| UI-002 | Chat | Pending visual/usability redesign |
+| UI-003 | Projects and panes | Pending visual/usability redesign |
+| UI-004 | Work queue | Pending visual/usability redesign |
+| UI-005 | File review | Pending visual/usability redesign |
+| UI-006 | Tasks | Pending visual/usability redesign |
+| UI-007 | Processes | Pending visual/usability redesign |
+| UI-008 | Operatives | Pending visual/usability redesign |
+| UI-009 | Computer & Tools | Pending visual/usability redesign |
+| UI-010 | Files & Images | Pending visual/usability redesign |
+| UI-011 | Command Centre | Pending visual/usability redesign |
+| UI-012 | Approvals & PC Activity | Pending visual/usability redesign |
+| UI-013 | Knowledge & Memory | Pending visual/usability redesign |
+| UI-014 | Studio | Pending visual/usability redesign |
+| UI-015 | Settings & Integrations | Pending visual/usability redesign |
+| UI-016 | Dialogs and accessibility | Pending visual/usability redesign |
+| UI-017 | Help and discoverability | Pending visual/usability redesign |
+| UI-018 | Single consolidated interface acceptance | Pending final consolidated acceptance |
+
+### Visual pass 000 — planning
+- Correct design: phone-app-like Windows interface, indigo blue, Nordic lattice borders, resizable panes, directly accessible controls.
+- Retain prior functionality and existing callback/authority contracts; no changes to backend or models.
+- Implementation sequence within one batch: shell/theme and splitters → chat/projects and action strips → remaining workspace presentation → dialogs/help → one final focused UI acceptance pass.
+- No per-screen PRs or full test cycles; no native inference runs for this presentation-only change. Existing automatic CI may still run under repository configuration; do not disable existing protections or report tests that did not occur.
+- Record screenshots, changed UI files, callback and pane checks, result and actual remaining issues. User visual approval pending.
+- Next action: implement UI-001–003 together as the foundation; continue remaining UI areas in the same batch. No installer requested in this turn.
+
+### Historical ledger (retained unchanged; prior completion states are not current visual acceptance)
+
 Register: [INTERFACE_REDESIGN_REGISTER.md](INTERFACE_REDESIGN_REGISTER.md). Baseline main `3688f6094872050f5ad3c010ac88e091ea1c8c43`, previous missing-ability programme pass 279 merged. Baseline main workflow [46093350764](https://github.com/Vardath/Vardath.github.io/actions/runs/46093350764) was in progress during inspection. Do not merge until predecessor and exact candidate checks are green.
 
 ## Finite interface completion checklist — owner-directed scope freeze

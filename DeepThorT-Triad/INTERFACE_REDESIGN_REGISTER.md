@@ -1,5 +1,46 @@
 # DeepThorTriad — Interface Redesign Register
 
+## Owner correction — authoritative visual redesign (28 November 2026)
+
+The owner tested baseline `5c51073fcb099abcfcc30853c6202064be106768` and reported that the application looks essentially unchanged and controls are harder to find. Previous passes delivered useful functional additions but failed the intended visual/usability outcome. Reopen the interface programme; this brief supersedes conflicting palette, shell, menu consolidation and test-cadence instructions below. Retain all implemented capabilities and operational safeguards. This is UI-only, not a new feature or backend programme.
+
+**Goal:** a phone-app-like experience on Windows: smooth, modern, comfortable, chat-first, with easily visible labelled controls, genuinely resizable panes and a deep indigo-blue colour scheme. Nordic interwoven lattice belongs around window/panel borders and corners, subtly integrated rather than represented only by a tiny logo. The previous teal-green theme and legacy notebook layout are not the target.
+
+### Visual and interaction specification
+- Use deep midnight blue backgrounds (e.g. #0B1026), indigo/slate panels (#151D3B), indigo primary actions (#6366F1), frost-white text (#EEF2FF), muted blue-grey text (#A8B4D4), cool silver-blue lattice trim. Palette values are proposed defaults; contrast and usability take precedence. Amber/red/green retain warning/error/success meanings with text labels.
+- Rounded surfaces, consistent typography, generous spacing, obvious hover/focus/pressed feedback, smooth scrolling and restrained transitions where practical; decoration must not intercept input or impair legibility/performance.
+- Persistent vertical primary navigation, chat is default, draggable left and right panes, collapsible inspector; splitters for editor/log/preview areas. Responsive reflow at 1000x650, 1138x765, 1320x860 and high DPI. Persist validated sizes safely.
+- Important actions directly visible with labels, not buried in menus. Overflow only for secondary actions or genuinely narrow layouts; visible search/categories for the large tool inventory. Keep existing callbacks, no duplicate execution path.
+- Choose the lightest UI technology capable of delivering the actual look and interaction. Do not force a framework migration or add a heavy runtime merely for style; if a migration becomes necessary, isolate the presentation layer, document dependencies and preserve backend contracts. No backend refactor, resource policy, model, state schema, permission or workflow change under this programme.
+- Preserve all five operatives, both societies, asynchronous memory, project identities, conversation history, task state, approvals, evidence, diagnostics and resource caps. No installer until requested.
+
+### Current finite work register (same stable IDs)
+| ID | Area | Required result |
+|---|---|---|
+| UI-001 | Application shell | A visibly new phone-app-inspired Windows shell; persistent vertical labelled navigation, chat-first central canvas, contextual right pane, no crowded horizontal primary tabs. Keep stable underlying workspace identities. |
+| UI-002 | Chat | Readable message blocks, clear role labels, rounded multiline composer, visible send/stop/attach/draft/queue/approve/JANUS/amend/retry actions; conversation list and search readily accessible. |
+| UI-003 | Projects and panes | Draggable left navigation/project pane and right inspector; collapse/expand; vertical splitters on applicable screens; persist validated pane sizes and selected workspace. Project picker, files and specialist actions clearly discoverable. |
+| UI-004 | Work queue | Readable list/cards with observed status, visible pause/resume/reorder/remove/inspect controls and exact dependency/evidence inspector. Preserve all queue semantics. |
+| UI-005 | File review | Resizable editor/preview/diff panels; visible find, line navigation, save/review and exact source/approval state. |
+| UI-006 | Tasks | Readable grouped task list, visible actions and linked job status; avoid invented progress. |
+| UI-007 | Processes | Clear resource/operation cards, readable resizable log pane, directly visible Run latest test, Stop latest test, Export diagnostics, Locate latest diagnostics and relevant cancellation controls. |
+| UI-008 | Operatives | Five identifiable role cards with observed state and activity; accessible JANUS/Sentinel eleven-core lattice views, scoped communications, inbox and existing controls; never fabricate activity. |
+| UI-009 | Computer & Tools | Visible categories, search, installed/available status and direct scan/review controls; all existing operations discoverable without hunting through nested menus. |
+| UI-010 | Files & Images | Searchable visible tool categories, action list and resizable preview, no lost callbacks. Coordinate with Studio without hiding existing abilities. |
+| UI-011 | Command Centre | Clean at-a-glance project, jobs, blockers, operative and artifact overview; clear direct navigation to relevant actions. |
+| UI-012 | Approvals & PC Activity | Inbox/list and resizable detail inspector; exact target, evidence, scope, review and revoke/stop controls where already available. No new authority. |
+| UI-013 | Knowledge & Memory | Searchable evidence and references, readable provenance, clear scope, visible existing index/recall controls. |
+| UI-014 | Studio | Visible Images, Audio, Video, 3D, Documents and other existing production categories, artifact grid/list, resizable preview and metadata. |
+| UI-015 | Settings & Integrations | Clear sections for interface, AI models, resources, permissions, integrations, diagnostics and updates. Keep Install AI, Start AI, Stop AI, Run latest test and Export diagnostics readily visible globally or in a direct action strip. |
+| UI-016 | Dialogs and accessibility | Coherent indigo styling, large legible controls, clear confirmation and cancel, keyboard/focus support, readable at high DPI and narrow windows. |
+| UI-017 | Help and discoverability | Update help and shortcuts for the actual new shell; visible labels and optional global command search supplement rather than replace primary buttons. |
+| UI-018 | Single consolidated interface acceptance | One focused final pass on complete UI implementation, including real rendering screenshots, resize, navigation, callback binding, approval preservation and persistence. No repeated full backend CI per screen. |
+
+### Implementation and verification cadence (owner direction)
+Implement the coherent interface as one development batch with logical checkpoints in the progress ledger, not separate PRs or comprehensive CI runs per screen. Inspect and compile changed UI files as needed; run at most one planned consolidated interface-only acceptance pass after implementation (existing relevant GUI tests plus focused checks for new presentation, callback preservation and pane persistence). Capture screenshots of chat and representative workspaces at normal and narrow desktop sizes, verify easy-to-find common controls, and note any physical Windows/high-DPI testing still outstanding. Fix actual failures and recheck only the affected area if necessary; do not repeatedly rerun unrelated models, multimedia, network, security or full backend suites for presentation-only changes. Do not weaken/delete existing test coverage, change repository protections, or falsely report green; if existing automatic CI triggers or required checks demand broader verification, report that constraint and avoid duplicate runs. No manual repeated full CI per checkpoint. Source changes outside the UI boundary require separate owner approval and appropriate verification. User's actual visual approval is the final design gate.
+
+## Historical original brief and register (retained for traceability; superseded where conflicting)
+
 Owner brief, 28 November 2026: chat-first PC production environment; futuristic Nordic dragon-lattice appearance; inspect existing screens, remedy functional gaps, introduce useful screens. This is a new programme separate from the missing-ability register. Maintain stable IDs; update the progress ledger after every pass. Do not remove capabilities, alter operative responsibilities, expand permissions, or bypass existing approval, resource, cancellation and evidence controls. Preserve persisted state, project identities and all existing actions. No installer until explicitly requested.
 
 ## Design system
