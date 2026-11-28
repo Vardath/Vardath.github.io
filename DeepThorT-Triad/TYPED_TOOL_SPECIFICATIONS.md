@@ -861,3 +861,7 @@ Run latest test includes 24 fixed text requests (four resident models × three i
 ## Reviewed SQLite backup and restoration (Pass 194)
 
 Backup SQLite: JSON `{"database":"project.db"}` produces a new ZIP containing exact standalone non-WAL SQLite bytes and a manifest with size, SHA-256, user version and page count. Restore SQLite copy: `{"archive":"backup.zip"}` produces a new `.db` after verifying manifest, checksum and SQLite quick-check. Both operations use exact source approval and refuse overwrite or sidecars; no live state replacement. Archives contain private data in unencrypted form; no scheduled full-state backup or externally authenticated signature. Existing source-checkpoint recovery unchanged.
+
+## Autonomous deep research (Pass 195)
+
+Deep research (reviewed sites) accepts JSON `{"question":"your question","sites":[{"seed":"https://example.org/docs/","path_prefix":"/docs/","max_pages":3,"max_depth":2},{"seed":"https://example.com/reference/","path_prefix":"/reference/","max_pages":3,"max_depth":2}]}`. Two to three distinct public hosts, eight total page attempts plus robots. Same-host permitted static links are ranked by uncovered question terms; evidence contains exact text hashes, literal excerpts, duplicate grouping and coverage gaps. The question remains local. Explicit scope approval required. No semantic fact verification, unrestricted web search, credentials, scripts, external links or claims of source independence.

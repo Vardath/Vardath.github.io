@@ -605,3 +605,40 @@ class ApplicationWorkflowTests(unittest.TestCase):
                 z.writestr('manifest.json',json.dumps(dict(meta,database_sha256='0'*64)))
             with self.assertRaises(ValueError):unpack(out.getvalue())
             self.assertEqual(unpack(archive)[0],raw)
+
+
+    def test_autonomous_research_scoped_gap_collection(self):
+        from deepthort_local.autonomous_research import collect
+        from deepthort_local.webpage_retrieval import extract
+        s={'question':'alpha beta','sites':[{'seed':'https://example.org/docs/','path_prefix':'/docs/','max_pages':2,'max_depth':1},
+                  {'seed':'https://example.com/ref/','path_prefix':'/ref/','max_pages':2,'max_depth':1}]}
+        calls=[]
+        def run(site,*,approved,cancelled,link_priority):
+            self.assertTrue(approved);self.assertFalse(cancelled())
+            first=not calls;calls.append(site['seed'])
+            if not first:
+                self.assertLess(link_priority('https://example.com/ref/beta'),link_priority('https://example.com/ref/alpha'))
+            url=site['seed'];p=extract(url,b'alpha evidence' if first else b'beta evidence','text/plain','utf-8')
+            return {'seed':url,'path_prefix':site['path_prefix'],'external_links_followed':False,'reference_only':True,
+                    'pages':[{'evidence':p}],'attempts':[{'url':url,'status':'retrieved'}],
+                    'robots_response_sha256':'a'*64}
+        with self.assertRaises(ValueError):collect(s,run=run)
+        self.assertEqual(calls,[])
+        r=collect(s,approved=True,run=run)
+        self.assertEqual(r['uncovered_terms'],[])
+        self.assertEqual(r['term_source_matrix'],{'alpha':['R1'],'beta':['R2']})
+        self.assertFalse(r['claims_verified'])
+        self.assertEqual(r['site_results'][1]['priority_terms'],['beta'])
+
+    def test_autonomous_research_refuses_scope_and_cancellation(self):
+        from deepthort_local.autonomous_research import checked,collect
+        from deepthort_local.webpage_retrieval import extract
+        s={'question':'alpha','sites':[{'seed':'https://example.org/docs/','path_prefix':'/docs/','max_pages':2,'max_depth':1},
+                  {'seed':'https://example.com/ref/','path_prefix':'/ref/','max_pages':2,'max_depth':1}]}
+        with self.assertRaises(ValueError):checked(dict(s,sites=[s['sites'][0]]*2))
+        with self.assertRaises(TimeoutError):collect(s,approved=True,cancelled=lambda:True,run=lambda *a,**k:self.fail('cancel ignored'))
+        def outside(site,**kw):
+            p=extract('https://other.org/outside/',b'alpha','text/plain','utf-8')
+            return {'seed':site['seed'],'path_prefix':site['path_prefix'],'external_links_followed':False,'reference_only':True,
+                    'pages':[{'evidence':p}],'attempts':[{}],'robots_response_sha256':'a'*64}
+        with self.assertRaises(ValueError):collect(s,approved=True,run=outside)
