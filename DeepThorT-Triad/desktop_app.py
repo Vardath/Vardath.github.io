@@ -103,7 +103,7 @@ ROOT = Path(__file__).resolve().parent
 STATE = ROOT / 'state'
 from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
-from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly
+from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = (PALETTE[k] for k in ('base','panel','input','text','muted','accent'))
 GREEN, YELLOW = PALETTE['success'], PALETTE['warning']
 MAX_INFERENCE_PROMPT = 7500  # current OpenVINO IR endpoint requires <=8000 / message
@@ -715,30 +715,43 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(instruction_bar,text='Instruction inbox…',command=self._show_instruction_inbox).pack(side='left',padx=3)
         ttk.Button(instruction_bar,text='Retry latest failed JANUS instruction',
                    command=self._retry_latest_janus_instruction).pack(side='left',padx=3)
-        ttk.Label(instruction_bar,text='Separate from Chats → Retry failed reply',
-                  style='Muted.TLabel').pack(side='left',padx=5)
+
         janus_bar=ttk.Frame(janus_tab);janus_bar.pack(fill='x',pady=(2,7))
         ttk.Button(janus_bar,text='Refresh status',command=self._show_janus_status).pack(side='left',padx=3)
         ttk.Button(janus_bar,text='Set primary goal…',command=self._set_janus_goal).pack(side='left',padx=3)
         ttk.Button(janus_bar,text='Inspect 22 core states',command=self._inspect_janus_cores).pack(side='left',padx=3)
         ttk.Button(janus_bar,text='Pause JANUS',command=lambda:self._set_janus_paused(True)).pack(side='left',padx=3)
         ttk.Button(janus_bar,text='Resume JANUS',command=lambda:self._set_janus_paused(False)).pack(side='left',padx=3)
-        ttk.Button(janus_bar,text='Cancel selected approved process',command=self._cancel_janus_action).pack(side='left',padx=3)
-        ttk.Label(janus_tab,text='Two independent 11-core societies (77 internal Fano faculties each). JANUS executes approved work; Sentinel checks task adherence and health. Local-model ideas are review-only.',style='Muted.TLabel').pack(anchor='w',pady=4)
-        self.janus_status_text=self._text(janus_tab,readonly=True,height=11)
-        self.janus_status_text.pack(fill='x',pady=(4,7))
-        self.janus_action_tree=ttk.Treeview(janus_tab,columns=('id','state','kind','label'),show='headings',height=7)
+        operative_tabs=ttk.Notebook(janus_tab);operative_tabs.pack(fill='both',expand=True,pady=4)
+        workers=ttk.Frame(operative_tabs);societies=ttk.Frame(operative_tabs)
+        approved=ttk.Frame(operative_tabs);messages=ttk.Frame(operative_tabs)
+        for page,title in ((workers,'Five operatives'),(societies,'Recursive societies'),(approved,'Approved processes'),(messages,'Interface messages')):
+            operative_tabs.add(page,text=title)
+        ttk.Label(workers,text='Neural worker observations, distinct from the persistent recursive societies.',style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=5)
+        worker_frame=ttk.Frame(workers);worker_frame.pack(fill='both',expand=True)
+        self.operative_table=ttk.Treeview(worker_frame,columns=('role','responsibility','observed','pid'),show='headings',height=5)
+        for col,title,width in (('role','Operative',85),('responsibility','Responsibility',215),('observed','Observed state',190),('pid','PID',65)):
+            self.operative_table.heading(col,text=title);self.operative_table.column(col,width=width,stretch=col=='responsibility')
+        source_scrollbars(worker_frame,self.operative_table)
+        status_frame=ttk.Frame(workers);status_frame.pack(fill='both',expand=True,pady=(4,5))
+        self.janus_status_text=self._text(status_frame,readonly=True,height=11)
+        scroll_text(status_frame,self.janus_status_text)
+        self.society_lattice=SocietyLattice(societies);self.society_lattice.pack(fill='both',expand=True)
+        ttk.Button(approved,text='Cancel selected approved process',command=self._cancel_janus_action).pack(anchor='w',pady=4)
+        approved_frame=ttk.Frame(approved);approved_frame.pack(fill='both',expand=True)
+        self.janus_action_tree=ttk.Treeview(approved_frame,columns=('id','state','kind','label'),show='headings',height=7)
         for col,title,width in (('id','ID',55),('state','Status',125),('kind','Kind',90),('label','Approved process',550)):
             self.janus_action_tree.heading(col,text=title)
             self.janus_action_tree.column(col,width=width,stretch=col=='label')
-        self.janus_action_tree.pack(fill='both',expand=True)
-        interface_bar=ttk.Frame(janus_tab);interface_bar.pack(fill='x',pady=(6,3))
+        source_scrollbars(approved_frame,self.janus_action_tree)
+        interface_bar=ttk.Frame(messages);interface_bar.pack(fill='x',pady=(6,3))
         self.interface_message_status=tk.StringVar(value='Independent Interface messages')
         ttk.Label(interface_bar,textvariable=self.interface_message_status,style='Muted.TLabel').pack(side='left')
         ttk.Button(interface_bar,text='Mark displayed messages read',command=self._mark_interface_messages_read).pack(side='right')
-        ttk.Label(janus_tab,text='Interface messages, Sentinel events and JANUS cycles (durable observations)',style='Muted.TLabel').pack(anchor='w',pady=(3,3))
-        self.janus_events_text=self._text(janus_tab,readonly=True,height=12)
-        self.janus_events_text.pack(fill='both',expand=True)
+        ttk.Label(messages,text='Interface messages, Sentinel events and JANUS cycles (durable observations)',style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=(3,3))
+        message_frame=ttk.Frame(messages);message_frame.pack(fill='both',expand=True)
+        self.janus_events_text=self._text(message_frame,readonly=True,height=12)
+        scroll_text(message_frame,self.janus_events_text)
 
         # MACHINE DISCOVERY, PLANNING, OPT-IN INSTALLER AND TESTING TOOLS
         hwbar=ttk.Frame(hardware_tab);hwbar.pack(fill='x',pady=7)
@@ -9506,10 +9519,9 @@ class DeepThorTDesktop(tk.Tk):
                   f'Neural instruction inbox: {self._council_status()}\n'
                   'Both use retained observations and separate Front states. Local Triad models may propose corrections; proposals cannot execute themselves.\n'
                   'Only explicitly approved tools/file changes run. Watchdog never duplicates execution.')
-            self._show(self.janus_status_text,text)
-            for k in self.janus_action_tree.get_children():self.janus_action_tree.delete(k)
-            for a in actions:
-                self.janus_action_tree.insert('','end',values=(a['id'],a['status'],a['kind'],a['label']))
+            replace_readonly(self.janus_status_text,text)
+            self.society_lattice.update_records(main_core,watch_core.get('cores',{}))
+            sync_table(self.janus_action_tree,[(str(a['id']),(a['id'],a['status'],a['kind'],a['label'])) for a in actions])
             lines=['INDEPENDENT INTERFACE MESSAGES — no user prompt required']
             total_unread=0
             for role,store in (('janus',self.janus),('sentinel',self.sentinel)):
@@ -9533,7 +9545,7 @@ class DeepThorTDesktop(tk.Tk):
             lines.extend(f"[{x['stamp']}] {x['message']}" for x in self.janus.events(limit=14))
             lines.extend(['','RECENT FOCUS:'])
             lines.extend(f"[{x['stamp']}] cycle {x['cycle']}: {x['focus']} -> {x['decision']}" for x in self.janus.history(limit=8))
-            self._show(self.janus_events_text,'\n'.join(lines))
+            replace_readonly(self.janus_events_text,'\n'.join(lines))
         except Exception as exc:
             self._log(f'JANUS/Sentinel status refresh problem: {exc}')
 
@@ -9917,6 +9929,7 @@ class DeepThorTDesktop(tk.Tk):
             f"  ·  Reply: {self.active_conversation or 'none'}"
             f"  ·  Queue: {'paused' if self.queue_paused else 'enabled'}")
         sync_table(self.resource_table,measured_process_rows(measured))
+        sync_table(self.operative_table,operative_rows(model_health,model_pid, bool(self._creative_lane_thread and self._creative_lane_thread.is_alive())))
         self.resource_notice.set(f'{len(measured)} tracked process samples · observed at '+datetime.now().strftime('%H:%M:%S')
                                  if measured else 'No tracked process measurements available on this OS or at this time')
         if self.active_job is not None:self._refresh_jobs()
