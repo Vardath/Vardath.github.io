@@ -4,6 +4,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .github_oauth import connect,client_id,VERIFY
 def show(app):
     if getattr(app,'_web_research_active',False):return
@@ -25,7 +26,7 @@ def show(app):
     except ValueError as e:messagebox.showwarning('Invalid OAuth client',str(e),parent=app);return
     if not messagebox.askyesno('Approve GitHub device authorization','Request read:user access via GitHub device flow, verify identity and keep token in local process memory for up to 15 minutes? No repository write access is requested. Approve only your own trusted OAuth application.',parent=app):return
     if not permitted():return
-    dialog=tk.Toplevel(app);dialog.title('GitHub device authorization');dialog.geometry('640x250');dialog.transient(app)
+    dialog=tk.Toplevel(app);dialog.title('GitHub device authorization');fit_dialog(dialog,640,250);dialog.transient(app)
     state=tk.StringVar(value='Requesting device code…')
     ttk.Label(dialog,textvariable=state,wraplength=600).pack(fill='x',padx=12,pady=12)
     ttk.Label(dialog,text='Open '+VERIFY+' in your own browser. Enter only the displayed code and check application identity before authorizing.',wraplength=600).pack(fill='x',padx=12,pady=8)

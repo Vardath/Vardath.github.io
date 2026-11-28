@@ -176,6 +176,10 @@ TABS = {
 }
 
 AREA_TIPS = {
+    'workspace_navigator': 'Choose any primary workspace even when notebook tabs overflow; Ctrl+F6 focuses navigation.',
+    'resource_table': 'Measured tracked PIDs; CPU, resident and private commit are distinct measurements.',
+    'operative_table': 'Observed neural-worker and creative-lane states, not inferred task assignments.',
+    'inventory_table': 'Detected software and version evidence; detection does not grant permission.',
     'files': 'Project file tree. Select a file to preview or include it in the next request.',
     'chat_history': 'Saved chat transcript and replies. A model answer is not an approved file edit.',
     'input': 'Type project requirements here. Ctrl+Enter sends; Ctrl+Shift+O imports a large TXT/MD specification.',
@@ -315,7 +319,7 @@ def install_tooltips(app):
                 elif isinstance(widget, tk.Text):
                     attach(widget, 'Scrollable project or activity text. Check adjacent controls for actions and approvals.')
                 elif isinstance(widget, ttk.Combobox):
-                    attach(widget, 'Select an option here. Choosing a value alone does not execute or install software.')
+                    attach(widget, 'Select an option here; workspace and filter selectors change the visible view. Review the associated operation before running it.')
                 elif kind in ('TEntry','Entry'):
                     attach(widget, 'Enter or edit a value for the current operation; review before submitting.')
                 elif kind in ('TLabel', 'Label'):

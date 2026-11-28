@@ -3,6 +3,7 @@ from __future__ import annotations
 import time
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .scheduled_tasks import utc_stamp,MAX_DELAY,MIN_INTERVAL,MAX_OCCURRENCES
 
 def show(app):
@@ -10,7 +11,7 @@ def show(app):
     if not chat or chat not in {i for i,_ in app.chats.list(project)}:
         messagebox.showwarning('Schedule unavailable','Open a chat first.',parent=app);return
     store=app.scheduled_tasks
-    dialog=tk.Toplevel(app);dialog.title('Scheduled conversation requests');dialog.geometry('800x440')
+    dialog=tk.Toplevel(app);dialog.title('Scheduled conversation requests');fit_dialog(dialog,800,440)
     dialog.transient(app)
     ttk.Label(dialog,text='One-time or recurring local requests. Missed intervals are coalesced, not replayed. Runs only while dispatch is available; no new file/tool authority.',wraplength=770).pack(anchor='w',padx=8,pady=6)
     tree=ttk.Treeview(dialog,columns=('due','state','remaining','request','prompt'),show='headings',selectmode='browse')

@@ -5,6 +5,7 @@ import threading
 import time
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .website_monitor import checked_url,fetch,MIN_INTERVAL,MAX_INTERVAL,MAX_CHECKS
 from .scheduled_tasks import utc_stamp
 
@@ -50,7 +51,7 @@ def show(app):
     project=app._project_key();chat=app.current_chat;store=app.website_monitors
     if not chat or chat not in {i for i,_ in app.chats.list(project)}:
         messagebox.showwarning('Monitoring unavailable','Open a chat first.',parent=app);return
-    dialog=tk.Toplevel(app);dialog.title('Website monitors');dialog.geometry('800x440');dialog.transient(app)
+    dialog=tk.Toplevel(app);dialog.title('Website monitors');fit_dialog(dialog,800,440);dialog.transient(app)
     ttk.Label(dialog,text='Read-only public HTTPS checks. Hashes only; page text is not saved or sent to a model. Changes may include dynamic page markup.',wraplength=770).pack(anchor='w',padx=8,pady=6)
     tree=ttk.Treeview(dialog,columns=('state','due','status','remaining','url'),show='headings',selectmode='browse')
     for key,label,width in (('state','State',75),('due','Next UTC',170),('status','Last check',110),('remaining','Remaining',80),('url','URL',330)):
