@@ -252,7 +252,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 240 | 122 | Video dubbing | Partial: reviewed silent clip interval with supplied exact-duration speech WAV, source frame preservation and lossless H.264/ALAC mux verification. Pass 241 CI pending; existing soundtrack replacement, automatic speech generation/alignment and native playback outstanding. |
 | 241 | 149 | Automatic multilingual dubbing | Partial: reviewed multilingual text and exact installed voices, automatic per-cue synthesis, 48 kHz conversion, bounded silence padding and verified silent video mux. Pass 242 CI pending; automatic translation, phoneme alignment, original soundtrack replacement and native acceptance outstanding. |
 | 242 | 147 | Voice transformation | Partial: reviewed local varispeed pitch/duration, optional ring modulation and low-pass tone on bounded mono PCM16, exact decoded output verification. Pass 243 CI pending; independent pitch/formant control, neural conversion and listening acceptance outstanding. |
-| 243 | 145 | Voice cloning with consent | Not started in this programme |
+| 243 | 145 | Voice cloning with consent | Partial: optional reviewed owner-installed XTTS CLI, exact consent attestation, reference and engine guards, capped CPU synthesis and verified WAV. Pass 244 CI pending; actual installed engine/model acceptance, consent verification and perceptual voice similarity outstanding. |
 | 244 | 146 | Custom voice design | Not started in this programme |
 | 245 | 150 | Sound-effect generation | Not started in this programme |
 | 246 | 151 | Ambient sound generation | Not started in this programme |
@@ -1172,3 +1172,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 243 — 28 November 2026
 - Add reviewed mono PCM voice effects: 75–150% varispeed, optional ring modulation and low-pass tone, bounded 5–20 second source and exact decoded output verification. Three regression fixtures on both hosts. Varispeed alters pitch and duration together; no voice identity imitation, formant-preserving pitch shift, neural conversion or native listening claim. Next rank 243 / ID 145 consent-based voice cloning. No installer.
 - CI repair: Windows webhook rejection could reset the connection when the wrong event was rejected before consuming its bounded body (run 46070481079). Parser repair and deterministic split-body regression staged in PR #311, Pass 229 and Pass 242; successor includes repair. Do not advance merges until exact required CI is green.
+
+## Pass 244 — 28 November 2026
+- Add optional owner-installed XTTS CLI reference-conditioned synthesis, explicit own-voice or documented permission and non-deceptive scope, bounded reference, exact reviewed script and installed assets, capped CPU child and verified new WAV. Large checkpoint guards use file stat identity, not authentication; only trusted independently installed assets. No downloads, new core model, public deployment, identity verification or listening claim. Three mocked regression fixtures on both hosts. Next rank 244 / ID 146 custom voice design. No installer.
