@@ -282,7 +282,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 270 | 157 | Image-to-3D reconstruction | Partial: reviewed local Shap-E image-conditioned shape estimation, exact source PNG, bounded settings and verified OBJ. Pass 271 CI pending; native model provisioning, inferred surface quality and metric accuracy outstanding. |
 | 271 | 158 | Multi-view 3D reconstruction | Partial: calibrated sparse fusion of three to five rectified views, all-view mutual matching and depth/reprojection consensus, exact source verification and JSON cloud. Pass 272 CI pending; arbitrary camera pose recovery, dense mesh and real-photo acceptance outstanding. |
 | 272 | 196 | GPU-accelerated text inference | Partial: explicit reviewed one-shot OpenVINO GPU generation using existing local IR, bounded supervised process and receipt; Pass 273 CI pending. Actual hardware inference, utilisation, speedup, VRAM constraints and resident production routing outstanding. |
-| 273 | 198 | AI model format conversion | Not started in this programme |
+| 273 | 198 | AI model format conversion | Partial: reviewed bidirectional bounded NPZ/SafeTensors weight conversion, exact tensor roundtrip and new outputs. Pass 274 CI pending; full model graph, tokenizer, large-checkpoint conversion and inference acceptance outstanding. |
 | 274 | 197 | AI model quantisation | Not started in this programme |
 | 275 | 39 | Remote computer control | Not started in this programme |
 | 276 | 40 | Virtual computer environments | Not started in this programme |
@@ -1279,3 +1279,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 273 — 28 November 2026
 - Rank 272 / ID 196: experimental opt-in native GPU text generation with explicit device, exact reviewed profile, bounded prompt/token count, inherited Windows supervisor, gaming/host reserve/time limits and no configured CPU fallback. Three fixture regressions registered in both CI jobs. GPU VRAM is not capped by the Windows Job Object; no production CPU worker or permission policy changes. Actual driver/model compatibility, acceleration and performance acceptance remain outstanding.
+
+
+## Pass 274 — 28 November 2026
+- Rank 273 / ID 198: local bidirectional SafeTensors/NPZ numeric weight conversion, strict container/header/dtype/shape/offset and expanded-size checks, no pickle, source guards, exact tensor bytes verified and new non-overwriting output. Three regression tests registered in both CI jobs. Full graph and large checkpoint conversion, external-library interoperability and inference acceptance outstanding; no production model or resource policy changes.
