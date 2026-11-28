@@ -209,7 +209,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 197 | 32 | Website interaction and control selection | Partial: exact static control selection from guarded inspection, offline identification and approved same-host link read after robots and source/control revalidation. Pass 198 CI pending. Actual browser click, form input and authenticated sessions outstanding. |
 | 198 | 35 | Browser-based file downloads | Partial: reviewed static public same-host anchor download, robots and source recheck, bounded MIME and bytes, optional exact digest, verified inert ZIP. Pass 199 CI pending. Actual browser download events, authenticated sessions and native network acceptance outstanding. |
 | 199 | 34 | Browser-based file uploads | Partial: explicitly reviewed single public HTTPS multipart POST with exact project file hash, disclosed name/field, bounded response receipt and no automatic retry. Pass 200 CI pending. Live browser file input, authentication and remote storage/native acceptance outstanding. |
-| 200 | 33 | Automated online form completion | Not started in this programme |
+| 200 | 33 | Automated online form completion | Partial: exact historical static form and literal text-like field mapping, required-field gaps and encoded preview, no network or submission. Pass 201 CI pending. Live browser fill, complex controls, validation and authenticated forms outstanding. |
 | 201 | 37 | Browser developer tools integration | Not started in this programme |
 | 202 | 38 | General browser automation | Not started in this programme |
 | 203 | 36 | Operation of authenticated browser sessions | Not started in this programme |
@@ -1036,3 +1036,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 200 — 27 November 2026
 - Add explicit reviewed single-file multipart upload to exact public HTTPS endpoint, bounded allowed document/media extensions, exact source guard, separate filename/field, explicit disclosure approval and fixed POST with no credentials, redirect or retry. Record bounded HTTP response metadata only; remote success is not established and failures may have transmitted. Two fixtures cover exact payload, stale input, non-overwrite and refusal. Native public network and real browser upload outstanding. Next rank 200 / ID 33 automated online form completion. No installer.
+
+## Pass 201 — 27 November 2026
+- Add reviewed offline preparation of explicit literal values for exact static form input locators, names and allowed types. Refuse duplicate, disabled, credential, mismatched and nested form controls; report unmapped required controls and bounded URL-encoded preview. Guard historical inspection and spec; publish new JSON only. No live fill, network, submission or validity claim. Two fixture regressions. Next rank 201 / ID 37 browser developer tools integration. No installer.
