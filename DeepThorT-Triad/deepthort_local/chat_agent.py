@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import re
+from .reference_trust import suspicious
 
 MAX_PACKET = 3600
 ONLINE = re.compile(r'\b(?:look|search|research|check|compare|find|read|browse|fetch|retrieve|investigate|consult)(?:\s+\w+){0,5}\s+(?:online|(?:the )?(?:internet|web))\b', re.I)
@@ -77,10 +79,10 @@ def run_agent(client, council, *, session, original, packet, route, docs,
                     or sha(item['text']) != item['sha256']):
                 raise ValueError('Reference identity mismatch')
             body = excerpt(item, original, limit=650)
-            if not body.strip():
-                raise ValueError('No readable excerpt')
+            if not body.strip() or suspicious(body):
+                raise ValueError('No suitable screened excerpt')
             receipts.append((key, docs[key], item['sha256']))
-            references.append(key+' | '+docs[key]+'\n'+body)
+            references.append(json.dumps({'id':key,'url':docs[key],'excerpt':body},ensure_ascii=True))
         except (OSError, ValueError, KeyError) as error:
             failures.append(key+': '+type(error).__name__)
         check()

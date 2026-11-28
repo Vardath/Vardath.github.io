@@ -13,6 +13,7 @@ import sqlite3
 import time
 from html.parser import HTMLParser
 from pathlib import Path
+from .reference_trust import suspicious
 from urllib.request import Request,build_opener,HTTPRedirectHandler
 
 DOCS={
@@ -143,7 +144,11 @@ class ResearchStore:
 def excerpt(document,focus,limit=1350):
     text=document['text']
     words=set(re.findall(r'[a-zA-Z_][a-zA-Z_0-9]{3,}',focus.casefold()))
-    blocks=[text[i:i+limit] for i in range(0,len(text),limit)]
+    if type(limit) is not int or not 1<=limit<=4000:raise ValueError('Invalid excerpt budget')
+    blocks=[]
+    for i in range(0,len(text),limit):
+        # Include neighbouring characters in screening to catch boundary splits.
+        if not suspicious(text[max(0,i-400):i+limit+400]):blocks.append(text[i:i+limit])
     if not blocks:return ''
     return max(blocks,key=lambda x:sum(w in x.casefold() for w in words))
 
