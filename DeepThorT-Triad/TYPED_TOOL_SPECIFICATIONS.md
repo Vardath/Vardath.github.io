@@ -821,3 +821,7 @@ Generate connected level button. JSON: `{"title":"Crystal Grid","width":10,"heig
 ## Reviewed procedural region world (Pass 184)
 
 Generate region world button. JSON: `{"title":"Crystal World","columns":3,"rows":2,"seed":17,"region_width":8,"region_height":6,"cell_size":24,"wall_percent":25,"collectible_count":3,"extra_links":1}`. The 2–4 by 2–4 region grid has a seeded adjacent spanning tree plus 0 to (columns−1)*(rows−1) extra links. Each region includes a deterministic biome label, distinct seed and checked connected-level specification usable by Generate grid game if extracted. JSON is editable and verified; no integrated world travel or terrain rendering is implied.
+
+## Reviewed grid NPC behaviour (Pass 185)
+
+Generate NPC behaviour button. Input JSON has `level` (inline existing Generate grid game specification), `patrol` (2–16 distinct connected open cells), `detection_distance` (1–32 traversable grid steps), and `player_trace` (1–128 open grid cells or null). Outputs deterministic ZIP with `behaviour.json`, `npc_controller.py`, `trace.json` and instructions. Each tick patrols, pursues a nearby player without stepping onto the player, or returns to the next patrol waypoint. Movement is checked for bounds, obstacles and step length. Python controller is reusable; no Godot integration, line-of-sight or native gameplay acceptance claim.

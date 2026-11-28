@@ -190,3 +190,42 @@ class ApplicationWorkflowTests(unittest.TestCase):
             plan,_=review(root,'spec.json','world.json')
             self.assertEqual(execute(root,plan)['status'],'connected_world_generated')
             with self.assertRaises(ValueError):execute(root,plan)
+
+
+    def test_grid_npc_bundle_and_controller(self):
+        import io,json,zipfile
+        from deepthort_local.npc_behaviour import generate
+        level={'title':'NPC','width':5,'height':5,'cell_size':24,'start':[0,0],
+               'goal':[4,4],'walls':[[1,1]],'collectibles':[[3,3]]}
+        s={'level':level,'patrol':[[0,0],[4,0]],'detection_distance':3,
+           'player_trace':[None,[3,0],[3,0],None,None,None]}
+        raw,receipt=generate(s)
+        self.assertEqual(raw,generate(s)[0])
+        with zipfile.ZipFile(io.BytesIO(raw)) as z:
+            trace=json.loads(z.read('trace.json'))
+            ns={};exec(compile(z.read('npc_controller.py'),'npc_controller.py','exec'),ns)
+            controller=ns['Controller'](json.loads(z.read('behaviour.json')))
+            self.assertEqual(trace,[controller.step(p) for p in s['player_trace']])
+        self.assertEqual([row['mode'] for row in trace[:4]],['patrol','pursuit','pursuit','return'])
+        self.assertEqual(trace[2]['position'],[2,0])
+        self.assertTrue(receipt['movement_verified'])
+        self.assertFalse(receipt['native_playtest_verified'])
+
+    def test_grid_npc_review_guards(self):
+        import json,tempfile
+        from pathlib import Path
+        from deepthort_local.npc_behaviour import generate,review,execute
+        level={'title':'NPC','width':5,'height':5,'cell_size':24,'start':[0,0],
+               'goal':[4,4],'walls':[[1,1]],'collectibles':[[3,3]]}
+        s={'level':level,'patrol':[[0,0],[4,0]],'detection_distance':3,'player_trace':[None]}
+        with self.assertRaises(ValueError):generate(dict(s,patrol=[[0,0],[1,1]]))
+        with self.assertRaises(ValueError):generate(dict(s,player_trace=[[1,1]]))
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();src=root/'spec.json';src.write_text(json.dumps(s))
+            plan,_=review(root,'spec.json','npc.zip')
+            src.write_text(json.dumps(dict(s,detection_distance=2)))
+            with self.assertRaises(ValueError):execute(root,plan)
+            self.assertFalse((root/'npc.zip').exists())
+            plan,_=review(root,'spec.json','npc.zip')
+            self.assertEqual(execute(root,plan)['status'],'npc_behaviour_generated')
+            with self.assertRaises(ValueError):execute(root,plan)

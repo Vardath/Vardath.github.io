@@ -193,7 +193,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 181 | 257 | Game asset generation | Partial: reviewed explicit pixel-art sprite/tileset generation with transparent RGBA atlas, named frame rectangles, pivots, animation sequences and editable source archive. Pass 182 CI pending. Semantic/neural asset generation and native engine import outstanding. |
 | 182 | 258 | Level generation | Partial: reviewed seeded grid level generation, exact obstacle and collectible counts, connected walkable cells, minimum goal distance and compatible editable Godot game specification. Pass 183 CI pending. Other level types and native playtesting outstanding. |
 | 183 | 259 | Procedural world generation | Partial: reviewed seeded adjacent-region graph with exact extra links, deterministic biome labels and independent connected playable-level specifications, verified region/objective reachability. Pass 184 CI pending. Native world travel, terrain and engine integration outstanding. |
-| 184 | 260 | NPC behaviour generation | Existing partial; completion not started in this programme |
+| 184 | 260 | NPC behaviour generation | Partial: reviewed portable executable Python grid controller with patrol, path-distance pursuit and return, bounded fixture simulation and editable verified archive. Pass 185 CI pending. Native engine integration and richer NPC behaviour outstanding. |
 | 185 | 261 | Collision testing | Existing partial; completion not started in this programme |
 | 186 | 262 | Android game compilation | Existing partial; completion not started in this programme |
 | 187 | 55 | Container creation and management | Not started in this programme |
@@ -988,3 +988,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 184 — 27 November 2026
 - Add reviewed bounded procedural region world generation using the existing connected-level generator. Exact adjacent region spanning graph with optional additional links, deterministic region seeds, biome metadata and embedded editable level specifications. Verify graph connectivity and link counts, preserve original source, reject stale inputs/overwrite. Two regression cases. No native world travel, biome rendering or engine integration claim. Next rank 184 / ID 260 NPC behaviour generation. No installer.
+
+## Pass 185 — 27 November 2026
+- Add reviewed portable grid NPC behaviour generation with pathfinding, patrol, pursuit and return, verified bounded movement traces and deterministic ZIP containing actual reusable Python controller, editable specification and fixture. Preserve source and no overwrite. Two regression cases including execution of bundled controller. Native game engine integration, perception beyond path distance and richer decision-making outstanding. Next rank 185 / ID 261 collision testing. No installer.
