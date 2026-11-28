@@ -221,7 +221,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 209 | 237 | Background desktop execution | Partial: hardened existing separate desktop runner with exact named root/cleanup membership and linked-path refusal; reviewed queue-compatible launch and expected window observation receipt. Pass 210 CI pending. Native external background acceptance and broader operation outstanding. |
 | 210 | 4 | Live screen interpretation | Partial: approved bounded live primary-region samples and existing offline caption engine, exact sample identity and local evidence receipt. Pass 211 CI pending. Native live screen and semantic acceptance, ongoing interpretation outstanding. |
 | 211 | 60 | Game controller input simulation | Partial: host-generated native Godot synthetic joypad button and axis event fixture, action press/release oracle and capped execution. Pass 212 CI pending. Native engine acceptance, OS virtual controllers and external games outstanding. |
-| 212 | 58 | Visual gameplay testing | Not started in this programme |
+| 212 | 58 | Visual gameplay testing | Partial: native non-headless Godot generated grid fixture, before/after viewport PNGs, expected movement and pixel oracle, evidence ZIP. Pass 213 CI pending. Native GPU/display and external game acceptance outstanding. |
 | 213 | 59 | Autonomous game playing and testing | Not started in this programme |
 | 214 | 61 | Automated game balancing | Not started in this programme |
 | 215 | 57 | Unreal Engine integration | Not started in this programme |
@@ -1075,3 +1075,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 212 — 27 November 2026
 - Add reviewed Godot controller simulation for fixed joypad buttons and signed axis directions using Input.parse_input_event, InputMap and press/release checks in a host-generated headless fixture. Shared resource cap, exact runtime guard, ordered engine evidence and no external game or OS virtual driver. Source fixtures added; native controller fixture acceptance outstanding. Next rank 212 / ID 58 visual gameplay testing. No installer.
+
+## Pass 213 — 27 November 2026
+- Add reviewed actual non-headless rendered grid gameplay probe, synthetic in-engine keyboard movement, generated before/after viewport PNGs, independent state/pixel checks and verified evidence archive. Existing capped Godot runner, no global input or arbitrary external game. Pixel oracle fixture added; actual native GPU/display verification outstanding. Next rank 213 / ID 59 autonomous game playing and testing. No installer.
