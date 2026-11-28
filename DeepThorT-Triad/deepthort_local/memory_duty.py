@@ -306,3 +306,33 @@ def observe_memory_duties(job_db,*,clock=time.time):
             if len(result)>=4:break
         return {'available':True,'reports':result}
     except (OSError,ValueError,TypeError,KeyError,sqlite3.Error):return empty
+
+
+def inspection_records(path,project,limit=80):
+    """Bounded historical receipt metadata for the selected workspace only.
+
+    Does not rerank, refresh the index, expose unrelated text, or claim that
+    the receipt is still eligible for delivery. Relevance remains advisory.
+    """
+    if not project or project=='(general)':return []
+    limit=max(1,min(100,int(limit)))
+    result=[]
+    with closing(reader(path,timeout=.15)) as db:
+        rows=db.execute("""SELECT work_id,job_id,request_id,scope,focus,phase,outcome,findings,
+                         receipt_sha,completed FROM memory_duties_v47
+                         ORDER BY completed DESC,work_id LIMIT ?""",(MAX_REPORTS,))
+        for row in rows:
+            try:
+                scope=json.loads(row['scope'])
+                if scope.get('project')!=str(project):continue
+                findings=json.loads(row['findings'])
+                record={'work_id':row['work_id'],'scope':scope,'focus':row['focus'],'phase':row['phase'],
+                        'outcome':row['outcome'],'findings':findings}
+                if not isinstance(findings,list) or sha(canonical(record))!=row['receipt_sha']:continue
+                result.append({'work_id':row['work_id'],'job_id':row['job_id'],
+                    'request_id':row['request_id'],'focus':row['focus'],'phase':row['phase'],
+                    'outcome':row['outcome'],'finding_count':len(findings),'receipt_sha':row['receipt_sha'],
+                    'completed':row['completed'],'findings':findings})
+                if len(result)>=limit:break
+            except (ValueError,TypeError,AttributeError):continue
+    return result

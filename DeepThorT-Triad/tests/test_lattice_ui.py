@@ -2,7 +2,7 @@
 import tkinter as tk
 from tkinter import ttk
 import unittest
-from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows
+from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre
 
 
 class LatticeShelfTests(unittest.TestCase):
@@ -258,3 +258,18 @@ class LatticeShelfTests(unittest.TestCase):
         centre.job_table.selection_set('5')
         centre.render('other workspace',[],actions)
         self.assertEqual(centre.job_table.selection(),())
+
+
+    def test_memory_centre_preserves_scope_and_advisory_status(self):
+        centre=KnowledgeMemoryCentre(self.root,lambda:self.calls.append('refresh'),lambda:self.calls.append('library'))
+        sample={'thread_alive':True,'active':False,'pending':2,'cached_reports':1}
+        record={'work_id':'a','job_id':1,'request_id':2,'outcome':'findings','focus':'engine',
+                'finding_count':1,'receipt_sha':'abc','findings':[{'id':'N1'}]}
+        centre.render('workspace',[record],sample)
+        self.assertEqual(self.calls,[])
+        centre.table.selection_set('a')
+        centre.inspect()
+        self.assertIn('no authority',centre.detail.get('1.0','end'))
+        centre.render('other workspace',[],sample)
+        self.assertEqual(centre.table.get_children(),())
+        self.assertNotIn('N1',centre.detail.get('1.0','end'))

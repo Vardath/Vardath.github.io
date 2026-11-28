@@ -594,3 +594,63 @@ class ApprovalCentre(ttk.Frame):
         replace_readonly(self.job_detail,'Select a workspace record for historical evidence.')
         replace_readonly(self.action_detail,'Select a PC action to inspect its recorded approval and result.')
         self.notice.set(f'{project} · {len(jobs)} review/blocker rows · {len(actions)} recent PC action records')
+
+
+class KnowledgeMemoryCentre(ttk.Frame):
+    """Workspace-scoped historical recall inspection, not a new retrieval path."""
+    def __init__(self,parent,refresh,open_library):
+        super().__init__(parent)
+        self.notice=tk.StringVar(self,value='Open or refresh to inspect saved records.')
+        self.worker=tk.StringVar(self,value='No observer sample yet')
+        bar=ttk.Frame(self);bar.pack(fill='x',pady=5)
+        ttk.Button(bar,text='Refresh memory overview',command=refresh).pack(side='left',padx=3)
+        ttk.Button(bar,text='Project knowledge…',command=open_library).pack(side='left',padx=3)
+        ttk.Label(self,textvariable=self.notice,wraplength=620).pack(anchor='w',pady=5)
+        ttk.Label(self,textvariable=self.worker,style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=4)
+        ttk.Label(self,text='Independent recall remains required. Historical findings are advisory, not current proof or execution authority. JANUS and Sentinel receive eligible reports through existing review paths.',wraplength=620).pack(anchor='w',pady=4)
+        filterbar=ttk.Frame(self);filterbar.pack(fill='x',pady=3)
+        self.query=tk.StringVar(self)
+        ttk.Entry(filterbar,textvariable=self.query).pack(side='left',fill='x',expand=True)
+        ttk.Button(filterbar,text='Filter memory receipts',command=self.filter).pack(side='left',padx=4)
+        frame=ttk.Frame(self);frame.pack(fill='both',expand=True)
+        columns=[('job','Job',55),('request','Request',65),('outcome','Outcome',145),
+                 ('focus','Focus',240),('count','Findings',65)]
+        self.table=ttk.Treeview(frame,columns=[c[0] for c in columns],show='headings',selectmode='browse',height=7)
+        for key,label,width in columns:
+            self.table.heading(key,text=label);self.table.column(key,width=width,stretch=key=='focus')
+        source_scrollbars(frame,self.table)
+        ttk.Button(self,text='Inspect memory receipt',command=self.inspect).pack(anchor='w',pady=4)
+        details=ttk.Frame(self);details.pack(fill='both',expand=True)
+        self.detail=tk.Text(details,height=9,state='disabled',wrap='word',bg=PALETTE['input'],fg=PALETTE['text'])
+        scroll_text(details,self.detail)
+        self.records={}
+
+    def render(self,project,records,worker):
+        if getattr(self,'project',None)!=project:
+            selected=self.table.selection()
+            if selected:self.table.selection_remove(*selected)
+            self.query.set('')
+        self.project=project
+        self.records={r['work_id']:r for r in records}
+        self.notice.set(f'{project} · {len(records)} bounded historical recall receipts')
+        self.worker.set(f"Global observer: {'thread alive' if worker['thread_alive'] else 'not observed running'}"
+                        f" · active: {worker['active']} · pending: {worker['pending']}"
+                        f" · cached reports: {worker['cached_reports']}")
+        self.filter()
+        replace_readonly(self.detail,'Select a receipt. Its current delivery eligibility has not been revalidated here.')
+
+    def filter(self):
+        rows=[]
+        for ident,r in self.records.items():
+            values=(str(r['job_id']),str(r['request_id']),r['outcome'],r['focus'],str(r['finding_count']))
+            if matches_query(' '.join(values),self.query.get()):rows.append((ident,values))
+        sync_table(self.table,rows)
+
+    def inspect(self):
+        import json
+        selected=self.table.selection()
+        if not selected:return
+        row=self.records.get(selected[0])
+        if not row:return
+        replace_readonly(self.detail,'Historical receipt · no authority · current relevance not checked\n'+
+                         json.dumps(row,indent=2,ensure_ascii=False))

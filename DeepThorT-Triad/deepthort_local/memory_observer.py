@@ -54,6 +54,13 @@ class MemoryObserver:
         try:self.report(event,**kw)
         except Exception:pass
 
+    def inspection_snapshot(self):
+        """Read counts under the existing lock; no scan or foreground recall."""
+        with self._cv:
+            return {'thread_alive':bool(self._thread and self._thread.is_alive()),
+                    'closed':self._closed,'active':self._active is not None,
+                    'pending':len(self._pending),'cached_reports':len(self._results)}
+
     def start_duty(self,duty):
         """Independent initiative; scan and recall on the same worker, never the GUI."""
         with self._cv:

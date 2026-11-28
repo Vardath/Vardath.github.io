@@ -63,7 +63,7 @@ class DesktopHelpTests(unittest.TestCase):
             with self.subTest(button=name):
                 self.assertTrue(TOOLTIPS.get(name), f'No actual tooltip for {name}')
         self.assertGreaterEqual(len(self.app._tooltip_handles), len(buttons))
-        self.assertEqual(len(self.app.tabs.tabs()),10)
+        self.assertEqual(len(self.app.tabs.tabs()),11)
         self.assertTrue(self.app.bind_all('<F1>'))
         self.assertTrue(self.app.input.bind('<Enter>'))
 

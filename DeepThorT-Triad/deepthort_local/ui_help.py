@@ -9,6 +9,9 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    'Refresh memory overview': 'Read historical memory receipt metadata and observer counts without triggering recall.',
+    'Filter memory receipts': 'Filter existing workspace receipt records without changing the memory index.',
+    'Inspect memory receipt': 'Inspect a selected historical advisory receipt; not current relevance or approval.',
     'Refresh approvals': 'Read existing job and approved action records without creating any permissions.',
     'Existing permission controls': 'Navigate to the existing reviewed permission and process controls.',
     'Inspect selected record': 'Read the exact stored record and historical evidence without executing anything.',
@@ -150,6 +153,7 @@ TOOLTIPS = {
 }
 
 TABS = {
+    'Knowledge & Memory': 'Inspect independent recall records and open the existing project knowledge library.',
     'Approvals & PC Activity': 'Read outstanding workspace review states and recent recorded PC actions; no approval or execution occurs here.',
     'Command Centre': 'Review project priorities, recorded job states and live operative observations. Navigate to existing controls without granting new authority.',
     'Chats': 'Manage saved conversations, submit instructions, draft a plan and request a file revision.',
