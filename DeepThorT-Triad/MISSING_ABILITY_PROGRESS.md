@@ -283,7 +283,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 271 | 158 | Multi-view 3D reconstruction | Partial: calibrated sparse fusion of three to five rectified views, all-view mutual matching and depth/reprojection consensus, exact source verification and JSON cloud. Pass 272 CI pending; arbitrary camera pose recovery, dense mesh and real-photo acceptance outstanding. |
 | 272 | 196 | GPU-accelerated text inference | Partial: explicit reviewed one-shot OpenVINO GPU generation using existing local IR, bounded supervised process and receipt; Pass 273 CI pending. Actual hardware inference, utilisation, speedup, VRAM constraints and resident production routing outstanding. |
 | 273 | 198 | AI model format conversion | Partial: reviewed bidirectional bounded NPZ/SafeTensors weight conversion, exact tensor roundtrip and new outputs. Pass 274 CI pending; full model graph, tokenizer, large-checkpoint conversion and inference acceptance outstanding. |
-| 274 | 197 | AI model quantisation | Not started in this programme |
+| 274 | 197 | AI model quantisation | Partial: reviewed selected F16/F32 tensor symmetric INT8 weight bundle with explicit scales and independent reconstruction error checks. Pass 275 CI pending; runnable model graph, INT4, calibration and runtime/quality acceptance outstanding. |
 | 275 | 39 | Remote computer control | Not started in this programme |
 | 276 | 40 | Virtual computer environments | Not started in this programme |
 | 277 | 206 | Virtual machine isolation | Not started in this programme |
@@ -1283,3 +1283,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 274 — 28 November 2026
 - Rank 273 / ID 198: local bidirectional SafeTensors/NPZ numeric weight conversion, strict container/header/dtype/shape/offset and expanded-size checks, no pickle, source guards, exact tensor bytes verified and new non-overwriting output. Three regression tests registered in both CI jobs. Full graph and large checkpoint conversion, external-library interoperability and inference acceptance outstanding; no production model or resource policy changes.
+
+
+## Pass 275 — 28 November 2026
+- Rank 274 / ID 197: bounded signed INT8 quantisation of explicitly selected F16/F32 weights with per-tensor scales, rejection of nonfinite input and excessive error, independent stored-value reconstruction check, unchanged unselected tensors and verified ZIP output. Three regression tests registered in both CI jobs. Full model/runtime integration, INT4, calibration and inference quality remain outstanding. No existing model or resource-cap changes.
