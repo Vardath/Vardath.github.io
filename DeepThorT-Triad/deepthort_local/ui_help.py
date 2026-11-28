@@ -9,6 +9,10 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    'Refresh artifacts': 'Read the existing bounded workspace file snapshot; no new disk scan.',
+    'Production categories': 'Navigate to original production controls filtered by category; no tool runs.',
+    'Filter artifacts': 'Filter discovered workspace file formats without opening or executing files.',
+    'Inspect artifact metadata': 'Read the selected file metadata within the current inspection scope.',
     'Refresh memory overview': 'Read historical memory receipt metadata and observer counts without triggering recall.',
     'Filter memory receipts': 'Filter existing workspace receipt records without changing the memory index.',
     'Inspect memory receipt': 'Inspect a selected historical advisory receipt; not current relevance or approval.',
@@ -153,6 +157,7 @@ TOOLTIPS = {
 }
 
 TABS = {
+    'Studio': 'Navigate production categories and inspect bounded workspace artifact metadata without running files.',
     'Knowledge & Memory': 'Inspect independent recall records and open the existing project knowledge library.',
     'Approvals & PC Activity': 'Read outstanding workspace review states and recent recorded PC actions; no approval or execution occurs here.',
     'Command Centre': 'Review project priorities, recorded job states and live operative observations. Navigate to existing controls without granting new authority.',
