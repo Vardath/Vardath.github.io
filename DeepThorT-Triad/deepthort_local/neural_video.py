@@ -86,7 +86,7 @@ def review(root,source,output,exclude=()):
     return plan,dict(s,local_model_inventory=plan['models'],
         scope='Trusted local SD1.5 and separately provisioned AnimateDiff motion adapter. CPU-only short silent clip at 24 fps. No downloads, remote services, custom pipeline code or model replacement. Native performance and visual quality unverified.')
 
-def generate(s):
+def load_pipeline(*,transform=False):
     from deepthort_local.triad_job import verify_root_cap
     cap,available,total=verify_root_cap()
     if available<total//10+4*GIB or cap<5*GIB:
@@ -95,16 +95,27 @@ def generate(s):
         os.environ[key]='1'
     import torch
     from diffusers import AnimateDiffPipeline,MotionAdapter
+    if transform:
+        from diffusers import AnimateDiffVideoToVideoPipeline
+        pipeline_class=AnimateDiffVideoToVideoPipeline
+    else:pipeline_class=AnimateDiffPipeline
     torch.set_num_threads(1)
     adapter=MotionAdapter.from_pretrained(str(ROOT/'models'/'animatediff-motion-adapter'),
         local_files_only=True,use_safetensors=True,torch_dtype=torch.float32)
-    pipe=AnimateDiffPipeline.from_pretrained(str(ROOT/'models'/'stable-diffusion-v1-5'),
+    pipe=pipeline_class.from_pretrained(str(ROOT/'models'/'stable-diffusion-v1-5'),
         motion_adapter=adapter,local_files_only=True,use_safetensors=True,torch_dtype=torch.float32)
     pipe=pipe.to('cpu');pipe.enable_attention_slicing('max')
     pipe.enable_vae_slicing()
+    return torch,pipe
+
+def generate(s):
+    torch,pipe=load_pipeline()
     result=pipe(prompt=s['prompt'],negative_prompt=s['negative_prompt'],height=s['size'],width=s['size'],
         num_frames=s['frames'],num_inference_steps=s['steps'],
         generator=torch.Generator(device='cpu').manual_seed(s['seed']),output_type='pil')
+    return result_rgb(result,s)
+
+def result_rgb(result,s):
     if len(result.frames)!=1:raise ValueError('Expected one generated clip')
     frames=result.frames[0]
     if len(frames)!=s['frames']:raise ValueError('Generated frame count mismatch')
