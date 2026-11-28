@@ -1037,3 +1037,7 @@ REAPER audio conversion selects an exact existing project-relative PCM16 WAV (mo
 ## Reviewed album production (Pass 232)
 
 Produce album accepts album and artist (printable ASCII), 2–8 ordered tracks with audio (project-relative PCM WAV) and title, and shared mastering settings identical to the reviewed mastering tool except audio. Up to 30 seconds per track, matching channels/rate, total inputs up to 12 MiB. Output a new ZIP of numbered mastered WAVs with exact RIFF title/artist/album/track metadata, PLAYLIST.m3u8 and ALBUM.json with source/output hashes and mastering observations. Original tracks unchanged. No listening, LUFS, full-length release, rights or remote distribution claims.
+
+## Reviewed audio plugin source (Pass 233)
+
+Create audio plugin accepts `{"name":"JANUS Gain","gain_db":0,"balance":0,"ceiling":0.8}`. Produces an editable REAPER JSFX stereo gain/balance effect with explicit hard sample clipping, bounded sliders, source hash, manual installation notes and Python reference vectors in a new ZIP. No arbitrary code inputs, automatic installation or native compilation/host acceptance. Reference: https://www.reaper.fm/sdk/js/js.php and https://www.reaper.fm/sdk/js/vars.php.

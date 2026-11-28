@@ -875,6 +875,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(production_review_actions,text='Auto-balance mix…',command=lambda:self._review_typed_tool('automated_audio_mixing','.wav','Audio: reviewed automatic mix')).pack(side='left',padx=3)
         ttk.Button(production_review_actions,text='Master audio…',command=lambda:self._review_typed_tool('automated_mastering','.wav','Audio: reviewed mastering')).pack(side='left',padx=3)
         ttk.Button(production_review_actions,text='Produce album…',command=lambda:self._review_typed_tool('album_production','.zip','Audio: reviewed album production')).pack(side='left',padx=3)
+        plugin_actions=ttk.Frame(media_tab);plugin_actions.pack(fill='x',pady=2)
+        ttk.Button(plugin_actions,text='Create audio plugin…',command=lambda:self._review_typed_tool('audio_plugin','.zip','Audio: reviewed JSFX plugin')).pack(side='left',padx=3)
         texture_review_actions=ttk.Frame(media_tab);texture_review_actions.pack(fill='x',pady=2)
         ttk.Button(texture_review_actions,text='Generate normal map…',command=lambda:self._review_typed_tool('normal_map','.png','Texture: reviewed normal map')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Generate height map…',command=lambda:self._review_typed_tool('height_map','.png','Texture: reviewed height map')).pack(side='left',padx=3)
@@ -1873,6 +1875,7 @@ class DeepThorTDesktop(tk.Tk):
                  'automated_audio_mixing':('.wav','Audio: reviewed automatic mix'),
                  'automated_mastering':('.wav','Audio: reviewed mastering'),
                  'album_production':('.zip','Audio: reviewed album production'),
+                 'audio_plugin':('.zip','Audio: reviewed JSFX plugin'),
                  'audio_conversion':('.flac','Audio: reviewed conversion'),
                  'normal_map':('.png','Texture: reviewed normal map'),
                  'height_map':('.png','Texture: reviewed height map'),

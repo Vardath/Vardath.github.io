@@ -241,7 +241,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 229 | 183 | Social media publishing | Partial: reviewed single text post to mastodon.social, exact account/visibility verification, transient token, one POST and no retry after uncertainty. Pass 230 CI pending; live provider acceptance, other networks, media and scheduling outstanding. |
 | 230 | 138 | Digital audio workstation (DAW) operation | Partial: reviewed fixed installed REAPER single PCM16 WAV resampling via native batch converter, fresh config and capped child process, exact source/executable and output format/duration checks. Pass 231 CI pending; actual native engine, multitrack DAW control and listening acceptance outstanding. |
 | 231 | 304 | Album production automation | Partial extended: reviewed ordered 2–8 short PCM WAVs, shared mastering settings, verified per-track RIFF metadata, playlist and deterministic offline archive. Pass 232 CI pending; full songs, listening quality, artwork and distribution outstanding. |
-| 232 | 139 | Audio plugin development | Not started in this programme |
+| 232 | 139 | Audio plugin development | Partial: reviewed editable REAPER JSFX stereo gain/balance/hard sample-ceiling source, parameter validation, reference DSP vectors and hash-verified ZIP. Pass 233 CI pending; native compilation/host testing, other plugin formats and general DSP development outstanding. |
 | 233 | 105 | Image-to-motion-video generation | Not started in this programme |
 | 234 | 109 | Video background replacement | Not started in this programme |
 | 235 | 110 | Video style transfer | Not started in this programme |
@@ -1138,3 +1138,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 232 — 28 November 2026
 - Extend album production with reviewed exact existing tracks, shared mastering settings, ordered RIFF INFO metadata, playlist and hash manifest in a verified non-overwriting offline ZIP. Reuse current mastering and metadata adapters. Three regression fixtures on both hosts. Bounded short tracks; full albums, listening quality and distribution acceptance outstanding. Next rank 232 / ID 139 audio plugin development. No installer.
+
+## Pass 233 — 28 November 2026
+- Add reviewed editable REAPER JSFX gain/balance/hard sample-ceiling plugin source, fixed parameter controls, reference DSP vectors, exact output and verified offline ZIP. Three regression fixtures on both hosts. No automatic installation or native host test; broader plugin formats and arbitrary DSP remain outstanding. Next rank 233 / ID 105 image-to-motion-video generation. No installer.
