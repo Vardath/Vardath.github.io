@@ -103,7 +103,7 @@ ROOT = Path(__file__).resolve().parent
 STATE = ROOT / 'state'
 from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
-from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_project_rows, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows
+from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_project_rows, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = (PALETTE[k] for k in ('base','panel','input','text','muted','accent'))
 GREEN, YELLOW = PALETTE['success'], PALETTE['warning']
 MAX_INFERENCE_PROMPT = 7500  # current OpenVINO IR endpoint requires <=8000 / message
@@ -491,6 +491,7 @@ class DeepThorTDesktop(tk.Tk):
             self.tabs.add(frame,text=title)
         command_tab=ttk.Frame(self.tabs);self.tabs.add(command_tab,text='Command Centre')
         approval_tab=ttk.Frame(self.tabs);self.tabs.add(approval_tab,text='Approvals & PC Activity')
+        memory_tab=ttk.Frame(self.tabs);self.tabs.add(memory_tab,text='Knowledge & Memory')
         # CHAT: separate persisted sessions and a tall, scrollable prompt editor.
         chatbar=ttk.Frame(chat);chatbar.pack(fill='x',pady=(4,3))
         ttk.Button(chatbar,text='+ New chat',command=self._new_chat).pack(side='left')
@@ -562,6 +563,8 @@ class DeepThorTDesktop(tk.Tk):
         self.approval_centre=ApprovalCentre(approval_tab,self._refresh_approval_centre,self._inspect_approval_job,self._inspect_pc_action,
             [('Network permissions…',self._network_permissions_dialog),('Computer & Tools',lambda:self.tabs.select(6)),('Processes',lambda:self.tabs.select(4)),('Approved process controls',lambda:self.tabs.select(5))])
         self.approval_centre.pack(fill='both',expand=True)
+        self.knowledge_centre=KnowledgeMemoryCentre(memory_tab,self._refresh_knowledge_centre,self._open_project_knowledge)
+        self.knowledge_centre.pack(fill='both',expand=True)
         self.tabs.bind('<<NotebookTabChanged>>',self._command_tab_changed,add='+')
 
         # REAL PERSISTENT WORK QUEUE
@@ -3051,6 +3054,18 @@ class DeepThorTDesktop(tk.Tk):
         index=self.tabs.index('current')
         if index==8:self._refresh_command_centre()
         elif index==9:self._refresh_approval_centre()
+        elif index==10:self._refresh_knowledge_centre()
+
+    def _refresh_knowledge_centre(self):
+        import sqlite3
+        project=self._project_key()
+        try:
+            from deepthort_local.memory_duty import inspection_records
+            records=inspection_records(self.memory_duty.path,project)
+            self.knowledge_centre.render(project,records,self.memory_observer.inspection_snapshot())
+        except (OSError,ValueError,sqlite3.Error) as exc:
+            self.knowledge_centre.render(project,[],self.memory_observer.inspection_snapshot())
+            self.knowledge_centre.notice.set('Memory receipt snapshot unavailable: '+str(exc)[:180])
 
     def _refresh_approval_centre(self):
         import sqlite3
