@@ -2,7 +2,7 @@
 import tkinter as tk
 from tkinter import ttk
 import unittest
-from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows
+from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_job_rows
 
 
 class LatticeShelfTests(unittest.TestCase):
@@ -222,3 +222,22 @@ class LatticeShelfTests(unittest.TestCase):
                                   {'name':'Blender','found':False,'purpose':'Meshes'}],{'Godot':'Stale / changed'}))
         self.assertEqual(rows['Godot'][1:5],('Found','Games','C:/Godot','Stale / changed'))
         self.assertEqual(rows['Blender'][1:5],('Missing','Meshes','—','Not verified'))
+
+
+    def test_command_centre_snapshot_and_job_selection_are_inert(self):
+        centre=CommandCentre(self.root,lambda:self.calls.append('refresh'),
+                             self.calls.append,[],lambda:self.calls.append('queue'))
+        rows=command_job_rows([{'id':7,'state':'waiting_approval','mode':'build','target':'main.py','detail':'Review only'},
+                               {'id':8,'state':'complete','mode':'build','detail':'Saved'}])
+        centre.render('workspace',[],rows,{'waiting_approval':1,'complete':1})
+        self.assertEqual(self.calls,[])
+        centre.state.set('Waiting / blocked')
+        centre.filter_jobs()
+        self.assertEqual(centre.jobs.get_children(),('7',))
+        centre._open_selected()
+        self.assertEqual(self.calls,[])
+        centre.jobs.selection_set('7')
+        centre._open_selected()
+        self.assertEqual(self.calls,['7'])
+        centre.render('another workspace',[],rows,{'complete':1})
+        self.assertEqual(centre.jobs.selection(),())

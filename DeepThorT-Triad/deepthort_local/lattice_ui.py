@@ -203,8 +203,8 @@ class SearchPicker(tk.Toplevel):
 # Display groups only; never used for dispatch, cancellation or approval.
 STATUS_GROUPS = {
     'Active': {'queued','pending','running','approved','resuming','building','testing','repairing'},
-    'Waiting / blocked': {'waiting_approval','waiting_sources','waiting','blocked','paused','interrupted'},
-    'Completed / stopped': {'done','completed','succeeded','failed','cancelled','stopped'},
+    'Waiting / blocked': {'waiting_approval','waiting_sources','waiting','blocked','paused','interrupted','needs_input','waiting_verification','waiting_repair'},
+    'Completed / stopped': {'done','complete','completed','succeeded','failed','cancelled','stopped','responded'},
 }
 
 def filter_status_rows(rows, state, query):
@@ -438,3 +438,95 @@ def inventory_rows(tools,evidence):
     return [(str(tool['name']),(str(tool['name']),'Found' if tool.get('found') else 'Missing',
              str(tool.get('purpose') or ''),str(tool.get('location') or '—'),
              str(evidence.get(tool['name'],'Not verified')))) for tool in tools]
+
+
+def command_project_rows(groups,view):
+    return [(project,(str(i),project,'Held' if not view.allowed({'project':project}) else 'Eligible by priority',
+                      str(len(tasks)),str(sum(len(items) for items in tasks.values()))))
+            for i,(project,tasks) in enumerate(groups.items(),1)]
+
+
+def command_job_rows(jobs):
+    relevant={'queued','running','waiting_approval','needs_input','waiting_verification',
+              'waiting_repair','paused','complete','failed','cancelled'}
+    return [(str(j['id']),(str(j['id']),j['state'],str(j.get('mode','')),
+                           str(j.get('target') or ''),str(j.get('detail') or '')))
+            for j in jobs if j['state'] in relevant and
+            (j.get('mode') not in ('chat','plan','edit') or j['state']=='waiting_approval')]
+
+
+class CommandCentre(ttk.Frame):
+    """Read-only overview with navigation to existing reviewed operations."""
+    def __init__(self,parent,refresh,open_job,navigation,project_queues):
+        super().__init__(parent)
+        self.open_job=open_job
+        self.notice=tk.StringVar(self,value='Open this screen or refresh to read saved records.')
+        self.live_status=tk.StringVar(self,value='No live sample yet')
+        self.counts=tk.StringVar(self,value='')
+        header=ttk.Frame(self);header.pack(fill='x',pady=5)
+        ttk.Label(header,text='COMMAND CENTRE',style='Muted.TLabel').pack(side='left')
+        ttk.Button(header,text='Refresh overview',command=refresh).pack(side='right')
+        ttk.Label(self,textvariable=self.live_status,wraplength=620).pack(anchor='w',pady=3)
+        ttk.Label(self,textvariable=self.notice,style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=3)
+        links=ttk.Frame(self);links.pack(fill='x',pady=3)
+        action_menu(links,'Go to workspace',navigation).pack(side='left')
+        ttk.Button(links,text='Project queues…',command=project_queues).pack(side='left',padx=4)
+        panels=ttk.Notebook(self);panels.pack(fill='both',expand=True)
+        projects=ttk.Frame(panels);jobs=ttk.Frame(panels);workers=ttk.Frame(panels)
+        for page,title in ((projects,'Project priorities'),(jobs,'Workspace jobs'),(workers,'Live operatives')):
+            panels.add(page,text=title)
+        ttk.Label(projects,text='Bounded queue inventory; priority is not a guarantee of execution.',wraplength=620).pack(anchor='w',pady=4)
+        project_frame=ttk.Frame(projects);project_frame.pack(fill='both',expand=True)
+        self.projects=self._table(project_frame,[('priority','Order',55),('project','Workspace',275),
+                ('state','State',125),('tasks','Task chats',70),('records','Records',65)])
+        ttk.Label(jobs,textvariable=self.counts,wraplength=620).pack(anchor='w',pady=4)
+        bar=ttk.Frame(jobs);bar.pack(fill='x')
+        self.query=tk.StringVar(self);self.state=tk.StringVar(self,value='All states')
+        ttk.Combobox(bar,textvariable=self.state,state='readonly',width=18,
+            values=('All states','Active','Waiting / blocked','Completed / stopped')).pack(side='left')
+        ttk.Entry(bar,textvariable=self.query).pack(side='left',fill='x',expand=True,padx=4)
+        ttk.Button(bar,text='Filter jobs',command=self.filter_jobs).pack(side='left')
+        ttk.Button(jobs,text='Open selected job',command=self._open_selected).pack(anchor='w',pady=3)
+        job_frame=ttk.Frame(jobs);job_frame.pack(fill='both',expand=True)
+        self.jobs=self._table(job_frame,[('id','Job',50),('state','State',125),('mode','Type',80),
+                   ('target','Recorded target',160),('detail','Recorded evidence',250)])
+        self.jobs.bind('<Double-1>',lambda e:self._open_selected())
+        self.job_rows=[]
+        worker_frame=ttk.Frame(workers);worker_frame.pack(fill='both',expand=True)
+        self.workers=self._table(worker_frame,[('role','Operative',85),('responsibility','Responsibility',190),
+                    ('state','Observed state',175),('pid','PID',65)])
+        ttk.Label(workers,text='Actual model/creative-lane observations; no inferred assignment or completion.',wraplength=620).pack(anchor='w',pady=4)
+
+    def _table(self,parent,columns):
+        tree=ttk.Treeview(parent,columns=[c[0] for c in columns],show='headings',selectmode='browse')
+        for key,label,width in columns:
+            tree.heading(key,text=label);tree.column(key,width=width,stretch=key in ('project','detail','responsibility'))
+        source_scrollbars(parent,tree)
+        return tree
+
+    def render(self,project,projects,jobs,counts):
+        if getattr(self,'project',None)!=project:
+            selected=self.jobs.selection()
+            if selected:self.jobs.selection_remove(*selected)
+            self.query.set('');self.state.set('All states')
+        self.project=project;self.job_rows=jobs
+        self.notice.set('Workspace: '+project+' · saved-record snapshot')
+        self.counts.set('Stored state counts: '+(', '.join(f'{k}: {v}' for k,v in sorted(counts.items())) or 'none')+
+                        ' · recent bounded job list')
+        sync_table(self.projects,projects)
+        self.filter_jobs()
+
+    def filter_jobs(self):
+        state=self.state.get();group=STATUS_GROUPS.get(state)
+        rows=[(ident,values) for ident,values in self.job_rows if
+              (state=='All states' or values[1] in (group or {state})) and
+              matches_query(' '.join(values),self.query.get())]
+        sync_table(self.jobs,rows)
+
+    def _open_selected(self):
+        selected=self.jobs.selection()
+        if selected:self.open_job(selected[0])
+
+    def live(self,status,workers,samples):
+        self.live_status.set(status+f' · {samples} measured PID samples')
+        sync_table(self.workers,workers)

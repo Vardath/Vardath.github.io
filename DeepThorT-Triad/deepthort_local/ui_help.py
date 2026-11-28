@@ -9,6 +9,9 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    'Refresh overview': 'Read saved project queue and workspace job metadata without approving or executing anything.',
+    'Go to workspace': 'Navigate to an existing workspace screen.',
+    'Open selected job': 'Inspect an exact selected job from the current workspace; never approves or executes it.',
     'Filter tools': 'Filter existing computer scan results without scanning, installing or granting permission.',
     'Discover & learn': 'Investigate or explicitly enrol tools and review learned procedures.',
     'Design & share': 'Review local workflows and portable skills or procedures.',
@@ -144,6 +147,7 @@ TOOLTIPS = {
 }
 
 TABS = {
+    'Command Centre': 'Review project priorities, recorded job states and live operative observations. Navigate to existing controls without granting new authority.',
     'Chats': 'Manage saved conversations, submit instructions, draft a plan and request a file revision.',
     'Work queue': 'Inspect approved task dependencies, real tests/repairs, source revisions and blockers. Explicit rollback quarantines new files and invalidates old approvals.',
     'File review': 'Inspect proposed file contents and differences before accepting a write.',
