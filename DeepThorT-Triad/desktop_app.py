@@ -3185,6 +3185,12 @@ class DeepThorTDesktop(tk.Tk):
             network='Unavailable — inspect existing network restrictions'
         self.settings_centre.render(settings_policy_rows(self._project_policy,self._autonomy_policy,network),
                                    self.model_status.get(),self._project_key())
+        from deepthort_local.readiness_inspection import model_records,integration_records
+        pid=self.node.pid if self.node and self.node.poll() is None else None
+        self.settings_centre.render_readiness(
+            model_records(ROOT,self.last_server_health,pid,bool(self._creative_lane_thread and self._creative_lane_thread.is_alive())),
+            integration_records(self._project_key(),STATE/'janus.sqlite3',
+                                getattr(self,'_github_oauth_session',None),getattr(self,'_web_research_active',False)))
 
     def _studio_tool_category(self,category):
         self.media_shelf.category.set(category)

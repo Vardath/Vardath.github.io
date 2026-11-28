@@ -375,3 +375,27 @@ class IntegratedInterfaceTests(unittest.TestCase):
             app.project=None
             app._refresh_knowledge_centre()
             self.assertFalse(app.knowledge_centre.library_table.get_children())
+
+
+    def test_readiness_snapshot_is_local_and_distinguishes_stale_health(self):
+        from deepthort_local.readiness_inspection import model_records,integration_records
+        from types import SimpleNamespace
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve()
+            records=dict(model_records(root,{'pid':8,'models':{'janus':{'resident':True,'pid':12}}},9))
+            self.assertEqual(records['janus'][3],'Not observed')
+            self.assertIn('Missing',records['janus'][2])
+            self.assertEqual(len(records),7)
+            class Session:
+                expires=200
+                def token(self):raise AssertionError('No token access')
+            rows=dict(integration_records('(general)',root/'missing.sqlite3',Session(),now=100))
+            self.assertIn('Unexpired',rows['github'][1])
+            self.assertIn('not revalidated',rows['github'][1])
+            self.assertFalse((root/'missing.sqlite3').exists())
+            app=self.app
+            with patch.object(app,'_start_ai') as start,patch.object(app,'_start_command') as run:
+                app._refresh_settings_centre()
+                start.assert_not_called();run.assert_not_called()
+            self.assertEqual(len(app.settings_centre.model_table.get_children()),7)
+            self.assertTrue(app.settings_centre.integration_table.exists('github'))
