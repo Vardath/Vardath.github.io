@@ -5,6 +5,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .web_search import token_checked
 from . import credential_vault as vault
 from .github_pull_request import checked as pr_checked,create as pr_create
@@ -24,7 +25,7 @@ def show(app,mode='pull_request'):
                 and not app.janus.status().get('paused'))
     if not permitted():
         messagebox.showwarning('GitHub paused','Resume work and stop gaming before a network request.',parent=app);return
-    dialog=tk.Toplevel(app);dialog.title(('Inspect GitHub ' if review else 'Create GitHub ')+noun);dialog.geometry('800x620');dialog.transient(app)
+    dialog=tk.Toplevel(app);dialog.title(('Inspect GitHub ' if review else 'Create GitHub ')+noun);fit_dialog(dialog,800,620);dialog.transient(app)
     ttk.Label(dialog,text=('Enter exact PR number and head/base SHAs. Three read-only requests, up to 30 changed files, no review posting or merge. Token requires pull-request read permission.' if review else 'Enter existing lightweight tag and exact commit SHA, title and notes. Token requires contents write permission. No publication or asset upload.' if release else 'Enter exact existing remote branches, title and body. No push, merge or local file upload. A GitHub token with pull-request write permission is required.'),wraplength=760).pack(anchor='w',padx=8,pady=6)
     variables={}
     for key,label in ([('repository','Owner/repository'),('number','PR number'),('head_sha','Head SHA'),('base_sha','Base SHA')] if review else [('repository','Owner/repository'),('tag','Existing tag'),('commit','Commit SHA'),('title','Title')] if release else [('repository','Owner/repository'),('head','Head branch'),('base','Base branch'),('title','Title')]):

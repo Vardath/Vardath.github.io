@@ -4,6 +4,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog,filedialog
+from .lattice_ui import fit_dialog
 from .local_speech import WindowsSpeech
 from .multilingual_speech import review,render
 from .source_security import exclusions
@@ -32,7 +33,7 @@ def show(app,mode='multilingual'):
         return (not app._quitting and app.project==project and app.current_chat==chat and not app.queue_paused
                 and not app._explicit_model_stop and not app.disk_gate.gaming() and not app.janus.status().get('paused'))
     if not project or not permitted():return
-    dlg=tk.Toplevel(app);dlg.title(title);dlg.geometry('820x620');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title(title);fit_dialog(dlg,820,620);dlg.transient(app)
     state=tk.StringVar(value='Discovering installed offline Windows voices…')
     ttk.Label(dlg,textvariable=state,wraplength=780).pack(fill='x',padx=8,pady=8)
     view=tk.Text(dlg,wrap='word');view.pack(fill='both',expand=True,padx=8,pady=8)

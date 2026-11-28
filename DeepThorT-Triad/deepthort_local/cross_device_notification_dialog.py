@@ -3,6 +3,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .cross_device_notification import destination,selected_state,watch,TERMINAL,message
 
 def show(app):
@@ -29,7 +30,7 @@ def show(app):
     texts='\n'.join(message(kind,s) for s in sorted(TERMINAL[kind]))
     if not messagebox.askyesno('Approve one cross-device notification','Watch local '+kind+' #'+str(ident)+' (currently '+initial+') for up to five minutes. On terminal state, send one matching generic message to https://ntfy.sh/ on topic '+topic+'.\n\n'+texts+'\n\nNo ID, project name, path, prompt or answer is transmitted. ntfy may cache messages. Topic privacy and receiving-device subscription are your responsibility. Provider acceptance does not prove device delivery.',parent=app):return
     if not permitted():return
-    dlg=tk.Toplevel(app);dlg.title('Cross-device notification watch');dlg.geometry('680x210');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('Cross-device notification watch');fit_dialog(dlg,680,210);dlg.transient(app)
     state=tk.StringVar(value='Watching selected status for up to five minutes…')
     ttk.Label(dlg,textvariable=state,wraplength=640).pack(fill='x',padx=12,pady=12)
     cancel=threading.Event();messages=queue.Queue(maxsize=1);closing=False;app._web_research_active=True

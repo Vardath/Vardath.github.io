@@ -3,6 +3,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .microphone_input import capture,save,MAX_SECONDS
 
 def show(app):
@@ -16,7 +17,7 @@ def show(app):
     if seconds is None:return
     if not messagebox.askyesno('Approve microphone recording','Record the default microphone for '+str(seconds)+' seconds, locally in memory? Recording starts immediately; no network, playback, transcription or saving until separately approved.',parent=app):return
     if not permitted():return
-    dlg=tk.Toplevel(app);dlg.title('Microphone recording');dlg.geometry('640x220');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('Microphone recording');fit_dialog(dlg,640,220);dlg.transient(app)
     state=tk.StringVar(value='RECORDING — microphone active for up to '+str(seconds)+' seconds.')
     ttk.Label(dlg,textvariable=state,wraplength=600).pack(fill='x',padx=12,pady=12)
     cancel=threading.Event();messages=queue.Queue(maxsize=1);closing=False;app._web_research_active=True

@@ -4,6 +4,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
+from .lattice_ui import fit_dialog
 from .gmail_organise import checked,preview,apply
 
 def show(app):
@@ -21,7 +22,7 @@ def show(app):
     if not messagebox.askyesno('Approve read-only preview','Search and inspect these bounded messages? No writes yet.\n\n'+json.dumps(s,indent=2),parent=app):return
     token=simpledialog.askstring('Google access token','Transient OAuth token with gmail.modify scope (not stored):',show='*',parent=app)
     if not token or not permitted():return
-    dlg=tk.Toplevel(app);dlg.title('Review inbox organisation');dlg.geometry('800x650');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('Review inbox organisation');fit_dialog(dlg,800,650);dlg.transient(app)
     status=tk.StringVar(value='Retrieving read-only preview…')
     ttk.Label(dlg,textvariable=status,wraplength=760).pack(fill='x',padx=8,pady=8)
     view=tk.Text(dlg,wrap='word',state='disabled');view.pack(fill='both',expand=True,padx=8,pady=8)

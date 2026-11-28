@@ -4,6 +4,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog,filedialog
+from .lattice_ui import fit_dialog
 from .reaper_batch import review,render,EXE
 from .source_security import exclusions
 
@@ -24,7 +25,7 @@ def show(app):
     if target is None:return
     try:plan=review(project,source,output,exe,target,app.inspection_exclusions.paths(project))
     except Exception:messagebox.showwarning('REAPER batch unavailable','Check trusted installed REAPER, PCM16 WAV, different target rate and new output path.',parent=app);return
-    dlg=tk.Toplevel(app);dlg.title('Review REAPER audio conversion');dlg.geometry('820x620');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('Review REAPER audio conversion');fit_dialog(dlg,820,620);dlg.transient(app)
     state=tk.StringVar(value='Review exact WAV, installed REAPER and fixed sample-rate conversion. Creates one new verified WAV. Sound quality is not verified. Resource cap is not a security sandbox.')
     ttk.Label(dlg,textvariable=state,wraplength=780).pack(fill='x',padx=8,pady=8)
     view=tk.Text(dlg,wrap='word');view.pack(fill='both',expand=True,padx=8,pady=8)

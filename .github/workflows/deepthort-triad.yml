@@ -25,6 +25,8 @@ jobs:
       - run: python -m compileall -q .
       - name: Nordic lattice tool shelf GUI regression
         run: xvfb-run -a python -m unittest discover -s tests -p test_lattice_ui.py -v
+      - name: Integrated desktop interface acceptance
+        run: xvfb-run -a -s '-screen 0 1600x1000x24' python -m unittest discover -s tests -p test_interface_acceptance.py -v
       - run: python -m unittest discover -s tests -p test_triad_resident.py -v
       - run: python -m unittest discover -s tests -p test_triad_collaboration.py -v
       - run: python -m unittest discover -s tests -p test_triad_inference_recovery.py -v
@@ -353,6 +355,8 @@ jobs:
           python-version: '3.11'
       - name: Nordic lattice tool shelf GUI regression
         run: python -m unittest discover -s tests -p test_lattice_ui.py -v
+      - name: Integrated desktop interface acceptance
+        run: python -m unittest discover -s tests -p test_interface_acceptance.py -v
       - name: Windows file identity and portable procedures
         run: |
           python -m unittest discover -s tests -p test_action_guards_v16_1.py -v

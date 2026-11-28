@@ -4,6 +4,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog,filedialog
+from .lattice_ui import fit_dialog
 from .blender_mesh_workflow import review,render,EXE
 from .source_security import exclusions
 
@@ -22,7 +23,7 @@ def show(app):
     if not output:return
     try:plan=review(project,source,output,exe,app.inspection_exclusions.paths(project))
     except Exception:messagebox.showwarning('Blender workflow unavailable','Check trusted installed Blender, plain OBJ geometry and new .blend path.',parent=app);return
-    dlg=tk.Toplevel(app);dlg.title('Review Blender mesh creation');dlg.geometry('820x620');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('Review Blender mesh creation');fit_dialog(dlg,820,620);dlg.transient(app)
     state=tk.StringVar(value='Review exact geometry, installed Blender and fixed bundled script. Creates one editable mesh and reopens the staged file. Visual quality is not verified. Resource cap is not a security sandbox.')
     ttk.Label(dlg,textvariable=state,wraplength=780).pack(fill='x',padx=8,pady=8)
     view=tk.Text(dlg,wrap='word');view.pack(fill='both',expand=True,padx=8,pady=8)

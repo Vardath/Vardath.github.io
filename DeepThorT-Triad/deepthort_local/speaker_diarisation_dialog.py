@@ -4,6 +4,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog,filedialog
+from .lattice_ui import fit_dialog
 from .speaker_diarisation import review,render,EXE
 from .source_security import exclusions
 
@@ -28,7 +29,7 @@ def show(app):
     if not output:return
     try:plan=review(project,source,output,exe,seg,emb,expected,app.inspection_exclusions.paths(project))
     except Exception:messagebox.showwarning('Diarisation unavailable','Check trusted installed engine/model files, WAV format and new output path.',parent=app);return
-    dlg=tk.Toplevel(app);dlg.title('Review anonymous speaker diarisation');dlg.geometry('820x620');dlg.transient(app)
+    dlg=tk.Toplevel(app);dlg.title('Review anonymous speaker diarisation');fit_dialog(dlg,820,620);dlg.transient(app)
     state=tk.StringVar(value='Review exact recording, installed tool/models and output. Labels are recording-local, not identities. This reports speaker intervals, not isolated audio. No model download. Resource cap is not a security sandbox.')
     ttk.Label(dlg,textvariable=state,wraplength=780).pack(fill='x',padx=8,pady=8)
     view=tk.Text(dlg,wrap='word');view.pack(fill='both',expand=True,padx=8,pady=8)
