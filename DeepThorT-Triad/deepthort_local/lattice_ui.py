@@ -6,10 +6,12 @@ import tkinter as tk
 from tkinter import ttk
 
 PALETTE = {
-    'base': '#10181b', 'panel': '#19262a', 'input': '#131f23',
-    'text': '#ecf2f0', 'muted': '#b0c4c6', 'accent': '#8edbd0',
-    'control': '#25383c', 'hover': '#354e52', 'selected': '#355956',
+    'base': '#0b1026', 'panel': '#151d3b', 'input': '#101831',
+    'text': '#eef2ff', 'muted': '#a8b4d4', 'accent': '#a5b4fc',
+    'control': '#232e55', 'hover': '#364479', 'selected': '#424e91',
     'success': '#9ad9b6', 'warning': '#f1c184',
+    'primary': '#4f46c8', 'primary_hover': '#5d55db', 'border': '#56658e',
+    'lattice': '#7184b6', 'message': '#1c2748',
 }
 
 
@@ -25,6 +27,174 @@ def dragon_mark(parent):
     canvas.create_line(13, 12, 9, 7, 19, 9, fill=PALETTE['accent'], width=1)
     canvas.create_oval(21, 14, 23, 16, fill=PALETTE['warning'], outline='')
     return canvas
+
+
+def lattice_border(parent, vertical=False):
+    """Thin interwoven framing; resize-driven drawing, no timer or input binding."""
+    canvas=tk.Canvas(parent,width=12 if vertical else 1,height=1 if vertical else 12,
+                     bg=PALETTE['base'],highlightthickness=0,takefocus=False)
+    def paint(event):
+        canvas.delete('lattice')
+        length=event.height if vertical else event.width
+        def points(values):
+            return [v for x,y in values for v in ((y,x) if vertical else (x,y))]
+        for x in range(0,length+24,24):
+            for offsets in (((0,6),(12,1),(24,6),(12,11),(0,6)),
+                            ((0,2),(12,9),(24,2))):
+                canvas.create_line(*points([(x+dx,dy) for dx,dy in offsets]),
+                                   fill=PALETTE['lattice'],width=1,tags='lattice')
+    canvas.bind('<Configure>',paint)
+    return canvas
+
+
+def indigo_buttons(root,style):
+    """Native ttk buttons with rounded, stateful image borders; preserve commands/focus."""
+    from math import sqrt
+    root._indigo_button_images=[]
+    def rounded(color,edge):
+        image=tk.PhotoImage(master=root,width=24,height=24)
+        for y in range(24):
+            dy=max(0,7-y,y-16)
+            inset=7-int(sqrt(max(0,49-dy*dy)))
+            image.put(edge,to=(inset,y,24-inset,y+1))
+            if 0<y<23 and 2*inset<22:
+                image.put(color,to=(inset+1,y,23-inset,y+1))
+        root._indigo_button_images.append(image)
+        return image
+    for prefix,normal,hover,anchor in (
+        ('Indigo',PALETTE['control'],PALETTE['hover'],'center'),
+        ('Primary',PALETTE['primary'],PALETTE['primary_hover'],'center'),
+        ('Rail',PALETTE['panel'],PALETTE['hover'],'w'),
+        ('ActiveRail',PALETTE['selected'],PALETTE['hover'],'w')):
+        ordinary=rounded(normal,PALETTE['border'])
+        active=rounded(hover,PALETTE['accent'])
+        focused=rounded(normal,PALETTE['accent'])
+        disabled=rounded(PALETTE['input'],PALETTE['panel'])
+        element=prefix+'.button'
+        style.element_create(element,'image',ordinary,('disabled',disabled),
+                             ('pressed',active),('active',active),('focus',focused),
+                             border=8,sticky='nsew')
+        name='TButton' if prefix=='Indigo' else prefix+'.TButton'
+        style.layout(name,[(element,{'sticky':'nswe','children':[
+            ('Button.padding',{'sticky':'nswe','children':[
+                ('Button.label',{'sticky':'nswe'})]})]})])
+        style.configure(name,padding=(10,5),anchor=anchor,foreground=PALETTE['text'],
+                        font=('Segoe UI',10))
+        style.map(name,foreground=[('disabled',PALETTE['muted'])])
+
+
+def wrap_action_row(frame):
+    """Reflow an existing packed row without replacing widgets or callbacks."""
+    children=[w for w in frame.winfo_children() if w.winfo_manager()=='pack']
+    if not children:return
+    for w in children:w.pack_forget()
+    state={'width':None}
+    def layout(event=None):
+        width=event.width if event is not None else frame.winfo_width()
+        if width<2:width=560
+        if state['width']==width:return
+        state['width']=width
+        row=col=used=0
+        for w in children:
+            need=w.winfo_reqwidth()+6
+            if col and used+need>width:row+=1;col=used=0
+            w.grid(row=row,column=col,sticky='w',padx=3,pady=2)
+            col+=1;used+=need
+    frame.bind('<Configure>',layout,add='+')
+    layout()
+
+
+class VerticalWorkspaceNavigator(ttk.Frame):
+    """Always-visible labelled rail; original notebook indices and events remain authoritative."""
+    def __init__(self,parent,notebook):
+        super().__init__(parent,style='Panel.TFrame')
+        self.notebook=notebook
+        self.names=tuple(notebook.tab(t,'text') for t in notebook.tabs())
+        self.current=tk.StringVar(self,value=self.names[0])
+        tk.Label(self,text='WORKSPACES',font=('Segoe UI Semibold',10),
+                 bg=PALETTE['panel'],fg=PALETTE['muted']).pack(anchor='w',padx=10,pady=(9,5))
+        labels=('Chats','Work queue','File review','Tasks','Processes','Operatives',
+                'Computer & Tools','Files & Images','Command Centre','Approvals',
+                'Knowledge & Memory','Studio','Settings')
+        order=(0,8,1,3,9,2,5,4,11,7,6,10,12)
+        self.choice=ttk.Combobox(self,textvariable=self.current,state='readonly',
+                                 values=self.names,width=14,takefocus=True)
+        self.choice.pack(fill='x',padx=7,pady=(2,5))
+        viewport=ttk.Frame(self,style='Panel.TFrame')
+        viewport.pack(fill='both',expand=True)
+        canvas=tk.Canvas(viewport,bg=PALETTE['panel'],highlightthickness=0,width=140,height=120)
+        scrollbar=ttk.Scrollbar(viewport,orient='vertical',command=canvas.yview)
+        scrollbar.pack(side='right',fill='y')
+        canvas.pack(side='left',fill='both',expand=True)
+        canvas.configure(yscrollcommand=scrollbar.set)
+        listing=ttk.Frame(canvas,style='Panel.TFrame')
+        window=canvas.create_window(0,0,anchor='nw',window=listing)
+        canvas.bind('<Configure>',lambda e:canvas.itemconfigure(window,width=e.width))
+        listing.bind('<Configure>',lambda e:canvas.configure(scrollregion=canvas.bbox('all')))
+        self.rail_canvas=canvas
+        self.buttons={}
+        def wheel(e):
+            canvas.yview_scroll(-1 if e.delta>0 or getattr(e,'num',0)==4 else 1,'units')
+            return 'break'
+        for i in order:
+            b=ttk.Button(listing,text=labels[i],style='Rail.TButton',
+                         command=lambda i=i:notebook.select(i))
+            b.pack(fill='x',padx=5,pady=1)
+            for event in ('<MouseWheel>','<Button-4>','<Button-5>'):b.bind(event,wheel,add='+')
+            self.buttons[i]=b
+        for event in ('<MouseWheel>','<Button-4>','<Button-5>'):canvas.bind(event,wheel,add='+')
+        self.choice.bind('<<ComboboxSelected>>',lambda event:self.select())
+        self.choice.bind('<Return>',lambda event:(self.select(),'break')[1])
+        notebook.bind('<<NotebookTabChanged>>',self.sync,add='+')
+        self.sync()
+    def select(self):
+        if self.current.get() in self.names:self.notebook.select(self.names.index(self.current.get()))
+    def sync(self,event=None):
+        index=self.notebook.index('current')
+        self.current.set(self.names[index])
+        for i,button in self.buttons.items():
+            button.configure(style='ActiveRail.TButton' if i==index else 'Rail.TButton')
+    def focus_choice(self):self.choice.focus_set()
+
+
+def reflow_button_rows(parent):
+    """Wrap packed action-only rows, keeping mixed entry/table and tool-shelf layout intact."""
+    for frame in parent.winfo_children():
+        if isinstance(frame,ToolShelf):continue
+        if isinstance(frame,ttk.Frame):
+            children=frame.winfo_children()
+            if (children and all(isinstance(w,(ttk.Button,ttk.Menubutton,ttk.Checkbutton))
+                                 and w.winfo_manager()=='pack' for w in children)
+                    and all(w.pack_info().get('side') in ('left','right') for w in children)):
+                wrap_action_row(frame)
+            else:reflow_button_rows(frame)
+        elif isinstance(frame,(ttk.Notebook,ttk.Panedwindow)):
+            reflow_button_rows(frame)
+
+
+class OperativeCards(ttk.Frame):
+    """Cards present the same observed rows as the existing table, not inferred activity."""
+    def __init__(self,parent):
+        super().__init__(parent)
+        self.cards={}
+        for i,(key,label,responsibility) in enumerate(OPERATIVES):
+            frame=ttk.Frame(self,style='Panel.TFrame',padding=(10,6))
+            frame.grid(row=i//2,column=i%2,sticky='nsew',padx=3,pady=3)
+            tk.Label(frame,text=label,font=('Segoe UI Semibold',12),bg=PALETTE['panel'],
+                     fg=PALETTE['accent']).pack(anchor='w')
+            tk.Label(frame,text=responsibility,bg=PALETTE['panel'],fg=PALETTE['muted'],
+                     wraplength=210,justify='left').pack(anchor='w')
+            state=tk.StringVar(frame,value='Not observed')
+            tk.Label(frame,textvariable=state,bg=PALETTE['panel'],fg=PALETTE['text'],
+                     wraplength=210,justify='left').pack(anchor='w')
+            self.cards[key]=state
+        self.columnconfigure(0,weight=1);self.columnconfigure(1,weight=1)
+    def render(self,rows):
+        for key,values in rows:
+            if key in self.cards:
+                value=str(values[2])
+                if values[3]!='—':value+=' · PID '+str(values[3])
+                if self.cards[key].get()!=value:self.cards[key].set(value)
 
 
 class ToolShelf(ttk.Frame):
@@ -481,8 +651,10 @@ class CommandCentre(ttk.Frame):
         ttk.Label(self,textvariable=self.live_status,wraplength=620).pack(anchor='w',pady=3)
         ttk.Label(self,textvariable=self.notice,style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=3)
         links=ttk.Frame(self);links.pack(fill='x',pady=3)
-        action_menu(links,'Go to workspace',navigation).pack(side='left')
+        for label,callback in navigation:
+            ttk.Button(links,text=label,command=callback).pack(side='left')
         ttk.Button(links,text='Project queues…',command=project_queues).pack(side='left',padx=4)
+        wrap_action_row(links)
         panels=ttk.Notebook(self);panels.pack(fill='both',expand=True)
         projects=ttk.Frame(panels);jobs=ttk.Frame(panels);workers=ttk.Frame(panels)
         for page,title in ((projects,'Project priorities'),(jobs,'Workspace jobs'),(workers,'Live operatives')):
@@ -566,7 +738,8 @@ class ApprovalCentre(ttk.Frame):
         ttk.Button(header,text='Refresh approvals',command=refresh).pack(side='right')
         ttk.Label(self,textvariable=self.notice,wraplength=620).pack(anchor='w',pady=4)
         bar=ttk.Frame(self);bar.pack(fill='x',pady=3)
-        action_menu(bar,'Existing permission controls',links).pack(side='left')
+        for label,callback in links:ttk.Button(bar,text=label,command=callback).pack(side='left')
+        wrap_action_row(bar)
         tabs=ttk.Notebook(self);tabs.pack(fill='both',expand=True)
         self.panels=tabs
         jobs=ttk.Frame(tabs);actions=ttk.Frame(tabs)
@@ -584,28 +757,32 @@ class ApprovalCentre(ttk.Frame):
             'Stored grant scope, not a current authorization. Per-action checks still apply.',
             [('id','Job',55),('status','Record status',160),('files','Files',55),
              ('expiry','Expiry',200)],inspect_grant or (lambda ident:'Unavailable'))
+        self.display_splits={'approval_jobs':self.job_table.master.master,
+                             'approval_actions':self.action_table.master.master,
+                             'approval_grants':self.grant_table.master.master}
         if open_job:
             for page,table in ((jobs,self.job_table),(grants,self.grant_table)):
                 def navigate(table=table):
                     selected=table.selection()
                     if selected:open_job(selected[0])
-                ttk.Button(page,text='Open exact job in Work queue',command=navigate).pack(anchor='w',pady=2,before=table.master)
+                ttk.Button(page,text='Open exact job in Work queue',command=navigate).pack(anchor='w',pady=2,before=table.master.master)
 
     def _pane(self,parent,caption,columns,inspect):
         ttk.Label(parent,text=caption,wraplength=620).pack(anchor='w',pady=4)
-        frame=ttk.Frame(parent);frame.pack(fill='both',expand=True)
+        split=ttk.Panedwindow(parent,orient='vertical');split.pack(fill='both',expand=True)
+        frame=ttk.Frame(split);split.add(frame,weight=2)
         tree=ttk.Treeview(frame,columns=[c[0] for c in columns],show='headings',selectmode='browse',height=7)
         for key,label,width in columns:
             tree.heading(key,text=label);tree.column(key,width=width,stretch=key in ('detail','label'))
         source_scrollbars(frame,tree)
-        detail_frame=ttk.Frame(parent);detail_frame.pack(fill='x',pady=4)
+        detail_frame=ttk.Frame(split);split.add(detail_frame,weight=1)
         detail=tk.Text(detail_frame,height=9,state='disabled',wrap='word',
                        bg=PALETTE['input'],fg=PALETTE['text'])
         scroll_text(detail_frame,detail)
         def show():
             selected=tree.selection()
             if selected:replace_readonly(detail,inspect(selected[0]))
-        ttk.Button(parent,text='Inspect selected record',command=show).pack(anchor='w',before=frame)
+        ttk.Button(parent,text='Inspect selected record',command=show).pack(anchor='w',before=split)
         return tree,detail
 
     def render(self,project,jobs,actions,grants=()):
@@ -642,14 +819,15 @@ class KnowledgeMemoryCentre(ttk.Frame):
         self.query=tk.StringVar(self)
         ttk.Entry(filterbar,textvariable=self.query).pack(side='left',fill='x',expand=True)
         ttk.Button(filterbar,text='Filter memory receipts',command=self.filter).pack(side='left',padx=4)
-        frame=ttk.Frame(receipts);frame.pack(fill='both',expand=True)
+        receipt_split=ttk.Panedwindow(receipts,orient='vertical');receipt_split.pack(fill='both',expand=True)
+        frame=ttk.Frame(receipt_split);receipt_split.add(frame,weight=2)
         columns=[('job','Job',55),('request','Request',65),('outcome','Outcome',145),
                  ('focus','Focus',240),('count','Findings',65)]
         self.table=ttk.Treeview(frame,columns=[c[0] for c in columns],show='headings',selectmode='browse',height=7)
         for key,label,width in columns:
             self.table.heading(key,text=label);self.table.column(key,width=width,stretch=key=='focus')
         source_scrollbars(frame,self.table)
-        receipt_links=ttk.Frame(receipts);receipt_links.pack(fill='x',pady=4,before=frame)
+        receipt_links=ttk.Frame(receipts);receipt_links.pack(fill='x',pady=4,before=receipt_split)
         ttk.Button(receipt_links,text='Inspect memory receipt',command=self.inspect).pack(side='left')
         def navigate_receipt(callback):
             selected=self.table.selection()
@@ -658,7 +836,7 @@ class KnowledgeMemoryCentre(ttk.Frame):
         if open_job:actions.append(('Open recorded job',lambda:navigate_receipt(open_job)))
         if open_chat:actions.append(('Open recorded conversation',lambda:navigate_receipt(open_chat)))
         if actions:action_menu(receipt_links,'Related records',actions).pack(side='left',padx=4)
-        details=ttk.Frame(receipts);details.pack(fill='both',expand=True)
+        details=ttk.Frame(receipt_split);receipt_split.add(details,weight=1)
         self.detail=tk.Text(details,height=9,state='disabled',wrap='word',bg=PALETTE['input'],fg=PALETTE['text'])
         scroll_text(details,self.detail)
         self.records={}
@@ -674,15 +852,17 @@ class KnowledgeMemoryCentre(ttk.Frame):
             selected=self.library_table.selection()
             if selected and open_document:open_document(selected[0])
         if open_document:ttk.Button(links,text='Open in project library',command=navigate).pack(side='left',padx=4)
-        library_frame=ttk.Frame(library);library_frame.pack(fill='both',expand=True)
+        library_split=ttk.Panedwindow(library,orient='vertical');library_split.pack(fill='both',expand=True)
+        library_frame=ttk.Frame(library_split);library_split.add(library_frame,weight=2)
         self.library_table=ttk.Treeview(library_frame,columns=('path','origin','fragments','locator'),show='headings',selectmode='browse')
         for key,label,width in (('path','Document path',280),('origin','Origin',80),('fragments','Fragments',75),('locator','Locator',100)):
             self.library_table.heading(key,text=label);self.library_table.column(key,width=width,stretch=key=='path')
         source_scrollbars(library_frame,self.library_table)
-        detail_frame=ttk.Frame(library);detail_frame.pack(fill='both',expand=True)
+        detail_frame=ttk.Frame(library_split);library_split.add(detail_frame,weight=1)
         self.library_detail=tk.Text(detail_frame,height=6,state='disabled',wrap='word',bg=PALETTE['input'],fg=PALETTE['text'])
         scroll_text(detail_frame,self.library_detail)
         self.library_records={}
+        self.display_splits={'memory_receipts':receipt_split,'memory_library':library_split}
 
     def render_library(self,project,records):
         if getattr(self,'library_project',None)!=project:
@@ -770,7 +950,10 @@ class StudioCentre(ttk.Frame):
         ttk.Label(bar,text='STUDIO',style='Muted.TLabel').pack(side='left')
         ttk.Button(bar,text='Refresh artifacts',command=refresh).pack(side='right')
         ttk.Label(self,text='Production tools · choose a category to navigate, not execute.',wraplength=620).pack(anchor='w',pady=4)
-        action_menu(self,'Production categories',[(cat,lambda c=cat:tools(c)) for cat in STUDIO_CATEGORIES]).pack(anchor='w',pady=4)
+        categories=ttk.Frame(self);categories.pack(fill='x',pady=3)
+        for cat in STUDIO_CATEGORIES:
+            ttk.Button(categories,text=cat,command=lambda c=cat:tools(c)).pack(side='left')
+        wrap_action_row(categories)
         ttk.Label(self,textvariable=self.notice,wraplength=620).pack(anchor='w',pady=4)
         ttk.Label(self,text='Bounded workspace file snapshot only; large or excluded files may not appear. Presence is not proof of production or testing.',style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=4)
         filters=ttk.Frame(self);filters.pack(fill='x')
@@ -779,12 +962,13 @@ class StudioCentre(ttk.Frame):
         self.query=tk.StringVar(self)
         ttk.Entry(filters,textvariable=self.query).pack(side='left',fill='x',expand=True,padx=4)
         ttk.Button(filters,text='Filter artifacts',command=self.filter).pack(side='left')
-        frame=ttk.Frame(self);frame.pack(fill='both',expand=True)
+        split=ttk.Panedwindow(self,orient='vertical');split.pack(fill='both',expand=True)
+        frame=ttk.Frame(split);split.add(frame,weight=2)
         self.table=ttk.Treeview(frame,columns=('category','path','extension'),show='headings',selectmode='browse')
         for key,label,width in (('category','Type',95),('path','Workspace path',390),('extension','Format',70)):
             self.table.heading(key,text=label);self.table.column(key,width=width,stretch=key=='path')
         source_scrollbars(frame,self.table)
-        controls=ttk.Frame(self);controls.pack(fill='x',pady=4,before=frame)
+        controls=ttk.Frame(self);controls.pack(fill='x',pady=4,before=split)
         ttk.Button(controls,text='Inspect artifact / preview',command=self.inspect).pack(side='left')
         if browse:ttk.Button(controls,text='Choose media…',command=browse).pack(side='left',padx=4)
         if preview:
@@ -792,10 +976,11 @@ class StudioCentre(ttk.Frame):
                 selected=self.table.selection()
                 if selected:preview(selected[0])
             ttk.Button(controls,text='Media preview / playback…',command=open_preview).pack(side='left',padx=4)
-        detail_frame=ttk.Frame(self);detail_frame.pack(fill='x')
+        detail_frame=ttk.Frame(split);split.add(detail_frame,weight=1)
         self.detail=tk.Text(detail_frame,height=5,state='disabled',wrap='word',bg=PALETTE['input'],fg=PALETTE['text'])
         scroll_text(detail_frame,self.detail)
         self.rows=[]
+        self.display_splits={'studio':split}
 
     def render(self,project,rows):
         if getattr(self,'project',None)!=project:
@@ -838,12 +1023,14 @@ class SettingsCentre(ttk.Frame):
         ttk.Button(bar,text='Refresh settings overview',command=refresh).pack(side='right')
         ttk.Label(self,textvariable=self.notice,wraplength=620).pack(anchor='w',pady=4)
         ttk.Label(self,text='Existing controls own all setting changes. Opening this overview does not grant permission, connect accounts or expose credentials.',wraplength=620).pack(anchor='w',pady=4)
-        menus=ttk.Frame(self);menus.pack(fill='x',pady=4)
-        for i,(label,actions) in enumerate(groups):
-            menu=action_menu(menus,label,actions)
-            menu.grid(row=i//2,column=i%2,sticky='ew',padx=3,pady=3)
-        menus.columnconfigure(0,weight=1);menus.columnconfigure(1,weight=1)
         tabs=ttk.Notebook(self);tabs.pack(fill='both',expand=True)
+        for label,actions in groups:
+            page=ttk.Frame(tabs);tabs.add(page,text=label)
+            shelf=ToolShelf(page);shelf.pack(fill='both',expand=True)
+            for title,callback in actions:
+                row=ttk.Frame(shelf.rows);row.pack(fill='x',pady=2)
+                ttk.Button(row,text=title,command=callback).pack(side='left',padx=4)
+            shelf.index_buttons()
         frame=ttk.Frame(tabs);models=ttk.Frame(tabs);integrations=ttk.Frame(tabs)
         tabs.add(frame,text='Saved policies');tabs.add(models,text='Model readiness');tabs.add(integrations,text='Integration readiness')
         self.table=ttk.Treeview(frame,columns=('policy','value','boundary'),show='headings')

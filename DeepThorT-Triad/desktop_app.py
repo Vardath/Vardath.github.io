@@ -103,7 +103,7 @@ ROOT = Path(__file__).resolve().parent
 STATE = ROOT / 'state'
 from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
-from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_project_rows, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre, StudioCentre, studio_artifact_rows, SettingsCentre, settings_policy_rows, WorkspaceNavigator, fit_dialog
+from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_project_rows, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre, StudioCentre, studio_artifact_rows, SettingsCentre, settings_policy_rows, WorkspaceNavigator, fit_dialog, VerticalWorkspaceNavigator, lattice_border, indigo_buttons, wrap_action_row, reflow_button_rows, OperativeCards
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = (PALETTE[k] for k in ('base','panel','input','text','muted','accent'))
 GREEN, YELLOW = PALETTE['success'], PALETTE['warning']
 MAX_INFERENCE_PROMPT = 7500  # current OpenVINO IR endpoint requires <=8000 / message
@@ -424,6 +424,27 @@ class DeepThorTDesktop(tk.Tk):
         s.configure('TEntry',fieldbackground=INPUT,foreground=TEXT,insertcolor=TEXT)
         s.configure('TScrollbar',background=PALETTE['control'],troughcolor=BG)
         s.map('TButton',foreground=[('disabled',MUTED)])
+        s.configure('Shell.TNotebook',background=BG,borderwidth=0)
+        s.layout('Shell.TNotebook.Tab',[])
+        s.configure('TPanedwindow',background=PALETTE['border'],sashwidth=6)
+        s.configure('Treeview',rowheight=30)
+        s.configure('Treeview.Heading',font=('Segoe UI Semibold',10),padding=(7,5))
+        indigo_buttons(self,s)
+        # Shared defaults for native Tk dialogs/widgets; explicit review styles still win.
+        for pattern,value in (('*Toplevel.background',BG),('*Frame.background',BG),
+                ('*Label.background',BG),('*Label.foreground',TEXT),
+                ('*Text.background',INPUT),('*Text.foreground',TEXT),
+                ('*Text.insertBackground',TEXT),('*Text.selectBackground',PALETTE['selected']),
+                ('*Entry.background',INPUT),('*Entry.foreground',TEXT),
+                ('*Entry.insertBackground',TEXT),('*Listbox.background',INPUT),
+                ('*Listbox.foreground',TEXT),('*Listbox.selectBackground',PALETTE['selected'])):
+            self.option_add(pattern,value,40)
+        s.configure('TLabelframe',background=PANEL,bordercolor=PALETTE['border'])
+        s.configure('TLabelframe.Label',background=PANEL,foreground=TEXT,font=('Segoe UI Semibold',10))
+        s.configure('TMenubutton',background=PALETTE['control'],foreground=TEXT,padding=(8,5))
+        s.configure('TCombobox',background=PALETTE['control'],fieldbackground=INPUT,
+                    foreground=TEXT,arrowcolor=TEXT)
+        s.map('TCombobox',fieldbackground=[('readonly',INPUT)],foreground=[('readonly',TEXT)])
 
     def _text(self,parent,*,readonly=False,height=10,font=('Consolas',10),wrap='word'):
         w=tk.Text(parent,height=height,wrap=wrap,font=font,bg=INPUT,fg=TEXT,
@@ -433,27 +454,55 @@ class DeepThorTDesktop(tk.Tk):
         return w
 
     def _make_ui(self):
-        top=ttk.Frame(self);top.pack(fill='x',padx=14,pady=(11,7))
-        dragon_mark(top).pack(side='left',padx=(0,6))
-        tk.Label(top,text='DeepThorTriad',font=('Segoe UI Semibold',17),bg=BG,fg=ACCENT).pack(side='left')
-        # Keep routine start/stop visible; advanced operations remain individually selectable.
-        action_menu(top,'System & maintenance',[
-            ('Install AI',self._install_ai),('Self-diagnose',self._diagnose),
-            ('Run latest test',self._run_latest_test),('Export diagnostics',self._export_diagnostics),
-            ('Review self-update…',self._review_self_installation),
-            ('Rollback self-update…',self._review_self_rollback),
-        ]).pack(side='right',padx=4)
-        ttk.Button(top,text='User guide',command=self._open_user_guide).pack(side='right',padx=4)
-        ttk.Button(top,text='Stop AI',command=self._stop_ai).pack(side='right',padx=4)
-        ttk.Button(top,text='Start AI',command=self._start_ai).pack(side='right',padx=4)
+        top=ttk.Frame(self);top.pack(fill='x',padx=18,pady=(8,2))
+        dragon_mark(top).pack(side='left',padx=(0,8))
+        tk.Label(top,text='DeepThorTriad',font=('Segoe UI Semibold',20),bg=BG,fg=TEXT).pack(side='left')
         self.model_status=tk.StringVar(value='AI: not started')
         ttk.Label(top,textvariable=self.model_status,style='Muted.TLabel').pack(side='right',padx=8)
-
-        body=ttk.Panedwindow(self,orient='horizontal');body.pack(fill='both',expand=True,padx=12,pady=(0,9))
+        commands=ttk.Frame(self);commands.pack(fill='x',padx=15,pady=(0,3))
+        for label,callback in (('Install AI',self._install_ai),('Start AI',self._start_ai),
+                ('Stop AI',self._stop_ai),('Run latest test',self._run_latest_test),
+                ('Export diagnostics',self._export_diagnostics),('Self-diagnose',self._diagnose),
+                ('User guide',self._open_user_guide)):
+            ttk.Button(commands,text=label,command=callback,
+                       style='Primary.TButton' if label=='Start AI' else 'TButton').pack(side='left')
+        action_menu(commands,'Updates',[
+            ('Review self-update…',self._review_self_installation),
+            ('Rollback self-update…',self._review_self_rollback),
+        ]).pack(side='left')
+        wrap_action_row(commands)
+        lattice_border(self).pack(fill='x',padx=12)
+        shell=ttk.Frame(self);shell.pack(fill='both',expand=True,padx=8,pady=2)
+        lattice_border(shell,vertical=True).pack(side='left',fill='y')
+        lattice_border(shell,vertical=True).pack(side='right',fill='y')
+        body=ttk.Panedwindow(shell,orient='horizontal');body.pack(fill='both',expand=True,padx=3)
+        lattice_border(self).pack(side='bottom',fill='x',padx=12,pady=(0,4),before=shell)
         self.workspace_split=body
-        left=ttk.Frame(body,style='Panel.TFrame',width=290);right=ttk.Frame(body)
-        body.add(left,weight=1);body.add(right,weight=5)
-        tk.Label(left,text='PROJECT WORKSPACE',font=('Segoe UI Semibold',11),fg=TEXT,bg=PANEL).pack(anchor='w',padx=11,pady=(15,5))
+        rail=ttk.Frame(body,style='Panel.TFrame',width=178)
+        right=ttk.Frame(body)
+        left=ttk.Frame(body,style='Panel.TFrame',width=250)
+        self.project_inspector=left
+        self._inspector_width=250
+        self.inspector_visible=tk.BooleanVar(value=True)
+        body.add(rail,weight=0);body.add(right,weight=1);body.add(left,weight=0)
+        inspector_tabs=ttk.Notebook(left);inspector_tabs.pack(fill='both',expand=True)
+        self.inspector_tabs=inspector_tabs
+        left=ttk.Frame(inspector_tabs,style='Panel.TFrame')
+        context=ttk.Frame(inspector_tabs,style='Panel.TFrame')
+        inspector_tabs.add(left,text='Project');inspector_tabs.add(context,text='Context')
+        self.inspector_context=tk.StringVar(value='No job or file selected.')
+        tk.Label(context,text='CURRENT CONTEXT',font=('Segoe UI Semibold',11),
+                 bg=PANEL,fg=TEXT).pack(anchor='w',padx=10,pady=(12,5))
+        ttk.Button(context,text='Open work queue',command=lambda:self.tabs.select(1)).pack(fill='x',padx=8,pady=3)
+        ttk.Button(context,text='Open file review',command=lambda:self.tabs.select(2)).pack(fill='x',padx=8,pady=3)
+        ttk.Button(context,text='Open approvals',command=lambda:self.tabs.select(9)).pack(fill='x',padx=8,pady=3)
+        ttk.Button(context,text='Open processes',command=lambda:self.tabs.select(4)).pack(fill='x',padx=8,pady=3)
+        context_frame=ttk.Frame(context);context_frame.pack(fill='both',expand=True,padx=8,pady=6)
+        self.context_text=self._text(context_frame,readonly=True,height=10,font=('Segoe UI',10))
+        scroll_text(context_frame,self.context_text)
+        self.inspector_context.trace_add('write',lambda *_:self._show(self.context_text,self.inspector_context.get()))
+        self._show(self.context_text,self.inspector_context.get())
+        tk.Label(left,text='PROJECT / CONTEXT',font=('Segoe UI Semibold',11),fg=TEXT,bg=PANEL).pack(anchor='w',padx=11,pady=(15,5))
         ttk.Button(left,text='Choose folder…',command=self._choose_project).pack(fill='x',padx=10,pady=3)
         ttk.Button(left,text='Recent projects…',command=self._pick_recent_project).pack(fill='x',padx=10,pady=3)
         self.project_label=tk.Label(left,text='General chat — no project selected',font=('Segoe UI',9),
@@ -487,10 +536,11 @@ class DeepThorTDesktop(tk.Tk):
         # On macOS Ctrl+click is the conventional secondary click.
         if sys.platform == 'darwin':
             self.files.bind('<Control-Button-1>',self._project_file_context_menu)
-        ttk.Button(left,text='Propose new project file…',command=self._new_file).pack(fill='x',padx=10,pady=(0,11))
+        ttk.Button(left,text='Propose new project file…',command=self._new_file).pack(side='bottom',fill='x',padx=10,pady=(0,6),before=file_view)
+        ttk.Button(left,text='Open file review',command=lambda:self.tabs.select(2)).pack(side='bottom',fill='x',padx=10,pady=(0,4),before=file_view)
 
         navigation=ttk.Frame(right);navigation.pack(fill='x',pady=(0,4))
-        self.tabs=ttk.Notebook(right);self.tabs.pack(fill='both',expand=True)
+        self.tabs=ttk.Notebook(right,style='Shell.TNotebook');self.tabs.pack(fill='both',expand=True)
         chat,queue_tab,files_tab,tasks_tab,process_tab,janus_tab,hardware_tab,media_tab=(ttk.Frame(self.tabs) for _ in range(8))
         for frame,title in ((chat,'Chats'),(queue_tab,'Work queue'),(files_tab,'File review'),
                 (tasks_tab,'Tasks'),(process_tab,'Processes'),(janus_tab,'JANUS & Sentinel'),(hardware_tab,'Computer & Tools'),(media_tab,'Files & Images')):
@@ -500,14 +550,19 @@ class DeepThorTDesktop(tk.Tk):
         memory_tab=ttk.Frame(self.tabs);self.tabs.add(memory_tab,text='Knowledge & Memory')
         studio_tab=ttk.Frame(self.tabs);self.tabs.add(studio_tab,text='Studio')
         settings_tab=ttk.Frame(self.tabs);self.tabs.add(settings_tab,text='Settings & Integrations')
-        self.workspace_navigator=WorkspaceNavigator(navigation,self.tabs)
-        self.workspace_navigator.pack(fill='x')
+        self.workspace_navigator=VerticalWorkspaceNavigator(rail,self.tabs)
+        self.workspace_navigator.pack(fill='both',expand=True)
+        ttk.Label(navigation,textvariable=self.workspace_navigator.current,
+                  font=('Segoe UI Semibold',16)).pack(side='left',padx=8,pady=4)
+        ttk.Checkbutton(navigation,text='Project inspector',variable=self.inspector_visible,
+                        command=self._toggle_inspector).pack(side='right',padx=7)
+        ttk.Button(navigation,text='Settings',command=lambda:self.tabs.select(12)).pack(side='right')
         self.bind('<Control-F6>',lambda event:(self.workspace_navigator.focus_choice(),'break')[1],add='+')
         # CHAT: separate persisted sessions and a tall, scrollable prompt editor.
         chatbar=ttk.Frame(chat);chatbar.pack(fill='x',pady=(4,3))
         ttk.Button(chatbar,text='+ New chat',command=self._new_chat).pack(side='left')
+        ttk.Button(chatbar,text='Find conversation…',command=self._pick_conversation).pack(side='left')
         action_menu(chatbar,'Conversation',[
-            ('Find conversation…',self._pick_conversation),
             ('Rename chat',self._rename_chat),('Close chat',self._close_chat),
             ('Reopen archived chat…',self._open_archived_chat_menu),
         ]).pack(side='left',padx=4)
@@ -516,6 +571,7 @@ class DeepThorTDesktop(tk.Tk):
         self.attach_file=tk.BooleanVar(value=False)
         tk.Checkbutton(chatbar,text='Include selected project file',variable=self.attach_file,
                        bg=BG,fg=TEXT,selectcolor=PANEL,activebackground=BG,activeforeground=TEXT).pack(side='right')
+        wrap_action_row(chatbar)
         self.attachment_status=tk.StringVar(value='No attachments; text, DOCX, PDF and images supported')
         ttk.Label(chat,textvariable=self.attachment_status,style='Muted.TLabel').pack(anchor='w',pady=2)
         # Reuse the original v10.9 connection/status line. A separate packed
@@ -533,6 +589,8 @@ class DeepThorTDesktop(tk.Tk):
         scroll_text(history_frame,self.chat_history)
         self.chat_history.tag_configure('user',spacing1=6)
         self.chat_history.tag_configure('assistant',spacing1=6)
+        self.chat_history.tag_configure('user_body',background=PALETTE['message'],lmargin1=12,lmargin2=12,rmargin=15,spacing1=4,spacing3=5)
+        self.chat_history.tag_configure('assistant_body',lmargin1=12,lmargin2=12,rmargin=15,spacing1=4,spacing3=5)
         for role,color in (('user',ACCENT),('assistant',GREEN),('warning',YELLOW)):
             self.chat_history.tag_configure(role,foreground=color)
         composer_head=ttk.Frame(chat);composer_head.pack(fill='x',pady=(5,2))
@@ -554,19 +612,25 @@ class DeepThorTDesktop(tk.Tk):
         self.chat_actions=ca
         chat_controls=ttk.Frame(ca);chat_controls.pack(fill='x',pady=(0,3))
         plan_controls=ttk.Frame(ca);plan_controls.pack(fill='x')
-        ttk.Button(chat_controls,text='Send message',command=self._send).pack(side='left')
+        ttk.Button(chat_controls,text='Send message',command=self._send,style='Primary.TButton').pack(side='left')
         ttk.Button(chat_controls,text='Stop reply',command=self._stop_chat_reply).pack(side='left',padx=4)
         ttk.Button(chat_controls,text='Instruction to JANUS',command=self._queue_janus_instruction).pack(side='left',padx=4)
-        action_menu(chat_controls,'Conversation tools',[
-            ('Retry failed reply',self._retry_conversation),('Diagnose AI',self._diagnose),
-            ('Personal preferences…',self._edit_personal_preferences),
-            ('Amend specification',self._amend_project_specification),
+        ttk.Button(chat_controls,text='Retry failed reply',command=self._retry_conversation).pack(side='left')
+        action_menu(chat_controls,'More',[
+            ('Diagnose AI',self._diagnose),('Personal preferences…',self._edit_personal_preferences),
         ]).pack(side='left',padx=4)
         ttk.Button(plan_controls,text='Draft project plan',command=lambda:self._queue_input('plan')).pack(side='left')
         ttk.Button(plan_controls,text='Queue project task',command=self._queue_independent_prompt).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Approve plan & queue',command=self._approve_conversation_plan).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Revise existing file',command=lambda:self._queue_input('edit')).pack(side='left',padx=5)
-        ttk.Label(ca,text='Conversation first. Only your approved plan becomes an executable job.',style='Muted.TLabel').pack(anchor='w',pady=2)
+        ttk.Button(plan_controls,text='Amend specification',command=self._amend_project_specification).pack(side='left')
+        wrap_action_row(chat_controls)
+        wrap_action_row(plan_controls)
+        ttk.Label(ca,text='Only approved plans become executable jobs.',style='Muted.TLabel').pack(anchor='w',pady=2)
+        # Reserve lower controls before expanding transcript; never let a tall history hide actions.
+        ca.pack_configure(side='bottom',before=chatbar,pady=3)
+        composer_frame.pack_configure(side='bottom',before=chatbar)
+        composer_head.pack_configure(side='bottom',before=chatbar)
 
         self.command_centre=CommandCentre(command_tab,self._refresh_command_centre,self._open_command_job,
             [(label,lambda index=index:self.tabs.select(index)) for label,index in (('Chats',0),('Work queue',1),('File review',2),('Processes',4),('Operatives',5),('Tools',6))],self._show_queued_prompts)
@@ -664,13 +728,14 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(restorebar,text='Stop quiet test',command=self._stop_quiet_scene).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Stop isolated GUI test',command=self._stop_isolated_gui).pack(side='left',padx=3)
         ttk.Label(queue_tab,text='Selected project jobs · graph and verification evidence below. Isolated GUI tests are not visual proof or VM isolation.',style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=(0,4))
-        job_view=ttk.Frame(queue_tab);job_view.pack(fill='both',expand=True)
+        job_split=ttk.Panedwindow(queue_tab,orient='vertical');job_split.pack(fill='both',expand=True)
+        job_view=ttk.Frame(job_split);job_split.add(job_view,weight=2)
         self.job_tree=ttk.Treeview(job_view,columns=('state','mode','chat','detail'),show='headings',height=12)
         for column,title,width in (('state','Status',125),('mode','Type',70),('chat','Chat',120),('detail','Work and progress',540)):
             self.job_tree.heading(column,text=title);self.job_tree.column(column,width=width,stretch=column=='detail')
         scroll_text(job_view,self.job_tree)
         self.job_tree.bind('<<TreeviewSelect>>',self._job_selected)
-        job_detail_frame=ttk.Frame(queue_tab);job_detail_frame.pack(fill='x',pady=(6,0))
+        job_detail_frame=ttk.Frame(job_split);job_split.add(job_detail_frame,weight=1)
         self.job_details=self._text(job_detail_frame,readonly=True,height=10)
         scroll_text(job_detail_frame,self.job_details)
         ttk.Button(queue_tab,text='Open selected task journal folder',command=self._open_task_journal).pack(anchor='w')
@@ -688,12 +753,18 @@ class DeepThorTDesktop(tk.Tk):
         self.file_review_status=tk.StringVar(value='Read-only inspection · no write authorized')
         ttk.Label(files_tab,textvariable=self.file_review_status,style='Muted.TLabel',wraplength=610).pack(anchor='w',pady=(0,5))
         nav_frame=ttk.Frame(files_tab);nav_frame.pack(fill='x')
-        file_frame=ttk.Frame(files_tab);file_frame.pack(fill='both',expand=True)
+        file_split=ttk.Panedwindow(files_tab,orient='vertical');file_split.pack(fill='both',expand=True)
+        file_frame=ttk.Frame(file_split);file_split.add(file_frame,weight=3)
         self.file_preview=self._text(file_frame,height=25,wrap='none')
         source_scrollbars(file_frame,self.file_preview)
         self.file_navigator=SourceNavigator(nav_frame,self.file_preview)
         self.file_navigator.pack(fill='x',pady=(0,4))
-        self._preview('Select a file on the left.\n\nRequest a proposed edit in Chats.\n'
+        file_context=ttk.Frame(file_split,style='Panel.TFrame');file_split.add(file_context,weight=1)
+        ttk.Label(file_context,text='SOURCE & REVIEW CONTEXT',style='Muted.TLabel').pack(anchor='w',padx=8,pady=4)
+        review_info=ttk.Frame(file_context);review_info.pack(fill='both',expand=True,padx=8,pady=3)
+        self.file_context_text=self._text(review_info,readonly=True,height=4,font=('Segoe UI',10))
+        scroll_text(review_info,self.file_context_text)
+        self._preview('Select a file in the Project inspector.\n\nRequest a proposed edit in Chats.\n'
                       'Approved unattended jobs may save only exact authorized files with backups; '
                        'other changes require individual file review.')
 
@@ -713,14 +784,15 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Entry(task_filter,textvariable=self.task_query).pack(side='left',fill='x',expand=True,padx=3)
         ttk.Button(task_filter,text='Filter tasks',command=self._refresh_tasks).pack(side='left',padx=3)
         ttk.Label(task_filter,textvariable=self.task_count,style='Muted.TLabel').pack(side='left',padx=3)
-        task_view=ttk.Frame(tasks_tab);task_view.pack(fill='both',expand=True)
+        task_split=ttk.Panedwindow(tasks_tab,orient='vertical');task_split.pack(fill='both',expand=True)
+        task_view=ttk.Frame(task_split);task_split.add(task_view,weight=2)
         self.task_tree=ttk.Treeview(task_view,columns=('state','description','job'),show='headings')
         for x,title,w in (('state','Manual status',110),('description','Task / project plan',340),('job','Recorded linked job',200)):
             self.task_tree.heading(x,text=title);self.task_tree.column(x,width=w,stretch=x=='description')
         source_scrollbars(task_view,self.task_tree)
         self.task_notice=tk.StringVar(value='Manual completion is separate from job and test evidence.')
-        ttk.Label(tasks_tab,textvariable=self.task_notice,style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=4)
-        task_detail_frame=ttk.Frame(tasks_tab);task_detail_frame.pack(fill='x',pady=4)
+        ttk.Label(tasks_tab,textvariable=self.task_notice,style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=4,before=task_split)
+        task_detail_frame=ttk.Frame(task_split);task_split.add(task_detail_frame,weight=1)
         self.task_evidence=self._text(task_detail_frame,readonly=True,height=6)
         scroll_text(task_detail_frame,self.task_evidence)
         ttk.Label(tasks_tab,text='Linking a job does not approve it or mark the task complete.',style='Muted.TLabel').pack(anchor='w',pady=4)
@@ -762,11 +834,12 @@ class DeepThorTDesktop(tk.Tk):
         pbar=ttk.Frame(process_tab);pbar.pack(fill='x',pady=3,before=process_tabs)
         ttk.Button(pbar,text='Cancel running job',command=self._cancel_active).pack(side='left',padx=3)
         ttk.Button(pbar,text='Stop tools / install / media…',command=self._cancel_tool).pack(side='left',padx=3)
-        action_menu(pbar,'Diagnostics & tests',[
-            ('Locate latest diagnostics',self._locate_diagnostics),('Export diagnostics',self._export_diagnostics),
-            ('Retry JANUS model',self._retry_council),('Run latest test',self._run_latest_test),
-        ]).pack(side='left',padx=3)
+        for label,callback in (('Locate latest diagnostics',self._locate_diagnostics),
+                ('Export diagnostics',self._export_diagnostics),('Retry JANUS model',self._retry_council),
+                ('Run latest test',self._run_latest_test)):
+            ttk.Button(pbar,text=label,command=callback).pack(side='left',padx=3)
         ttk.Button(pbar,text='Stop latest test',command=self._stop_latest_test).pack(side='left',padx=3)
+        wrap_action_row(pbar)
         log_header=ttk.Frame(activity_page);log_header.pack(fill='x',pady=3)
         self.follow_activity=tk.BooleanVar(value=True)
         ttk.Checkbutton(log_header,text='Follow latest activity',variable=self.follow_activity).pack(side='right')
@@ -800,7 +873,9 @@ class DeepThorTDesktop(tk.Tk):
         for page,title in ((workers,'Five operatives'),(societies,'Recursive societies'),(approved,'Approved processes'),(messages,'Interface messages'),(assignments,'Assignment evidence')):
             operative_tabs.add(page,text=title)
         ttk.Label(workers,text='Neural worker observations, distinct from the persistent recursive societies.',style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=5)
-        worker_frame=ttk.Frame(workers);worker_frame.pack(fill='both',expand=True)
+        worker_split=ttk.Panedwindow(workers,orient='vertical');worker_split.pack(fill='both',expand=True)
+        self.operative_cards=OperativeCards(worker_split);worker_split.add(self.operative_cards,weight=2)
+        worker_frame=ttk.Frame(worker_split);worker_split.add(worker_frame,weight=1)
         self.operative_table=ttk.Treeview(worker_frame,columns=('role','responsibility','observed','pid'),show='headings',height=5)
         for col,title,width in (('role','Operative',85),('responsibility','Responsibility',215),('observed','Observed state',190),('pid','PID',65)):
             self.operative_table.heading(col,text=title);self.operative_table.column(col,width=width,stretch=col=='responsibility')
@@ -932,8 +1007,10 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(media_head,text='Project knowledge…',command=self._open_project_knowledge).pack(side='left',padx=3)
         self.media_summary=tk.StringVar(value='Choose files; local model downloads are opt-in.')
         ttk.Label(media_tab,textvariable=self.media_summary,style='Muted.TLabel').pack(anchor='w',pady=(0,5))
-        self.media_shelf=ToolShelf(media_tab)
-        self.media_shelf.pack(fill='both',expand=True,pady=(0,4))
+        media_split=ttk.Panedwindow(media_tab,orient='vertical');media_split.pack(fill='both',expand=True)
+        self.media_shelf=ToolShelf(media_split)
+        media_split.add(self.media_shelf,weight=3)
+        preview_panel=ttk.Frame(media_split);media_split.add(preview_panel,weight=1)
         media_actions=ttk.Frame(self.media_shelf.rows);media_actions.pack(fill='x',pady=6)
         self.media_shelf.set_category(media_actions,'Documents')
         ttk.Button(media_actions,text='Install PDF tools…',command=self._install_pdf_reader).pack(side='left',padx=3)
@@ -1247,22 +1324,47 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(image_restore_actions,text='Same-character scene…',command=lambda:self._queue_image_to_image(inpaint=True,character=True)).pack(side='left',padx=3)
         self.media_shelf.index_buttons()
         self.refine_image=tk.BooleanVar(value=True)
-        tk.Checkbutton(media_tab,text='Ask local coding model to refine image description before generation',
+        tk.Checkbutton(preview_panel,text='Ask local coding model to refine image description before generation',
                        variable=self.refine_image,bg=BG,fg=TEXT,selectcolor=PANEL,
                        activebackground=BG,activeforeground=TEXT).pack(anchor='w',pady=(0,4))
-        self.image_preview=tk.Label(media_tab,text='Selected image preview',bg=PANEL,fg=MUTED,height=6)
+        self.image_preview=tk.Label(preview_panel,text='Selected image preview',bg=PANEL,fg=MUTED,height=6)
         self.image_preview.pack(fill='x',expand=False,pady=4)
-        self.image_info=self._text(media_tab,readonly=True,height=5)
+        self.image_info=self._text(preview_panel,readonly=True,height=5)
         self.image_info.pack(fill='both',expand=False,pady=(4,6))
         self._show(self.image_info,'Image reading uses a separate local Florence ONNX vision model after user-approved installation. '
             'Image generation uses a separate offline Stable Diffusion model and CPU diffusers after user-approved installation. '
             'Image operations may run very slowly and cannot guarantee the visual quality of a cloud service. '
             'Installation and heavy generation should run when games are closed.')
 
-        foot=ttk.Frame(self);foot.pack(fill='x',padx=13,pady=(0,8))
+        foot=ttk.Frame(self);foot.pack(side='bottom',fill='x',padx=13,pady=(0,4),before=shell)
         self.status=tk.StringVar(value='Idle • Automatic Medium / High resource policy')
         ttk.Label(foot,textvariable=self.status,style='Muted.TLabel').pack(side='left')
         ttk.Label(foot,text='GPU inference off · Offline generation · No cloud fallback',style='Muted.TLabel').pack(side='right')
+        for page in (queue_tab,files_tab,tasks_tab,process_tab,janus_tab,hardware_tab,media_tab,
+                     command_tab,approval_tab,memory_tab,studio_tab,settings_tab):
+            reflow_button_rows(page)
+        self._internal_splits={'queue':job_split,'files':file_split,'tasks':task_split,
+                              'operatives':worker_split,'media':media_split,
+                              **self.approval_centre.display_splits,
+                              **self.knowledge_centre.display_splits,
+                              **self.studio_centre.display_splits}
+        self._internal_ratios=dict(self._display_preferences['split_ratios'])
+        for key,split in self._internal_splits.items():
+            def mapped(event,key=key,split=split):
+                if event.widget is not split or key not in self._internal_ratios:return
+                split.after_idle(lambda: self._restore_internal_split(key,split))
+            split.bind('<Map>',mapped,add='+')
+            split.bind('<ButtonRelease-1>',lambda event,key=key,split=split:
+                       split.after_idle(lambda:self._remember_internal_split(key,split)),add='+')
+
+    def _restore_internal_split(self,key,split):
+        if split.winfo_ismapped() and split.winfo_height()>80 and len(split.panes())==2:
+            split.sashpos(0,round(split.winfo_height()*self._internal_ratios[key]))
+
+    def _remember_internal_split(self,key,split):
+        if split.winfo_ismapped() and split.winfo_height()>80 and len(split.panes())==2:
+            self._internal_ratios[key]=max(.15,min(.85,split.sashpos(0)/split.winfo_height()))
+
 
     # ----------- basic GUI data and project/chat selection ------------
     def _show(self,box,text):
@@ -1278,6 +1380,9 @@ class DeepThorTDesktop(tk.Tk):
         self.compare_proposal.configure(state='normal' if editable else 'disabled')
         self.apply_proposal.configure(state='normal' if editable else 'disabled')
         self.file_navigator.reset()
+        context=self.file_title.get()+'\n'+self.file_review_status.get()
+        self._show(self.file_context_text,context)
+        self.inspector_context.set(context)
 
     def _inspect_proposed_diff(self):
         if not self.proposed or not self.project:return
@@ -1799,7 +1904,7 @@ class DeepThorTDesktop(tk.Tk):
         self.chat_history.config(state='normal')
         label='You' if role=='user' else 'DeepThorTriad' if role=='assistant' else 'Notice'
         self.chat_history.insert('end',f'{label}:\n',role if role in ('user','assistant') else 'warning')
-        self.chat_history.insert('end',message+'\n\n')
+        self.chat_history.insert('end',message+'\n\n','user_body' if role=='user' else 'assistant_body')
         self.chat_history.see('end');self.chat_history.config(state='disabled')
     def _project_key(self):
         return str(self.project) if self.project else '(general)'
@@ -2643,7 +2748,7 @@ class DeepThorTDesktop(tk.Tk):
         except (OSError,ValueError,TypeError,AttributeError):pass
 
     def _restore_display_preferences(self):
-        from deepthort_local.interface_preferences import geometry,FILTERS,sidebar_position
+        from deepthort_local.interface_preferences import geometry,FILTERS,shell_positions
         prefs=self._display_preferences
         w,h=geometry(prefs,self.winfo_screenwidth(),self.winfo_screenheight())
         self.geometry(f'{w}x{h}')
@@ -2654,12 +2759,34 @@ class DeepThorTDesktop(tk.Tk):
         # user's first navigation (or an immediate programmatic navigation).
         names=tuple(self.tabs.tab(t,'text') for t in self.tabs.tabs())
         if prefs['page'] in names:self.tabs.select(names.index(prefs['page']))
+        self._inspector_width=prefs['inspector']
+        self.inspector_visible.set(prefs['inspector_visible'])
+        self._toggle_inspector()
         def layout():
             if self._quitting:return
             width=self.workspace_split.winfo_width()
-            if width>1:self.workspace_split.sashpos(0,sidebar_position(prefs,width))
+            if width>1:
+                rail,divider=shell_positions(prefs,width)
+                self.workspace_split.sashpos(0,rail)
+                if self.inspector_visible.get():self.workspace_split.sashpos(1,divider)
             self._resize_composer()
         self.after_idle(layout)
+
+    def _toggle_inspector(self):
+        split=self.workspace_split
+        present=str(self.project_inspector) in split.panes()
+        if not self.inspector_visible.get() and present:
+            width=split.winfo_width()
+            if width>1:self._inspector_width=max(180,width-split.sashpos(1))
+            split.forget(self.project_inspector)
+        elif self.inspector_visible.get() and not present:
+            split.add(self.project_inspector,weight=0)
+            def resize():
+                if self.inspector_visible.get() and str(self.project_inspector) in split.panes():
+                    from deepthort_local.interface_preferences import shell_positions
+                    _,divider=shell_positions({'navigation':split.sashpos(0),'inspector':self._inspector_width},split.winfo_width())
+                    split.sashpos(1,divider)
+            self.after_idle(resize)
 
     def _save_display_preferences(self):
         from deepthort_local.interface_preferences import SCHEMA,FILTERS,save
@@ -2669,6 +2796,10 @@ class DeepThorTDesktop(tk.Tk):
             raw={'schema':SCHEMA,'width':self.winfo_width() if normal and self.winfo_width()>1 else previous['width'],
                  'height':self.winfo_height() if normal and self.winfo_height()>1 else previous['height'],
                  'sidebar':self.workspace_split.sashpos(0) if self.workspace_split.winfo_width()>1 else previous['sidebar'],
+                 'navigation':self.workspace_split.sashpos(0) if self.workspace_split.winfo_width()>1 else previous['navigation'],
+                 'inspector':max(180,self.workspace_split.winfo_width()-self.workspace_split.sashpos(1)) if self.inspector_visible.get() and self.workspace_split.winfo_width()>1 else self._inspector_width,
+                 'inspector_visible':self.inspector_visible.get(),
+                 'split_ratios':self._internal_ratios,
                  'page':self.tabs.tab(self.tabs.select(),'text'),'expanded_composer':self.expanded_composer.get(),
                  'follow_activity':self.follow_activity.get(),**{key:getattr(self,key).get() for key in FILTERS}}
             if not save(self.display_preferences_file,raw):
@@ -2682,6 +2813,7 @@ class DeepThorTDesktop(tk.Tk):
     def _set_project(self,path):
         self.project=Path(path).resolve()
         self._studio_selected_media=None
+        self.inspector_context.set('Workspace changed. Select a job or file for context.')
         self.file_query.set('')
         sync_table(self.assignment_table,[])
         self.assignment_notice.set('Workspace changed; refresh assignment evidence.')
@@ -3250,7 +3382,11 @@ class DeepThorTDesktop(tk.Tk):
 
     def _command_tab_changed(self,event=None):
         index=self.tabs.index('current')
-        if index==1:self._refresh_jobs()
+        if index==1:
+            self._refresh_jobs()
+            job=self._selected_job()
+            self.inspector_context.set(f"Job #{job['id']} · {job['state']}\nTarget: {job['target'] or '—'}\n\nFull evidence is in Work queue." if job else 'No job selected in the current workspace.')
+        elif index==2:self.inspector_context.set(self.file_title.get()+'\n'+self.file_review_status.get())
         elif index==3:self._refresh_tasks()
         elif index==5:self._show_janus_status()
         elif index==8:self._refresh_command_centre()
@@ -3258,6 +3394,8 @@ class DeepThorTDesktop(tk.Tk):
         elif index==10:self._refresh_knowledge_centre()
         elif index==11:self._refresh_studio()
         elif index==12:self._refresh_settings_centre()
+        if index not in (1,2):
+            self.inspector_context.set(self.workspace_navigator.current.get()+'\nCurrent project: '+self._project_key()+'\nUse the workspace controls to inspect exact records.')
 
     def _refresh_settings_centre(self):
         # Saved policy snapshot only. Do not read tokens, connect, or test external services.
@@ -5190,6 +5328,7 @@ class DeepThorTDesktop(tk.Tk):
             self.job_filter_count.set('Unavailable')
             self.queue_summary.set('Job snapshot unavailable — refresh Work queue; see Processes for diagnostics.')
             self._show(self.job_details,'Job snapshot unavailable: '+str(exc)[:180]+'\nNo job state was changed.')
+            if self.tabs.index('current')==1:self.inspector_context.set('Job evidence unavailable; see Work queue.')
             self._log('Work queue snapshot unavailable: '+type(exc).__name__)
 
     def _read_job_overview(self):
@@ -5216,6 +5355,7 @@ class DeepThorTDesktop(tk.Tk):
         self.job_filter_count.set(f'{len(visible)} / {len(displayed)}')
         if not self.job_tree.selection():
             self._show(self.job_details,'Select a job to inspect its journal, dependencies and verification evidence.')
+            if self.tabs.index('current')==1:self.inspector_context.set('No job selected in the current workspace.')
         count={}
         for j in rows:count[j['state']]=count.get(j['state'],0)+1
         summary='   '.join(f'{k}: {v}' for k,v in sorted(count.items())) or 'No approved jobs'
@@ -5231,7 +5371,9 @@ class DeepThorTDesktop(tk.Tk):
         return job if job and job['project']==self._project_key() else None
     def _job_selected(self,_event=None):
         job=self._selected_job()
-        if not job:return
+        if not job:
+            if self.tabs.index('current')==1:self.inspector_context.set('No job selected in the current workspace.')
+            return
         if job['state']=='waiting_approval' and job['mode'] in ('build','edit') and job['result']:
             steps=self.jobs.steps(job['id'])
             chosen=next((x for x in steps if x['state']=='proposed'),None)
@@ -5295,6 +5437,8 @@ class DeepThorTDesktop(tk.Tk):
         journal=self.jobs.journal(job['id'])
         if journal:detail+='\n\nPERSISTENT TASK JOURNAL:\n'+str(journal)
         self._show(self.job_details,detail)
+        if self.tabs.index('current')==1:
+            self.inspector_context.set(f"Job #{job['id']} · {job['state']}\n{job['mode']}\nTarget: {job['target'] or '—'}\n\n{str(job['detail'])[:2000]}\n\nFull evidence is in Work queue.")
     def _open_task_journal(self):
         job=self._selected_job()
         if not job:return
@@ -10750,6 +10894,7 @@ class DeepThorTDesktop(tk.Tk):
         sync_table(self.resource_table,measured_process_rows(measured))
         worker_rows=operative_rows(model_health,model_pid, bool(self._creative_lane_thread and self._creative_lane_thread.is_alive()))
         sync_table(self.operative_table,worker_rows)
+        self.operative_cards.render(worker_rows)
         self.command_centre.live(self.process_summary.get(),worker_rows,len(measured))
         self._render_operations(counts)
         self.resource_notice.set(f'{len(measured)} tracked process samples · observed at '+datetime.now().strftime('%H:%M:%S')

@@ -50,6 +50,30 @@ class IntegratedInterfaceTests(unittest.TestCase):
             app.update()
             self.assertEqual(app.input.get('1.0','end-1c'),'Unsent acceptance test draft')
 
+    def test_indigo_shell_controls_and_inspector_toggle(self):
+        from deepthort_local.lattice_ui import PALETTE
+        app=self.app
+        app.geometry('1320x860');app.update()
+        self.assertEqual(PALETTE['base'],'#0b1026')
+        self.assertEqual(len(app.workspace_navigator.buttons),13)
+        self.assertEqual(len(app.workspace_split.panes()),3)
+        app.inspector_visible.set(False);app._toggle_inspector();app.update()
+        self.assertEqual(len(app.workspace_split.panes()),2)
+        app.inspector_visible.set(True);app._toggle_inspector();app.update()
+        self.assertEqual(len(app.workspace_split.panes()),3)
+        app.workspace_navigator.buttons[11].invoke();app.update()
+        self.assertEqual(app.tabs.index('current'),11)
+        self.assertEqual(app.workspace_navigator.current.get(),'Studio')
+        self.assertEqual(set(app._internal_splits),{'queue','files','tasks','operatives','media',
+            'approval_jobs','approval_actions','approval_grants','memory_receipts','memory_library','studio'})
+        app.tabs.select(2);app.update()
+        self.assertIn('Read-only inspection',app.inspector_context.get())
+        self.assertEqual(len(app._internal_splits['files'].panes()),2)
+        app._internal_ratios['files']=.6
+        app._save_display_preferences()
+        from deepthort_local.interface_preferences import load
+        self.assertEqual(load(app.display_preferences_file)['split_ratios']['files'],.6)
+
     def test_overviews_are_read_only_and_tool_categories_do_not_dispatch(self):
         app=self.app
         with patch.object(app,'_start_command') as run, patch.object(app.jobs,'change') as change:

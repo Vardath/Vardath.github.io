@@ -6,23 +6,23 @@ Owner tested current baseline `5c51073fcb099abcfcc30853c6202064be106768` and rej
 
 | ID | Area | Current status |
 |---|---|---|
-| UI-001 | Application shell | Pending visual/usability redesign |
-| UI-002 | Chat | Pending visual/usability redesign |
-| UI-003 | Projects and panes | Pending visual/usability redesign |
-| UI-004 | Work queue | Pending visual/usability redesign |
-| UI-005 | File review | Pending visual/usability redesign |
-| UI-006 | Tasks | Pending visual/usability redesign |
-| UI-007 | Processes | Pending visual/usability redesign |
-| UI-008 | Operatives | Pending visual/usability redesign |
-| UI-009 | Computer & Tools | Pending visual/usability redesign |
-| UI-010 | Files & Images | Pending visual/usability redesign |
-| UI-011 | Command Centre | Pending visual/usability redesign |
-| UI-012 | Approvals & PC Activity | Pending visual/usability redesign |
-| UI-013 | Knowledge & Memory | Pending visual/usability redesign |
-| UI-014 | Studio | Pending visual/usability redesign |
-| UI-015 | Settings & Integrations | Pending visual/usability redesign |
-| UI-016 | Dialogs and accessibility | Pending visual/usability redesign |
-| UI-017 | Help and discoverability | Pending visual/usability redesign |
+| UI-001 | Application shell | Foundation candidate; final verification pending |
+| UI-002 | Chat | Foundation candidate; final verification pending |
+| UI-003 | Projects and panes | Foundation candidate; final verification pending |
+| UI-004 | Work queue | Workspace presentation candidate; final verification pending |
+| UI-005 | File review | Presentation candidate; final verification pending |
+| UI-006 | Tasks | Workspace presentation candidate; final verification pending |
+| UI-007 | Processes | Foundation candidate; final verification pending |
+| UI-008 | Operatives | Workspace presentation candidate; final verification pending |
+| UI-009 | Computer & Tools | Workspace presentation candidate; final verification pending |
+| UI-010 | Files & Images | Workspace presentation candidate; final verification pending |
+| UI-011 | Command Centre | Workspace presentation candidate; final verification pending |
+| UI-012 | Approvals & PC Activity | Workspace presentation candidate; final verification pending |
+| UI-013 | Knowledge & Memory | Workspace presentation candidate; final verification pending |
+| UI-014 | Studio | Workspace presentation candidate; final verification pending |
+| UI-015 | Settings & Integrations | Workspace presentation candidate; final verification pending |
+| UI-016 | Dialogs and accessibility | Presentation candidate; final verification pending |
+| UI-017 | Help and discoverability | Workspace presentation candidate; final verification pending |
 | UI-018 | Single consolidated interface acceptance | Pending final consolidated acceptance |
 
 ### Visual pass 000 — planning
@@ -32,6 +32,23 @@ Owner tested current baseline `5c51073fcb099abcfcc30853c6202064be106768` and rej
 - No per-screen PRs or full test cycles; no native inference runs for this presentation-only change. Existing automatic CI may still run under repository configuration; do not disable existing protections or report tests that did not occur.
 - Record screenshots, changed UI files, callback and pane checks, result and actual remaining issues. User visual approval pending.
 - Next action: implement UI-001–003 together as the foundation; continue remaining UI areas in the same batch. No installer requested in this turn.
+
+### Visual checkpoint 001 — foundation implementation
+- Candidate branch deepthortriad-indigo-interface: indigo palette, rounded native ttk stateful buttons, continuous woven borders, vertical labelled navigation retaining exact notebook indices, three-pane shell with draggable dividers and collapsible project inspector, bounded display-only pane preferences. Direct install/start/stop/test/diagnostics buttons, visible chat retry/amend/find actions, responsive action strips and message blocks.
+- UI-001–003 candidate implementation (right inspector currently provides project/file context and not a full selected-job inspector); UI-007 direct diagnostic controls candidate. Remaining workspace-specific presentation, dialog review and final acceptance still pending. No backend or model changes, no installer. No manual acceptance run at this checkpoint; verify the complete batch once. Actual visual acceptance not yet claimed.
+- Next: reflow remaining workspace controls, responsive splitters, visible categories and workspace-specific presentation; then final integrated UI checks.
+
+### Visual checkpoint 002 — workspace presentation and clipping correction
+- Automatic checkpoint 001 run [46136258198](https://github.com/Vardath/Vardath.github.io/actions/runs/46136258198): Linux compile and lattice tests passed, integrated interface failed (28 assertions: clipped workspace selector and primary chat actions). Repair: selector above a scrollable labelled rail; reserve footer/composer/actions before expanding content. No regression assertion removed.
+- Add draggable job/task evidence, operative cards/table, approval record, memory evidence, Studio preview and Files & Images splits; direct Studio categories, visible settings actions in sections, direct Command Centre/approval navigation; wrap packed action-only rows. Update offline help; retain original callbacks and underlying stores. Add focused shell/pane regression.
+- Candidate only. UI-005 file-review-specific additional split and UI-016 dialog coverage, exact right-inspector contextual detail, screenshot/physical visual acceptance and final consolidated verification remain outstanding. No manual test run or installer; existing automatic CI triggers unchanged. No backend changes.
+- Next: inspect remaining clipping and final visual refinements, then consolidated acceptance.
+
+### Visual checkpoint 003 — final presentation candidate
+- Checkpoint 002 automatic run [46136437734](https://github.com/Vardath/Vardath.github.io/actions/runs/46136437734): Linux compilation, lattice GUI and integrated interface acceptance succeeded, including previously clipped controls; Windows integrated step was in progress at inspection. No manual full run.
+- Add contextual inspector tab with exact current workspace/file/job state and direct navigation, clear stale context on workspace/selection change; file review source/context splitter, persistent validated ratios for eleven internal splits, shared indigo native dialog/widget defaults and tooltip colours. Existing exact source-diff review, permissions, callbacks and backend unchanged. Added focused assertions for split inventory, persistence and file context.
+- All 17 presentation areas now have candidate work; UI-018 remains acceptance pending, not closed. This remains native Tk/ttk with custom presentation rather than framework migration; OS-native dialogs and individually styled legacy dialogs may still differ. No claim of physical Windows visual quality or screenshot evidence.
+- Next: verify exact candidate's consolidated interface checks and actual rendering, fix only real failures, open one integration PR once candidate ready. No installer requested. No manual model or unrelated tests; repository's automatic checks remain unchanged.
 
 ### Historical ledger (retained unchanged; prior completion states are not current visual acceptance)
 
