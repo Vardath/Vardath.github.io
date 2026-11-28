@@ -285,7 +285,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 273 | 198 | AI model format conversion | Partial: reviewed bidirectional bounded NPZ/SafeTensors weight conversion, exact tensor roundtrip and new outputs. Pass 274 CI pending; full model graph, tokenizer, large-checkpoint conversion and inference acceptance outstanding. |
 | 274 | 197 | AI model quantisation | Partial: reviewed selected F16/F32 tensor symmetric INT8 weight bundle with explicit scales and independent reconstruction error checks. Pass 275 CI pending; runnable model graph, INT4, calibration and runtime/quality acceptance outstanding. |
 | 275 | 39 | Remote computer control | Partial: explicit authorised-host RDP client handoff with reviewed configuration, network restriction, manual authentication and bounded cleanup. Pass 276 CI pending; actual remote session, autonomous input and native connection acceptance outstanding. |
-| 276 | 40 | Virtual computer environments | Not started in this programme |
+| 276 | 40 | Virtual computer environments | Partial: reviewed diskless offline QEMU virtual-computer launch from exact staged boot ISO under shared Windows cap, with bounded observation. Pass 277 CI pending; guest boot, interactive desktop and native emulator acceptance outstanding. |
 | 277 | 206 | Virtual machine isolation | Not started in this programme |
 | 278 | 205 | Operating-system-level execution sandboxing | Not started in this programme |
 
@@ -1291,3 +1291,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 276 — 28 November 2026
 - Rank 275 / ID 39: reviewed manual remote desktop client handoff, exact host/port, explicit owner authority and network restriction, resource redirection disabled by requested profile, supervised bounded client execution and observation receipt. Three regression tests registered in both CI jobs. Native remote connectivity, independent host identity, actual remote session cleanup and autonomous input remain outstanding. No remote agent, password collection, network-policy bypass or arbitrary shell.
+
+
+## Pass 277 — 28 November 2026
+- Rank 276 / ID 40: reviewed temporary QEMU software-emulated virtual computer using trusted installed runtime, fixed command, exact boot ISO digest and staged copy, one vCPU and bounded guest memory. No configured network, host shares or persistent disk. Native child scope and resource monitoring; three fixture regressions registered in both CI jobs. Native QEMU availability, guest boot, guest interaction and independent isolation proof outstanding.
