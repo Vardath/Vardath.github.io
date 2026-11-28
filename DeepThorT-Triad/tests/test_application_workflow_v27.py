@@ -668,3 +668,45 @@ class ApplicationWorkflowTests(unittest.TestCase):
         self.assertEqual(len(r['elements']),300);self.assertTrue(r['elements_truncated'])
         r=extract_elements(url,b'<div hidden><button>Hidden</button></div><button>Visible</button>','text/html','utf-8')
         self.assertEqual([v['text'] for v in r['elements']],['Visible'])
+
+
+    def test_website_navigation_goal_and_path(self):
+        from deepthort_local.website_navigation import navigate
+        from deepthort_local.webpage_retrieval import extract
+        import hashlib
+        spec={'seed':'https://example.org/docs/','path_prefix':'/docs/','max_pages':3,'max_depth':2,'target_heading':'Installation guide'}
+        pages={'https://example.org/robots.txt':b'User-agent: *\nDisallow: /docs/private/',
+               spec['seed']:b'<a href="/docs/other/">Other</a><a href="/docs/install/">Installation guide</a><a href="https://outside.org/">Installation guide</a>',
+               'https://example.org/docs/install/':b'<h1>Installation guide</h1>'}
+        calls=[];now=[0.]
+        def get(url,*,approved,cancelled,extractor=extract):
+            self.assertTrue(approved);self.assertFalse(cancelled());calls.append(url)
+            return extractor(url,pages[url],'text/plain' if url.endswith('robots.txt') else 'text/html','utf-8')
+        def sleep(n):now[0]+=n
+        r=navigate(spec,approved=True,retrieve=get,clock=lambda:now[0],sleep=sleep)
+        self.assertEqual(r['status'],'heading_observed')
+        self.assertEqual(calls,['https://example.org/robots.txt',spec['seed'],'https://example.org/docs/install/'])
+        self.assertEqual([v['url'] for v in r['navigation_path']],calls[1:])
+        self.assertEqual(r['navigation_path'][-1]['link_text'],'Installation guide')
+        self.assertEqual(r['match']['response_sha256'],hashlib.sha256(pages[calls[-1]]).hexdigest())
+        self.assertFalse(r['rendered_browser_verified'])
+
+    def test_website_navigation_robots_and_cancellation(self):
+        from deepthort_local.website_navigation import navigate
+        from deepthort_local.webpage_retrieval import extract
+        spec={'seed':'https://example.org/docs/','path_prefix':'/docs/','max_pages':3,'max_depth':2,'target_heading':'Installation guide'}
+        calls=[];now=[0.]
+        def get(url,*,approved,cancelled,extractor=extract):
+            calls.append(url)
+            if url.endswith('robots.txt'):return extractor(url,b'User-agent: *\nDisallow: /docs/private/','text/plain','utf-8')
+            self.assertEqual(url,spec['seed'])
+            return extractor(url,b'<a href="/docs/private/">Installation guide</a><a href="/elsewhere/">Installation guide</a>','text/html','utf-8')
+        def sleep(n):now[0]+=n
+        with self.assertRaises(ValueError):navigate(spec,retrieve=get)
+        self.assertEqual(calls,[])
+        with self.assertRaises(TimeoutError):navigate(spec,approved=True,retrieve=get,cancelled=lambda:True)
+        self.assertEqual(calls,[])
+        r=navigate(spec,approved=True,retrieve=get,clock=lambda:now[0],sleep=sleep)
+        self.assertEqual(r['status'],'heading_not_observed_within_budget')
+        self.assertEqual(len(r['robots_blocked']),1);self.assertEqual(len(calls),2)
+        self.assertIsNone(r['match'])

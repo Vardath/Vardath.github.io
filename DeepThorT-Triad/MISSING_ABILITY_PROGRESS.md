@@ -205,7 +205,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 193 | 336 | Automated backup and restoration | Partial: existing automatic source checkpoints plus reviewed exact standalone SQLite archive backup and verified nonoverwriting restoration, checksum and quick-check roundtrip. Pass 194 CI pending. Scheduled/full app-state backup, live databases and encryption outstanding. |
 | 194 | 19 | Autonomous deep research | Partial: bounded approved multi-site crawl with question-gap link prioritisation, literal excerpts, duplicate detection and evidence coverage report. Pass 195 CI pending. Semantic synthesis, broader search and native network acceptance outstanding. |
 | 195 | 31 | Webpage element inspection | Partial: reviewed public static HTML structural element inspection, controls/links/labels/headings, bounded locators and no input values or activation. Pass 196 CI pending. Rendered DOM, accessibility and authenticated/browser acceptance outstanding. |
-| 196 | 30 | Autonomous website navigation | Not started in this programme |
+| 196 | 30 | Autonomous website navigation | Partial: reviewed public static goal-directed navigation using link-label/URL ranking, exact target heading stop, bounded frontier and path receipt. Pass 197 CI pending. Live browser navigation and native network acceptance outstanding. |
 | 197 | 32 | Website interaction and control selection | Not started in this programme |
 | 198 | 35 | Browser-based file downloads | Not started in this programme |
 | 199 | 34 | Browser-based file uploads | Not started in this programme |
@@ -1024,3 +1024,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 196 — 27 November 2026
 - Add exact reviewed public HTTPS static webpage element inspection using existing pinned transport, no extra requests or script execution. Report bounded source locators, selected tags/roles/labels, safe links and control attributes; omit input values and hidden content. Distinguish static parser from live DOM/actionability. Two fixture tests; native public network and browser DOM acceptance outstanding. Next rank 196 / ID 30 autonomous website navigation. No installer.
+
+## Pass 197 — 27 November 2026
+- Add goal-directed public static website navigation. Rank inspected same-scope links by target heading terms, stop on exact heading observation, record parent-link locators, path and response hashes. Preserve robots, depth, request, deadline and public HTTPS protections. Distinguish target not observed from absent. Two fixtures cover ranking/path and denial/cancellation. Live browser and native network acceptance outstanding. Next rank 197 / ID 32 website interaction and control selection. No installer.
