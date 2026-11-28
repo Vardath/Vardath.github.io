@@ -287,7 +287,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 275 | 39 | Remote computer control | Partial: explicit authorised-host RDP client handoff with reviewed configuration, network restriction, manual authentication and bounded cleanup. Pass 276 CI pending; actual remote session, autonomous input and native connection acceptance outstanding. |
 | 276 | 40 | Virtual computer environments | Partial: reviewed diskless offline QEMU virtual-computer launch from exact staged boot ISO under shared Windows cap, with bounded observation. Pass 277 CI pending; guest boot, interactive desktop and native emulator acceptance outstanding. |
 | 277 | 206 | Virtual machine isolation | Partial: fixed QEMU guest read-only media boundary probe, BIOS write denial and unchanged host media evidence; Pass 278 CI pending. Native QEMU acceptance and general host/network security isolation remain unverified. |
-| 278 | 205 | Operating-system-level execution sandboxing | Not started in this programme |
+| 278 | 205 | Operating-system-level execution sandboxing | Partial: native Windows restricted-token thread access probe against fresh protected ACL fixtures, verified allowed read and denied access; Pass 279 CI pending. General process-wide arbitrary-code sandbox and network/filesystem confinement outstanding. |
 
 ## Register expansion — 27 November 2026
 
@@ -1299,3 +1299,8 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 278 — 28 November 2026
 - Rank 277 / ID 206: fixed benign x86 boot-sector guest probe with reproducible assembly, read/write-denial/reread checks, exact guest marker, unchanged media digest, resource-bounded QEMU execution and new report. Three fixture regressions registered in both CI jobs; native QEMU execution and general isolation not verified.
+
+
+## Pass 279 — 28 November 2026
+- Rank 278 / ID 205: native restricted-token thread boundary probe for exact benign files using Windows protected DACLs, kernel token verification, allowed/denied access tests, original-identity restoration and unchanged contents. Three fixture regressions in both CI jobs and real Windows probe registered in native CI. No arbitrary-code execution authority, general sandbox, network isolation or process-wide restriction claim.
+- All 278 retained register entries now have an implementation or bounded partial implementation on the development sequence; this is source coverage, not evidence of full capability completion. Integration and acceptance remain gated on exact green predecessor CI and real runtime evidence. No installer generated.
