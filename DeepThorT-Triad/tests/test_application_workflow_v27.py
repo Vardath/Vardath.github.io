@@ -405,8 +405,8 @@ class ApplicationWorkflowTests(unittest.TestCase):
         from pathlib import Path
         from deepthort_local.latest_acceptance import load_test
         manifest=load_test(Path(__file__).resolve().parents[1]/'LATEST_TEST.json')
-        self.assertEqual(len(manifest['checks']),24)
-        self.assertEqual(manifest['checks'][-1],'five_model_acceptance')
+        self.assertEqual(len(manifest['checks']),25)
+        self.assertEqual(manifest['checks'][-2:],[ 'five_model_acceptance','native_model_benchmark'])
 
 
     def test_autonomous_self_evaluation_history_and_dedup(self):
@@ -520,3 +520,37 @@ class ApplicationWorkflowTests(unittest.TestCase):
         s={'title':'E2E','width':5,'height':5,'cell_size':24,'start':[0,0],
            'goal':[4,4],'walls':[[0,1]],'collectibles':[[1,0]]}
         with self.assertRaises(ValueError):fixture(s)
+
+
+    def test_native_model_benchmark_oracles_and_cancel(self):
+        import json
+        from deepthort_local.native_model_benchmark import exercise,TASKS,ROLES
+        from deepthort_local.triad_profiles import PROFILES,MEMORY_PROFILE
+        h={'pid':10,'ready':True,'offline':True,'backend':'native-openvino-ir-cpu',
+           'models':{r:{'name':p[0],'resident':True,'pid':i+11} for i,(r,p) in enumerate(PROFILES.items())},
+           'memory_model':{'name':MEMORY_PROFILE[0],'revision':MEMORY_PROFILE[2],'resident':True,'pid':20},
+           'serial_memory_mode':False,'memory_retries':0}
+        answers={ident:expected for ident,_,expected in TASKS};calls=[]
+        def ask(role,prompt,tokens,repeat,ident):
+            calls.append((role,repeat,ident))
+            return json.dumps(answers[ident])
+        r=exercise(lambda:h,10,ask)
+        self.assertEqual(r['status'],'passed',r)
+        self.assertEqual(len(calls),24);self.assertEqual(len(set(calls)),24)
+        self.assertEqual(set(r['evidence']['benchmark_results']),set(ROLES))
+        self.assertTrue(all(row['passed']==6 for row in r['evidence']['benchmark_results'].values()))
+        r=exercise(lambda:h,10,lambda *args:'{"answer":true}')
+        self.assertEqual(r['status'],'failed')
+        r=exercise(lambda:h,10,ask,cancelled=lambda:True)
+        self.assertEqual(r['status'],'cancelled')
+
+    def test_native_model_benchmark_health_change(self):
+        from deepthort_local.native_model_benchmark import exercise
+        from deepthort_local.triad_profiles import PROFILES,MEMORY_PROFILE
+        h={'pid':10,'ready':True,'offline':True,'backend':'native-openvino-ir-cpu',
+           'models':{r:{'name':p[0],'resident':True,'pid':i+11} for i,(r,p) in enumerate(PROFILES.items())},
+           'memory_model':{'name':MEMORY_PROFILE[0],'revision':MEMORY_PROFILE[2],'resident':True,'pid':20},
+           'serial_memory_mode':False,'memory_retries':0}
+        def ask(*args):
+            h['memory_retries']+=1;return '{"answer":1080}'
+        self.assertEqual(exercise(lambda:h,10,ask)['status'],'inconclusive')

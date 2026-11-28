@@ -853,3 +853,7 @@ JANUS uses periodic self-evaluation to stage a candidate ordering of the existin
 ## Reviewed native grid game end-to-end test (Pass 192)
 
 Test native grid game button accepts the same JSON as Generate grid game. Choose a level where a path to the goal avoids all collectibles and a blocked movement is reachable. Generates the exact game and fixed probe in a temporary directory, imports and executes under installed Windows Godot and existing shared resource protection. Checks initial state, blocked movement, early goal without win, collection/win, reset and synthetic touch input. Only publishes a success receipt after ordered native evidence and no engine errors. No arbitrary project code, visual/device acceptance or broad E2E claim.
+
+## Native model benchmarking (Pass 193)
+
+Run latest test includes 24 fixed text requests (four resident models × three identical JSON oracles × two isolated sessions). Records configured model revision, PID, each pass/failure/blocked result and request elapsed time; median only over verified successes. Aborts on cancellation or changed worker/memory policy; defers active work and gaming. No raw responses, model replacement, new weights or remote inference. Native local run required. Not Gemma benchmarking, general coding acceptance, token throughput or peak memory measurement.
