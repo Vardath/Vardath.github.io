@@ -9,6 +9,7 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    'Refresh settings overview': 'Read existing saved policy values without changing settings or connecting external services.',
     'Refresh artifacts': 'Read the existing bounded workspace file snapshot; no new disk scan.',
     'Production categories': 'Navigate to original production controls filtered by category; no tool runs.',
     'Filter artifacts': 'Filter discovered workspace file formats without opening or executing files.',
@@ -157,6 +158,7 @@ TOOLTIPS = {
 }
 
 TABS = {
+    'Settings & Integrations': 'Inspect saved policy values and navigate to existing local configuration and explicitly reviewed integrations.',
     'Studio': 'Navigate production categories and inspect bounded workspace artifact metadata without running files.',
     'Knowledge & Memory': 'Inspect independent recall records and open the existing project knowledge library.',
     'Approvals & PC Activity': 'Read outstanding workspace review states and recent recorded PC actions; no approval or execution occurs here.',

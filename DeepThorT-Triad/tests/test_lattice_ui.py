@@ -2,7 +2,7 @@
 import tkinter as tk
 from tkinter import ttk
 import unittest
-from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre, StudioCentre, studio_artifact_rows
+from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly, operative_rows, SocietyLattice, inventory_rows, CommandCentre, command_job_rows, ApprovalCentre, approval_job_rows, pc_action_rows, KnowledgeMemoryCentre, StudioCentre, studio_artifact_rows, SettingsCentre, settings_policy_rows
 
 
 class LatticeShelfTests(unittest.TestCase):
@@ -295,3 +295,16 @@ class LatticeShelfTests(unittest.TestCase):
         self.assertIn('Metadata song.mid',studio.detail.get('1.0','end'))
         studio.render('other',[])
         self.assertNotIn('song.mid',studio.detail.get('1.0','end'))
+
+
+    def test_settings_overview_is_inert_and_accurately_labels_policy(self):
+        centre=SettingsCentre(self.root,lambda:self.calls.append('refresh'),
+                              [('Permissions',[('Configure',lambda:self.calls.append('configure'))])])
+        rows=settings_policy_rows({'enabled':True},{'enabled':False,'allow_upgrades':True},'blocked')
+        centre.render(rows,'AI: stopped','workspace')
+        self.assertEqual(self.calls,[])
+        self.assertEqual(dict(rows)['project'][1],'Enabled')
+        self.assertEqual(dict(rows)['tools'][1],'Disabled')
+        self.assertIn('only',dict(rows)['upgrades'][2])
+        self.assertEqual(dict(rows)['network'][1],'blocked')
+        self.assertIn('not runtime verification',centre.notice.get())

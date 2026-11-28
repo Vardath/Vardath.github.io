@@ -734,3 +734,42 @@ class StudioCentre(ttk.Frame):
     def inspect(self):
         selected=self.table.selection()
         if selected:replace_readonly(self.detail,self.inspect_callback(selected[0]))
+
+
+def settings_policy_rows(project,tools,network):
+    enabled=lambda policy,key:'Enabled' if policy.get(key) is True else 'Disabled' if policy.get(key) is False else 'Unknown'
+    return [
+        ('project',('Unattended approved project steps',enabled(project,'enabled'),'Job-bound grants only')),
+        ('tools',('Routine software management',enabled(tools,'enabled'),'Existing approved software policy')),
+        ('upgrades',('Tool upgrades preference',enabled(tools,'allow_upgrades'),'Effective only with routine management')),
+        ('network',('Shared HTTPS restrictions',str(network),'Not an OS-wide firewall; existing approvals still apply')),
+        ('cpu',('Configured CPU ceiling','50%','Windows supervised launcher; not measured usage')),
+        ('commit',('Configured maximum RAM-sized commit','65%','Actual admission may be lower; not physical working set')),
+        ('inference',('Primary text inference','Local OpenVINO CPU','External services are separate reviewed integrations')),
+    ]
+
+
+class SettingsCentre(ttk.Frame):
+    """Settings directory; existing owners remain authoritative for all writes."""
+    def __init__(self,parent,refresh,groups):
+        super().__init__(parent)
+        self.notice=tk.StringVar(self,value='Open or refresh to read saved settings.')
+        bar=ttk.Frame(self);bar.pack(fill='x',pady=4)
+        ttk.Label(bar,text='SETTINGS & INTEGRATIONS',style='Muted.TLabel').pack(side='left')
+        ttk.Button(bar,text='Refresh settings overview',command=refresh).pack(side='right')
+        ttk.Label(self,textvariable=self.notice,wraplength=620).pack(anchor='w',pady=4)
+        ttk.Label(self,text='Existing controls own all setting changes. Opening this overview does not grant permission, connect accounts or expose credentials.',wraplength=620).pack(anchor='w',pady=4)
+        menus=ttk.Frame(self);menus.pack(fill='x',pady=4)
+        for i,(label,actions) in enumerate(groups):
+            menu=action_menu(menus,label,actions)
+            menu.grid(row=i//2,column=i%2,sticky='ew',padx=3,pady=3)
+        menus.columnconfigure(0,weight=1);menus.columnconfigure(1,weight=1)
+        frame=ttk.Frame(self);frame.pack(fill='both',expand=True)
+        self.table=ttk.Treeview(frame,columns=('policy','value','boundary'),show='headings')
+        for key,label,width in (('policy','Saved / configured policy',230),('value','Value',170),('boundary','Scope and limits',300)):
+            self.table.heading(key,text=label);self.table.column(key,width=width,stretch=key=='boundary')
+        source_scrollbars(frame,self.table)
+
+    def render(self,rows,model_status,project):
+        self.notice.set(model_status+' · '+project+' · policy snapshot, not runtime verification')
+        sync_table(self.table,rows)
