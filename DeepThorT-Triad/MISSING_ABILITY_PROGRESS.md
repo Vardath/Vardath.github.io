@@ -237,7 +237,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 225 | 168 | Email reading and searching | Partial: explicit Gmail account-bound bounded search and plain-text read via transient OAuth access token, read-only pinned HTTPS, no attachment retrieval or model sharing. Pass 226 CI pending; native provider acceptance and account authorization flow outstanding. |
 | 226 | 169 | Email sending | Partial: explicitly reviewed single-recipient plain-text Gmail send, account identity, transient OAuth token, one POST and no retry on uncertain outcome. Pass 227 CI pending; live provider acceptance and integrated OAuth acquisition outstanding. |
 | 227 | 170 | Automated inbox organisation | Partial: bounded Gmail rule search, exact message/label preview, explicit reviewed label changes and archive, stale-state refusal, inverse label receipts, no trash/delete/retry. Pass 228 CI pending; live provider acceptance and scheduled rules outstanding. |
-| 228 | 175 | Cloud storage integration | Not started in this programme |
+| 228 | 175 | Cloud storage integration | Partial: reviewed Google Drive folder inventory and exact bounded binary download with transient account-bound OAuth, metadata recheck and SHA-256 receipt; optional exclusive local save. Pass 229 CI pending; uploads, native Google document export, sync and live provider acceptance outstanding. |
 | 229 | 183 | Social media publishing | Not started in this programme |
 | 230 | 138 | Digital audio workstation (DAW) operation | Not started in this programme |
 | 231 | 304 | Album production automation | Existing partial; completion not started in this programme |
@@ -1126,3 +1126,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 228 — 28 November 2026
 - Add reviewed two-stage Gmail inbox organisation. Bounded search preview, exact account/message IDs and before/after labels, five-minute expiry, revalidation before mutation, permitted existing user/system labels and archive. Stop on uncertain receipt; retain confirmed inverse operations without automatic rollback or retry. No deletion, trash, spam or unrestricted scheduled rules. Three mocked regressions on both hosts. Next rank 228 / ID 175 cloud storage integration. No installer.
+
+## Pass 229 — 28 November 2026
+- Add reviewed Google Drive folder inventory and exact bounded binary download, pinned HTTPS and transient user-provided OAuth, account identity before/after, version/MD5/size recheck and SHA-256 receipt. Separate user approval for exclusive local save; no cloud mutations, model ingestion or remote filename trust. Three mocked regression fixtures on both hosts. Native provider acceptance, uploads, document export and sync outstanding. Next rank 229 / ID 183 social media publishing. No installer.

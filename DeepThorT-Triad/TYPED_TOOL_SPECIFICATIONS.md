@@ -1021,3 +1021,7 @@ Compose/send Gmail accepts one literal sender account, one recipient, subject an
 ## Reviewed Gmail inbox organisation (Pass 228)
 
 Organise Gmail accepts `{"account":"owner@example.com","query":"subject:example","limit":5,"add":["Label_123"],"remove":["INBOX"]}`. Requires separately obtained transient Gmail modify OAuth token. First approve bounded read-only preview, then separately approve exact displayed IDs and label changes. Rechecks account, labels and message metadata; no automatic retry or deletion. Partial results include inverse label deltas for manual review. Archive removes INBOX. No scheduled rules or live provider acceptance yet.
+
+## Reviewed Google Drive storage (Pass 229)
+
+Google Drive accepts `{"operation":"list","account":"owner@example.com","folder_id":"root","limit":20}` or `{"operation":"download","account":"owner@example.com","file_id":"<exact ID>"}`. Supply transient OAuth token with Drive read-only scope. Bounded folder metadata inventory and existing binary files up to 1 MiB; exact identity, size, version and MD5 rechecked, SHA-256 receipt. Separate explicit local save to a new file; remote names never become paths. No exports of native Google documents, remote writes, sync, model ingestion or credential storage. Live provider acceptance pending.
