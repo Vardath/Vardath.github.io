@@ -236,7 +236,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 224 | 63 | Automated game distribution | Partial: reviewed offline Windows game distribution archive, exact original build, release notes, PE header identity and per-file digests. Pass 225 CI pending; store upload, signing and gameplay acceptance outstanding. |
 | 225 | 168 | Email reading and searching | Partial: explicit Gmail account-bound bounded search and plain-text read via transient OAuth access token, read-only pinned HTTPS, no attachment retrieval or model sharing. Pass 226 CI pending; native provider acceptance and account authorization flow outstanding. |
 | 226 | 169 | Email sending | Partial: explicitly reviewed single-recipient plain-text Gmail send, account identity, transient OAuth token, one POST and no retry on uncertain outcome. Pass 227 CI pending; live provider acceptance and integrated OAuth acquisition outstanding. |
-| 227 | 170 | Automated inbox organisation | Not started in this programme |
+| 227 | 170 | Automated inbox organisation | Partial: bounded Gmail rule search, exact message/label preview, explicit reviewed label changes and archive, stale-state refusal, inverse label receipts, no trash/delete/retry. Pass 228 CI pending; live provider acceptance and scheduled rules outstanding. |
 | 228 | 175 | Cloud storage integration | Not started in this programme |
 | 229 | 183 | Social media publishing | Not started in this programme |
 | 230 | 138 | Digital audio workstation (DAW) operation | Not started in this programme |
@@ -1123,3 +1123,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 227 — 28 November 2026
 - Add reviewed Gmail compose/send dialog, exact account/recipient/subject/body confirmation, bounded MIME encoding, fixed account-verified HTTPS request, provider receipt and no automatic retries. No attachments, CC/BCC, bulk mail, token storage or delivery claim. Three mocked regressions on both hosts. Native live acceptance and integrated OAuth acquisition outstanding. Next rank 227 / ID 170 automated inbox organisation. No installer.
+
+## Pass 228 — 28 November 2026
+- Add reviewed two-stage Gmail inbox organisation. Bounded search preview, exact account/message IDs and before/after labels, five-minute expiry, revalidation before mutation, permitted existing user/system labels and archive. Stop on uncertain receipt; retain confirmed inverse operations without automatic rollback or retry. No deletion, trash, spam or unrestricted scheduled rules. Three mocked regressions on both hosts. Next rank 228 / ID 175 cloud storage integration. No installer.

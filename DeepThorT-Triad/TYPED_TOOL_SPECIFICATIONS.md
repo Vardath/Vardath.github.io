@@ -1017,3 +1017,7 @@ Search/read Gmail accepts `{"operation":"search","account":"owner@example.com","
 ## Reviewed Gmail sending (Pass 227)
 
 Compose/send Gmail accepts one literal sender account, one recipient, subject and plain-text body. Final explicit confirmation displays exact message. Requires separately obtained transient OAuth token with Gmail read-only (profile identity) and send scope. Exactly one POST to Google after account verification, no automatic retry even if outcome uncertain; inspect Sent before retry. No attachments, bulk send, CC/BCC, credential storage or delivery guarantee. Live provider acceptance pending.
+
+## Reviewed Gmail inbox organisation (Pass 228)
+
+Organise Gmail accepts `{"account":"owner@example.com","query":"subject:example","limit":5,"add":["Label_123"],"remove":["INBOX"]}`. Requires separately obtained transient Gmail modify OAuth token. First approve bounded read-only preview, then separately approve exact displayed IDs and label changes. Rechecks account, labels and message metadata; no automatic retry or deletion. Partial results include inverse label deltas for manual review. Archive removes INBOX. No scheduled rules or live provider acceptance yet.
