@@ -1173,3 +1173,7 @@ Files & Images → Experimental GPU text. JSON: `{"role":"memory","device":"GPU.
 
 ### Model weight format conversion (Pass 274)
 Files & Images → Convert weights to SafeTensors / Export weights to NPZ. JSON: `{"weights":"weights.npz"}` or `{"weights":"weights.safetensors"}` respectively. Convert 1–128 numeric tensors, little-endian contiguous NPY v1.0 and supported SafeTensors dtypes (F16/F32/F64, signed/unsigned 8/16/32/64-bit integers, BOOL). Scalars supported; no zero-sized, BF16, exotic dtype, nonempty SafeTensors metadata, Fortran order or pickle. 16 MiB input, expanded-data and output bounds. Tensor names, shape, dtype and bytes verified on roundtrip. This is weight-container conversion, not model architecture, tokenizer, full checkpoint or deployment conversion. No installed model changes.
+
+
+### Reviewed model weight quantisation (Pass 275)
+Files & Images → Quantise selected weights. JSON: `{"weights":"weights.safetensors","tensors":["layer.weight"],"max_abs_error":0.01}`. Select exact F16/F32 tensor names from a bounded SafeTensors file. Quantise to signed INT8 with symmetric per-tensor scaling, nearest-even rounding and independently verified absolute reconstruction error. Output ZIP contains `quantized.safetensors` plus `quantization.json` with the original types, scales, error and byte counts. Unselected weights preserved exactly. No full graph, runnable quantised LLM, INT4, calibration-dataset accuracy, runtime speedup or production model changes. The 16 MiB artifact bounds remain in effect.
