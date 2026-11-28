@@ -1161,3 +1161,7 @@ Files & Images → Generate 3D from text. JSON: `{"prompt":"a small spacecraft",
 
 ### Local image-to-3D (Pass 271)
 Files & Images → Reconstruct 3D from image. JSON: `{"image":"source.png","seed":12,"steps":24,"guidance":4}`. Requires a separately provisioned trusted Shap-E image pipeline with safetensors in `models/shap-e-image`, compatible local PyTorch/Diffusers and protected Windows memory headroom. Source is a single 64–1024 px RGB PNG. Both Shap-E profiles require compatible safetensors in the current renderer component folder; upstream pickle weights are not loaded by these tools. No downloads or automatic conversion. One verified geometry-only OBJ; unseen surfaces are inferred, not measured, and metric accuracy and materials are not verified.
+
+
+### Calibrated multi-view 3D (Pass 272)
+Files & Images → Reconstruct multi-view points. JSON: `{"reference":"ref.png","views":[{"image":"a.png","baseline_m":0.1},{"image":"b.png","baseline_m":0.2}],"focal_px":100,"min_disparity":2,"max_disparity":10,"step":4,"max_error":0,"min_margin":5,"max_depth_error_m":0.01,"max_reprojection_px":0.1}`. Use three to five same-size rectified views from parallel cameras with shared focal length and centered principal point, at distinct positive baselines along the horizontal axis. Every accepted point must match all views and meet both depth-spread and reprojection tolerances. Saves a sparse JSON point cloud with source hashes; no automatic camera calibration, dense surface, texture, or independently validated metric accuracy.
