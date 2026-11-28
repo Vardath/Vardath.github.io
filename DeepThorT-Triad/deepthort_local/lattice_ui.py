@@ -333,3 +333,101 @@ def replace_readonly(widget,text):
     widget.configure(state='disabled')
     widget.yview_moveto(y)
     widget.xview_moveto(x)
+
+
+OPERATIVES = (
+    ('janus','JANUS','Executive coordination'),
+    ('sentinel','Sentinel','Independent oversight'),
+    ('implementation','Granite','Technical development'),
+    ('gemma','Gemma','Multimedia production'),
+    ('memory','Memory','Independent contextual retrieval'),
+)
+
+
+def operative_rows(health, broker_pid, creative_active=False):
+    """Reject stale broker reports; Gemma thread state is not model residency."""
+    current=health if isinstance(health,dict) and broker_pid and health.get('pid')==broker_pid else {}
+    models=current.get('models',{})
+    if not isinstance(models,dict):models={}
+    rows=[]
+    for key,label,responsibility in OPERATIVES:
+        if key=='gemma':
+            state='Creative lane active' if creative_active else 'No active creative lane observed'
+            pid='—'
+        else:
+            row=current.get('memory_model',{}) if key=='memory' else models.get(key,{})
+            row=row if isinstance(row,dict) else {}
+            if not row:
+                state='Not observed';pid='—'
+            else:
+                state=('Generating' if row.get('generating') else 'Busy' if row.get('busy') else 'Resident') if row.get('resident') else 'Not resident'
+                pid=row.get('pid') if row.get('resident') and type(row.get('pid')) is int else '—'
+        rows.append((key,(label,responsibility,state,pid)))
+    return rows
+
+
+class SocietyLattice(ttk.Frame):
+    """Topology of recorded recursive roles; edges represent architecture, not traffic."""
+    def __init__(self,parent):
+        super().__init__(parent)
+        import json
+        from .janus_cognition import CORE_NAMES
+        self.names=CORE_NAMES
+        self.records={'JANUS':{},'Sentinel':{}}
+        self.role='Front'
+        self.society=tk.StringVar(self,value='JANUS')
+        bar=ttk.Frame(self);bar.pack(fill='x')
+        ttk.Label(bar,text='Recorded core appraisals · select a society and core').pack(side='left')
+        choice=ttk.Combobox(bar,textvariable=self.society,values=('JANUS','Sentinel'),state='readonly',width=10)
+        choice.pack(side='right')
+        choice.bind('<<ComboboxSelected>>',lambda e:self.redraw())
+        self.canvas=tk.Canvas(self,bg=PALETTE['base'],height=210,highlightthickness=0)
+        self.canvas.pack(fill='x',pady=3)
+        self.canvas.bind('<Configure>',lambda e:self.redraw())
+        nav=ttk.Frame(self);nav.pack(fill='x')
+        self.selected=tk.StringVar(self,value='Front')
+        core=ttk.Combobox(nav,textvariable=self.selected,values=self.names,state='readonly',width=14)
+        core.pack(side='left')
+        core.bind('<<ComboboxSelected>>',lambda e:self.select(self.selected.get()))
+        ttk.Label(nav,text='7 specialists → both hemispheres → Front → Interface',style='Muted.TLabel').pack(side='left',padx=8)
+        frame=ttk.Frame(self);frame.pack(fill='both',expand=True)
+        self.detail=tk.Text(frame,bg=PALETTE['input'],fg=PALETTE['text'],height=9,wrap='word',state='disabled',font=('Consolas',10))
+        scroll_text(frame,self.detail)
+        self.redraw()
+
+    def update_records(self,main,watch):
+        self.records={'JANUS':main if isinstance(main,dict) else {},
+                      'Sentinel':watch if isinstance(watch,dict) else {}}
+        self.redraw()
+
+    def select(self,name):
+        if name not in self.names:return
+        self.role=name;self.selected.set(name);self.redraw()
+
+    def redraw(self):
+        import json
+        canvas=self.canvas
+        canvas.delete('all')
+        width=max(280,canvas.winfo_width())
+        top=[(name, (i+1)*width/8,30) for i,name in enumerate(self.names[:7])]
+        lower=[('Left',width*.30,86),('Right',width*.70,86),('Front',width*.50,139),('Interface',width*.50,190)]
+        positions={name:(x,y) for name,x,y in top+lower}
+        for name,_,_ in top:
+            for target in ('Left','Right'):
+                canvas.create_line(*positions[name],*positions[target],fill=PALETTE['selected'])
+        for source,target in [('Left','Front'),('Right','Front'),('Front','Interface')]:
+            canvas.create_line(*positions[source],*positions[target],fill=PALETTE['selected'],arrow='last')
+        records=self.records.get(self.society.get(),{})
+        for name,x,y in top+lower:
+            recorded=isinstance(records.get(name),dict) and bool(records.get(name))
+            colour=PALETTE['accent'] if recorded else PALETTE['muted']
+            tag='core_'+name
+            radius=9
+            canvas.create_polygon(x,y-radius,x+radius,y,x,y+radius,x-radius,y,
+                                  fill=PALETTE['selected'] if name==self.role else PALETTE['panel'],
+                                  outline=colour,width=2 if name==self.role else 1,tags=(tag,))
+            canvas.create_text(x,y+16,text=name,fill=colour,font=('Segoe UI',8),tags=(tag,))
+            canvas.tag_bind(tag,'<Button-1>',lambda event,n=name:self.select(n))
+        data=records.get(self.role)
+        body=json.dumps(data,indent=2,ensure_ascii=False) if isinstance(data,dict) and data else 'No recorded appraisal for this core.'
+        replace_readonly(self.detail,self.society.get()+' · '+self.role+'\nRecorded observations, not a neural thought transcript.\n'+body)
