@@ -1013,3 +1013,7 @@ Prepare game distribution accepts `{"artifact":"game.zip","name":"Example","vers
 ## Reviewed Gmail read/search (Pass 226)
 
 Search/read Gmail accepts `{"operation":"search","account":"owner@example.com","query":"subject:example","limit":5}` or `{"operation":"read","account":"owner@example.com","message_id":"<exact message ID>"}`. Requires a transient Google OAuth access token obtained separately with Gmail read-only scope. Fixed Google HTTPS GET endpoints check account before and after. Search returns at most five metadata results; exact read displays bounded inline plain text only, no HTML or attachments. No provider writes, model dispatch, automatic memory or credential storage. Native provider acceptance and integrated OAuth acquisition pending.
+
+## Reviewed Gmail sending (Pass 227)
+
+Compose/send Gmail accepts one literal sender account, one recipient, subject and plain-text body. Final explicit confirmation displays exact message. Requires separately obtained transient OAuth token with Gmail read-only (profile identity) and send scope. Exactly one POST to Google after account verification, no automatic retry even if outcome uncertain; inspect Sent before retry. No attachments, bulk send, CC/BCC, credential storage or delivery guarantee. Live provider acceptance pending.
