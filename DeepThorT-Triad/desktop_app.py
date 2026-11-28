@@ -567,7 +567,7 @@ class DeepThorTDesktop(tk.Tk):
             [(label,lambda index=index:self.tabs.select(index)) for label,index in (('Chats',0),('Work queue',1),('File review',2),('Processes',4),('Operatives',5),('Tools',6))],self._show_queued_prompts)
         self.command_centre.pack(fill='both',expand=True)
         self.approval_centre=ApprovalCentre(approval_tab,self._refresh_approval_centre,self._inspect_approval_job,self._inspect_pc_action,
-            [('Network permissions…',self._network_permissions_dialog),('Computer & Tools',lambda:self.tabs.select(6)),('Processes',lambda:self.tabs.select(4)),('Approved process controls',lambda:self.tabs.select(5))])
+            [('Network permissions…',self._network_permissions_dialog),('Computer & Tools',lambda:self.tabs.select(6)),('Processes',lambda:self.tabs.select(4)),('Approved process controls',lambda:self.tabs.select(5))],self._open_approval_job,self._inspect_approval_grant)
         self.approval_centre.pack(fill='both',expand=True)
         self.knowledge_centre=KnowledgeMemoryCentre(memory_tab,self._refresh_knowledge_centre,self._open_project_knowledge)
         self.knowledge_centre.pack(fill='both',expand=True)
@@ -3220,12 +3220,54 @@ class DeepThorTDesktop(tk.Tk):
         import sqlite3
         try:
             project=self._project_key()
-            self.approval_centre.render(project,approval_job_rows(self.jobs.items(project)),
-                                       pc_action_rows(self.janus.actions(limit=100)))
+            from deepthort_local.project_authority import inspect_grant
+            jobs=self.jobs.items(project)
+            grants=[]
+            for job in [j for j in jobs if j['mode']=='build'][:40]:
+                try:
+                    grant=inspect_grant(STATE/'project-grants',job,self.jobs.steps(job['id']),
+                                        enabled=self._project_work_is_enabled())
+                except (OSError,ValueError,KeyError,TypeError) as exc:
+                    grant={'status':'Unavailable','files':[],'expires_at':''}
+                if grant:
+                    ident=str(job['id'])
+                    grants.append((ident,(ident,grant['status'],str(len(grant['files'])),str(grant['expires_at']))))
+            self.approval_centre.render(project,approval_job_rows(jobs),
+                                       pc_action_rows(self.janus.actions(limit=100)),grants)
         except (OSError,ValueError,sqlite3.Error) as exc:
             # Do not retain another workspace's evidence after a failed read.
             self.approval_centre.render(self._project_key(),[],[])
             self.approval_centre.notice.set('Snapshot unavailable: '+str(exc)[:200])
+
+    def _open_approval_job(self,ident):
+        job=self.jobs.get(int(ident))
+        if not job or job['project']!=self._project_key() or job['mode'] in ('chat','plan','edit'):
+            self.approval_centre.notice.set('No exact Work queue record in this workspace; refresh or use Chats.')
+            return
+        self.job_filter.set('All states');self.job_query.set('')
+        self._refresh_jobs()
+        if self.job_tree.exists(str(ident)):
+            self.job_tree.selection_set(str(ident));self.job_tree.see(str(ident));self.tabs.select(1)
+        else:self.approval_centre.notice.set('Job outside current bounded queue view.')
+
+    def _inspect_approval_grant(self,ident):
+        from deepthort_local.project_authority import inspect_grant
+        job=self.jobs.get(int(ident))
+        if not job or job['project']!=self._project_key() or job['mode']!='build':
+            return 'No exact workspace grant record.'
+        try:
+            row=inspect_grant(STATE/'project-grants',job,self.jobs.steps(job['id']),
+                              enabled=self._project_work_is_enabled())
+            if not row:return 'No durable grant record.'
+            lines=[f"Job #{ident} · {row['status']}",row['detail'],
+                   'Recorded scope only; not an authorization for any action.']
+            for key in ('issued_at','expires_at','revoked_at','plan_sha256'):
+                if row.get(key):lines.append(f'{key}: {row[key]}')
+            for item in row['files']:
+                lines.append(f"Step #{item['step_id']} · {item['path']} · original SHA-256: {item.get('before_sha256')} · written SHA-256: {item.get('written_sha256')}")
+            return '\n'.join(lines)
+        except (OSError,ValueError,KeyError,TypeError) as exc:
+            return 'Grant evidence unavailable: '+str(exc)[:180]
 
     def _inspect_approval_job(self,ident):
         job=self.jobs.get(int(ident))

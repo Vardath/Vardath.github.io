@@ -167,6 +167,30 @@ def _active(folder: Path, job: dict, steps: list[dict], enabled: bool) -> dict:
     return row
 
 
+def inspect_grant(folder: Path, job: dict, steps: list[dict], *, enabled: bool):
+    """Recorded grant scope only; never authorize a file, test, or process."""
+    ident=job['id']
+    if not (Path(folder)/f'job-{int(ident)}.json').exists():
+        return None
+    row=_read_grant(folder,ident)
+    if not row:
+        return {'status':'Unreadable / invalid seal','files':[],'expires_at':'','detail':'Stored record unavailable.'}
+    if (row.get('job_id')!=ident or row.get('project')!=str(Path(job['project']).resolve(strict=True))
+            or row.get('plan_sha256')!=_plan_digest(job,steps)
+            or row.get('approval_key')!=job.get('approval_key')):
+        return {'status':'Identity mismatch','files':[],'expires_at':'','detail':'Stored record does not match current job.'}
+    try:
+        _active(folder,job,steps,enabled=True)
+        status='Recorded active' if enabled else 'Policy disabled'
+        detail='Exact job and plan record match; per-action checks still required.'
+    except (GrantError,OSError,ValueError) as exc:
+        status='Not currently eligible'
+        detail=str(exc)
+    return {'status':status,'files':row.get('files',[]),'expires_at':row.get('expires_at',''),
+            'issued_at':row.get('issued_at',''),'plan_sha256':row['plan_sha256'],
+            'revoked_at':row.get('revoked_at'),'detail':detail}
+
+
 def authorize_file(folder: Path, job: dict, steps: list[dict],
                    step: dict, *, enabled: bool) -> dict:
     """Return a checked existing-file hash for apply_approved_file's race guard."""
