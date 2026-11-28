@@ -270,3 +270,33 @@ class AuthBrowserTests(unittest.TestCase):
         for patch in ({'url':'http://example.org/'},{'url':HOST+'/account?token=x'},{'seconds':999},
                       {'browser':'personal'},{'expected_heading':''},{'password':'x'}):
             with self.assertRaises(ValueError):checked(dict(s,**patch))
+
+class AuthResearchTests(unittest.TestCase):
+    def test_bounded_section_selection(self):
+        from deepthort_local.browser_authenticated_research import select
+        s={'browser':'chrome','url':HOST+'/account','expected_heading':'Orders','seconds':90,'question':'What changed?','max_blocks':2}
+        rows=[['h1','Account'],['p','Other'],['h2','Orders'],['p','First'],['h3','Details'],['p','Third'],['h2','Billing'],['p','Private elsewhere']]
+        self.assertEqual(select(s,rows),[{'tag':'p','text':'First'},{'tag':'h3','text':'Details'}])
+        with self.assertRaises(ValueError):select(s,rows+[['h2','Orders']])
+        with self.assertRaises(ValueError):select(s,[['h2','Orders'],['h2','Other']])
+        with self.assertRaises(ValueError):select(s,[['h2','Orders'],['input','secret']])
+    def test_isolated_readback_and_navigation_guard(self):
+        from deepthort_local.browser_authenticated_research import observe,COLLECT
+        s={'browser':'chrome','url':HOST+'/account','expected_heading':'Orders','seconds':90,'question':'Orders?','max_blocks':3}
+        class WS:
+            def __init__(self,changed=False):self.sent=[];self.changed=changed
+            def send(self,raw):self.sent.append(json.loads(raw))
+            def recv(self):
+                q=self.sent[-1];m=q['method'];r={}
+                if m=='Target.getTargets':r={'targetInfos':[{'type':'page','url':s['url'],'targetId':'TARGET'}]}
+                elif m=='Target.attachToTarget':r={'sessionId':'SESSION'}
+                elif m=='Page.getFrameTree':r={'frameTree':{'frame':{'url':s['url'],'id':'FRAME','loaderId':'CHANGED' if self.changed and q['id']==8 else 'LOADER'}}}
+                elif m=='Page.createIsolatedWorld':r={'executionContextId':17}
+                elif m=='Runtime.evaluate':r={'result':{'value':[['h2','Orders'],['p','One order']]}}
+                a={'id':q['id'],'result':r}
+                if 'sessionId' in q:a['sessionId']=q['sessionId']
+                return json.dumps(a)
+        ws=WS();r=observe(ws,s)
+        self.assertEqual(r['blocks'],[{'tag':'p','text':'One order'}]);self.assertFalse(r['model_received_text'])
+        self.assertEqual(ws.sent[-2]['params'],{'expression':COLLECT,'returnByValue':True,'contextId':17})
+        with self.assertRaises(ValueError):observe(WS(True),s)

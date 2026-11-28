@@ -213,7 +213,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 201 | 37 | Browser developer tools integration | Partial: reviewed installed Chrome/Edge disposable headless profile, ephemeral loopback DevTools endpoint, fixed Browser.getVersion and Target.getTargets, capped cleanup and blank-page verification. Pass 202 CI pending. Native browser and websocket-client acceptance, broader CDP inspection outstanding. |
 | 202 | 38 | General browser automation | Partial: actual CDP local inert form replay with attached disposable page, DOM focus, native text insertion and independent readback oracle. Pass 203 CI pending. Live sites, arbitrary navigation, complex controls and native browser acceptance outstanding. |
 | 203 | 36 | Operation of authenticated browser sessions | Partial: separate visible disposable Chromium profile, user-operated sign-in and explicit confirmation, exact page and expected heading observation, no credential or cookie extraction. Pass 204 CI pending. Real login/native acceptance and reusable authenticated workflows outstanding. |
-| 204 | 26 | Research using authenticated websites | Not started in this programme |
+| 204 | 26 | Research using authenticated websites | Partial: manually authenticated disposable browser, exact page and unique approved heading section, isolated-world bounded visible text collection, local untrusted evidence receipt. Pass 205 CI pending. Native execution, multi-page research and model synthesis outstanding. |
 | 205 | 333 | Prompt injection resistance | Existing partial; completion not started in this programme |
 | 206 | 28 | Mouse control | Not started in this programme |
 | 207 | 29 | Keyboard control | Not started in this programme |
@@ -1051,3 +1051,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 204 — 27 November 2026
 - Add explicitly reviewed visible disposable browser session with manual user sign-in, separate confirmation dialog, exact page identity and fixed expected heading observation. Profile outside project and nested cleanup; no personal profile, cookie export, password capture or automatic navigation. User confirmation is not independent authentication proof. Protocol fixtures only; native login acceptance outstanding. Next rank 204 / ID 26 authenticated website research. No installer.
+
+## Pass 205 — 27 November 2026
+- Reuse manual browser sign-in and explicit second confirmation for local research of one exact page and unique named section. Fixed isolated-world rendered-text observation, bounded section blocks, frame/loader recheck, hash and untrusted reference-only receipt. No credential access, automatic submission, cookie export or model ingestion. Two protocol/selection fixtures; native research and broader synthesis outstanding. Next rank 205 / ID 333 prompt injection resistance. No installer.
