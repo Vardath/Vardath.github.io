@@ -858,6 +858,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(audio_review_actions,text='Neural speech…',command=self._show_neural_speech).pack(side='left',padx=3)
         ttk.Button(audio_review_actions,text='Voice effects…',command=lambda:self._review_typed_tool('voice_transformation','.wav','Audio: reviewed voice effects')).pack(side='left',padx=3)
         ttk.Button(audio_review_actions,text='Consent voice synthesis…',command=lambda:self._review_typed_tool('voice_cloning','.wav','Audio: consent voice synthesis')).pack(side='left',padx=3)
+        ttk.Button(audio_review_actions,text='Design custom voice…',command=lambda:self._review_typed_tool('custom_voice_design','.zip','Audio: reviewed voice design')).pack(side='left',padx=3)
         speech_review_actions=ttk.Frame(media_tab);speech_review_actions.pack(fill='x',pady=2)
         ttk.Button(speech_review_actions,text='Multilingual speech…',command=self._show_multilingual_speech).pack(side='left',padx=3)
         ttk.Button(speech_review_actions,text='Podcast generation…',command=self._show_podcast_generation).pack(side='left',padx=3)
@@ -1883,6 +1884,7 @@ class DeepThorTDesktop(tk.Tk):
                  'audio_restoration':('.wav','Audio: reviewed restoration'),
                  'voice_transformation':('.wav','Audio: reviewed voice effects'),
                  'voice_cloning':('.wav','Audio: consent voice synthesis'),
+                 'custom_voice_design':('.zip','Audio: reviewed voice design'),
                  'audio_source_isolation':('.zip','Audio: reviewed spatial isolation'),
                  'audio_to_midi':('.mid','Audio: reviewed MIDI transcription'),
                  'musical_arrangement':('.mid','Audio: reviewed arrangement'),

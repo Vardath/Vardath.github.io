@@ -253,7 +253,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 241 | 149 | Automatic multilingual dubbing | Partial: reviewed multilingual text and exact installed voices, automatic per-cue synthesis, 48 kHz conversion, bounded silence padding and verified silent video mux. Pass 242 CI pending; automatic translation, phoneme alignment, original soundtrack replacement and native acceptance outstanding. |
 | 242 | 147 | Voice transformation | Partial: reviewed local varispeed pitch/duration, optional ring modulation and low-pass tone on bounded mono PCM16, exact decoded output verification. Pass 243 CI pending; independent pitch/formant control, neural conversion and listening acceptance outstanding. |
 | 243 | 145 | Voice cloning with consent | Partial: optional reviewed owner-installed XTTS CLI, exact consent attestation, reference and engine guards, capped CPU synthesis and verified WAV. Pass 244 CI pending; actual installed engine/model acceptance, consent verification and perceptual voice similarity outstanding. |
-| 244 | 146 | Custom voice design | Not started in this programme |
+| 244 | 146 | Custom voice design | Partial: reviewed reusable generic installed-voice design with varispeed, modulation and tone, automatic synthesis and verified audition/preset bundle. Pass 245 CI pending; novel neural timbre creation, independent prosody/formant controls and native listening outstanding. |
 | 245 | 150 | Sound-effect generation | Not started in this programme |
 | 246 | 151 | Ambient sound generation | Not started in this programme |
 | 247 | 129 | Singing voice generation | Not started in this programme |
@@ -1175,3 +1175,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 244 — 28 November 2026
 - Add optional owner-installed XTTS CLI reference-conditioned synthesis, explicit own-voice or documented permission and non-deceptive scope, bounded reference, exact reviewed script and installed assets, capped CPU child and verified new WAV. Large checkpoint guards use file stat identity, not authentication; only trusted independently installed assets. No downloads, new core model, public deployment, identity verification or listening claim. Three mocked regression fixtures on both hosts. Next rank 244 / ID 146 custom voice design. No installer.
+
+## Pass 245 — 28 November 2026
+- Compose installed generic local voice synthesis and verified voice effects into a reusable named design JSON and audition WAV ZIP with exact source and voice identity, non-overwrite publication and per-output hashes. Bounded 5–20 second synthesis; three mocked regression fixtures on both hosts. No neural voice training, cloning, independent prosody/formant control or listening claim. Next rank 245 / ID 150 sound-effect generation. No installer.
