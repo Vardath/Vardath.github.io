@@ -731,6 +731,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(academic_actions,text='Discover academic literature…',command=lambda:self._review_typed_tool('academic_discovery','.json','Research: reviewed academic discovery')).pack(side='left',padx=3)
         crawl_actions=ttk.Frame(media_tab);crawl_actions.pack(fill='x',pady=2)
         ttk.Button(crawl_actions,text='Crawl website…',command=lambda:self._review_typed_tool('website_crawling','.json','Research: reviewed website crawl')).pack(side='left',padx=3)
+        ttk.Button(crawl_actions,text='Probe browser DevTools…',command=lambda:self._review_typed_tool('browser_devtools','.json','Research: reviewed browser DevTools')).pack(side='left',padx=3)
         ttk.Button(crawl_actions,text='Prepare form values…',command=lambda:self._review_typed_tool('website_form_completion','.json','Research: reviewed form values')).pack(side='left',padx=3)
         ttk.Button(crawl_actions,text='Upload reviewed file…',command=lambda:self._review_typed_tool('website_file_upload','.json','Research: reviewed file upload')).pack(side='left',padx=3)
         ttk.Button(crawl_actions,text='Download reviewed link…',command=lambda:self._review_typed_tool('website_file_download','.zip','Research: reviewed file download')).pack(side='left',padx=3)
@@ -1855,6 +1856,7 @@ class DeepThorTDesktop(tk.Tk):
                  'website_file_download':('.zip','Research: reviewed file download'),
                  'website_file_upload':('.json','Research: reviewed file upload'),
                  'website_form_completion':('.json','Research: reviewed form values'),
+                 'browser_devtools':('.json','Research: reviewed browser DevTools'),
                  'image_discovery':('.json','Research: reviewed image discovery'),
                  'scientific_citations':('.json','Research: reviewed citation check'),
                  'academic_discovery':('.json','Research: reviewed academic discovery'),
@@ -1925,7 +1927,7 @@ class DeepThorTDesktop(tk.Tk):
             view.insert('1.0',json.dumps(spec,ensure_ascii=False,indent=2));view.configure(state='disabled')
             approved=[False]
             def approve():approved[0]=True;dialog.destroy()
-            ttk.Button(dialog,text='Approve exact file disclosure + POST' if module=='website_file_upload' else 'Approve native Godot fixture + report' if module=='end_to_end_testing' else 'Approve exact stopped-container operation + report' if module=='container_management' else 'Approve trusted Godot import + debug APK export' if module=='android_game_compilation' else 'Approve emulator launch + report' if module=='android_emulator' else 'Approve exact REST request + output' if module=='rest_api' else 'Approve remote MCP discovery + output' if module=='remote_mcp' else 'Approve local HTTP requests + output' if module in ('api_testing','application_monitoring') else 'Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations','academic_discovery','website_crawling','multi_source_research','autonomous_research','webpage_elements','website_navigation','website_control_selection','website_file_download') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
+            ttk.Button(dialog,text='Approve disposable browser launch' if module=='browser_devtools' else 'Approve exact file disclosure + POST' if module=='website_file_upload' else 'Approve native Godot fixture + report' if module=='end_to_end_testing' else 'Approve exact stopped-container operation + report' if module=='container_management' else 'Approve trusted Godot import + debug APK export' if module=='android_game_compilation' else 'Approve emulator launch + report' if module=='android_emulator' else 'Approve exact REST request + output' if module=='rest_api' else 'Approve remote MCP discovery + output' if module=='remote_mcp' else 'Approve local HTTP requests + output' if module in ('api_testing','application_monitoring') else 'Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations','academic_discovery','website_crawling','multi_source_research','autonomous_research','webpage_elements','website_navigation','website_control_selection','website_file_download') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
             ttk.Button(dialog,text='Cancel',command=dialog.destroy).pack(side='right',padx=8,pady=8)
             dialog.grab_set();self.wait_window(dialog)
             if not approved[0] or not self._editor_idle(project,proposal=True):return
