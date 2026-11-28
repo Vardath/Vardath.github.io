@@ -280,7 +280,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 268 | 128 | Individual song section replacement and editing | Partial: exact same-duration PCM section replacement or gain edit with internal boundary fades, unchanged outside samples, clipping refusal and output verification. Pass 269 CI pending; neural inpainting and listening acceptance outstanding. |
 | 269 | 156 | Neural text-to-3D generation | Partial: optional reviewed offline Shap-E text mesh, bounded CPU settings and model inventory, strict verified geometry-only OBJ. Pass 270 CI pending; trusted model acquisition, native inference, material and visual acceptance outstanding. |
 | 270 | 157 | Image-to-3D reconstruction | Partial: reviewed local Shap-E image-conditioned shape estimation, exact source PNG, bounded settings and verified OBJ. Pass 271 CI pending; native model provisioning, inferred surface quality and metric accuracy outstanding. |
-| 271 | 158 | Multi-view 3D reconstruction | Not started in this programme |
+| 271 | 158 | Multi-view 3D reconstruction | Partial: calibrated sparse fusion of three to five rectified views, all-view mutual matching and depth/reprojection consensus, exact source verification and JSON cloud. Pass 272 CI pending; arbitrary camera pose recovery, dense mesh and real-photo acceptance outstanding. |
 | 272 | 196 | GPU-accelerated text inference | Not started in this programme |
 | 273 | 198 | AI model format conversion | Not started in this programme |
 | 274 | 197 | AI model quantisation | Not started in this programme |
@@ -1271,3 +1271,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 271 — 28 November 2026
 - Rank 270 / ID 157: optional local Shap-E image-to-mesh inference, shared reviewed model inventory, exact RGB PNG and verified geometry-only OBJ. Three fixture regressions registered in both CI jobs. No hidden-surface measurement, material recovery, model installation or resource-cap change. Native inference and quality acceptance remain outstanding.
+
+
+## Pass 272 — 28 November 2026
+- Rank 271 / ID 158: reviewed sparse multi-view reconstruction, common reference frame, owner-specified parallel baselines, independently matched depth agreement and reprojection checks. Bounded aggregate matching work, exact source guards, verified point cloud output. Three fixture regressions registered in both CI jobs. No automatic calibration, arbitrary pose recovery, dense mesh or native real-photo acceptance claim.
