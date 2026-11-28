@@ -212,7 +212,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 200 | 33 | Automated online form completion | Partial: exact historical static form and literal text-like field mapping, required-field gaps and encoded preview, no network or submission. Pass 201 CI pending. Live browser fill, complex controls, validation and authenticated forms outstanding. |
 | 201 | 37 | Browser developer tools integration | Partial: reviewed installed Chrome/Edge disposable headless profile, ephemeral loopback DevTools endpoint, fixed Browser.getVersion and Target.getTargets, capped cleanup and blank-page verification. Pass 202 CI pending. Native browser and websocket-client acceptance, broader CDP inspection outstanding. |
 | 202 | 38 | General browser automation | Partial: actual CDP local inert form replay with attached disposable page, DOM focus, native text insertion and independent readback oracle. Pass 203 CI pending. Live sites, arbitrary navigation, complex controls and native browser acceptance outstanding. |
-| 203 | 36 | Operation of authenticated browser sessions | Not started in this programme |
+| 203 | 36 | Operation of authenticated browser sessions | Partial: separate visible disposable Chromium profile, user-operated sign-in and explicit confirmation, exact page and expected heading observation, no credential or cookie extraction. Pass 204 CI pending. Real login/native acceptance and reusable authenticated workflows outstanding. |
 | 204 | 26 | Research using authenticated websites | Not started in this programme |
 | 205 | 333 | Prompt injection resistance | Existing partial; completion not started in this programme |
 | 206 | 28 | Mouse control | Not started in this programme |
@@ -1048,3 +1048,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ### Pass 203 documentation follow-up
 - Document exact JSON specifications, approval scope, output formats, optional browser dependency and native acceptance limitations for Passes 199–203 in TYPED_TOOL_SPECIFICATIONS.md. No runtime change or installer.
+
+## Pass 204 — 27 November 2026
+- Add explicitly reviewed visible disposable browser session with manual user sign-in, separate confirmation dialog, exact page identity and fixed expected heading observation. Profile outside project and nested cleanup; no personal profile, cookie export, password capture or automatic navigation. User confirmation is not independent authentication proof. Protocol fixtures only; native login acceptance outstanding. Next rank 204 / ID 26 authenticated website research. No installer.
