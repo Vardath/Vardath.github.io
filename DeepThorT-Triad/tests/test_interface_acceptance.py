@@ -64,6 +64,15 @@ class IntegratedInterfaceTests(unittest.TestCase):
         app.workspace_navigator.buttons[11].invoke();app.update()
         self.assertEqual(app.tabs.index('current'),11)
         self.assertEqual(app.workspace_navigator.current.get(),'Studio')
+        self.assertEqual(set(app._internal_splits),{'queue','files','tasks','operatives','media',
+            'approval_jobs','approval_actions','approval_grants','memory_receipts','memory_library','studio'})
+        app.tabs.select(2);app.update()
+        self.assertIn('Read-only inspection',app.inspector_context.get())
+        self.assertEqual(len(app._internal_splits['files'].panes()),2)
+        app._internal_ratios['files']=.6
+        app._save_display_preferences()
+        from deepthort_local.interface_preferences import load
+        self.assertEqual(load(app.display_preferences_file)['split_ratios']['files'],.6)
 
     def test_overviews_are_read_only_and_tool_categories_do_not_dispatch(self):
         app=self.app

@@ -9,7 +9,13 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
-    'Quick navigation': 'Open any primary workspace, even when native notebook tabs overflow. Ctrl+F6 focuses the workspace selector.',
+    'Quick navigation': 'Use the vertical navigation rail or workspace selector. Ctrl+F6 focuses the selector.',
+    'Project inspector': 'Show or hide the resizable project and context inspector without closing the project.',
+    'Open work queue': 'Navigate to the current workspace queue; no action is approved or started.',
+    'Open file review': 'Navigate to the existing file inspection and reviewed edit controls.',
+    'Open approvals': 'Inspect current workspace approval records; no new grant is made.',
+    'Open processes': 'Inspect observed operations and diagnostic controls.',
+    'Updates': 'Inspect the existing governed update or rollback review; opening the menu does not install anything.',
     'Selected job actions': 'Existing selected-job review and prompt loading commands.',
     'Refresh settings overview': 'Read existing saved policy values without changing settings or connecting external services.',
     'Refresh artifacts': 'Read the existing bounded workspace file snapshot; no new disk scan.',
@@ -263,7 +269,7 @@ class HoverTip:
             self._window.withdraw()
             self._window.overrideredirect(True)
             label = tk.Label(self._window, text=msg, justify='left', wraplength=365,
-                             bg='#fff5d5', fg='#20252b', relief='solid', borderwidth=1,
+                             bg='#232e55', fg='#eef2ff', relief='solid', borderwidth=1,
                              padx=10, pady=7, font=('Segoe UI', 9))
             label.pack()
             self._window.update_idletasks()

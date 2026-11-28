@@ -430,6 +430,21 @@ class DeepThorTDesktop(tk.Tk):
         s.configure('Treeview',rowheight=30)
         s.configure('Treeview.Heading',font=('Segoe UI Semibold',10),padding=(7,5))
         indigo_buttons(self,s)
+        # Shared defaults for native Tk dialogs/widgets; explicit review styles still win.
+        for pattern,value in (('*Toplevel.background',BG),('*Frame.background',BG),
+                ('*Label.background',BG),('*Label.foreground',TEXT),
+                ('*Text.background',INPUT),('*Text.foreground',TEXT),
+                ('*Text.insertBackground',TEXT),('*Text.selectBackground',PALETTE['selected']),
+                ('*Entry.background',INPUT),('*Entry.foreground',TEXT),
+                ('*Entry.insertBackground',TEXT),('*Listbox.background',INPUT),
+                ('*Listbox.foreground',TEXT),('*Listbox.selectBackground',PALETTE['selected'])):
+            self.option_add(pattern,value,40)
+        s.configure('TLabelframe',background=PANEL,bordercolor=PALETTE['border'])
+        s.configure('TLabelframe.Label',background=PANEL,foreground=TEXT,font=('Segoe UI Semibold',10))
+        s.configure('TMenubutton',background=PALETTE['control'],foreground=TEXT,padding=(8,5))
+        s.configure('TCombobox',background=PALETTE['control'],fieldbackground=INPUT,
+                    foreground=TEXT,arrowcolor=TEXT)
+        s.map('TCombobox',fieldbackground=[('readonly',INPUT)],foreground=[('readonly',TEXT)])
 
     def _text(self,parent,*,readonly=False,height=10,font=('Consolas',10),wrap='word'):
         w=tk.Text(parent,height=height,wrap=wrap,font=font,bg=INPUT,fg=TEXT,
@@ -470,6 +485,23 @@ class DeepThorTDesktop(tk.Tk):
         self._inspector_width=250
         self.inspector_visible=tk.BooleanVar(value=True)
         body.add(rail,weight=0);body.add(right,weight=1);body.add(left,weight=0)
+        inspector_tabs=ttk.Notebook(left);inspector_tabs.pack(fill='both',expand=True)
+        self.inspector_tabs=inspector_tabs
+        left=ttk.Frame(inspector_tabs,style='Panel.TFrame')
+        context=ttk.Frame(inspector_tabs,style='Panel.TFrame')
+        inspector_tabs.add(left,text='Project');inspector_tabs.add(context,text='Context')
+        self.inspector_context=tk.StringVar(value='No job or file selected.')
+        tk.Label(context,text='CURRENT CONTEXT',font=('Segoe UI Semibold',11),
+                 bg=PANEL,fg=TEXT).pack(anchor='w',padx=10,pady=(12,5))
+        ttk.Button(context,text='Open work queue',command=lambda:self.tabs.select(1)).pack(fill='x',padx=8,pady=3)
+        ttk.Button(context,text='Open file review',command=lambda:self.tabs.select(2)).pack(fill='x',padx=8,pady=3)
+        ttk.Button(context,text='Open approvals',command=lambda:self.tabs.select(9)).pack(fill='x',padx=8,pady=3)
+        ttk.Button(context,text='Open processes',command=lambda:self.tabs.select(4)).pack(fill='x',padx=8,pady=3)
+        context_frame=ttk.Frame(context);context_frame.pack(fill='both',expand=True,padx=8,pady=6)
+        self.context_text=self._text(context_frame,readonly=True,height=10,font=('Segoe UI',10))
+        scroll_text(context_frame,self.context_text)
+        self.inspector_context.trace_add('write',lambda *_:self._show(self.context_text,self.inspector_context.get()))
+        self._show(self.context_text,self.inspector_context.get())
         tk.Label(left,text='PROJECT / CONTEXT',font=('Segoe UI Semibold',11),fg=TEXT,bg=PANEL).pack(anchor='w',padx=11,pady=(15,5))
         ttk.Button(left,text='Choose folder…',command=self._choose_project).pack(fill='x',padx=10,pady=3)
         ttk.Button(left,text='Recent projects…',command=self._pick_recent_project).pack(fill='x',padx=10,pady=3)
@@ -504,7 +536,8 @@ class DeepThorTDesktop(tk.Tk):
         # On macOS Ctrl+click is the conventional secondary click.
         if sys.platform == 'darwin':
             self.files.bind('<Control-Button-1>',self._project_file_context_menu)
-        ttk.Button(left,text='Propose new project file…',command=self._new_file).pack(fill='x',padx=10,pady=(0,11))
+        ttk.Button(left,text='Propose new project file…',command=self._new_file).pack(side='bottom',fill='x',padx=10,pady=(0,6),before=file_view)
+        ttk.Button(left,text='Open file review',command=lambda:self.tabs.select(2)).pack(side='bottom',fill='x',padx=10,pady=(0,4),before=file_view)
 
         navigation=ttk.Frame(right);navigation.pack(fill='x',pady=(0,4))
         self.tabs=ttk.Notebook(right,style='Shell.TNotebook');self.tabs.pack(fill='both',expand=True)
@@ -720,11 +753,17 @@ class DeepThorTDesktop(tk.Tk):
         self.file_review_status=tk.StringVar(value='Read-only inspection · no write authorized')
         ttk.Label(files_tab,textvariable=self.file_review_status,style='Muted.TLabel',wraplength=610).pack(anchor='w',pady=(0,5))
         nav_frame=ttk.Frame(files_tab);nav_frame.pack(fill='x')
-        file_frame=ttk.Frame(files_tab);file_frame.pack(fill='both',expand=True)
+        file_split=ttk.Panedwindow(files_tab,orient='vertical');file_split.pack(fill='both',expand=True)
+        file_frame=ttk.Frame(file_split);file_split.add(file_frame,weight=3)
         self.file_preview=self._text(file_frame,height=25,wrap='none')
         source_scrollbars(file_frame,self.file_preview)
         self.file_navigator=SourceNavigator(nav_frame,self.file_preview)
         self.file_navigator.pack(fill='x',pady=(0,4))
+        file_context=ttk.Frame(file_split,style='Panel.TFrame');file_split.add(file_context,weight=1)
+        ttk.Label(file_context,text='SOURCE & REVIEW CONTEXT',style='Muted.TLabel').pack(anchor='w',padx=8,pady=4)
+        review_info=ttk.Frame(file_context);review_info.pack(fill='both',expand=True,padx=8,pady=3)
+        self.file_context_text=self._text(review_info,readonly=True,height=4,font=('Segoe UI',10))
+        scroll_text(review_info,self.file_context_text)
         self._preview('Select a file in the Project inspector.\n\nRequest a proposed edit in Chats.\n'
                       'Approved unattended jobs may save only exact authorized files with backups; '
                        'other changes require individual file review.')
@@ -1304,6 +1343,28 @@ class DeepThorTDesktop(tk.Tk):
         for page in (queue_tab,files_tab,tasks_tab,process_tab,janus_tab,hardware_tab,media_tab,
                      command_tab,approval_tab,memory_tab,studio_tab,settings_tab):
             reflow_button_rows(page)
+        self._internal_splits={'queue':job_split,'files':file_split,'tasks':task_split,
+                              'operatives':worker_split,'media':media_split,
+                              **self.approval_centre.display_splits,
+                              **self.knowledge_centre.display_splits,
+                              **self.studio_centre.display_splits}
+        self._internal_ratios=dict(self._display_preferences['split_ratios'])
+        for key,split in self._internal_splits.items():
+            def mapped(event,key=key,split=split):
+                if event.widget is not split or key not in self._internal_ratios:return
+                split.after_idle(lambda: self._restore_internal_split(key,split))
+            split.bind('<Map>',mapped,add='+')
+            split.bind('<ButtonRelease-1>',lambda event,key=key,split=split:
+                       split.after_idle(lambda:self._remember_internal_split(key,split)),add='+')
+
+    def _restore_internal_split(self,key,split):
+        if split.winfo_ismapped() and split.winfo_height()>80 and len(split.panes())==2:
+            split.sashpos(0,round(split.winfo_height()*self._internal_ratios[key]))
+
+    def _remember_internal_split(self,key,split):
+        if split.winfo_ismapped() and split.winfo_height()>80 and len(split.panes())==2:
+            self._internal_ratios[key]=max(.15,min(.85,split.sashpos(0)/split.winfo_height()))
+
 
     # ----------- basic GUI data and project/chat selection ------------
     def _show(self,box,text):
@@ -1319,6 +1380,9 @@ class DeepThorTDesktop(tk.Tk):
         self.compare_proposal.configure(state='normal' if editable else 'disabled')
         self.apply_proposal.configure(state='normal' if editable else 'disabled')
         self.file_navigator.reset()
+        context=self.file_title.get()+'\n'+self.file_review_status.get()
+        self._show(self.file_context_text,context)
+        self.inspector_context.set(context)
 
     def _inspect_proposed_diff(self):
         if not self.proposed or not self.project:return
@@ -2735,6 +2799,7 @@ class DeepThorTDesktop(tk.Tk):
                  'navigation':self.workspace_split.sashpos(0) if self.workspace_split.winfo_width()>1 else previous['navigation'],
                  'inspector':max(180,self.workspace_split.winfo_width()-self.workspace_split.sashpos(1)) if self.inspector_visible.get() and self.workspace_split.winfo_width()>1 else self._inspector_width,
                  'inspector_visible':self.inspector_visible.get(),
+                 'split_ratios':self._internal_ratios,
                  'page':self.tabs.tab(self.tabs.select(),'text'),'expanded_composer':self.expanded_composer.get(),
                  'follow_activity':self.follow_activity.get(),**{key:getattr(self,key).get() for key in FILTERS}}
             if not save(self.display_preferences_file,raw):
@@ -2748,6 +2813,7 @@ class DeepThorTDesktop(tk.Tk):
     def _set_project(self,path):
         self.project=Path(path).resolve()
         self._studio_selected_media=None
+        self.inspector_context.set('Workspace changed. Select a job or file for context.')
         self.file_query.set('')
         sync_table(self.assignment_table,[])
         self.assignment_notice.set('Workspace changed; refresh assignment evidence.')
@@ -3316,7 +3382,11 @@ class DeepThorTDesktop(tk.Tk):
 
     def _command_tab_changed(self,event=None):
         index=self.tabs.index('current')
-        if index==1:self._refresh_jobs()
+        if index==1:
+            self._refresh_jobs()
+            job=self._selected_job()
+            self.inspector_context.set(f"Job #{job['id']} · {job['state']}\nTarget: {job['target'] or '—'}\n\nFull evidence is in Work queue." if job else 'No job selected in the current workspace.')
+        elif index==2:self.inspector_context.set(self.file_title.get()+'\n'+self.file_review_status.get())
         elif index==3:self._refresh_tasks()
         elif index==5:self._show_janus_status()
         elif index==8:self._refresh_command_centre()
@@ -3324,6 +3394,8 @@ class DeepThorTDesktop(tk.Tk):
         elif index==10:self._refresh_knowledge_centre()
         elif index==11:self._refresh_studio()
         elif index==12:self._refresh_settings_centre()
+        if index not in (1,2):
+            self.inspector_context.set(self.workspace_navigator.current.get()+'\nCurrent project: '+self._project_key()+'\nUse the workspace controls to inspect exact records.')
 
     def _refresh_settings_centre(self):
         # Saved policy snapshot only. Do not read tokens, connect, or test external services.
@@ -5256,6 +5328,7 @@ class DeepThorTDesktop(tk.Tk):
             self.job_filter_count.set('Unavailable')
             self.queue_summary.set('Job snapshot unavailable — refresh Work queue; see Processes for diagnostics.')
             self._show(self.job_details,'Job snapshot unavailable: '+str(exc)[:180]+'\nNo job state was changed.')
+            if self.tabs.index('current')==1:self.inspector_context.set('Job evidence unavailable; see Work queue.')
             self._log('Work queue snapshot unavailable: '+type(exc).__name__)
 
     def _read_job_overview(self):
@@ -5282,6 +5355,7 @@ class DeepThorTDesktop(tk.Tk):
         self.job_filter_count.set(f'{len(visible)} / {len(displayed)}')
         if not self.job_tree.selection():
             self._show(self.job_details,'Select a job to inspect its journal, dependencies and verification evidence.')
+            if self.tabs.index('current')==1:self.inspector_context.set('No job selected in the current workspace.')
         count={}
         for j in rows:count[j['state']]=count.get(j['state'],0)+1
         summary='   '.join(f'{k}: {v}' for k,v in sorted(count.items())) or 'No approved jobs'
@@ -5297,7 +5371,9 @@ class DeepThorTDesktop(tk.Tk):
         return job if job and job['project']==self._project_key() else None
     def _job_selected(self,_event=None):
         job=self._selected_job()
-        if not job:return
+        if not job:
+            if self.tabs.index('current')==1:self.inspector_context.set('No job selected in the current workspace.')
+            return
         if job['state']=='waiting_approval' and job['mode'] in ('build','edit') and job['result']:
             steps=self.jobs.steps(job['id'])
             chosen=next((x for x in steps if x['state']=='proposed'),None)
@@ -5361,6 +5437,8 @@ class DeepThorTDesktop(tk.Tk):
         journal=self.jobs.journal(job['id'])
         if journal:detail+='\n\nPERSISTENT TASK JOURNAL:\n'+str(journal)
         self._show(self.job_details,detail)
+        if self.tabs.index('current')==1:
+            self.inspector_context.set(f"Job #{job['id']} · {job['state']}\n{job['mode']}\nTarget: {job['target'] or '—'}\n\n{str(job['detail'])[:2000]}\n\nFull evidence is in Work queue.")
     def _open_task_journal(self):
         job=self._selected_job()
         if not job:return

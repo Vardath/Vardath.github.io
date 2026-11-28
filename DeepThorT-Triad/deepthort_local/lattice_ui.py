@@ -757,6 +757,9 @@ class ApprovalCentre(ttk.Frame):
             'Stored grant scope, not a current authorization. Per-action checks still apply.',
             [('id','Job',55),('status','Record status',160),('files','Files',55),
              ('expiry','Expiry',200)],inspect_grant or (lambda ident:'Unavailable'))
+        self.display_splits={'approval_jobs':self.job_table.master.master,
+                             'approval_actions':self.action_table.master.master,
+                             'approval_grants':self.grant_table.master.master}
         if open_job:
             for page,table in ((jobs,self.job_table),(grants,self.grant_table)):
                 def navigate(table=table):
@@ -859,6 +862,7 @@ class KnowledgeMemoryCentre(ttk.Frame):
         self.library_detail=tk.Text(detail_frame,height=6,state='disabled',wrap='word',bg=PALETTE['input'],fg=PALETTE['text'])
         scroll_text(detail_frame,self.library_detail)
         self.library_records={}
+        self.display_splits={'memory_receipts':receipt_split,'memory_library':library_split}
 
     def render_library(self,project,records):
         if getattr(self,'library_project',None)!=project:
@@ -976,6 +980,7 @@ class StudioCentre(ttk.Frame):
         self.detail=tk.Text(detail_frame,height=5,state='disabled',wrap='word',bg=PALETTE['input'],fg=PALETTE['text'])
         scroll_text(detail_frame,self.detail)
         self.rows=[]
+        self.display_splits={'studio':split}
 
     def render(self,project,rows):
         if getattr(self,'project',None)!=project:

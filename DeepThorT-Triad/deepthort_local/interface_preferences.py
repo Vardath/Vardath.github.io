@@ -9,9 +9,11 @@ PAGES=('Chats','Work queue','File review','Tasks','Processes','JANUS & Sentinel'
 FILTERS={'job_filter':('All states','Active','Waiting / blocked','Completed / stopped'),
          'task_filter':('All states','Planned','Done'),
          'inventory_filter':('All states','Found','Missing')}
+SPLIT_KEYS=('queue','files','tasks','operatives','media','approval_jobs','approval_actions',
+            'approval_grants','memory_receipts','memory_library','studio')
 DEFAULTS={'schema':SCHEMA,'width':1320,'height':860,'sidebar':290,'page':'Chats',
           'expanded_composer':False,'follow_activity':True,
-          'navigation':178,'inspector':250,'inspector_visible':True,
+          'navigation':178,'inspector':250,'inspector_visible':True,'split_ratios':{},
           **{key:values[0] for key,values in FILTERS.items()}}
 
 def validated(raw):
@@ -20,6 +22,12 @@ def validated(raw):
     for key,low,high in (('width',1000,7680),('height',650,4320),('sidebar',180,1200),('navigation',150,320),('inspector',180,700)):
         value=raw.get(key)
         if type(value) is int:out[key]=max(low,min(high,value))
+    out['split_ratios']={}
+    ratios=raw.get('split_ratios')
+    if isinstance(ratios,dict):
+        for key in SPLIT_KEYS:
+            value=ratios.get(key)
+            if type(value) in (int,float) and .15<=value<=.85:out['split_ratios'][key]=float(value)
     if raw.get('page') in PAGES:out['page']=raw['page']
     for key in ('expanded_composer','follow_activity','inspector_visible'):
         if type(raw.get(key)) is bool:out[key]=raw[key]

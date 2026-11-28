@@ -10,7 +10,7 @@ Owner tested current baseline `5c51073fcb099abcfcc30853c6202064be106768` and rej
 | UI-002 | Chat | Foundation candidate; final verification pending |
 | UI-003 | Projects and panes | Foundation candidate; final verification pending |
 | UI-004 | Work queue | Workspace presentation candidate; final verification pending |
-| UI-005 | File review | Pending visual/usability redesign |
+| UI-005 | File review | Presentation candidate; final verification pending |
 | UI-006 | Tasks | Workspace presentation candidate; final verification pending |
 | UI-007 | Processes | Foundation candidate; final verification pending |
 | UI-008 | Operatives | Workspace presentation candidate; final verification pending |
@@ -21,7 +21,7 @@ Owner tested current baseline `5c51073fcb099abcfcc30853c6202064be106768` and rej
 | UI-013 | Knowledge & Memory | Workspace presentation candidate; final verification pending |
 | UI-014 | Studio | Workspace presentation candidate; final verification pending |
 | UI-015 | Settings & Integrations | Workspace presentation candidate; final verification pending |
-| UI-016 | Dialogs and accessibility | Pending visual/usability redesign |
+| UI-016 | Dialogs and accessibility | Presentation candidate; final verification pending |
 | UI-017 | Help and discoverability | Workspace presentation candidate; final verification pending |
 | UI-018 | Single consolidated interface acceptance | Pending final consolidated acceptance |
 
@@ -43,6 +43,12 @@ Owner tested current baseline `5c51073fcb099abcfcc30853c6202064be106768` and rej
 - Add draggable job/task evidence, operative cards/table, approval record, memory evidence, Studio preview and Files & Images splits; direct Studio categories, visible settings actions in sections, direct Command Centre/approval navigation; wrap packed action-only rows. Update offline help; retain original callbacks and underlying stores. Add focused shell/pane regression.
 - Candidate only. UI-005 file-review-specific additional split and UI-016 dialog coverage, exact right-inspector contextual detail, screenshot/physical visual acceptance and final consolidated verification remain outstanding. No manual test run or installer; existing automatic CI triggers unchanged. No backend changes.
 - Next: inspect remaining clipping and final visual refinements, then consolidated acceptance.
+
+### Visual checkpoint 003 — final presentation candidate
+- Checkpoint 002 automatic run [46136437734](https://github.com/Vardath/Vardath.github.io/actions/runs/46136437734): Linux compilation, lattice GUI and integrated interface acceptance succeeded, including previously clipped controls; Windows integrated step was in progress at inspection. No manual full run.
+- Add contextual inspector tab with exact current workspace/file/job state and direct navigation, clear stale context on workspace/selection change; file review source/context splitter, persistent validated ratios for eleven internal splits, shared indigo native dialog/widget defaults and tooltip colours. Existing exact source-diff review, permissions, callbacks and backend unchanged. Added focused assertions for split inventory, persistence and file context.
+- All 17 presentation areas now have candidate work; UI-018 remains acceptance pending, not closed. This remains native Tk/ttk with custom presentation rather than framework migration; OS-native dialogs and individually styled legacy dialogs may still differ. No claim of physical Windows visual quality or screenshot evidence.
+- Next: verify exact candidate's consolidated interface checks and actual rendering, fix only real failures, open one integration PR once candidate ready. No installer requested. No manual model or unrelated tests; repository's automatic checks remain unchanged.
 
 ### Historical ledger (retained unchanged; prior completion states are not current visual acceptance)
 
