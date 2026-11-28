@@ -1149,3 +1149,7 @@ Files & Images → Music from reference. JSON `{"reference":"ref.wav","min_bpm":
 
 ### Song continuation (Pass 268)
 Files & Images → Continue song. Use the Pass 267 reference-music JSON plus `tail_seconds` (3–20) and `fade_ms` (20–500). Input stereo PCM16 WAV at 22.05 kHz, up to 60 seconds. Analyse only the chosen trailing region, append 2–4 new bars in supported measured tempo/key, bridge from the last original sample into the new section. Original PCM remains exact, and the new output is separately saved. Peak ceiling applies after the bridge; original level and bridge may exceed that ceiling. No neural continuation or listening-quality claim.
+
+
+### Song section replacement and editing (Pass 269)
+Files & Images → Edit song section. JSON `{"audio":"song.wav","start_frame":24000,"end_frame":48000,"fade_frames":1200,"mode":"replace","gain_db":0,"replacement":"part.wav"}`. Source/replacement PCM16 mono/stereo 22.05/24/44.1/48 kHz; replacement must match selected duration, rate and channels exactly. For `gain` omit `replacement` and use nonzero gain. Fades remain inside selection; no clipping or outside sample changes. Saves a new WAV; neural inpainting not provided.

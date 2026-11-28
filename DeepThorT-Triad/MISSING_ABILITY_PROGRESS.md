@@ -277,7 +277,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 265 | 125 | Melody-to-song generation | Partial: stable monophonic transcription, preserved pitches/timing, explicit-key diatonic chord selection and bass, repeated phrase arrangement and verified synthetic stereo WAV. Pass 266 CI pending; neural arrangement, lyrics and listening acceptance outstanding. |
 | 266 | 126 | Reference-guided music generation | Partial: supported tempo/key estimates from exact reference, seeded independent diatonic score and stereo PCM synthesis; ambiguous evidence refused. Pass 267 CI pending; neural style/reference conditioning and listening acceptance outstanding. |
 | 267 | 127 | Song continuation | Partial: append independently synthesized tempo/key-conditioned section from trailing audio evidence, preserve exact original stereo PCM, bounded boundary bridge, verified new WAV. Pass 268 CI pending; neural continuation, stylistic continuity and listening acceptance outstanding. |
-| 268 | 128 | Individual song section replacement and editing | Not started in this programme |
+| 268 | 128 | Individual song section replacement and editing | Partial: exact same-duration PCM section replacement or gain edit with internal boundary fades, unchanged outside samples, clipping refusal and output verification. Pass 269 CI pending; neural inpainting and listening acceptance outstanding. |
 | 269 | 156 | Neural text-to-3D generation | Not started in this programme |
 | 270 | 157 | Image-to-3D reconstruction | Not started in this programme |
 | 271 | 158 | Multi-view 3D reconstruction | Not started in this programme |
@@ -1259,3 +1259,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 268 — 28 November 2026
 - Add reviewed song continuation based on trailing 3–20 seconds of exact 22.05 kHz stereo input (maximum 60 seconds), supported tempo/key analysis, seeded new musical section and boundary bridge without changing original samples. Verify entire PCM output and post-fade peak; no global peak claim or neural stylistic continuity. Three regression cases include actual extension synthesis with injected profile, ambiguous refusal and exact source-prefix preservation. Carry forward bounded advisory SQLite lock wait and competing transaction regression from Pass 261/265 repairs. Next rank 268 / ID 128 individual song section replacement and editing.
+
+
+## Pass 269 — 28 November 2026
+- Add reviewed sample-frame song section replacement/gain editing, exact matching replacement duration/rate/channels, inside-only boundary fades, no clipping, unchanged outside interval and duration, exact verified WAV. Three actual PCM and stale replacement regression cases in both CI jobs. Neural regeneration/listening not claimed. Next rank 269 / ID 156 neural text-to-3D generation.
