@@ -258,7 +258,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 246 | 151 | Ambient sound generation | Partial: reviewed deterministic procedural stereo wind/rain/machine-hum textures using periodic circular filtering, exact PCM and measured loop-boundary deltas. Pass 247 CI pending; realistic soundscapes, neural synthesis and listening acceptance outstanding. |
 | 247 | 129 | Singing voice generation | Partial: reviewed procedural pitched vowel score with rests, harmonic formant profiles, vibrato and verified PCM. Pass 248 CI pending; intelligible lyric synthesis, expressive neural singing and listening acceptance outstanding. |
 | 248 | 130 | Vocal harmony generation | Partial: reviewed automatic fixed-interval harmonization of the synthetic vowel score, two or three independently panned parts, linked peak control and exact PCM. Pass 249 CI pending; key-aware arrangements, recorded vocal conversion and listening acceptance outstanding. |
-| 249 | 165 | Motion capture | Not started in this programme |
+| 249 | 165 | Motion capture | Partial: reviewed synchronized multi-marker 2D trajectories from local video, bounded patch tracking, explicit partial results at loss/ambiguity/overlap and JSON verification. Pass 250 CI pending; markerless pose, 3D skeletal capture, retargeting integration and native acceptance outstanding. |
 | 250 | 159 | Automated photogrammetry | Not started in this programme |
 | 251 | 5 | Autonomous creation and configuration of specialist AI agents | Not started in this programme |
 | 252 | 216 | Parallel project development | Existing partial; completion not started in this programme |
@@ -1190,3 +1190,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 249 — 28 November 2026
 - Reuse sung-vowel synthesis for reviewed two- or three-part fixed chromatic interval harmonies, exact shared note/rest timing, independent gain/pan, linked peak attenuation and verified stereo PCM. Three regression fixtures on both hosts. No key-aware arrangement, recorded vocal pitch conversion or intelligible lyrics. Next rank 249 / ID 165 motion capture. No installer.
+
+## Pass 250 — 28 November 2026
+- Reuse local video patch tracker for 2–8 named nonoverlapping markers, common bounded work budget, synchronized frame-relative timing and pixel centers, source/codec guards and verified trajectory JSON. Stop at loss, ambiguity or overlap, explicitly label partial results. Three regression fixtures on both hosts. No identity recognition, skeletal pose inference, 3D capture or native animation acceptance. Next rank 250 / ID 159 automated photogrammetry. No installer.
